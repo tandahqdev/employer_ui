@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { LayoutProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles/globalStyles';
 
-const GlobalLayout = ({ children }: LayoutProps) => {
+export const GlobalLayout = ({ children }: LayoutProps) => {
   return (
     <>
       <Head>
@@ -38,4 +38,3 @@ const GlobalLayout = ({ children }: LayoutProps) => {
   );
 };
 
-export default GlobalLayout;
