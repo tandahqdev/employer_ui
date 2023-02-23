@@ -45,7 +45,7 @@ interface Props {
   children?: ReactNode;
 }
 
-const InputComp = ({
+export const InputComp = ({
   mainLabel,
   secondaryLabel,
   placeholder,
@@ -191,4 +191,3 @@ const InputComp = ({
   );
 };
 
-export default InputComp;

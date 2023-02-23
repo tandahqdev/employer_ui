@@ -6,7 +6,7 @@ interface Props {
   image?: string;
 }
 
-const Metatags = ({ title, description, image = '' }: Props) => {
+export const Metatags = ({ title, description, image = '' }: Props) => {
   return (
     <Head>
       <title>{title}</title>
@@ -23,4 +23,3 @@ const Metatags = ({ title, description, image = '' }: Props) => {
   );
 };
 
-export default Metatags;

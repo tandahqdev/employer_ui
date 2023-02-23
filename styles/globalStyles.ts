@@ -1,8 +1,8 @@
 export const DEFAULT_STYLES = {
   containerWidth: {
     base: '100%',
-    xl: '1240px',
-    '2xl': '1450px',
+    xl: '900px',
+    '2xl': '1080px',
   },
   sectionStyle: {
     width: '100%',
@@ -15,12 +15,14 @@ export const DEFAULT_STYLES = {
   white: '#FFFFFF',
   darkColor: '#000000',
   lightDarkColor: '#888888',
+  lightPurple: '#6E31F0',
   primaryColor: '#F89673',
   primaryTextColor: '#19224C',
   lightPrimaryColor: '#FDE7E3',
+  bgColor: '#F6F6F6',
   errorColor: 'red',
   successColor: '#34A853',
-  gradient: 'linear-gradient(180deg, #FFC7B4 0%, #F89673 100%)',
+  lightGray: '#D9D9D9',
   normalFontWeight: 400,
   semibold: 500,
   mediumbold: 600,
