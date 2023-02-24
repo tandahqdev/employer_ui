@@ -2,7 +2,7 @@ export class DashRoutes {
   static home = '/';
   static dashboard = '/dashboard';
 
-  // TODO: Change to dynamic route system
+  // TODO: Change to dynamic route system ?? not
   // Finance
   static dashboardFinanceOverview = `${this.dashboard}/finance/overview`;
   static dashboardFinanceGrow = `${this.dashboard}/finance/grow`;
