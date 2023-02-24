@@ -11,6 +11,8 @@ import { BiLogOut } from 'react-icons/bi';
 import { HelpCard } from './HelpCard';
 import { DashRoutes } from '@/utils';
 
+
+// TODO: Remove nextjs data collection
 export const SideBar = () => {
   return (
     <ColumnFlex
