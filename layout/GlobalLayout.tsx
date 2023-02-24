@@ -21,7 +21,7 @@ export const GlobalLayout = ({ children }: LayoutProps) => {
         <link rel='manifest' href='manifest.json' />
         <link rel='apple-touch-icon' href='favicon.ico' />
 
-        <title>Tanda</title>
+        <title>Employee - Tanda</title>
       </Head>
 
       <div

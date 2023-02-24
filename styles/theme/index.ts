@@ -23,7 +23,7 @@ export const theme = extendTheme({
     bodyText: {
       fontSize: '0.9rem',
       fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1.4,
       color: DEFAULT_STYLES.primaryTextColor,
     },
     info: {
@@ -34,7 +34,7 @@ export const theme = extendTheme({
     },
     title: {
       fontSize: '1.2rem',
-      lineHeight: 1.5,
+      lineHeight: 1.3,
       color: DEFAULT_STYLES.primaryTextColor,
       fontWeight: 600,
     },

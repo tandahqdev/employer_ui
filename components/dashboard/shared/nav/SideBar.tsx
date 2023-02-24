@@ -13,6 +13,7 @@ import { DashRoutes } from '@/utils';
 
 
 // TODO: Remove nextjs data collection
+// TODO: Change the stack in the admin side bar to be flex 1. 
 export const SideBar = () => {
   return (
     <ColumnFlex
@@ -25,6 +26,7 @@ export const SideBar = () => {
       pt='40px'
       px='0.5'
       pb='30px'
+      overflow='auto'
     >
       <Logo />
 
@@ -51,6 +53,7 @@ export const SideBar = () => {
         title='Settings'
         path={DashRoutes.dashboardSettings}
       />
+
       <NavItem icon={BiLogOut} title='Logout' />
     </ColumnFlex>
   );

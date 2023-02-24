@@ -17,6 +17,7 @@ export const Topbar = ({ header }: Props) => {
       borderBottom='1px solid rgba(218, 220, 224, 0.83)'
       align='center'
       justify='center'
+      zIndex={5}
     >
       <HStack
         width={DEFAULT_STYLES.containerWidth}

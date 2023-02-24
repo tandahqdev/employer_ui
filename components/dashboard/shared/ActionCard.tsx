@@ -30,8 +30,7 @@ export const ActionCard = ({
       variant='noBgBtn'
       size='smPadding'
       onClick={onClick}
-      alignSelf={isShowTopBtn ? 'initial' : 'flex-start'}
-      width='143px'
+      alignSelf={isShowTopBtn ? 'center' : 'flex-start'}
     >
       {btnText}
     </Button>
@@ -54,7 +53,7 @@ export const ActionCard = ({
           </Center>
 
           <Text
-            fontSize='24px'
+            fontSize='1.5rem'
             fontWeight={DEFAULT_STYLES.mediumbold}
             textTransform='uppercase'
             letterSpacing='0.13px'
@@ -76,7 +75,7 @@ export const ActionCard = ({
         <Text
           textStyle='bodyText'
           maxW='324px'
-          color='#19224C'
+          color={DEFAULT_STYLES.primaryDarkColor}
           opacity={0.4}
           flex='1'
         >

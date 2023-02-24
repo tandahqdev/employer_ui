@@ -18,6 +18,7 @@ export const DEFAULT_STYLES = {
   lightPurple: '#6E31F0',
   primaryColor: '#F89673',
   primaryTextColor: '#2B2B2B',
+  primaryDarkColor: '#19224C',
   lightPrimaryColor: '#FDE7E3',
   bgColor: '#F6F6F6',
   errorColor: 'red',

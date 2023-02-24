@@ -12,7 +12,6 @@ export default function Home() {
     <DashBoardLayout topBar={topbar}>
       <Grid
         gridTemplateColumns='repeat(2,1fr)'
-        mt='10'
         gridAutoRows='1fr'
         w='984px'
         columnGap='54px'

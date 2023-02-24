@@ -16,20 +16,17 @@ export const NavCard = ({ header, list }: Props) => {
   });
 
   return (
-    <>
-      <ColumnFlex>
-        <Text
-          fontSize='10px'
-          fontWeight={400}
-          textTransform='uppercase'
-          color={DEFAULT_STYLES.darkGray}
-          pl='0.5'
-        >
-          {header}
-        </Text>
+    <ColumnFlex>
+      <Text
+        fontSize='10px'
+        textTransform='uppercase'
+        color={DEFAULT_STYLES.darkGray}
+        pl='0.5'
+      >
+        {header}
+      </Text>
 
-        {renderList}
-      </ColumnFlex>
-    </>
+      {renderList}
+    </ColumnFlex>
   );
 };
