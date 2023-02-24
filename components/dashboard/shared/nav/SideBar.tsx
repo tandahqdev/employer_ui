@@ -8,6 +8,8 @@ import { NavCard } from './NavCard';
 import { bankingItems, financeItems } from '@/store';
 import { FiSettings } from 'react-icons/fi';
 import { BiLogOut } from 'react-icons/bi';
+import { HelpCard } from './HelpCard';
+import { DashRoutes } from '@/utils';
 
 export const SideBar = () => {
   return (
@@ -25,7 +27,11 @@ export const SideBar = () => {
       <Logo />
 
       <ColumnFlex pt='35px' gap='1' flex='1'>
-        <NavItem icon={AiTwotoneHome} title='Home' />
+        <NavItem
+          icon={AiTwotoneHome}
+          title='Home'
+          path={DashRoutes.dashboard}
+        />
 
         <TandaDivider />
 
@@ -36,7 +42,13 @@ export const SideBar = () => {
         <NavCard header='Banking' list={bankingItems} />
       </ColumnFlex>
 
-      <NavItem icon={FiSettings} title='Settings' />
+      <HelpCard />
+
+      <NavItem
+        icon={FiSettings}
+        title='Settings'
+        path={DashRoutes.dashboardSettings}
+      />
       <NavItem icon={BiLogOut} title='Logout' />
     </ColumnFlex>
   );

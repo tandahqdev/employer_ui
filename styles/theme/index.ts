@@ -28,7 +28,7 @@ export const theme = extendTheme({
     },
     info: {
       fontSize: '0.7rem',
-      lineHeight: 1.8,
+      lineHeight: 1.5,
       color: DEFAULT_STYLES.primaryTextColor,
       fontWeight: 400,
     },

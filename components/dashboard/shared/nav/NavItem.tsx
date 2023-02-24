@@ -1,22 +1,29 @@
 import { DEFAULT_STYLES } from '@/styles';
 import { Flex, Icon, Text } from '@chakra-ui/react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { IconType } from 'react-icons/lib';
 
 interface Props {
   icon: IconType;
   title: string;
   path?: string;
+  onClick?: () => void;
 }
 
-// Change nav comp in the other dashboard to sometime like this.
+export const NavItem = ({ icon, title, path, onClick }: Props) => {
+  const pathname = useRouter().pathname;
+  const isActive = path === pathname;
 
-export const NavItem = ({ icon, title }: Props) => {
-  return (
+  // The reused item
+  const navItem = (
     <Flex
       w={DEFAULT_STYLES.fullWidth}
       pl={DEFAULT_STYLES.sidePl}
       cursor='pointer'
+      onClick={onClick}
       borderRadius={DEFAULT_STYLES.borderRadius}
+      bg={isActive ? 'rgba(110, 49, 240, 0.1)' : 'transparent'}
       gap='2'
       py='2'
       role='group'
@@ -27,13 +34,13 @@ export const NavItem = ({ icon, title }: Props) => {
     >
       <Icon
         as={icon}
-        color={DEFAULT_STYLES.darkGray}
+        color={isActive ? DEFAULT_STYLES.lightPurple : DEFAULT_STYLES.darkGray}
         _groupHover={{
           color: DEFAULT_STYLES.lightPurple,
         }}
       />
       <Text
-        color={DEFAULT_STYLES.darkGray}
+        color={isActive ? DEFAULT_STYLES.lightPurple : DEFAULT_STYLES.darkGray}
         fontSize='0.75rem'
         _groupHover={{
           color: DEFAULT_STYLES.lightPurple,
@@ -43,4 +50,6 @@ export const NavItem = ({ icon, title }: Props) => {
       </Text>
     </Flex>
   );
+
+  return <>{path ? <Link href={path}>{navItem}</Link> : navItem}</>;
 };
