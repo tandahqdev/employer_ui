@@ -1,77 +1,64 @@
-import { FaRegUserCircle } from 'react-icons/fa';
-import { TbHome } from 'react-icons/tb';
-import { LinkItemProps } from '@/models';
-import { FiSettings } from 'react-icons/fi';
-import { IoIosHelpCircleOutline } from 'react-icons/io';
-import { BiLogOut } from 'react-icons/bi';
+import { NavItemProps } from '@/models';
 import { DashRoutes } from '@/utils';
+import { TfiMenuAlt } from 'react-icons/tfi';
+import { ImStack } from 'react-icons/im';
+import { MdStackedLineChart } from 'react-icons/md';
+import { FiCheckCircle } from 'react-icons/fi';
+import { HiOutlineUsers } from 'react-icons/hi';
+import { BsCreditCard, BsCashStack } from 'react-icons/bs';
+import { nanoid } from 'nanoid';
 
-export const navLinkItems: Array<LinkItemProps> = [
-  { name: 'Overview', icon: TbHome, route: DashRoutes.dashboard },
+
+export const financeItems: NavItemProps[] = [
   {
-    name: 'Employees',
-    icon: FaRegUserCircle,
-    children: [
-      {
-        name: 'Directory',
-        route: '#',
-      },
-      {
-        name: 'All Tasks',
-        route: '#',
-      },
-      {
-        name: 'Offers',
-        route: '#',
-      },
-    ],
+    icon: TfiMenuAlt,
+    title: 'Overview',
+    path: DashRoutes.dashboardFinanceOverview,
+    id: nanoid(),
   },
   {
-    name: 'Payrolls',
-    icon: FaRegUserCircle,
-    children: [
-      {
-        name: 'Directory',
-        route: '#',
-      },
-      {
-        name: 'All Tasks',
-        route: '#',
-      },
-      {
-        name: 'Offers',
-        route: '#',
-      },
-    ],
+    icon: MdStackedLineChart,
+    title: 'Grow',
+    path: DashRoutes.dashboardFinanceGrow,
+    id: nanoid(),
   },
   {
-    name: 'Leave',
-    icon: FaRegUserCircle,
-    children: [
-      {
-        name: 'Directory',
-        route: '#',
-      },
-      {
-        name: 'All Tasks',
-        route: '#',
-      },
-      {
-        name: 'Offers',
-        route: '#',
-      },
-    ],
+    icon: FiCheckCircle,
+    title: 'Extend',
+    path: DashRoutes.dashboardFinanceExtend,
+    id: nanoid(),
   },
-  { name: 'Settings', icon: FiSettings, route: DashRoutes.dashboardSettings },
 ];
 
-export const helpItems = {
-  icon: IoIosHelpCircleOutline,
-  text: 'Help & Support',
-  route: DashRoutes.dashboardHelp,
-};
-
-export const logoutItem = {
-  icon: BiLogOut,
-  text: 'Log Out',
-};
+export const bankingItems: NavItemProps[] = [
+  {
+    icon: TfiMenuAlt,
+    title: 'Overview',
+    path: DashRoutes.dashboardBankOverview,
+    id: nanoid(),
+  },
+  {
+    icon: ImStack,
+    title: 'Accounts',
+    path: DashRoutes.dashboardBankAccts,
+    id: nanoid(),
+  },
+  {
+    icon: BsCreditCard,
+    title: 'Cards',
+    path: DashRoutes.dashboardFinanceExtend,
+    id: nanoid(),
+  },
+  {
+    icon: BsCashStack,
+    title: 'Payments',
+    path: DashRoutes.dashboardFinanceExtend,
+    id: nanoid(),
+  },
+  {
+    icon: HiOutlineUsers,
+    title: 'Recipients',
+    path: DashRoutes.dashboardFinanceExtend,
+    id: nanoid(),
+  },
+];

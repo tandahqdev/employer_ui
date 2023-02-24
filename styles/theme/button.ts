@@ -35,9 +35,9 @@ const textBtn = defineStyle((_) => ({
 
 const noBgBtn = defineStyle({
   border: '1px solid',
-  borderColor: '#637381',
+  borderColor: DEFAULT_STYLES.darkGray,
   backgroundColor: 'transparent',
-  color: '#637381',
+  color: DEFAULT_STYLES.darkGray,
 });
 
 export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({

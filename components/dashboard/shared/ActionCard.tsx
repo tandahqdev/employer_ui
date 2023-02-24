@@ -1,15 +1,8 @@
+import Image, { StaticImageData } from 'next/image';
 import { ColumnFlex } from '@/components';
 import { DEFAULT_STYLES } from '@/styles';
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  HStack,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
-import Image, { StaticImageData } from 'next/image';
+import { Button, Center, Flex, HStack, Stack, Text } from '@chakra-ui/react';
+import { TandaDivider } from './TandaDivider';
 
 interface Props {
   header: string;
@@ -43,6 +36,7 @@ export const ActionCard = ({
       {btnText}
     </Button>
   );
+
   return (
     <ColumnFlex
       minH='350px'
@@ -73,11 +67,7 @@ export const ActionCard = ({
         {isShowTopBtn && button}
       </HStack>
 
-      <Box
-        w={DEFAULT_STYLES.fullWidth}
-        border='1.5px solid #19224C'
-        opacity={0.1}
-      />
+      <TandaDivider />
 
       <Stack w='85%' pt='4' flex='1' gap='2'>
         <Text textStyle='title' maxW='60%'>
