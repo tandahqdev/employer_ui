@@ -5,6 +5,8 @@ import { DashBoardLayout } from '@/layout';
 import { DEFAULT_STYLES } from '@/styles';
 import { Grid, GridItem } from '@chakra-ui/react';
 
+// * Remember to name branches according to tasks
+
 export default function Home() {
   const topbar = <Header>Hello!</Header>;
 
