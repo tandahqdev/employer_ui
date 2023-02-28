@@ -18,26 +18,26 @@ const smPadding = defineStyle({
 
 // Variants
 const bgBtn = defineStyle({
-  background: DEFAULT_STYLES.gradient,
+  background: 'green',
   color: DEFAULT_STYLES.white,
   boxShadow: '0px 10px 10px rgba(248, 150, 115, 0.2)',
   _hover: {
     _disabled: {
-      background: DEFAULT_STYLES.gradient,
+      background: 'green',
     },
   },
 });
 
-const textBtn = defineStyle((props) => ({
+const textBtn = defineStyle((_) => ({
   backgroundColor: 'transparent',
   color: DEFAULT_STYLES.primaryColor,
 }));
 
 const noBgBtn = defineStyle({
   border: '1px solid',
-  borderColor: DEFAULT_STYLES.primaryTextColor,
+  borderColor: DEFAULT_STYLES.darkGray,
   backgroundColor: 'transparent',
-  color: DEFAULT_STYLES.primaryTextColor,
+  color: DEFAULT_STYLES.darkGray,
 });
 
 export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
@@ -45,6 +45,9 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     borderRadius: 8,
     fontWeight: DEFAULT_STYLES.semibold,
     fontSize: '0.95rem',
+    _active: {
+      transform: 'scale(0.98)',
+    },
   },
 
   sizes: { lgPadding, smPadding },

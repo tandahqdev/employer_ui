@@ -23,18 +23,18 @@ export const theme = extendTheme({
     bodyText: {
       fontSize: '0.9rem',
       fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1.4,
       color: DEFAULT_STYLES.primaryTextColor,
     },
     info: {
       fontSize: '0.7rem',
-      lineHeight: 1.8,
+      lineHeight: 1.5,
       color: DEFAULT_STYLES.primaryTextColor,
       fontWeight: 400,
     },
     title: {
       fontSize: '1.2rem',
-      lineHeight: 1.5,
+      lineHeight: 1.3,
       color: DEFAULT_STYLES.primaryTextColor,
       fontWeight: 600,
     },

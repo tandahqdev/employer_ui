@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { LayoutProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles/globalStyles';
 
-const GlobalLayout = ({ children }: LayoutProps) => {
+export const GlobalLayout = ({ children }: LayoutProps) => {
   return (
     <>
       <Head>
@@ -21,7 +21,7 @@ const GlobalLayout = ({ children }: LayoutProps) => {
         <link rel='manifest' href='manifest.json' />
         <link rel='apple-touch-icon' href='favicon.ico' />
 
-        <title>Tanda</title>
+        <title>Employee - Tanda</title>
       </Head>
 
       <div
@@ -38,4 +38,3 @@ const GlobalLayout = ({ children }: LayoutProps) => {
   );
 };
 
-export default GlobalLayout;
