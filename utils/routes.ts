@@ -4,16 +4,16 @@ export class DashRoutes {
 
   // TODO: Change to dynamic route system ?? not
   // Finance
-  static dashboardFinanceOverview = `${this.dashboard}/finance/overview`;
-  static dashboardFinanceGrow = `${this.dashboard}/finance/grow`;
-  static dashboardFinanceExtend = `${this.dashboard}/finance/extend`;
+  static dashboardFinanceOverview = `${this.dashboard}/finance`;
+  static dashboardFinanceGrow = `${this.dashboardFinanceOverview}/grow`;
+  static dashboardFinanceExtend = `${this.dashboardFinanceOverview}/extend`;
 
   // Banking
-  static dashboardBankOverview = `${this.dashboard}/bank/overview`;
-  static dashboardBankAccts = `${this.dashboard}/bank/accounts`;
-  static dashboardBankCards = `${this.dashboard}/bank/cards`;
-  static dashboardBankPay = `${this.dashboard}/bank/payments`;
-  static dashboardBankRepts = `${this.dashboard}/bank/recipients`;
+  static dashboardBankOverview = `${this.dashboard}/bank`;
+  static dashboardBankAccts = `${this.dashboardBankOverview}/accounts`;
+  static dashboardBankCards = `${this.dashboardBankOverview}/cards`;
+  static dashboardBankPay = `${this.dashboardBankOverview}/payments`;
+  static dashboardBankRepts = `${this.dashboardBankOverview}/recipients`;
 
   static dashboardSettings = `${this.dashboard}/settings`;
   static dashboardHelp = `${this.dashboard}/help`;
