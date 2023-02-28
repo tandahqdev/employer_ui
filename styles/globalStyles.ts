@@ -1,8 +1,8 @@
 export const DEFAULT_STYLES = {
   containerWidth: {
     base: '100%',
-    xl: '900px',
-    '2xl': '1080px',
+    xl: '1000px',
+    '2xl': '1200px',
   },
   sectionStyle: {
     width: '100%',

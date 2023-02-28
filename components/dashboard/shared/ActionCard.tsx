@@ -72,6 +72,7 @@ export const ActionCard = ({
         <Text textStyle='title' maxW='60%'>
           {title}
         </Text>
+
         <Text
           textStyle='bodyText'
           maxW='324px'

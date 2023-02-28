@@ -28,8 +28,6 @@ export const GlobalLayout = ({ children }: LayoutProps) => {
         style={{
           width: DEFAULT_STYLES.fullWidth,
           minHeight: DEFAULT_STYLES.fullHeight,
-          display: 'flex',
-          flexDirection: 'column',
         }}
       >
         {children}
