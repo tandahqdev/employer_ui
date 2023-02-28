@@ -20,7 +20,6 @@ const smPadding = defineStyle({
 const bgBtn = defineStyle({
   background: DEFAULT_STYLES.lightPurple,
   color: DEFAULT_STYLES.white,
-  boxShadow: '0px 10px 10px rgba(248, 150, 115, 0.2)',
   _hover: {
     _disabled: {
       background: DEFAULT_STYLES.lightPurple,
@@ -31,7 +30,7 @@ const bgBtn = defineStyle({
 
 const textBtn = defineStyle((_) => ({
   backgroundColor: 'transparent',
-  color: DEFAULT_STYLES.primaryColor,
+  color: DEFAULT_STYLES.lightPurple,
   py: 0,
   px: 0,
 }));
