@@ -32,6 +32,8 @@ const bgBtn = defineStyle({
 const textBtn = defineStyle((_) => ({
   backgroundColor: 'transparent',
   color: DEFAULT_STYLES.primaryColor,
+  py: 0,
+  px: 0,
 }));
 
 const noBgBtn = defineStyle({
