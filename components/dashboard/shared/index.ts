@@ -3,3 +3,4 @@ export * from './Header';
 export * from './ActionCard';
 export * from './nav';
 export * from './NewBanner';
+export * from './NewPageCard';

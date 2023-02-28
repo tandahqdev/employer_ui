@@ -19,7 +19,12 @@ export const NewBanner = () => {
           Supercharge your growth
         </Text>
 
-        <Text maxW='450px' textAlign='center' opacity={0.4}>
+        <Text
+          maxW='450px'
+          textAlign='center'
+          color={DEFAULT_STYLES.primaryColor}
+          opacity={0.4}
+        >
           In order to complete your account setup and receive your funding
           offer, please connect your bank account, accounting platform, and
           payment platform.
