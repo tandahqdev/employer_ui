@@ -27,10 +27,11 @@ export const SideBar = () => {
       px='0.5'
       pb='30px'
       overflow='auto'
+      gap='0.5'
     >
       <Logo />
 
-      <ColumnFlex pt='35px' gap='1' flex='1'>
+      <ColumnFlex pt='30px' gap='1' flex='1'>
         <NavItem
           icon={AiTwotoneHome}
           title='Home'

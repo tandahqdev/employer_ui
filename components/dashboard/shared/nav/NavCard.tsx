@@ -16,7 +16,7 @@ export const NavCard = ({ header, list }: Props) => {
   });
 
   return (
-    <ColumnFlex>
+    <ColumnFlex gap='1'>
       <Text
         fontSize='10px'
         textTransform='uppercase'

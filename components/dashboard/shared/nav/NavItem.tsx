@@ -15,7 +15,6 @@ export const NavItem = ({ icon, title, path, onClick }: Props) => {
   const pathname = useRouter().pathname;
   const isActive = path === pathname;
 
-  // The reused item
   const navItem = (
     <Flex
       w={DEFAULT_STYLES.fullWidth}
@@ -39,9 +38,10 @@ export const NavItem = ({ icon, title, path, onClick }: Props) => {
           color: DEFAULT_STYLES.lightPurple,
         }}
       />
+
       <Text
         color={isActive ? DEFAULT_STYLES.lightPurple : DEFAULT_STYLES.darkGray}
-        fontSize='0.75rem'
+        fontSize={DEFAULT_STYLES.smFontSize}
         _groupHover={{
           color: DEFAULT_STYLES.lightPurple,
         }}
