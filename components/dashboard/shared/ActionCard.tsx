@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
 import { ColumnFlex } from '@/components';
 import { DEFAULT_STYLES } from '@/styles';
@@ -13,6 +14,7 @@ interface Props {
   isShowTopBtn?: boolean;
   btnText: string;
   onClick?: () => void;
+  path: string;
 }
 
 export const ActionCard = ({
@@ -24,16 +26,18 @@ export const ActionCard = ({
   onClick,
   title,
   desc,
+  path,
 }: Props) => {
-  const button = (
-    <Button
-      variant='noBgBtn'
-      size='smPadding'
-      onClick={onClick}
-      alignSelf={isShowTopBtn ? 'center' : 'flex-start'}
-    >
-      {btnText}
-    </Button>
+  const buttonLink = (
+    <Link href={path}>
+      <Button
+        variant='noBgBtn'
+        onClick={onClick}
+        alignSelf={isShowTopBtn ? 'center' : 'flex-start'}
+      >
+        {btnText}
+      </Button>
+    </Link>
   );
 
   return (
@@ -63,7 +67,7 @@ export const ActionCard = ({
           </Text>
         </Flex>
 
-        {isShowTopBtn && button}
+        {isShowTopBtn && buttonLink}
       </HStack>
 
       <TandaDivider />
@@ -76,14 +80,14 @@ export const ActionCard = ({
         <Text
           textStyle='bodyText'
           maxW='324px'
-          color={DEFAULT_STYLES.primaryDarkColor}
+          color={DEFAULT_STYLES.primaryColor}
           opacity={0.4}
           flex='1'
         >
           {desc}
         </Text>
 
-        {!isShowTopBtn && button}
+        {!isShowTopBtn && buttonLink}
       </Stack>
     </ColumnFlex>
   );

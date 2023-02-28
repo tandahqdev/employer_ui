@@ -2,6 +2,7 @@ import { ActionCard, Header } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { bankIcon, financeIcon } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
+import { DashRoutes } from '@/utils';
 import { Grid, GridItem } from '@chakra-ui/react';
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
         gridTemplateColumns='repeat(2,1fr)'
         gridAutoRows='1fr'
         w={DEFAULT_STYLES.pageWidth}
-        columnGap='54px'
+        columnGap='50px'
       >
         <GridItem>
           <ActionCard
@@ -23,6 +24,7 @@ export default function Home() {
             title='Upfront funding to accelerate your growth'
             desc='Convert future revenue into upfront capital, without debt or dilution.'
             btnText='Get started'
+            path={DashRoutes.dashboardFinanceOverview}
           />
         </GridItem>
 
@@ -31,6 +33,7 @@ export default function Home() {
             header='Banking'
             icon={bankIcon}
             headerColor={DEFAULT_STYLES.pink}
+            path={DashRoutes.dashboardBankOverview}
             title='Banking for what  you are building'
             desc='Get access to the cash management account built for startups.'
             btnText='Get started'

@@ -5,7 +5,7 @@ export const TandaDivider = () => {
   return (
     <Box
       w={DEFAULT_STYLES.fullWidth}
-      border={`1px solid ${DEFAULT_STYLES.primaryDarkColor}`}
+      border={`1px solid ${DEFAULT_STYLES.primaryColor}`}
       opacity={0.1}
     />
   );
