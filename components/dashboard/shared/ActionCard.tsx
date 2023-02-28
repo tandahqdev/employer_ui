@@ -57,7 +57,7 @@ export const ActionCard = ({
           </Center>
 
           <Text
-            fontSize='1.5rem'
+            fontSize='1.3rem'
             fontWeight={DEFAULT_STYLES.mediumbold}
             textTransform='uppercase'
             letterSpacing='0.13px'
