@@ -46,19 +46,19 @@ export const bankingItems: NavItemProps[] = [
   {
     icon: BsCreditCard,
     title: 'Cards',
-    path: DashRoutes.dashboardFinanceExtend,
+    path: DashRoutes.dashboardBankCards,
     id: nanoid(),
   },
   {
     icon: BsCashStack,
     title: 'Payments',
-    path: DashRoutes.dashboardFinanceExtend,
+    path: DashRoutes.dashboardBankPay,
     id: nanoid(),
   },
   {
     icon: HiOutlineUsers,
     title: 'Recipients',
-    path: DashRoutes.dashboardFinanceExtend,
+    path: DashRoutes.dashboardBankRepts,
     id: nanoid(),
   },
 ];
