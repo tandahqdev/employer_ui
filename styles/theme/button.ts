@@ -8,7 +8,7 @@ import { DEFAULT_STYLES } from '../globalStyles';
 // Sizes
 const lgPadding = defineStyle({
   px: '24px',
-  py: '18px',
+  py: '14px',
 });
 
 const smPadding = defineStyle({
@@ -18,12 +18,13 @@ const smPadding = defineStyle({
 
 // Variants
 const bgBtn = defineStyle({
-  background: 'green',
+  background: DEFAULT_STYLES.lightPurple,
   color: DEFAULT_STYLES.white,
   boxShadow: '0px 10px 10px rgba(248, 150, 115, 0.2)',
   _hover: {
     _disabled: {
-      background: 'green',
+      background: DEFAULT_STYLES.lightPurple,
+      opacity: 0.4,
     },
   },
 });
@@ -47,6 +48,9 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     fontSize: '0.95rem',
     _active: {
       transform: 'scale(0.98)',
+    },
+    _hover: {
+      opacity: 0.8,
     },
   },
 
