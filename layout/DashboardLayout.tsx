@@ -19,7 +19,7 @@ export const DashBoardLayout = ({ children, topBar }: Props) => {
       <SideBar />
 
       <ColumnFlex
-        ml='200px'
+        ml={{ base: '0', xl: '200px' }}
         width={DEFAULT_STYLES.fullWidth}
         align='center'
         position='relative'

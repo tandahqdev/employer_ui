@@ -35,9 +35,10 @@ export const DEFAULT_STYLES = {
   textFontSize: '0.9rem',
   cardText: '0.8rem',
   alt: 'Tanda',
-  fontFamily: " 'Outfit', sans-serif",
+  fontFamily: "'Outfit', sans-serif",
   lineHeight: 1.6,
   borderRadius: 5,
+  px: '2',
   sidePl: '30px',
   border: `1px solid #E4E2E2`,
 };

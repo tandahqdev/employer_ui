@@ -4,6 +4,7 @@ import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { Text } from '@chakra-ui/react';
 
+// ! Remember to add flex 1 when working on admin and other dashboard sidebars
 export const HelpCard = () => {
   return (
     <ColumnFlex

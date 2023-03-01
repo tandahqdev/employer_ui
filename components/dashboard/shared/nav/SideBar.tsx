@@ -10,11 +10,17 @@ import { FiSettings } from 'react-icons/fi';
 import { BiLogOut } from 'react-icons/bi';
 import { HelpCard } from './HelpCard';
 import { DashRoutes } from '@/utils';
-
+import { useRouter } from 'next/router';
 
 // TODO: Remove nextjs data collection
-// TODO: Change the stack in the admin side bar to be flex 1. 
+// TODO: Change the stack in the admin side bar to be flex 1.
+
+// Todo: This will be used for making side bar responsive
+// window.addEventListener('resize')
+
 export const SideBar = () => {
+  const { push } = useRouter();
+
   return (
     <ColumnFlex
       w='200px'
@@ -55,7 +61,13 @@ export const SideBar = () => {
         path={DashRoutes.dashboardSettings}
       />
 
-      <NavItem icon={BiLogOut} title='Logout' />
+      <NavItem
+        icon={BiLogOut}
+        title='Logout'
+        onClick={() => {
+          push(DashRoutes.home);
+        }}
+      />
     </ColumnFlex>
   );
 };
