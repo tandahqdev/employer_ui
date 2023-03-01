@@ -1,17 +1,23 @@
-import { Header, NewBanner, NewPageCard } from '@/components';
+import { ActionTitle, NewBanner, NewPageCard } from '@/components';
 import { DashBoardLayout } from '@/layout';
+import { growIcon } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { Grid } from '@chakra-ui/react';
 
 const FinanceGrow = () => {
-  const topbar = <Header>Grow</Header>;
+  const topbar = (
+    <ActionTitle
+      icon={growIcon}
+      header='Grow'
+      headerColor={DEFAULT_STYLES.lightPurple}
+    />
+  );
 
   return (
     <DashBoardLayout topBar={topbar}>
       <Grid
         gridTemplateColumns='repeat(2,1fr)'
         w={DEFAULT_STYLES.pageWidth}
-        columnGap='50px'
         rowGap='7'
       >
         <NewBanner />

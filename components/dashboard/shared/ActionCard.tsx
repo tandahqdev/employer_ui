@@ -1,21 +1,10 @@
 import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
 import { ColumnFlex } from '@/components';
 import { DEFAULT_STYLES } from '@/styles';
-import { Button, Center, Flex, HStack, Stack, Text } from '@chakra-ui/react';
+import { Button, HStack, Stack, Text } from '@chakra-ui/react';
 import { TandaDivider } from './TandaDivider';
-
-interface Props {
-  header: string;
-  headerColor: string;
-  icon: StaticImageData;
-  title: string;
-  desc: string;
-  isShowTopBtn?: boolean;
-  btnText: string;
-  onClick?: () => void;
-  path: string;
-}
+import { ActionCardModel } from '@/models';
+import { ActionTitle } from './ActionTitle';
 
 export const ActionCard = ({
   icon,
@@ -27,7 +16,7 @@ export const ActionCard = ({
   title,
   desc,
   path,
-}: Props) => {
+}: ActionCardModel) => {
   const buttonLink = (
     <Link href={path}>
       <Button
@@ -51,21 +40,7 @@ export const ActionCard = ({
       pb='5'
     >
       <HStack width='85%' align='center' justify='space-between' pb='4'>
-        <Flex align='center' gap='7px'>
-          <Center bgColor={headerColor} borderRadius='full' w='37px' h='37px'>
-            <Image src={icon} alt={header} />
-          </Center>
-
-          <Text
-            fontSize='1.3rem'
-            fontWeight={DEFAULT_STYLES.mediumbold}
-            textTransform='uppercase'
-            letterSpacing='0.13px'
-            color={headerColor}
-          >
-            {header}
-          </Text>
-        </Flex>
+        <ActionTitle header={header} headerColor={headerColor} icon={icon} />
 
         {isShowTopBtn && buttonLink}
       </HStack>
