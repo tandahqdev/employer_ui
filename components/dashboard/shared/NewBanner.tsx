@@ -1,4 +1,4 @@
-import { ColumnFlex } from '@/components';
+import { ColumnFlex, Header } from '@/components';
 import { DEFAULT_STYLES } from '@/styles';
 import { Button, GridItem, Text } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
@@ -15,9 +15,9 @@ export const NewBanner = () => {
         pt='38px'
         pb='40px'
       >
-        <Text textStyle='header' fontSize='1.3rem' mb='1'>
+        <Header fontSize='1.3rem' mb='1' fontWeight={DEFAULT_STYLES.bold}>
           Supercharge your growth
-        </Text>
+        </Header>
 
         <Text
           maxW='450px'
@@ -36,7 +36,7 @@ export const NewBanner = () => {
 
         <Button
           variant='textBtn'
-          rightIcon={<ChevronRightIcon fontSize='1.6rem' mt='1' />}
+          rightIcon={<ChevronRightIcon fontSize='1.6rem' mt='0.5' />}
         >
           Talk to our team
         </Button>

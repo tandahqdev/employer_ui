@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ColumnFlex } from '@/components';
+import { ColumnFlex, Header } from '@/components';
 import { NewPageProps } from '@/models';
 import { newPageItems } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
@@ -28,10 +28,7 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
         px='30px'
         w='80%'
       >
-        <Text
-          textStyle='header'
-          fontSize='1.5rem'
-        >{`Welcome to Tanda ${title}`}</Text>
+        <Header fontSize='1.5rem'>{`Welcome to Tanda ${title}`}</Header>
 
         <Text color={DEFAULT_STYLES.primaryColor} opacity={0.4} maxW='600px'>
           {desc}
