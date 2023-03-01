@@ -8,7 +8,7 @@ export const NewBanner = () => {
     <GridItem colSpan={2} display='flex' minH='269px'>
       <ColumnFlex
         bg={DEFAULT_STYLES.white}
-        border={`1px solid ${DEFAULT_STYLES.borderColor}`}
+        border={DEFAULT_STYLES.border}
         rounded={16}
         flex='1'
         align='center'

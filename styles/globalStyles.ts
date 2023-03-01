@@ -39,4 +39,5 @@ export const DEFAULT_STYLES = {
   lineHeight: 1.6,
   borderRadius: 5,
   sidePl: '30px',
+  border: `1px solid #E4E2E2`,
 };
