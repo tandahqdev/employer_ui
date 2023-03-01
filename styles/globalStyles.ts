@@ -40,9 +40,9 @@ export const DEFAULT_STYLES = {
 };
 
 export const sharedGridStyles = {
-  gridTemplateColumns: { base: 'repeat(1,1fr)', xl: 'repeat(2,1fr)' },
+  gridTemplateColumns: { base: 'repeat(1,1fr)', lg: 'repeat(2,1fr)' },
   w: DEFAULT_STYLES.pageWidth,
   columnGap: '50px',
-  rowGap: { base: '5', xl: 0 },
+  rowGap: '5',
   px: DEFAULT_STYLES.mobilePx,
 };

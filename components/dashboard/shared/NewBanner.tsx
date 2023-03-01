@@ -5,7 +5,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons';
 
 export const NewBanner = () => {
   return (
-    <GridItem colSpan={2} display='flex' minH='269px'>
+    <GridItem colSpan={{ base: 1, lg: 2 }} display='flex' minH='269px'>
       <ColumnFlex
         bg={DEFAULT_STYLES.white}
         border={DEFAULT_STYLES.border}
