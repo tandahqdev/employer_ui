@@ -1,17 +1,13 @@
 export const DEFAULT_STYLES = {
   containerWidth: {
     base: '100%',
+    lg: '95%',
     xl: '1000px',
     '2xl': '1200px',
   },
-  sectionStyle: {
-    width: '100%',
-    align: 'center',
-    justifyContent: 'center',
-  },
   fullWidth: '100%',
   fullHeight: '100vh',
-  pageWidth: '984px',
+  pageWidth: { base: '100%', xl: '984px' },
   white: '#FFFFFF',
   darkColor: '#000000',
   pink: '#EF567E',
@@ -38,7 +34,15 @@ export const DEFAULT_STYLES = {
   fontFamily: "'Outfit', sans-serif",
   lineHeight: 1.6,
   borderRadius: 5,
-  px: '2',
+  mobilePx: { base: '2', xl: 0 },
   sidePl: '30px',
   border: `1px solid #E4E2E2`,
+};
+
+export const sharedGridStyles = {
+  gridTemplateColumns: { base: 'repeat(1,1fr)', xl: 'repeat(2,1fr)' },
+  w: DEFAULT_STYLES.pageWidth,
+  columnGap: '50px',
+  rowGap: { base: '5', xl: 0 },
+  px: DEFAULT_STYLES.mobilePx,
 };

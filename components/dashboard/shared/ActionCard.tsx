@@ -18,12 +18,13 @@ export const ActionCard = ({
   path,
 }: ActionCardModel) => {
   const buttonLink = (
-    <Link href={path}>
-      <Button
-        variant='noBgBtn'
-        onClick={onClick}
-        alignSelf={isShowTopBtn ? 'center' : 'flex-start'}
-      >
+    <Link
+      href={path}
+      style={{
+        alignSelf: isShowTopBtn ? 'center' : 'flex-start',
+      }}
+    >
+      <Button variant='noBgBtn' onClick={onClick}>
         {btnText}
       </Button>
     </Link>

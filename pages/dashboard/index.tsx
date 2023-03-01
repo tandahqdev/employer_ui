@@ -1,7 +1,7 @@
 import { ActionCard, Header } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { bankIcon, financeIcon } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { Grid, GridItem } from '@chakra-ui/react';
 
@@ -10,12 +10,7 @@ export default function Home() {
 
   return (
     <DashBoardLayout topBar={topbar}>
-      <Grid
-        gridTemplateColumns='repeat(2,1fr)'
-        gridAutoRows='1fr'
-        w={DEFAULT_STYLES.pageWidth}
-        columnGap='50px'
-      >
+      <Grid {...sharedGridStyles}>
         <GridItem>
           <ActionCard
             header='Financing'

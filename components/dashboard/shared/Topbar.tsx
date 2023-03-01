@@ -1,5 +1,8 @@
+import { IconBtn } from '@/components/shared';
 import { ColumnFlex } from '@/components/shared/ColumnFlex';
+import { useCustomMediaQuery } from '@/context';
 import { DEFAULT_STYLES } from '@/styles';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import { Center, Flex, HStack } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
@@ -8,16 +11,19 @@ interface Props {
 }
 
 export const Topbar = ({ header }: Props) => {
+  const { upDateMediaQuery } = useCustomMediaQuery();
+
   return (
     <Flex
       w={DEFAULT_STYLES.fullWidth}
-      h='104px'
+      h={{ base: '80px', lg: '104px' }}
       position='fixed'
       bg={DEFAULT_STYLES.white}
       borderBottom='1px solid rgba(218, 220, 224, 0.83)'
       align='center'
       justify='center'
       zIndex={5}
+      px={DEFAULT_STYLES.mobilePx}
     >
       <HStack
         width={DEFAULT_STYLES.containerWidth}
@@ -26,19 +32,31 @@ export const Topbar = ({ header }: Props) => {
       >
         <ColumnFlex>{header}</ColumnFlex>
 
-        <Center
-          width='54px'
-          height='54px'
-          bgColor={DEFAULT_STYLES.lightPurple}
-          borderRadius='full'
-        >
+        <Flex w='max-content' gap='4'>
           <Center
-            width='16px'
-            height='16px'
-            bg={DEFAULT_STYLES.lightGray}
+            width='54px'
+            height='54px'
+            bgColor={DEFAULT_STYLES.lightPurple}
             borderRadius='full'
+          >
+            <Center
+              width='16px'
+              height='16px'
+              bg={DEFAULT_STYLES.lightGray}
+              borderRadius='full'
+            />
+          </Center>
+
+          <IconBtn
+            aria-label='Close button'
+            icon={<HamburgerIcon fontSize='2rem' />}
+            display={{ base: 'flex', xl: 'none' }}
+            bgColor='transparent'
+            onClick={() => {
+              upDateMediaQuery(true);
+            }}
           />
-        </Center>
+        </Flex>
       </HStack>
     </Flex>
   );
