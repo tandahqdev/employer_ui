@@ -14,13 +14,14 @@ export const NewBanner = () => {
         align='center'
         pt='38px'
         pb='40px'
+        px='2'
       >
         <Header fontSize='1.3rem' mb='1' fontWeight={DEFAULT_STYLES.bold}>
           Supercharge your growth
         </Header>
 
         <Text
-          maxW='450px'
+          maxW={{ base: DEFAULT_STYLES.fullWidth, lg: '450px' }}
           textAlign='center'
           color={DEFAULT_STYLES.primaryColor}
           opacity={0.4}

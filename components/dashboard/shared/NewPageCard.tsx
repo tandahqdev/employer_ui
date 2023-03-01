@@ -17,7 +17,7 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
   ));
 
   return (
-    <GridItem colSpan={2}>
+    <GridItem colSpan={{ base: 1, lg: 2 }}>
       <ColumnFlex
         bg={DEFAULT_STYLES.white}
         border={DEFAULT_STYLES.border}
@@ -25,12 +25,16 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
         minH='442px'
         pt='30px'
         pb='40px'
-        px='30px'
-        w='80%'
+        px={{ base: '20px', xl: '30px' }}
+        w={{ base: DEFAULT_STYLES.fullWidth, lg: '80%' }}
       >
         <Header fontSize='1.5rem'>{`Welcome to Tanda ${title}`}</Header>
 
-        <Text color={DEFAULT_STYLES.primaryColor} opacity={0.4} maxW='600px'>
+        <Text
+          color={DEFAULT_STYLES.primaryColor}
+          opacity={0.4}
+          maxW={{ base: DEFAULT_STYLES.fullWidth, xl: '600px' }}
+        >
           {desc}
         </Text>
 
@@ -46,9 +50,10 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
         )}
 
         <Grid
-          templateColumns='repeat(3,1fr)'
-          width='max-content'
+          templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(3,1fr)' }}
+          width={{ base: DEFAULT_STYLES.fullWidth, xl: 'max-content' }}
           columnGap='35px'
+          rowGap='5'
           mt={!path ? '45px' : '5'}
         >
           {renderNewPageItems}
