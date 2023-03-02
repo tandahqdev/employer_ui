@@ -20,7 +20,8 @@ const FinanceExtend = () => {
         <NewBanner />
         <NewPageCard
           title='Extend'
-          desc='Access up to 60% of your predictable ARR on day one. Fuel your growth without taking on debt or diluting our equity.'
+          desc='Take control of your cash flows by investing in bigger things today
+          and paying back at your own pace.'
           path={DashRoutes.dashboard}
         />
       </Grid>
