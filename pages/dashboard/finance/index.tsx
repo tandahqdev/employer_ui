@@ -1,4 +1,4 @@
-import { ActionCard, Header, NewBanner } from '@/components';
+import { ActionCard, NewBanner, WelcomeCard } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { growIcon, extendIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
@@ -6,10 +6,10 @@ import { DashRoutes } from '@/utils';
 import { Grid, GridItem } from '@chakra-ui/react';
 
 const FinanceOverview = () => {
-  const topbar = <Header>Hello!</Header>;
+  // const topbar = <Header>Hello!</Header>;
 
   return (
-    <DashBoardLayout topBar={topbar}>
+    <DashBoardLayout topBar={<WelcomeCard name='John' />}>
       <Grid {...sharedGridStyles}>
         <NewBanner />
 

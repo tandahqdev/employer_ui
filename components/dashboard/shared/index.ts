@@ -5,3 +5,4 @@ export * from './ActionTitle';
 export * from './nav';
 export * from './NewBanner';
 export * from './NewPageCard';
+export * from './WelcomeCard';
