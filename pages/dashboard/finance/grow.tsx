@@ -1,7 +1,7 @@
 import { ActionTitle, NewBanner, NewPageCard } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { growIcon } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { Grid } from '@chakra-ui/react';
 
 const FinanceGrow = () => {
@@ -15,11 +15,7 @@ const FinanceGrow = () => {
 
   return (
     <DashBoardLayout topBar={topbar}>
-      <Grid
-        gridTemplateColumns='repeat(2,1fr)'
-        w={DEFAULT_STYLES.pageWidth}
-        rowGap='7'
-      >
+      <Grid {...sharedGridStyles}>
         <NewBanner />
         <NewPageCard
           title='Grow'

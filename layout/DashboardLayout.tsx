@@ -27,7 +27,8 @@ export const DashBoardLayout = ({ children, topBar }: Props) => {
         <Topbar header={topBar} />
 
         <Flex
-          w={DEFAULT_STYLES.containerWidth}
+          minW={DEFAULT_STYLES.containerWidth}
+          maxW={DEFAULT_STYLES.fullWidth}
           mt={{ base: '120px', lg: '170px' }}
           mb={{ base: '35px', lg: '50px' }}
           justify='center'

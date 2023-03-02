@@ -33,7 +33,7 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
         <Text
           color={DEFAULT_STYLES.primaryColor}
           opacity={0.4}
-          maxW={{ base: DEFAULT_STYLES.fullWidth, xl: '600px' }}
+          maxW={{ base: DEFAULT_STYLES.fullWidth, md: '600px' }}
         >
           {desc}
         </Text>
