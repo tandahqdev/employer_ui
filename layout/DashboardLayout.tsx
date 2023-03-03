@@ -29,7 +29,7 @@ export const DashBoardLayout = ({ children, topBar }: Props) => {
         <Flex
           minW={DEFAULT_STYLES.containerWidth}
           maxW={DEFAULT_STYLES.fullWidth}
-          mt={{ base: '120px', lg: '170px' }}
+          mt={{ base: '120px', lg: '150px' }}
           mb={{ base: '35px', lg: '50px' }}
           justify='center'
         >

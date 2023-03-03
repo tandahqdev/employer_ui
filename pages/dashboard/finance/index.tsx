@@ -31,9 +31,7 @@ const FinanceOverview = () => {
         </ColumnFlex>
 
         <Grid {...sharedGridStyles}>
-          <NewBanner />
-          <ExistingBanner />
-
+          {false && <NewBanner />} <ExistingBanner />
           <GridItem>
             <ActionCard
               header='Grow'
@@ -46,7 +44,6 @@ const FinanceOverview = () => {
               path={DashRoutes.dashboardFinanceGrow}
             />
           </GridItem>
-
           <GridItem>
             <ActionCard
               header='Extend'
