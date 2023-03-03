@@ -6,3 +6,5 @@ export * from './nav';
 export * from './NewBanner';
 export * from './NewPageCard';
 export * from './WelcomeCard';
+export * from './ExistingBanner';
+export * from './SharedBannerContainer';

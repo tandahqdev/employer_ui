@@ -1,4 +1,10 @@
-import { ActionCard, ColumnFlex, NewBanner, WelcomeCard } from '@/components';
+import {
+  ActionCard,
+  ColumnFlex,
+  ExistingBanner,
+  NewBanner,
+  WelcomeCard,
+} from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { growIcon, extendIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
@@ -26,6 +32,7 @@ const FinanceOverview = () => {
 
         <Grid {...sharedGridStyles}>
           <NewBanner />
+          <ExistingBanner />
 
           <GridItem>
             <ActionCard
