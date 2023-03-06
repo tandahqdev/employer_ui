@@ -50,7 +50,11 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
         )}
 
         <Grid
-          templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(3,1fr)' }}
+          templateColumns={{
+            base: 'repeat(1,1fr)',
+            md: 'repeat(3,170px)',
+            '2xl': 'repeat(3,196px)',
+          }}
           width={DEFAULT_STYLES.fullWidth}
           columnGap='35px'
           rowGap='5'

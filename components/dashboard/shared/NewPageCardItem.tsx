@@ -6,13 +6,12 @@ import { Text } from '@chakra-ui/react';
 export const NewPageCardItem = ({ title, desc }: NewPageItemsModel) => {
   return (
     <ColumnFlex
-      // w={{ base: DEFAULT_STYLES.fullWidth, xl: '196px' }}
       minH='225px'
       border={DEFAULT_STYLES.border}
       rounded='10px'
       justify='flex-end'
       px='4'
-      pb='6'
+      pb='8'
       gap='1'
     >
       <Text

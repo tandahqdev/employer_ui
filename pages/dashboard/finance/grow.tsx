@@ -19,7 +19,7 @@ const FinanceGrow = () => {
     />
   );
 
-  const isOtherScreens = false;
+  const isOtherScreens = true;
 
   return (
     <DashBoardLayout topBar={topbar}>
