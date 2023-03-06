@@ -26,7 +26,7 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
         pt='30px'
         pb='40px'
         px={{ base: '20px', xl: '30px' }}
-        w={{ base: DEFAULT_STYLES.fullWidth, lg: '80%' }}
+        w={DEFAULT_STYLES.fullWidth}
       >
         <Header fontSize='1.5rem'>{`Welcome to Tanda ${title}`}</Header>
 
@@ -51,7 +51,7 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
 
         <Grid
           templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(3,1fr)' }}
-          width={{ base: DEFAULT_STYLES.fullWidth, xl: 'max-content' }}
+          width={DEFAULT_STYLES.fullWidth}
           columnGap='35px'
           rowGap='5'
           mt={!path ? '45px' : '5'}

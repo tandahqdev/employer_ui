@@ -8,7 +8,7 @@ import {
 import { DashBoardLayout } from '@/layout';
 import { growIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
-import { Grid } from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
 
 const FinanceGrow = () => {
   const topbar = (
@@ -19,19 +19,44 @@ const FinanceGrow = () => {
     />
   );
 
+  const isOtherScreens = false;
+
   return (
     <DashBoardLayout topBar={topbar}>
-      <GrowActionCard header='Need some help?'>
-        <HelpText />
-      </GrowActionCard>
+      {isOtherScreens && (
+        <Grid gap='33px' templateColumns='repeat(4,1fr)'>
+          <GridItem
+            minH='212px'
+            border={DEFAULT_STYLES.border}
+            borderRadius={DEFAULT_STYLES.borderRadius}
+            bg={DEFAULT_STYLES.white}
+            colSpan={3}
+          ></GridItem>
+          <GrowActionCard header='Need some help?'>
+            <HelpText />
+          </GrowActionCard>
 
-      <Grid {...sharedGridStyles}>
-        <NewBanner />
-        <NewPageCard
-          title='Grow'
-          desc='Access up to 60% of your predictable ARR on day one. Fuel your growth without taking on debt or diluting our equity.'
-        />
-      </Grid>
+          <GridItem colSpan={3}>
+            <NewPageCard
+              title='Grow'
+              desc='Access up to 60% of your predictable ARR on day one. Fuel your growth without taking on debt or diluting our equity.'
+            />
+          </GridItem>
+        </Grid>
+      )}
+
+      {!isOtherScreens && (
+        <Grid {...sharedGridStyles}>
+          <NewBanner />
+
+          <GridItem width={{ base: DEFAULT_STYLES.fullWidth, xl: '717px' }}>
+            <NewPageCard
+              title='Grow'
+              desc='Access up to 60% of your predictable ARR on day one. Fuel your growth without taking on debt or diluting our equity.'
+            />
+          </GridItem>
+        </Grid>
+      )}
     </DashBoardLayout>
   );
 };

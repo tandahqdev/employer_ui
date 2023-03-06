@@ -45,4 +45,5 @@ export const sharedGridStyles = {
   columnGap: '50px',
   rowGap: '5',
   px: DEFAULT_STYLES.mobilePx,
+  maxW: '1000px',
 };
