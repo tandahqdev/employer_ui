@@ -21,7 +21,7 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
       <ColumnFlex
         bg={DEFAULT_STYLES.white}
         border={DEFAULT_STYLES.border}
-        rounded={16}
+        rounded={DEFAULT_STYLES.borderRadius}
         minH='442px'
         pt='30px'
         pb='40px'

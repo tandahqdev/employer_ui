@@ -21,7 +21,7 @@ export const NavItem = ({ icon, title, path, onClick }: Props) => {
       pl={DEFAULT_STYLES.sidePl}
       cursor='pointer'
       onClick={onClick}
-      borderRadius={DEFAULT_STYLES.borderRadius}
+      borderRadius={5}
       bg={isActive ? 'rgba(110, 49, 240, 0.1)' : 'transparent'}
       gap='2'
       py='2'

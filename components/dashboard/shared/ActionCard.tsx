@@ -33,7 +33,7 @@ export const ActionCard = ({
   return (
     <ColumnFlex
       minH='350px'
-      rounded={16}
+      rounded={DEFAULT_STYLES.borderRadius}
       bg={DEFAULT_STYLES.white}
       border={DEFAULT_STYLES.border}
       align='center'

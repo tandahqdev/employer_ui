@@ -33,7 +33,7 @@ export const DEFAULT_STYLES = {
   alt: 'Tanda',
   fontFamily: "'Outfit', sans-serif",
   lineHeight: 1.6,
-  borderRadius: 5,
+  borderRadius: 16,
   mobilePx: { base: '2', xl: 0 },
   sidePl: '30px',
   border: `1px solid #E4E2E2`,

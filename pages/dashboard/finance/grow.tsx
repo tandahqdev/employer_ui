@@ -1,4 +1,9 @@
-import { ActionTitle, NewBanner, NewPageCard } from '@/components';
+import {
+  ActionTitle,
+  GrowHelpCard,
+  NewBanner,
+  NewPageCard,
+} from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { growIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
@@ -15,6 +20,7 @@ const FinanceGrow = () => {
 
   return (
     <DashBoardLayout topBar={topbar}>
+      <GrowHelpCard />
       <Grid {...sharedGridStyles}>
         <NewBanner />
         <NewPageCard

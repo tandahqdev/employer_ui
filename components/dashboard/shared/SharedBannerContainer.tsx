@@ -9,7 +9,7 @@ export const SharedBannerContainer = ({ children }: LayoutProps) => {
       <ColumnFlex
         bg={DEFAULT_STYLES.white}
         border={DEFAULT_STYLES.border}
-        rounded={16}
+        rounded={DEFAULT_STYLES.borderRadius}
         flex='1'
         align='center'
         justify='center'
