@@ -1,6 +1,7 @@
 import {
   ActionTitle,
-  GrowHelpCard,
+  GrowActionCard,
+  HelpText,
   NewBanner,
   NewPageCard,
 } from '@/components';
@@ -20,7 +21,10 @@ const FinanceGrow = () => {
 
   return (
     <DashBoardLayout topBar={topbar}>
-      <GrowHelpCard />
+      <GrowActionCard header='Need some help?'>
+        <HelpText />
+      </GrowActionCard>
+
       <Grid {...sharedGridStyles}>
         <NewBanner />
         <NewPageCard

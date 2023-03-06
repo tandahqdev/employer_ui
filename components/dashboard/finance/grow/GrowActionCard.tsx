@@ -1,20 +1,23 @@
-import Link from 'next/link';
 import { ColumnFlex } from '@/components';
 import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
 import { Text } from '@chakra-ui/react';
+import { LayoutProps } from '@/models';
 
-export const GrowHelpCard = () => {
+interface Props extends LayoutProps {
+  header: string;
+}
+
+export const GrowActionCard = ({ children, header }: Props) => {
   return (
     <ColumnFlex
       width='334px'
       bgColor={DEFAULT_STYLES.white}
       border={DEFAULT_STYLES.border}
       borderRadius={DEFAULT_STYLES.borderRadius}
-      align='center'
-      justifyContent='center'
       minH='127px'
       maxH='127px'
+      alignItems='flex-start'
+      p='32px'
       gap='4'
     >
       <Text
@@ -22,22 +25,11 @@ export const GrowHelpCard = () => {
         fontSize='1rem'
         color={DEFAULT_STYLES.primaryHeaderColor}
         alignSelf='flex-start'
-        pl='10'
       >
-        Need some help?
+        {header}
       </Text>
 
-      <Text textStyle='desc' color={DEFAULT_STYLES.darkGray}>
-        You can{' '}
-        <span
-          style={{
-            color: DEFAULT_STYLES.lightPurple,
-          }}
-        >
-          <Link href={DashRoutes.dashboardHelp}>book a call</Link>
-        </span>{' '}
-        with one of our experts
-      </Text>
+      {children}
     </ColumnFlex>
   );
 };

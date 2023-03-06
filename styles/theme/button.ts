@@ -12,20 +12,14 @@ const lgPadding = defineStyle({
 });
 
 const smPadding = defineStyle({
-  px: '16px',
-  py: '12px',
+  px: '14px',
+  py: '10px',
 });
 
 // Variants
 const bgBtn = defineStyle({
   background: DEFAULT_STYLES.lightPurple,
   color: DEFAULT_STYLES.white,
-  _hover: {
-    _disabled: {
-      background: DEFAULT_STYLES.lightPurple,
-      opacity: 0.4,
-    },
-  },
 });
 
 const textBtn = defineStyle((_) => ({
