@@ -1,6 +1,6 @@
 import { Text } from '@chakra-ui/react';
 import { getDay } from '@/utils';
-import { ColumnFlex } from '@/components/shared';
+import { ColumnFlex } from '@/components';
 import { Header } from './Header';
 import { DEFAULT_STYLES } from '@/styles';
 

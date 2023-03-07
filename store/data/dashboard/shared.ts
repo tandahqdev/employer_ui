@@ -5,10 +5,13 @@ import growIcon from '@/assets/images/grow.png';
 import fairerIcon from '@/assets/images/fairer.png';
 import fasterIcon from '@/assets/images/faster.png';
 import maskIcon from '@/assets/images/mask.png';
+import credit from '@/assets/images/credit.png';
+import rate from '@/assets/images/rate.png';
+import termcap from '@/assets/images/termcap.png';
 import { NewPageItemsModel } from '@/models';
 import { nanoid } from 'nanoid';
 
-export { financeIcon, bankIcon, extendIcon, growIcon };
+export { financeIcon, bankIcon, extendIcon, growIcon, credit, rate, termcap };
 
 export const newPageItems: NewPageItemsModel[] = [
   {

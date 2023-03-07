@@ -1,6 +1,9 @@
 import {
   ActionTitle,
+  ExistingBanner,
+  FinanceDetails,
   NewBanner,
+  NewDrawBtn,
   NewPageCard,
   SharedCongratulate,
 } from '@/components';
@@ -10,6 +13,11 @@ import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { Grid, GridItem } from '@chakra-ui/react';
 
 const FinanceGrow = () => {
+  const screenMain = false;
+  const evScreen = false;
+  const Congratulations = true;
+  const financeS = false;
+
   const topbar = (
     <ActionTitle
       icon={growIcon}
@@ -18,15 +26,21 @@ const FinanceGrow = () => {
     />
   );
 
-  const isOtherScreens = true;
-
   return (
     <DashBoardLayout topBar={topbar}>
-      {isOtherScreens && <SharedCongratulate />}
+      {Congratulations && <SharedCongratulate />}
 
-      {!isOtherScreens && (
+      {financeS && (
+        <FinanceDetails
+          header='Need more funds?'
+          actionChildren={<NewDrawBtn />}
+        />
+      )}
+
+      {screenMain && (
         <Grid {...sharedGridStyles}>
           <NewBanner />
+          {evScreen && <ExistingBanner />}
 
           <GridItem width={{ base: DEFAULT_STYLES.fullWidth, xl: '717px' }}>
             <NewPageCard

@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import { ColumnFlex, Header } from '@/components';
-import { NewPageProps } from '@/models';
+import { IProps } from '@/models';
 import { newPageItems } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { Button, Grid, GridItem, Text } from '@chakra-ui/react';
 import { NewPageCardItem } from './NewPageCardItem';
 
-interface Props extends NewPageProps {
+interface Props extends IProps {
   path?: string;
   onClick?: () => void;
 }

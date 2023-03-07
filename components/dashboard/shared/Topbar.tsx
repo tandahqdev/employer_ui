@@ -1,5 +1,4 @@
-import { IconBtn } from '@/components/shared';
-import { ColumnFlex } from '@/components/shared/ColumnFlex';
+import { ColumnFlex, IconBtn } from '@/components';
 import { useCustomMediaQuery } from '@/context';
 import { DEFAULT_STYLES } from '@/styles';
 import { HamburgerIcon } from '@chakra-ui/icons';

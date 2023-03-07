@@ -1,18 +1,13 @@
 import { ColumnFlex } from '@/components';
-import { NewPageProps } from '@/models';
+import { IProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { Flex, Icon, Text } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 
-export const OfferCard = ({ title, desc }: NewPageProps) => {
+export const OfferCard = ({ title, desc }: IProps) => {
   return (
     <ColumnFlex gap='1'>
-      <Flex
-        align='center'
-        color={DEFAULT_STYLES.primaryColor}
-        opacity={0.4}
-        gap='1'
-      >
+      <Flex align='center' color='#A3A7B7' gap='1'>
         <Text alignSelf='flex-start'>{title}</Text>
 
         <Icon as={RiErrorWarningLine} />

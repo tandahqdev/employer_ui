@@ -3,13 +3,14 @@ import {
   ColumnFlex,
   ExistingBanner,
   NewBanner,
+  PageSecondaryTitle,
   WelcomeCard,
 } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { growIcon, extendIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { DashRoutes } from '@/utils';
-import { Grid, GridItem, Text } from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
 
 const FinanceOverview = () => {
   // const topbar = <Header>Hello!</Header>;
@@ -17,21 +18,11 @@ const FinanceOverview = () => {
   return (
     <DashBoardLayout topBar={<WelcomeCard name='John' />}>
       <ColumnFlex gap='5'>
-        <ColumnFlex gap='0.5'>
-          <Text textStyle='title'>Financing overview</Text>
-
-          <Text
-            textStyle='bodyText'
-            color={DEFAULT_STYLES.primaryColor}
-            opacity={0.4}
-          >
-            A quick glance at the aggregated status of your financing products
-            with tanda
-          </Text>
-        </ColumnFlex>
+        <PageSecondaryTitle />
 
         <Grid {...sharedGridStyles}>
-          {false && <NewBanner />} <ExistingBanner />
+          {false && <NewBanner />}
+          <ExistingBanner />
           <GridItem>
             <ActionCard
               header='Grow'

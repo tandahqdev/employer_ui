@@ -10,3 +10,4 @@ export * from './ExistingBanner';
 export * from './SharedBannerContainer';
 export * from './HelpText';
 export * from './NewDrawBtn';
+export * from './PageSecondaryTitle';

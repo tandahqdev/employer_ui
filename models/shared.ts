@@ -5,12 +5,12 @@ export interface LayoutProps {
   children?: ReactNode;
 }
 
-export interface NewPageProps {
+export interface IProps {
   title: string;
   desc: string;
 }
 
-export interface NewPageItemsModel extends NewPageProps {
+export interface NewPageItemsModel extends IProps {
   id: string;
   icon: StaticImageData;
 }
@@ -21,7 +21,7 @@ interface ActionTitleModel {
   icon: StaticImageData;
 }
 
-export interface ActionCardModel extends NewPageProps, ActionTitleModel {
+export interface ActionCardModel extends IProps, ActionTitleModel {
   isShowTopBtn?: boolean;
   btnText: string;
   onClick?: () => void;

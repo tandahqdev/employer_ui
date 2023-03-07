@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ColumnFlex } from '@/components/shared';
+import { ColumnFlex } from '@/components';
 import { NewPageItemsModel } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { Text } from '@chakra-ui/react';

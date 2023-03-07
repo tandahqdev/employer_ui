@@ -1,4 +1,4 @@
-import { ColumnFlex } from '@/components/shared';
+import { ColumnFlex } from '@/components';
 import { LayoutProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { GridItem } from '@chakra-ui/react';
