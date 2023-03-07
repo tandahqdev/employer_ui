@@ -12,6 +12,7 @@ export interface NewPageProps {
 
 export interface NewPageItemsModel extends NewPageProps {
   id: string;
+  icon: StaticImageData;
 }
 
 interface ActionTitleModel {
