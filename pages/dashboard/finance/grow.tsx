@@ -15,8 +15,8 @@ import { Grid, GridItem } from '@chakra-ui/react';
 const FinanceGrow = () => {
   const screenMain = false;
   const evScreen = false;
-  const Congratulations = true;
-  const financeS = false;
+  const Congratulations = false;
+  const financeS = true;
 
   const topbar = (
     <ActionTitle

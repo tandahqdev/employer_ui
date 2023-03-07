@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import party from '@/assets/images/party.png';
 import { DEFAULT_STYLES } from '@/styles';
-import { Box, Flex, Grid, GridItem, HStack, Text } from '@chakra-ui/react';
+import { Flex, Grid, GridItem, HStack, Text } from '@chakra-ui/react';
 import { HelpText, NewPageCard } from '../../shared';
 import { GrowActionCard } from './GrowActionCard';
 import { OfferCard } from './OfferCard';
+import { TandaVDivider } from '../../shared/TandaDivider';
 
 export const SharedCongratulate = () => {
   return (
@@ -48,17 +49,9 @@ export const SharedCongratulate = () => {
 
           <HStack h='40px' gap='2'>
             <OfferCard title='Credit cap' desc='$920,000.00' />
-            <Box
-              border={`1px solid ${DEFAULT_STYLES.primaryColor}`}
-              opacity={0.1}
-              height='100%'
-            />
+            <TandaVDivider />
             <OfferCard title='Max term' desc='12 months' />
-            <Box
-              border={`1px solid ${DEFAULT_STYLES.primaryColor}`}
-              opacity={0.1}
-              height='100%'
-            />
+            <TandaVDivider />
             <OfferCard title='Rate' desc='8.00%' />
           </HStack>
         </Flex>

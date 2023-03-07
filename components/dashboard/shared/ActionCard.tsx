@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ColumnFlex } from '@/components';
 import { DEFAULT_STYLES } from '@/styles';
 import { Button, HStack, Stack, Text } from '@chakra-ui/react';
-import { TandaDivider } from './TandaDivider';
+import { TandaHDivider } from './TandaDivider';
 import { ActionCardModel } from '@/models';
 import { ActionTitle } from './ActionTitle';
 
@@ -46,7 +46,7 @@ export const ActionCard = ({
         {isShowTopBtn && buttonLink}
       </HStack>
 
-      <TandaDivider />
+      <TandaHDivider />
 
       <Stack w='85%' pt='4' flex='1' gap='2'>
         <Text textStyle='title' maxW='60%'>

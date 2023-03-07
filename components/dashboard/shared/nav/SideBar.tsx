@@ -3,7 +3,7 @@ import { ColumnFlex, IconBtn } from '@/components';
 import { DEFAULT_STYLES } from '@/styles';
 import { Logo } from './Logo';
 import { NavItem } from './NavItem';
-import { TandaDivider } from '../TandaDivider';
+import { TandaHDivider } from '../TandaDivider';
 import { NavCard } from './NavCard';
 import { bankingItems, financeItems } from '@/store';
 import { FiSettings } from 'react-icons/fi';
@@ -61,11 +61,11 @@ export const SideBar = () => {
           path={DashRoutes.dashboard}
         />
 
-        <TandaDivider />
+        <TandaHDivider />
 
         <NavCard header='Finance' list={financeItems} />
 
-        <TandaDivider />
+        <TandaHDivider />
 
         <NavCard header='Banking' list={bankingItems} />
       </ColumnFlex>
