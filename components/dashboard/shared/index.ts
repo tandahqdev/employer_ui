@@ -9,3 +9,4 @@ export * from './WelcomeCard';
 export * from './ExistingBanner';
 export * from './SharedBannerContainer';
 export * from './HelpText';
+export * from './NewDrawBtn';
