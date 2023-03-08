@@ -18,7 +18,9 @@ export const FinanceCard = ({ title, desc, icon }: Props) => {
         </Center>
 
         <Flex align='center' gap='0.5'>
-          <Text fontSize='0.9rem'>{title}</Text>
+          <Text fontSize='1rem' fontWeight={DEFAULT_STYLES.bold}>
+            {title}
+          </Text>
           <Icon as={RiErrorWarningLine} color='#A3A7B7' />
         </Flex>
       </Flex>

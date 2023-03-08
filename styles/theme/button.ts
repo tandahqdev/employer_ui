@@ -42,10 +42,13 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     fontWeight: DEFAULT_STYLES.semibold,
     fontSize: '0.95rem',
     _active: {
-      transform: 'scale(0.98)',
+      transform: 'scale(0.99)',
     },
     _hover: {
       opacity: 0.8,
+      _disabled: {
+        bg: 'gray',
+      },
     },
   },
 

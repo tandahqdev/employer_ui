@@ -36,3 +36,12 @@ export const newPageItems: NewPageItemsModel[] = [
     icon: maskIcon,
   },
 ];
+
+export const financeDetailsHeaders = [
+  { name: 'Name' },
+  { name: 'Date deployed' },
+  { name: 'Maturity' },
+  { name: 'Total Outstanding', other: 'Total' },
+  { name: 'Outstanding Principal', other: 'Total Principal' },
+  { name: 'Outstanding Fee', other: 'Total fee' },
+];

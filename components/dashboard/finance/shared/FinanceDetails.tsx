@@ -1,8 +1,9 @@
 import { credit, rate, termcap } from '@/store';
-import { containerStyles } from '@/styles';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { containerStyles, DEFAULT_STYLES } from '@/styles';
+import { Center, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import { TandaVDivider } from '../../shared/TandaDivider';
+import { AiOutlineDownload } from 'react-icons/ai';
+import { TandaVDivider } from '../../shared';
 import { FinanceCard } from './FinanceCard';
 import { GrowActionCard } from './GrowActionCard';
 
@@ -37,7 +38,37 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
 
       <GrowActionCard header={header}>{actionChildren}</GrowActionCard>
 
-      <GridItem colSpan={4} minH='417px' {...containerStyles}></GridItem>
+      <GridItem colSpan={4} minH='417px' {...containerStyles} p='20px 30px'>
+        <Flex
+          justify='space-between'
+          align='center'
+          w={DEFAULT_STYLES.fullWidth}
+        >
+          <Text
+            textStyle='title'
+            color={DEFAULT_STYLES.primaryHeaderColor}
+            fontSize='1.4rem'
+          >
+            My draws
+          </Text>
+
+          <Center
+            w='34px'
+            h='31px'
+            cursor='pointer'
+            bg={DEFAULT_STYLES.lightGray}
+            opacity={0.3}
+            rounded='5px'
+            _active={{
+              transform: 'scale(0.97)',
+            }}
+          >
+            <AiOutlineDownload size='1.4rem' />
+          </Center>
+        </Flex>
+
+        <Grid gap='33px' templateColumns='repeat(4,1fr)'></Grid>
+      </GridItem>
     </Grid>
   );
 };
