@@ -2,7 +2,7 @@ export const DEFAULT_STYLES = {
   containerWidth: {
     base: '100%',
     lg: '95%',
-    xl: '1000px',
+    xl: '1020px',
     '2xl': '1200px',
   },
   fullWidth: '100%',

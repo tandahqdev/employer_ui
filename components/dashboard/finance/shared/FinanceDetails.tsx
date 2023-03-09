@@ -1,21 +1,7 @@
 import { ColumnFlex } from '@/components/shared';
 import { credit, financeDetailsHeaders, rate, termcap } from '@/store';
 import { containerStyles, DEFAULT_STYLES } from '@/styles';
-import {
-  Box,
-  Center,
-  Flex,
-  Grid,
-  GridItem,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Text,
-  Th,
-  Thead,
-  Tr,
-} from '@chakra-ui/react';
+import { Center, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { TandaVDivider } from '../../shared';
@@ -29,13 +15,16 @@ interface Props {
 
 export const FinanceDetails = ({ header, actionChildren }: Props) => {
   const renderDrawsHeaders = financeDetailsHeaders.map((item, i) => {
+    const isLast = i === financeDetailsHeaders.length - 1;
+
     return (
-      <Th key={`${item.name}_${i}`} border='2px solid red'>
-        <ColumnFlex minH='30px' align='flex-end'>
+      <GridItem key={`${item.name}_${i}`}>
+        <ColumnFlex w='max-content'>
           <Text
             textStyle='title'
             fontSize='1rem'
             fontWeight={DEFAULT_STYLES.mediumbold}
+            textAlign={isLast ? 'right' : 'left'}
           >
             {item.name}
           </Text>
@@ -44,14 +33,15 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
             <Text
               textStyle='desc'
               fontWeight={DEFAULT_STYLES.mediumbold}
-              color={DEFAULT_STYLES.primaryHeaderColor}
               opacity={0.3}
+              color={DEFAULT_STYLES.primaryHeaderColor}
+              textAlign='right'
             >
               {item.other}
             </Text>
           )}
         </ColumnFlex>
-      </Th>
+      </GridItem>
     );
   });
 
@@ -110,23 +100,14 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
           </Center>
         </Flex>
 
-        <TableContainer w='full'>
-          <Table variant='simple' size='lg'>
-            <Thead>
-              <Tr>{renderDrawsHeaders}</Tr>
-            </Thead>
-            <Tbody>
-              <Tr>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td textAlign='center'>25.4</Td>
-                <Td textAlign='center'>25.4</Td>
-                <Td textAlign='center'>25.4</Td>
-                <Td textAlign='center'>25.4</Td>
-              </Tr>
-            </Tbody>
-          </Table>
-        </TableContainer>
+        <Grid
+          templateColumns='repeat(6,1fr)'
+          gap='8'
+          borderBottom={DEFAULT_STYLES.border}
+          pb='6'
+        >
+          {renderDrawsHeaders}
+        </Grid>
       </GridItem>
     </Grid>
   );
