@@ -1,7 +1,7 @@
 import { ColumnFlex } from '@/components/shared';
 import { credit, financeDetailsHeaders, rate, termcap } from '@/store';
 import { containerStyles, DEFAULT_STYLES } from '@/styles';
-import { Center, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
+import { Center, Divider, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { TandaVDivider } from '../../shared';
@@ -100,14 +100,17 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
           </Center>
         </Flex>
 
-        <Grid
-          templateColumns='repeat(6,1fr)'
-          gap='8'
-          borderBottom={DEFAULT_STYLES.border}
-          pb='6'
-        >
-          {renderDrawsHeaders}
-        </Grid>
+        <ColumnFlex w={DEFAULT_STYLES.fullWidth} gap='4'>
+          <Grid templateColumns='repeat(6,1fr)' gap='8'>
+            {renderDrawsHeaders}
+          </Grid>
+
+          <Divider />
+
+          <Grid templateColumns='repeat(6,1fr)' gap='8'>
+            {renderDrawsHeaders}
+          </Grid>
+        </ColumnFlex>
       </GridItem>
     </Grid>
   );
