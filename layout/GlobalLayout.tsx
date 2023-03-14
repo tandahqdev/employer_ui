@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { LayoutProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles/globalStyles';
-import { MediaContextProvider } from '@/context';
+import { MediaContextProvider, ModalContextProvider } from '@/context';
 
 export const GlobalLayout = ({ children }: LayoutProps) => {
   return (
@@ -31,9 +31,10 @@ export const GlobalLayout = ({ children }: LayoutProps) => {
           minHeight: DEFAULT_STYLES.fullHeight,
         }}
       >
-        <MediaContextProvider>{children}</MediaContextProvider>
+        <MediaContextProvider>
+          <ModalContextProvider>{children}</ModalContextProvider>
+        </MediaContextProvider>
       </div>
     </>
   );
 };
-

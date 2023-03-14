@@ -11,4 +11,5 @@ export * from './PageSecondaryTitle';
 export * from './SharedBannerContainer';
 export * from './TandaDivider';
 export * from './Topbar';
+export * from './DrawModal';
 export * from './WelcomeCard';

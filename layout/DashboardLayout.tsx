@@ -1,4 +1,4 @@
-import { ColumnFlex, SideBar, Topbar } from '@/components';
+import { ColumnFlex, DrawModal, SideBar, Topbar } from '@/components';
 import { LayoutProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { Flex } from '@chakra-ui/react';
@@ -36,6 +36,7 @@ export const DashBoardLayout = ({ children, topBar }: Props) => {
           {children}
         </Flex>
       </ColumnFlex>
+      <DrawModal />
     </Flex>
   );
 };
