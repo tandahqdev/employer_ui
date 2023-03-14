@@ -79,14 +79,18 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
   });
 
   return (
-    <Grid gap='33px' templateColumns='repeat(4,1fr)'>
+    <Grid
+      gap='33px'
+      templateColumns={{ base: '1fr', lg: 'repeat(4,1fr)' }}
+      px={DEFAULT_STYLES.mobilePx}
+    >
       <GridItem
         minH='132px'
         {...containerStyles}
         display='flex'
         alignItems='center'
         justifyContent='center'
-        colSpan={3}
+        colSpan={{ base: 1, lg: 3 }}
         p='30px'
         gap='30px'
       >
@@ -111,7 +115,14 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
 
       <GrowActionCard header={header}>{actionChildren}</GrowActionCard>
 
-      <GridItem colSpan={4} minH='417px' {...containerStyles} p='20px 30px'>
+      <GridItem
+        colSpan={4}
+        display={{ base: 'none', lg: 'inherit' }}
+        minH='417px'
+        {...containerStyles}
+        p='20px 30px'
+        overflow='auto'
+      >
         <Flex
           justify='space-between'
           align='center'
