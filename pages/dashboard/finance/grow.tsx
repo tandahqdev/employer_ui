@@ -15,8 +15,8 @@ import { Grid, GridItem } from '@chakra-ui/react';
 const FinanceGrow = () => {
   const screenMain = false;
   const evScreen = false;
-  const Congratulations = false;
-  const financeS = true;
+  const Congratulations = true;
+  const financeS = false;
 
   const topbar = (
     <ActionTitle
@@ -33,7 +33,7 @@ const FinanceGrow = () => {
       {financeS && (
         <FinanceDetails
           header='Need more funds?'
-          actionChildren={<NewDrawBtn />}
+          actionChildren={<NewDrawBtn btnText='New draw' />}
         />
       )}
 

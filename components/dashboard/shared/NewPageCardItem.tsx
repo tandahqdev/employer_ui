@@ -3,8 +3,11 @@ import { ColumnFlex } from '@/components';
 import { NewPageItemsModel } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { Text } from '@chakra-ui/react';
+import { useSharedColor } from '@/customHooks';
 
 export const NewPageCardItem = ({ title, desc, icon }: NewPageItemsModel) => {
+  const color = useSharedColor();
+
   return (
     <ColumnFlex
       minH='225px'
@@ -17,11 +20,7 @@ export const NewPageCardItem = ({ title, desc, icon }: NewPageItemsModel) => {
     >
       <Image src={icon} alt={title} />
 
-      <Text
-        textStyle='title'
-        fontSize='1.1rem'
-        color={DEFAULT_STYLES.lightPurple}
-      >
+      <Text textStyle='title' fontSize='1.1rem' color={color}>
         {title}
       </Text>
 

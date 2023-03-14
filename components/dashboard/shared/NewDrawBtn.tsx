@@ -2,7 +2,12 @@ import { useModalContext } from '@/context';
 import { DEFAULT_STYLES } from '@/styles';
 import { Button } from '@chakra-ui/react';
 
-export const NewDrawBtn = () => {
+interface Props {
+  btnText: string;
+  onClick?: () => void;
+}
+
+export const NewDrawBtn = ({ btnText, onClick }: Props) => {
   const { onOpen } = useModalContext();
 
   return (
@@ -11,10 +16,13 @@ export const NewDrawBtn = () => {
       bg={DEFAULT_STYLES.primaryHeaderColor}
       border='1px solid #2B2B2B'
       rounded={8}
-      onClick={onOpen}
+      onClick={() => {
+        onClick?.();
+        onOpen();
+      }}
       size='smPadding'
     >
-      New draw
+      {btnText}
     </Button>
   );
 };

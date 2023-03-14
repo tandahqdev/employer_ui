@@ -1,11 +1,5 @@
 import { ColumnFlex } from '@/components/shared';
-import {
-  credit,
-  financeDetailsBody,
-  financeDetailsHeaders,
-  rate,
-  termcap,
-} from '@/store';
+import { financeDetailsBody, financeDetailsHeaders } from '@/store';
 import { containerStyles, DEFAULT_STYLES } from '@/styles';
 import { Center, Divider, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
@@ -13,6 +7,9 @@ import { AiOutlineDownload } from 'react-icons/ai';
 import { TandaVDivider } from '../../shared';
 import { FinanceCard } from './FinanceCard';
 import { GrowActionCard } from './GrowActionCard';
+import { RiBankLine } from 'react-icons/ri';
+import { TbPercentage } from 'react-icons/tb';
+import { WiMoonAltWaxingCrescent6 } from 'react-icons/wi';
 
 interface Props {
   header: string;
@@ -93,15 +90,23 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
         p='30px'
         gap='30px'
       >
-        <FinanceCard title='Term cap' desc='12 months' icon={termcap} />
+        <FinanceCard
+          title='Term cap'
+          desc='12 months'
+          icon={WiMoonAltWaxingCrescent6}
+        />
 
         <TandaVDivider />
 
-        <FinanceCard title='Available Credit' desc='$22,644,94' icon={credit} />
+        <FinanceCard
+          title='Available Credit'
+          desc='$22,644,94'
+          icon={RiBankLine}
+        />
 
         <TandaVDivider />
 
-        <FinanceCard title='Rate' desc='8.00%' icon={rate} />
+        <FinanceCard title='Rate' desc='8.00%' icon={TbPercentage} />
       </GridItem>
 
       <GrowActionCard header={header}>{actionChildren}</GrowActionCard>
