@@ -1,4 +1,4 @@
-import { ColumnFlex, SideBar, Topbar } from '@/components';
+import { ColumnFlex, DrawModal, SideBar, Topbar } from '@/components';
 import { LayoutProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { Flex } from '@chakra-ui/react';
@@ -19,7 +19,7 @@ export const DashBoardLayout = ({ children, topBar }: Props) => {
       <SideBar />
 
       <ColumnFlex
-        ml='200px'
+        ml={{ base: '0', xl: '200px' }}
         width={DEFAULT_STYLES.fullWidth}
         align='center'
         position='relative'
@@ -28,13 +28,15 @@ export const DashBoardLayout = ({ children, topBar }: Props) => {
 
         <Flex
           w={DEFAULT_STYLES.containerWidth}
-          mt='170px'
-          mb='50px'
+          maxW={DEFAULT_STYLES.fullWidth}
+          mt={{ base: '120px', lg: '150px' }}
+          mb={{ base: '35px', lg: '50px' }}
           justify='center'
         >
           {children}
         </Flex>
       </ColumnFlex>
+      <DrawModal />
     </Flex>
   );
 };

@@ -112,7 +112,7 @@ export const InputComp = ({
             size='xs'
             position='absolute'
             right='0'
-            color={DEFAULT_STYLES.primaryTextColor}
+            color={DEFAULT_STYLES.primaryHeaderColor}
             onClick={onClickSecondaryLabel}
           >
             {secondaryLabel}
@@ -179,7 +179,7 @@ export const InputComp = ({
             variant='textBtn'
             width='max-content'
             size='xs'
-            color={DEFAULT_STYLES.primaryTextColor}
+            color={DEFAULT_STYLES.primaryHeaderColor}
             justifySelf='flex-end'
             onClick={onClickHelper}
           >

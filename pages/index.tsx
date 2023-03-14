@@ -5,7 +5,6 @@ import { DashRoutes } from '@/utils';
 import { Button } from '@chakra-ui/react';
 
 // * Remember to name branches according to tasks
-
 export default function Home() {
   return (
     <ColumnFlex

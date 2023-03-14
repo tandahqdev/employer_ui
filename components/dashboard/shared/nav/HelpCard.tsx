@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { ColumnFlex } from '@/components/shared';
+import { ColumnFlex } from '@/components';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { Text } from '@chakra-ui/react';
 
+// ! Remember to add flex 1 when working on admin and other dashboard sidebars
 export const HelpCard = () => {
   return (
     <ColumnFlex
@@ -13,7 +14,7 @@ export const HelpCard = () => {
       mt='20px'
       p='2'
       background='#EFF1F2'
-      borderRadius={DEFAULT_STYLES.borderRadius}
+      borderRadius={5}
     >
       <Text
         fontSize={DEFAULT_STYLES.smFontSize}

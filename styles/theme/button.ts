@@ -12,26 +12,19 @@ const lgPadding = defineStyle({
 });
 
 const smPadding = defineStyle({
-  px: '16px',
-  py: '12px',
+  px: '14px',
+  py: '10px',
 });
 
 // Variants
 const bgBtn = defineStyle({
   background: DEFAULT_STYLES.lightPurple,
   color: DEFAULT_STYLES.white,
-  boxShadow: '0px 10px 10px rgba(248, 150, 115, 0.2)',
-  _hover: {
-    _disabled: {
-      background: DEFAULT_STYLES.lightPurple,
-      opacity: 0.4,
-    },
-  },
 });
 
 const textBtn = defineStyle((_) => ({
   backgroundColor: 'transparent',
-  color: DEFAULT_STYLES.primaryColor,
+  color: DEFAULT_STYLES.lightPurple,
   py: 0,
   px: 0,
 }));
@@ -49,10 +42,13 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     fontWeight: DEFAULT_STYLES.semibold,
     fontSize: '0.95rem',
     _active: {
-      transform: 'scale(0.98)',
+      transform: 'scale(0.99)',
     },
     _hover: {
       opacity: 0.8,
+      _disabled: {
+        bg: 'gray',
+      },
     },
   },
 

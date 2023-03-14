@@ -1,6 +1,8 @@
 import { Header } from '@/components';
 import { DashBoardLayout } from '@/layout';
 
+// I can move styles to the globalStyles object and share them
+
 const BankRecipients = () => {
   const topbar = <Header>Hello!</Header>;
 

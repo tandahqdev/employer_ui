@@ -10,7 +10,6 @@ interface Props {
 }
 
 export const NavCard = ({ header, list }: Props) => {
-  list;
   const renderList = list.map((e) => {
     return <NavItem {...e} key={e.id} />;
   });
