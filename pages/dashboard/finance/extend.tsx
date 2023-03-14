@@ -11,13 +11,13 @@ import { DashBoardLayout } from '@/layout';
 import { extendIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { DashRoutes } from '@/utils';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid } from '@chakra-ui/react';
 
 const FinanceExtend = () => {
   const screenMain = false;
   const evScreen = false;
-  const Congratulations = false;
-  const financeS = true;
+  const Congratulations = true;
+  const financeS = false;
 
   const topbar = (
     <ActionTitle
@@ -42,14 +42,13 @@ const FinanceExtend = () => {
         <Grid {...sharedGridStyles}>
           <NewBanner />
           {evScreen && <ExistingBanner />}
-          <GridItem width={{ base: DEFAULT_STYLES.fullWidth, xl: '717px' }}>
-            <NewPageCard
-              title='Extend'
-              desc='Take control of your cash flows by investing in bigger things today
+
+          <NewPageCard
+            title='Extend'
+            desc='Take control of your cash flows by investing in bigger things today
           and paying back at your own pace.'
-              path={DashRoutes.dashboard}
-            />
-          </GridItem>
+            path={DashRoutes.dashboard}
+          />
         </Grid>
       )}
     </DashBoardLayout>

@@ -10,7 +10,7 @@ import {
 import { DashBoardLayout } from '@/layout';
 import { growIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid } from '@chakra-ui/react';
 
 const FinanceGrow = () => {
   const screenMain = false;
@@ -42,12 +42,10 @@ const FinanceGrow = () => {
           <NewBanner />
           {evScreen && <ExistingBanner />}
 
-          <GridItem width={{ base: DEFAULT_STYLES.fullWidth, xl: '717px' }}>
-            <NewPageCard
-              title='Grow'
-              desc='Access up to 60% of your predictable ARR on day one. Fuel your growth without taking on debt or diluting our equity.'
-            />
-          </GridItem>
+          <NewPageCard
+            title='Grow'
+            desc='Access up to 60% of your predictable ARR on day one. Fuel your growth without taking on debt or diluting our equity.'
+          />
         </Grid>
       )}
     </DashBoardLayout>

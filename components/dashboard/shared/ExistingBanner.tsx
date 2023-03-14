@@ -8,7 +8,7 @@ import { SharedBannerContainer } from './SharedBannerContainer';
 export const ExistingBanner = () => {
   return (
     <SharedBannerContainer>
-      <Flex align='center' gap='2'>
+      <Flex align='center' gap='2' direction={{ base: 'column', md: 'row' }}>
         <Image src={loader} alt='Loader' />
 
         <Header fontSize='1.3rem' mb='1' fontWeight={DEFAULT_STYLES.bold}>
