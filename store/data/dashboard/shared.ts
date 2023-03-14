@@ -45,3 +45,14 @@ export const financeDetailsHeaders = [
   { name: 'Outstanding Principal', other: 'Total Principal' },
   { name: 'Outstanding Fee', other: 'Total fee' },
 ];
+
+export const financeDetailsBody = [
+  {
+    name: 'First Draw',
+  },
+  { name: 'Feb 23,2023' },
+  { name: 'Pending' },
+  { name: '$46633438', other: 'of $46633438' },
+  { name: '$46633438', other: ' of $46633438' },
+  { name: '$46633438', other: ' of $46633438' },
+];

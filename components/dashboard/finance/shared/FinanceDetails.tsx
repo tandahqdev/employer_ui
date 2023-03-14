@@ -1,5 +1,11 @@
 import { ColumnFlex } from '@/components/shared';
-import { credit, financeDetailsHeaders, rate, termcap } from '@/store';
+import {
+  credit,
+  financeDetailsBody,
+  financeDetailsHeaders,
+  rate,
+  termcap,
+} from '@/store';
 import { containerStyles, DEFAULT_STYLES } from '@/styles';
 import { Center, Divider, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
@@ -33,6 +39,36 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
             <Text
               textStyle='desc'
               fontWeight={DEFAULT_STYLES.mediumbold}
+              opacity={0.3}
+              color={DEFAULT_STYLES.primaryHeaderColor}
+              textAlign='right'
+            >
+              {item.other}
+            </Text>
+          )}
+        </ColumnFlex>
+      </GridItem>
+    );
+  });
+
+  const renderBody = financeDetailsBody.map((item, i) => {
+    const isLast = i === financeDetailsHeaders.length - 1;
+
+    return (
+      <GridItem key={`${item.name}_${i}`}>
+        <ColumnFlex align='center' w={item.other ? 'full' : 'max-content'}>
+          <Text
+            textStyle='desc'
+            fontWeight={DEFAULT_STYLES.semibold}
+            textAlign={isLast ? 'right' : 'left'}
+          >
+            {item.name}
+          </Text>
+
+          {item.other && (
+            <Text
+              textStyle='desc'
+              fontWeight={DEFAULT_STYLES.semibold}
               opacity={0.3}
               color={DEFAULT_STYLES.primaryHeaderColor}
               textAlign='right'
@@ -108,7 +144,7 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
           <Divider />
 
           <Grid templateColumns='repeat(6,1fr)' gap='8'>
-            {renderDrawsHeaders}
+            {renderBody}
           </Grid>
         </ColumnFlex>
       </GridItem>
