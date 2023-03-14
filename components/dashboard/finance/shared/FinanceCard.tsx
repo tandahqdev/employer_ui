@@ -13,7 +13,7 @@ export const FinanceCard = ({ title, desc, icon }: Props) => {
   return (
     <ColumnFlex gap='12px' flex='1'>
       <Flex align='center' color={DEFAULT_STYLES.primaryColor} gap='3'>
-        <Center w='31px' h='31px' bg='#F0EAFD' rounded='full' pr='1'>
+        <Center w='31px' h='31px' bg='#F0EAFD' rounded='full'>
           <Image src={icon} alt={title} />
         </Center>
 
