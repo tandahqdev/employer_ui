@@ -14,7 +14,7 @@ const MediaContext = createContext<MediaContextProps>({
 
 export const MediaContextProvider = ({ children }: LayoutProps) => {
   const [mediaQuery, setMediaQuery] = useState(false);
-  const pathname = useRouter().pathname;
+  const { pathname } = useRouter();
 
   useEffect(() => {
     upDateMediaQuery(false);
