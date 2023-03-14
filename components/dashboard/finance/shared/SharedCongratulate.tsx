@@ -9,7 +9,11 @@ import { TandaVDivider } from '../../shared/TandaDivider';
 
 export const SharedCongratulate = () => {
   return (
-    <Grid gap='33px' templateColumns='repeat(4,1fr)'>
+    <Grid
+      gap='33px'
+      templateColumns={{ base: '1fr', lg: 'repeat(4,1fr)' }}
+      px={DEFAULT_STYLES.mobilePx}
+    >
       <GridItem
         minH='212px'
         border={DEFAULT_STYLES.border}
@@ -43,7 +47,11 @@ export const SharedCongratulate = () => {
           justify='space-between'
           pt='10'
         >
-          <Text color={DEFAULT_STYLES.primaryColor} opacity={0.4}>
+          <Text
+            color={DEFAULT_STYLES.primaryColor}
+            opacity={0.4}
+            display={{ base: 'none', md: 'inline' }}
+          >
             Your Offer
           </Text>
 
