@@ -26,4 +26,6 @@ export interface ActionCardModel extends IProps, ActionTitleModel {
   btnText: string;
   onClick?: () => void;
   path: string;
+  gradientImg?: StaticImageData;
+  atEdge?: boolean;
 }
