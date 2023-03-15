@@ -29,7 +29,8 @@ const FinanceOverview = () => {
               icon={growIcon}
               headerColor={DEFAULT_STYLES.lightPurple}
               title='Upfront funding to accelerate your growth'
-              desc='Convert future revenue into upfront capital, without debt or dilution.'
+              desc='Access your  predictable recurring
+                revenue on day one.'
               btnText='Learn more'
               isShowTopBtn
               path={DashRoutes.dashboardFinanceGrow}
@@ -40,8 +41,10 @@ const FinanceOverview = () => {
               header='Extend'
               icon={extendIcon}
               headerColor={DEFAULT_STYLES.pink}
-              title='Banking for what  you are building'
-              desc='Get access to the cash management account built for startups.'
+              title='Smooth cash flows and
+              avaid large impacful outflows'
+              desc='Take control of your cash flows
+              by buying now and paying later.'
               isShowTopBtn
               btnText='Learn more'
               path={DashRoutes.dashboardFinanceExtend}
