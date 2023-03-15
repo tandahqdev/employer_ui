@@ -1,5 +1,6 @@
+import { TextProps } from '@chakra-ui/react';
 import { StaticImageData } from 'next/image';
-import { ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 export interface LayoutProps {
   children?: ReactNode;
@@ -15,10 +16,11 @@ export interface NewPageItemsModel extends IProps {
   icon: StaticImageData;
 }
 
-interface ActionTitleModel {
+export interface ActionTitleModel {
   header: string;
   headerColor: string;
   icon: StaticImageData;
+  textProps?: TextProps;
 }
 
 export interface ActionCardModel extends IProps, ActionTitleModel {
@@ -26,4 +28,7 @@ export interface ActionCardModel extends IProps, ActionTitleModel {
   btnText: string;
   onClick?: () => void;
   path: string;
+  gradientImg?: StaticImageData;
+  atEdge?: boolean;
+  leftIcon?: ReactElement;
 }

@@ -1,14 +1,14 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { DEFAULT_STYLES } from '@/styles';
 import { Flex, Center, Text } from '@chakra-ui/react';
+import { ActionTitleModel } from '@/models';
 
-interface Props {
-  header: string;
-  headerColor: string;
-  icon: StaticImageData;
-}
-
-export const ActionTitle = ({ headerColor, icon, header }: Props) => {
+export const ActionTitle = ({
+  headerColor,
+  icon,
+  header,
+  textProps,
+}: ActionTitleModel) => {
   return (
     <Flex align='center' gap='7px'>
       <Center bgColor={headerColor} borderRadius='full' w='37px' h='37px'>
@@ -16,11 +16,11 @@ export const ActionTitle = ({ headerColor, icon, header }: Props) => {
       </Center>
 
       <Text
-        fontSize='1.3rem'
         fontWeight={DEFAULT_STYLES.mediumbold}
         textTransform='uppercase'
         letterSpacing='0.13px'
         color={headerColor}
+        {...textProps}
       >
         {header}
       </Text>

@@ -3,8 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   devIndicators: {
     buildActivity: true,
-    buildActivityPosition: 'top-left',
+    buildActivityPosition: 'top-right',
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,3 +1,5 @@
+import extendcurve from '@/assets/images/extendcurve.png';
+import growcurve from '@/assets/images/growcurve.png';
 import {
   ActionCard,
   ColumnFlex,
@@ -6,50 +8,60 @@ import {
   PageSecondaryTitle,
   WelcomeCard,
 } from '@/components';
+import { MainPage } from '@/components/dashboard/finance/overview/MainPage';
 import { DashBoardLayout } from '@/layout';
 import { growIcon, extendIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { DashRoutes } from '@/utils';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { AddIcon } from '@chakra-ui/icons';
+import { Grid } from '@chakra-ui/react';
 
 const FinanceOverview = () => {
   // const topbar = <Header>Hello!</Header>;
 
   return (
-    <DashBoardLayout topBar={<WelcomeCard name='John' />}>
-      <ColumnFlex gap='5'>
-        <PageSecondaryTitle />
+    <>
+      <DashBoardLayout topBar={<WelcomeCard name='John' />}>
+        <ColumnFlex gap='5'>
+          <PageSecondaryTitle />
 
-        <Grid {...sharedGridStyles}>
-          {false && <NewBanner />}
-          <ExistingBanner />
-          <GridItem>
+          <Grid {...sharedGridStyles}>
+            {false && <NewBanner />}
+            <ExistingBanner />
             <ActionCard
               header='Grow'
               icon={growIcon}
               headerColor={DEFAULT_STYLES.lightPurple}
               title='Upfront funding to accelerate your growth'
-              desc='Convert future revenue into upfront capital, without debt or dilution.'
-              btnText='Learn more'
+              desc='Access your  predictable recurring
+                revenue on day one.'
+              btnText='New extension'
               isShowTopBtn
               path={DashRoutes.dashboardFinanceGrow}
+              gradientImg={growcurve}
+              atEdge
+              leftIcon={<AddIcon />}
             />
-          </GridItem>
-          <GridItem>
+
             <ActionCard
               header='Extend'
               icon={extendIcon}
               headerColor={DEFAULT_STYLES.pink}
-              title='Banking for what  you are building'
-              desc='Get access to the cash management account built for startups.'
+              title='Smooth cash flows and
+              avaid large impacful outflows'
+              desc='Take control of your cash flows
+              by buying now and paying later.'
               isShowTopBtn
               btnText='Learn more'
               path={DashRoutes.dashboardFinanceExtend}
+              gradientImg={extendcurve}
             />
-          </GridItem>
-        </Grid>
-      </ColumnFlex>
-    </DashBoardLayout>
+          </Grid>
+        </ColumnFlex>
+      </DashBoardLayout>
+
+      <MainPage />
+    </>
   );
 };
 
