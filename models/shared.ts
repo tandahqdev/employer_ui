@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 export interface LayoutProps {
   children?: ReactNode;
@@ -28,4 +28,5 @@ export interface ActionCardModel extends IProps, ActionTitleModel {
   path: string;
   gradientImg?: StaticImageData;
   atEdge?: boolean;
+  leftIcon?: ReactElement;
 }

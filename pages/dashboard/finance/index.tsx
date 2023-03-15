@@ -12,6 +12,7 @@ import { DashBoardLayout } from '@/layout';
 import { growIcon, extendIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { DashRoutes } from '@/utils';
+import { AddIcon } from '@chakra-ui/icons';
 import { Grid } from '@chakra-ui/react';
 
 const FinanceOverview = () => {
@@ -32,11 +33,12 @@ const FinanceOverview = () => {
             title='Upfront funding to accelerate your growth'
             desc='Access your  predictable recurring
                 revenue on day one.'
-            btnText='Learn more'
+            btnText='New extension'
             isShowTopBtn
             path={DashRoutes.dashboardFinanceGrow}
             gradientImg={growcurve}
             atEdge
+            leftIcon={<AddIcon />}
           />
 
           <ActionCard

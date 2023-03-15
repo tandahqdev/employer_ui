@@ -19,6 +19,7 @@ export const ActionCard = ({
   path,
   atEdge,
   gradientImg,
+  leftIcon,
 }: ActionCardModel) => {
   const buttonLink = (
     <Link
@@ -27,7 +28,7 @@ export const ActionCard = ({
         alignSelf: isShowTopBtn ? 'center' : 'flex-start',
       }}
     >
-      <Button variant='noBgBtn' onClick={onClick}>
+      <Button variant='noBgBtn' onClick={onClick} leftIcon={leftIcon}>
         {btnText}
       </Button>
     </Link>
