@@ -1,3 +1,4 @@
+import { TextProps } from '@chakra-ui/react';
 import { StaticImageData } from 'next/image';
 import { ReactElement, ReactNode } from 'react';
 
@@ -15,10 +16,11 @@ export interface NewPageItemsModel extends IProps {
   icon: StaticImageData;
 }
 
-interface ActionTitleModel {
+export interface ActionTitleModel {
   header: string;
   headerColor: string;
   icon: StaticImageData;
+  textProps?: TextProps;
 }
 
 export interface ActionCardModel extends IProps, ActionTitleModel {

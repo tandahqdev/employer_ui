@@ -8,6 +8,7 @@ import {
   PageSecondaryTitle,
   WelcomeCard,
 } from '@/components';
+import { MainPage } from '@/components/dashboard/finance/overview/MainPage';
 import { DashBoardLayout } from '@/layout';
 import { growIcon, extendIcon } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
@@ -19,44 +20,48 @@ const FinanceOverview = () => {
   // const topbar = <Header>Hello!</Header>;
 
   return (
-    <DashBoardLayout topBar={<WelcomeCard name='John' />}>
-      <ColumnFlex gap='5'>
-        <PageSecondaryTitle />
+    <>
+      <DashBoardLayout topBar={<WelcomeCard name='John' />}>
+        <ColumnFlex gap='5'>
+          <PageSecondaryTitle />
 
-        <Grid {...sharedGridStyles}>
-          {false && <NewBanner />}
-          <ExistingBanner />
-          <ActionCard
-            header='Grow'
-            icon={growIcon}
-            headerColor={DEFAULT_STYLES.lightPurple}
-            title='Upfront funding to accelerate your growth'
-            desc='Access your  predictable recurring
+          <Grid {...sharedGridStyles}>
+            {false && <NewBanner />}
+            <ExistingBanner />
+            <ActionCard
+              header='Grow'
+              icon={growIcon}
+              headerColor={DEFAULT_STYLES.lightPurple}
+              title='Upfront funding to accelerate your growth'
+              desc='Access your  predictable recurring
                 revenue on day one.'
-            btnText='New extension'
-            isShowTopBtn
-            path={DashRoutes.dashboardFinanceGrow}
-            gradientImg={growcurve}
-            atEdge
-            leftIcon={<AddIcon />}
-          />
+              btnText='New extension'
+              isShowTopBtn
+              path={DashRoutes.dashboardFinanceGrow}
+              gradientImg={growcurve}
+              atEdge
+              leftIcon={<AddIcon />}
+            />
 
-          <ActionCard
-            header='Extend'
-            icon={extendIcon}
-            headerColor={DEFAULT_STYLES.pink}
-            title='Smooth cash flows and
+            <ActionCard
+              header='Extend'
+              icon={extendIcon}
+              headerColor={DEFAULT_STYLES.pink}
+              title='Smooth cash flows and
               avaid large impacful outflows'
-            desc='Take control of your cash flows
+              desc='Take control of your cash flows
               by buying now and paying later.'
-            isShowTopBtn
-            btnText='Learn more'
-            path={DashRoutes.dashboardFinanceExtend}
-            gradientImg={extendcurve}
-          />
-        </Grid>
-      </ColumnFlex>
-    </DashBoardLayout>
+              isShowTopBtn
+              btnText='Learn more'
+              path={DashRoutes.dashboardFinanceExtend}
+              gradientImg={extendcurve}
+            />
+          </Grid>
+        </ColumnFlex>
+      </DashBoardLayout>
+
+      <MainPage />
+    </>
   );
 };
 

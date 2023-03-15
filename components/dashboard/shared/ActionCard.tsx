@@ -47,7 +47,14 @@ export const ActionCard = ({
       overflow='hidden'
     >
       <HStack width='85%' align='center' justify='space-between' pb='4'>
-        <ActionTitle header={header} headerColor={headerColor} icon={icon} />
+        <ActionTitle
+          header={header}
+          headerColor={headerColor}
+          icon={icon}
+          textProps={{
+            fontSize: '1.3rem',
+          }}
+        />
 
         {isShowTopBtn && buttonLink}
       </HStack>

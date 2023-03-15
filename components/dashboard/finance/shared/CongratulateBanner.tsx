@@ -1,15 +1,16 @@
 import Image from 'next/image';
 import { Flex, GridItem, GridItemProps, HStack, Text } from '@chakra-ui/react';
 import { DEFAULT_STYLES } from '@/styles';
-import { TandaVDivider } from '../../shared';
+import { ActionTitle, TandaVDivider } from '../../shared';
 import { OfferCard } from './OfferCard';
-import { party } from '@/store';
+import { extendIcon, growIcon, party, plusIcon } from '@/store';
 
 interface Props {
   colSpan?: GridItemProps['colSpan'];
+  showBtns?: boolean;
 }
 
-export const CongratulateBanner = ({ colSpan }: Props) => {
+export const CongratulateBanner = ({ colSpan, showBtns }: Props) => {
   return (
     <GridItem
       minH='212px'
@@ -21,29 +22,45 @@ export const CongratulateBanner = ({ colSpan }: Props) => {
       justifyContent='center'
       colSpan={colSpan}
       p='30px'
+      gap='7'
     >
-      <Flex align='center' gap='1'>
-        <Text
-          textStyle='title'
-          color={DEFAULT_STYLES.primaryHeaderColor}
-          alignSelf='flex-start'
-        >
-          Congràtulations, you’re ready to start with tanda financing
-        </Text>
+      {showBtns && (
+        <Flex align='center' gap='4'>
+          <ActionTitle
+            header='Grow'
+            icon={growIcon}
+            headerColor={DEFAULT_STYLES.lightPurple}
+          />
 
-        <Image src={party} alt='party' />
+          <Image src={plusIcon} alt='plus' />
+
+          <ActionTitle
+            header='Extend'
+            icon={extendIcon}
+            headerColor={DEFAULT_STYLES.pink}
+          />
+        </Flex>
+      )}
+
+      <Flex direction='column'>
+        <Flex align='center' gap='1'>
+          <Text
+            textStyle='title'
+            color={DEFAULT_STYLES.primaryHeaderColor}
+            alignSelf='flex-start'
+          >
+            Congràtulations, you’re ready to start with tanda financing
+          </Text>
+
+          <Image src={party} alt='party' />
+        </Flex>
+
+        <Text color={DEFAULT_STYLES.primaryColor} pt='1' opacity={0.4}>
+          The underwriting process was successful and your offer is ready
+        </Text>
       </Flex>
 
-      <Text color={DEFAULT_STYLES.primaryColor} pt='1' opacity={0.4}>
-        The underwriting process was successful and your offer is ready
-      </Text>
-
-      <Flex
-        w={DEFAULT_STYLES.fullWidth}
-        align='center'
-        justify='space-between'
-        pt='10'
-      >
+      <Flex w={DEFAULT_STYLES.fullWidth} align='center' justify='space-between'>
         <Text
           color={DEFAULT_STYLES.primaryColor}
           opacity={0.4}

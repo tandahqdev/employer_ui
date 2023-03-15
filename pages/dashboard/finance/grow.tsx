@@ -23,6 +23,9 @@ const FinanceGrow = () => {
       icon={growIcon}
       header='Grow'
       headerColor={DEFAULT_STYLES.lightPurple}
+      textProps={{
+        fontSize: '1.3rem',
+      }}
     />
   );
 
