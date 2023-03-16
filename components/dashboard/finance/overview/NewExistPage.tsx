@@ -1,16 +1,14 @@
-import { growIcon, extendIcon, growcurve, extendcurve } from '@/store';
+import { growIcon, growcurve, extendIcon, extendcurve } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
-import { AddIcon } from '@chakra-ui/icons';
-import { ActionCard } from '../../shared';
-import { CongratulateBanner } from '../shared/CongratulateBanner';
+import { NewBanner, ExistingBanner, ActionCard } from '../../shared';
 import { SharedFinanceOverview } from './SharedFinanceOverview';
 
-export const MainPage = () => {
+export const NewExistPage = () => {
   return (
     <SharedFinanceOverview>
-      <CongratulateBanner colSpan={2} showBtns />
-
+      {true && <NewBanner />}
+      <ExistingBanner />
       <ActionCard
         header='Grow'
         icon={growIcon}
@@ -18,12 +16,11 @@ export const MainPage = () => {
         title='Upfront funding to accelerate your growth'
         desc='Access your  predictable recurring
                 revenue on day one.'
-        btnText='New draw'
+        btnText='Learn more'
         isShowTopBtn
         path={DashRoutes.dashboardFinanceGrow}
         gradientImg={growcurve}
         atEdge
-        leftIcon={<AddIcon />}
       />
 
       <ActionCard
@@ -35,10 +32,9 @@ export const MainPage = () => {
         desc='Take control of your cash flows
               by buying now and paying later.'
         isShowTopBtn
-        btnText='New extension'
+        btnText='Learn more'
         path={DashRoutes.dashboardFinanceExtend}
         gradientImg={extendcurve}
-        leftIcon={<AddIcon />}
       />
     </SharedFinanceOverview>
   );
