@@ -4,12 +4,14 @@ import { DashRoutes } from '@/utils';
 import { AddIcon } from '@chakra-ui/icons';
 import { ActionCard } from '../../shared';
 import { CongratulateBanner } from '../shared/CongratulateBanner';
+import { CreditDetails } from './CreditDetails';
 import { SharedFinanceOverview } from './SharedFinanceOverview';
 import { Transaction } from './Transaction';
 
 export const MainPage = () => {
   return (
     <SharedFinanceOverview>
+      <CreditDetails />
       <CongratulateBanner colSpan={2} showBtns />
 
       <ActionCard

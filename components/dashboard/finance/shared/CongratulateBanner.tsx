@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Flex, GridItem, GridItemProps, HStack, Text } from '@chakra-ui/react';
-import { DEFAULT_STYLES } from '@/styles';
+import { containerStyles, DEFAULT_STYLES } from '@/styles';
 import { ActionTitle, TandaVDivider } from '../../shared';
 import { OfferCard } from './OfferCard';
 import { extendIcon, growIcon, party, plusIcon } from '@/store';
@@ -14,9 +14,7 @@ export const CongratulateBanner = ({ colSpan, showBtns }: Props) => {
   return (
     <GridItem
       minH='212px'
-      border={DEFAULT_STYLES.border}
-      borderRadius={DEFAULT_STYLES.borderRadius}
-      bg={DEFAULT_STYLES.white}
+      {...containerStyles}
       display='flex'
       flexDirection='column'
       justifyContent='center'

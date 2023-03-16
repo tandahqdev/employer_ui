@@ -1,10 +1,13 @@
 import { MainPage, NewExistPage } from '@/components';
 
 const FinanceOverview = () => {
+  const isMainPage = true;
+  const isNewPage = false;
+
   return (
     <>
-      <NewExistPage />
-      <MainPage />
+      {isNewPage && <NewExistPage />}
+      {isMainPage && <MainPage />}
     </>
   );
 };
