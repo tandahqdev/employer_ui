@@ -1,6 +1,6 @@
 import { DEFAULT_STYLES } from '@/styles';
-import { Center, Flex, GridItem, Icon, Text } from '@chakra-ui/react';
-import { AiOutlineDownload } from 'react-icons/ai';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import { Button, Flex, GridItem, Icon, Text } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 
 export const CreditDetails = () => {
@@ -19,19 +19,12 @@ export const CreditDetails = () => {
           <Icon as={RiErrorWarningLine} color='#A3A7B7' />
         </Flex>
 
-        <Center
-          w='34px'
-          h='31px'
-          cursor='pointer'
-          bg={DEFAULT_STYLES.lightGray}
-          opacity={0.3}
-          rounded='5px'
-          _active={{
-            transform: 'scale(0.97)',
-          }}
+        <Button
+          variant='textBtn'
+          rightIcon={<ChevronRightIcon fontSize='1.5rem' />}
         >
-          <AiOutlineDownload size='1.4rem' />
-        </Center>
+          View details
+        </Button>
       </Flex>
     </GridItem>
   );
