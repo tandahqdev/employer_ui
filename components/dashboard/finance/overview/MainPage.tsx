@@ -5,6 +5,7 @@ import { AddIcon } from '@chakra-ui/icons';
 import { ActionCard } from '../../shared';
 import { CongratulateBanner } from '../shared/CongratulateBanner';
 import { SharedFinanceOverview } from './SharedFinanceOverview';
+import { Transaction } from './Transaction';
 
 export const MainPage = () => {
   return (
@@ -40,6 +41,8 @@ export const MainPage = () => {
         gradientImg={extendcurve}
         leftIcon={<AddIcon />}
       />
+
+      <Transaction />
     </SharedFinanceOverview>
   );
 };
