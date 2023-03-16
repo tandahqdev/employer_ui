@@ -1,6 +1,6 @@
 import { ColumnFlex } from '@/components/shared';
 import { financeDetailsBody, financeDetailsHeaders } from '@/store';
-import { containerStyles, DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from '@/styles';
 import { Center, Divider, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { AiOutlineDownload } from 'react-icons/ai';
@@ -86,7 +86,7 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
     >
       <GridItem
         minH='132px'
-        {...containerStyles}
+        layerStyle='card'
         display='flex'
         alignItems='center'
         justifyContent='center'
@@ -119,7 +119,7 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
         colSpan={4}
         display={{ base: 'none', lg: 'inherit' }}
         minH='417px'
-        {...containerStyles}
+        layerStyle='card'
         p='20px 30px'
         overflow='auto'
       >

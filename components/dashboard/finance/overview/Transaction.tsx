@@ -1,5 +1,5 @@
 import { ColumnFlex } from '@/components/shared';
-import { containerStyles, DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from '@/styles';
 import {
   GridItem,
   Flex,
@@ -73,7 +73,7 @@ export const Transaction = () => {
       alignItems='center'
       justifyContent='flex-start'
       flexDirection='column'
-      {...containerStyles}
+      layerStyle='card'
       p='20px 30px'
       gap='7'
     >

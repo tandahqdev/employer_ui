@@ -67,5 +67,11 @@ export const theme = extendTheme({
       borderRadius: 16,
       padding: { base: '10px', md: '30px' },
     },
+    card: {
+      border: '1px solid',
+      borderColor: '#E4E2E2',
+      bg: 'white',
+      borderRadius: 16,
+    },
   },
 });

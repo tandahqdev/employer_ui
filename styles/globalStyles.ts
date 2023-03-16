@@ -48,8 +48,3 @@ export const sharedGridStyles = {
   maxW: '1000px',
 };
 
-export const containerStyles = {
-  border: DEFAULT_STYLES.border,
-  borderRadius: DEFAULT_STYLES.borderRadius,
-  bg: DEFAULT_STYLES.white,
-};
