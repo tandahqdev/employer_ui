@@ -1,3 +1,4 @@
+import { ColumnFlex } from '@/components/shared';
 import { containerStyles, DEFAULT_STYLES } from '@/styles';
 import {
   GridItem,
@@ -7,6 +8,11 @@ import {
   Button,
   Center,
   HStack,
+  Table,
+  TableContainer,
+  Th,
+  Thead,
+  Tr,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { AiOutlineDownload } from 'react-icons/ai';
@@ -40,6 +46,25 @@ export const Transaction = () => {
     }
   );
 
+  const renderTableHeaders = [
+    'Due Date',
+    'Status',
+    'Expected Repayment',
+    'Outstanding',
+  ].map((h, i, arr) => {
+    const isNumeric = i === arr.length - 1 || i === arr.length - 2;
+    return (
+      <Th
+        key={`${h}+${i}`}
+        isNumeric={isNumeric}
+        color={DEFAULT_STYLES.primaryHeaderColor}
+        opacity={0.8}
+      >
+        <Text>{h}</Text>
+      </Th>
+    );
+  });
+
   return (
     <GridItem
       colSpan={2}
@@ -50,7 +75,7 @@ export const Transaction = () => {
       flexDirection='column'
       {...containerStyles}
       p='20px 30px'
-      gap='6'
+      gap='7'
     >
       <Flex align='center' gap='1.5' w={DEFAULT_STYLES.fullWidth}>
         <Text
@@ -64,12 +89,7 @@ export const Transaction = () => {
         <Icon as={RiErrorWarningLine} color='#A3A7B7' />
       </Flex>
 
-      <Flex
-        justify='space-between'
-        align='center'
-        w={DEFAULT_STYLES.fullWidth}
-        mb='80px'
-      >
+      <Flex justify='space-between' align='center' w={DEFAULT_STYLES.fullWidth}>
         <HStack>{renderButtons}</HStack>
 
         <Center
@@ -86,6 +106,22 @@ export const Transaction = () => {
           <AiOutlineDownload size='1.4rem' />
         </Center>
       </Flex>
+
+      <TableContainer w={DEFAULT_STYLES.fullWidth}>
+        <Table variant='simple'>
+          <Thead>
+            <Tr>{renderTableHeaders}</Tr>
+          </Thead>
+        </Table>
+      </TableContainer>
+
+      <ColumnFlex mt='10' gap='1'>
+        <Text textStyle='title' color={DEFAULT_STYLES.darkGray}>
+          You don’t have any payments pending
+        </Text>
+
+        <Button variant='textBtn'>Launch a new draw</Button>
+      </ColumnFlex>
     </GridItem>
   );
 };
