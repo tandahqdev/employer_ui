@@ -1,19 +1,11 @@
-import { containerStyles, DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from '@/styles';
 import { Center, Flex, GridItem, Icon, Text } from '@chakra-ui/react';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { RiErrorWarningLine } from 'react-icons/ri';
 
 export const CreditDetails = () => {
   return (
-    <GridItem
-      minH='176px'
-      {...containerStyles}
-      display='flex'
-      flexDirection='column'
-      justifyContent='center'
-      p='30px'
-      colSpan={2}
-    >
+    <GridItem minH='176px' layerStyle='gridItem' colSpan={2}>
       <Flex justify='space-between' align='center' w={DEFAULT_STYLES.fullWidth}>
         <Flex align='center' gap='1.5' w={DEFAULT_STYLES.fullWidth}>
           <Text

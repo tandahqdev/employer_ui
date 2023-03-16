@@ -56,5 +56,16 @@ export const theme = extendTheme({
       //  Add later
     },
   },
-
+  layerStyles: {
+    gridItem: {
+      bg: 'white',
+      border: '1px solid',
+      borderColor: '#E4E2E2',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      borderRadius: 16,
+      padding: { base: '10px', md: '30px' },
+    },
+  },
 });
