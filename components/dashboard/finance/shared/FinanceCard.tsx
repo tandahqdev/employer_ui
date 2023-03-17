@@ -8,13 +8,20 @@ import { useSharedColor } from '@/customHooks';
 
 interface Props extends IProps {
   icon: IconType;
+  w: string;
 }
 
-export const FinanceCard = ({ title, desc, icon }: Props) => {
+export const FinanceCard = ({ title, desc, icon, w }: Props) => {
   const color = useSharedColor();
 
   return (
-    <ColumnFlex gap='12px' flex='1'>
+    <ColumnFlex
+      direction={{ base: 'row', md: 'column' }}
+      align={{ base: 'center', md: 'flex-start' }}
+      justify={{ base: 'space-between', md: 'flex-start' }}
+      gap='12px'
+      w={{ base: DEFAULT_STYLES.fullWidth, lg: w }}
+    >
       <Flex align='center' color={DEFAULT_STYLES.primaryColor} gap='3'>
         <Center w='31px' h='31px' bg='#F0EAFD' rounded='full'>
           <Icon as={icon} fontSize='1.3rem' color={color} />

@@ -4,7 +4,7 @@ import { DEFAULT_STYLES } from '@/styles';
 import { Center, Divider, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { AiOutlineDownload } from 'react-icons/ai';
-import { TandaVDivider } from '../../shared';
+import { TandaHDivider, TandaVDivider } from '../../shared';
 import { FinanceCard } from './FinanceCard';
 import { GrowActionCard } from './GrowActionCard';
 import { RiBankLine } from 'react-icons/ri';
@@ -82,6 +82,7 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
     <Grid
       gap='33px'
       templateColumns={{ base: '1fr', lg: 'repeat(4,1fr)' }}
+      width={{ base: DEFAULT_STYLES.fullWidth, lg: 'max-content' }}
       px={DEFAULT_STYLES.mobilePx}
     >
       <GridItem
@@ -90,27 +91,32 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
         display='flex'
         alignItems='center'
         justifyContent='center'
+        flexDirection={{ base: 'column', md: 'row' }}
         colSpan={{ base: 1, lg: 3 }}
-        p='30px'
+        p={{ base: '15px', md: '20px', '2xl': '30px' }}
         gap='30px'
       >
         <FinanceCard
           title='Term cap'
           desc='12 months'
           icon={WiMoonAltWaxingCrescent6}
+          w='250px'
         />
 
-        <TandaVDivider />
+        <TandaVDivider display={{ base: 'none', md: 'block' }} />
+        <TandaHDivider display={{ base: 'block', md: 'none' }} />
 
         <FinanceCard
           title='Available Credit'
           desc='$22,644,94'
           icon={RiBankLine}
+          w='350px'
         />
 
-        <TandaVDivider />
+        <TandaVDivider display={{ base: 'none', md: 'block' }} />
+        <TandaHDivider display={{ base: 'block', md: 'none' }} />
 
-        <FinanceCard title='Rate' desc='8.00%' icon={TbPercentage} />
+        <FinanceCard title='Rate' desc='8.00%' icon={TbPercentage} w='200px' />
       </GridItem>
 
       <GrowActionCard header={header}>{actionChildren}</GrowActionCard>
