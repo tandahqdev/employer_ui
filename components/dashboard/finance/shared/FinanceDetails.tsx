@@ -82,7 +82,7 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
     <Grid
       gap='33px'
       templateColumns={{ base: '1fr', lg: 'repeat(4,1fr)' }}
-      width={{ base: DEFAULT_STYLES.fullWidth, md: 'max-content' }}
+      width={{ base: DEFAULT_STYLES.fullWidth, lg: 'max-content' }}
       px={DEFAULT_STYLES.mobilePx}
     >
       <GridItem
@@ -109,7 +109,6 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
           title='Available Credit'
           desc='$22,644,94'
           icon={RiBankLine}
-          flex='1'
         />
 
         <TandaVDivider display={{ base: 'none', md: 'block' }} />
