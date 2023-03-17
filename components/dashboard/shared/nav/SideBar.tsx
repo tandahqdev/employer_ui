@@ -63,7 +63,7 @@ export const SideBar = () => {
 
         <TandaHDivider />
 
-        <NavCard header='Finance' list={financeItems} />
+        <NavCard header='Financing' list={financeItems} />
 
         <TandaHDivider />
 

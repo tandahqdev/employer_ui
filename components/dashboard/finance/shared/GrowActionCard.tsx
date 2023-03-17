@@ -15,8 +15,6 @@ export const GrowActionCard = ({ children, header }: Props) => {
       border={DEFAULT_STYLES.border}
       display={{ base: 'none', lg: 'flex' }}
       borderRadius={DEFAULT_STYLES.borderRadius}
-      minH='127px'
-      maxH='127px'
       alignItems='flex-start'
       p='32px'
       gap='4'
