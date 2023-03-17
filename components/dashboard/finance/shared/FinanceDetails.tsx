@@ -93,13 +93,14 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
         justifyContent='center'
         flexDirection={{ base: 'column', md: 'row' }}
         colSpan={{ base: 1, lg: 3 }}
-        p={{ base: '10px', md: '20px' }}
+        p={{ base: '15px', md: '20px' }}
         gap='30px'
       >
         <FinanceCard
           title='Term cap'
           desc='12 months'
           icon={WiMoonAltWaxingCrescent6}
+          w='250px'
         />
 
         <TandaVDivider display={{ base: 'none', md: 'block' }} />
@@ -109,12 +110,13 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
           title='Available Credit'
           desc='$22,644,94'
           icon={RiBankLine}
+          w='350px'
         />
 
         <TandaVDivider display={{ base: 'none', md: 'block' }} />
         <TandaHDivider display={{ base: 'block', md: 'none' }} />
 
-        <FinanceCard title='Rate' desc='8.00%' icon={TbPercentage} />
+        <FinanceCard title='Rate' desc='8.00%' icon={TbPercentage} w='200px' />
       </GridItem>
 
       <GrowActionCard header={header}>{actionChildren}</GrowActionCard>
