@@ -10,10 +10,9 @@ interface Props extends LayoutProps {
 export const GrowActionCard = ({ children, header }: Props) => {
   return (
     <ColumnFlex
-      width='334px'
+      width={{ base: DEFAULT_STYLES.fullWidth, md: '334px' }}
       bgColor={DEFAULT_STYLES.white}
       border={DEFAULT_STYLES.border}
-      display={{ base: 'none', lg: 'flex' }}
       borderRadius={DEFAULT_STYLES.borderRadius}
       alignItems='flex-start'
       p='30px'

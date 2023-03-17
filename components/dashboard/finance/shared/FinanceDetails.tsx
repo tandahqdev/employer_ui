@@ -93,7 +93,7 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
         justifyContent='center'
         flexDirection={{ base: 'column', md: 'row' }}
         colSpan={{ base: 1, lg: 3 }}
-        p={{ base: '15px', md: '20px' }}
+        p={{ base: '15px', md: '20px', '2xl': '30px' }}
         gap='30px'
       >
         <FinanceCard
