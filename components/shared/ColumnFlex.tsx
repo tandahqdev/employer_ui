@@ -4,7 +4,7 @@ interface Props extends FlexProps, BoxProps {}
 
 export const ColumnFlex = ({ children, ...rest }: Props) => {
   return (
-    <Flex direction='column' {...rest}>
+    <Flex direction={rest.direction ?? 'column'} {...rest}>
       {children}
     </Flex>
   );

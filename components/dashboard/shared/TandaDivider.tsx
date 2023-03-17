@@ -1,22 +1,24 @@
 import { DEFAULT_STYLES } from '@/styles';
-import { Box } from '@chakra-ui/react';
+import { Box, BoxProps } from '@chakra-ui/react';
 
-export const TandaHDivider = () => {
+export const TandaHDivider = ({ ...r }: BoxProps) => {
   return (
     <Box
       w={DEFAULT_STYLES.fullWidth}
       border={`1px solid ${DEFAULT_STYLES.primaryColor}`}
       opacity={0.1}
+      {...r}
     />
   );
 };
 
-export const TandaVDivider = () => {
+export const TandaVDivider = ({ ...r }: BoxProps) => {
   return (
     <Box
       border={`1px solid ${DEFAULT_STYLES.primaryColor}`}
       opacity={0.1}
       height='100%'
+      {...r}
     />
   );
 };
