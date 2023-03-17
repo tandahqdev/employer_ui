@@ -33,7 +33,7 @@ export const theme = extendTheme({
       fontWeight: 400,
     },
     title: {
-      fontSize: '1.2rem',
+      fontSize: { base: '1rem', md: '1.2rem' },
       lineHeight: 1.3,
       color: DEFAULT_STYLES.primaryColor,
       fontWeight: 600,
@@ -45,7 +45,7 @@ export const theme = extendTheme({
       fontWeight: 400,
     },
     header: {
-      fontSize: '2rem',
+      fontSize: { base: '1.3rem', md: '2rem' },
       lineHeight: 1.5,
       color: DEFAULT_STYLES.primaryHeaderColor,
       fontWeight: 600,
@@ -65,7 +65,7 @@ export const theme = extendTheme({
       flexDirection: 'column',
       justifyContent: 'center',
       borderRadius: 16,
-      padding: { base: '10px', md: '30px' },
+      padding: { base: '15px', md: '30px' },
     },
     card: {
       border: '1px solid',

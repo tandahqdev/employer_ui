@@ -49,8 +49,19 @@ export const CreditDetails = () => {
   });
 
   return (
-    <GridItem minH='176px' layerStyle='gridItem' colSpan={2} gap='7'>
-      <Flex justify='space-between' align='center' w={DEFAULT_STYLES.fullWidth}>
+    <GridItem
+      minH='176px'
+      layerStyle='gridItem'
+      colSpan={{ base: 1, md: 2 }}
+      gap='7'
+    >
+      <Flex
+        justify='space-between'
+        gap={{ base: '1', md: 0 }}
+        align={{ base: 'flex-start', md: 'center' }}
+        flexDirection={{ base: 'column', md: 'row' }}
+        w={DEFAULT_STYLES.fullWidth}
+      >
         <Flex align='center' gap='1.5' w={DEFAULT_STYLES.fullWidth}>
           <Text
             textStyle='title'
@@ -71,7 +82,13 @@ export const CreditDetails = () => {
         </Button>
       </Flex>
 
-      <Flex justify='space-between' align='center' w={DEFAULT_STYLES.fullWidth}>
+      <Flex
+        justify='space-between'
+        gap={{ base: '4', md: 0 }}
+        align={{ base: 'flex-start', md: 'center' }}
+        flexDirection={{ base: 'column', md: 'row' }}
+        w={DEFAULT_STYLES.fullWidth}
+      >
         <ColumnFlex gap='6'>
           <Image src={pending} alt='Pending' />
           <Flex align='center' gap='2'>

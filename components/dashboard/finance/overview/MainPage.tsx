@@ -12,7 +12,7 @@ export const MainPage = () => {
   return (
     <SharedFinanceOverview>
       <CreditDetails />
-      <CongratulateBanner colSpan={2} showBtns />
+      <CongratulateBanner colSpan={{ base: 1, md: 2 }} showBtns />
 
       <ActionCard
         header='Grow'

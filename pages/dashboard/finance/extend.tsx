@@ -16,8 +16,8 @@ import { Grid, GridItem } from '@chakra-ui/react';
 const FinanceExtend = () => {
   const screenMain = false;
   const evScreen = false;
-  const Congratulations = false;
-  const financeS = true;
+  const Congratulations = true;
+  const financeS = false;
 
   const topbar = (
     <ActionTitle
