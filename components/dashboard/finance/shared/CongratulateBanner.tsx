@@ -1,5 +1,12 @@
 import Image from 'next/image';
-import { Flex, GridItem, GridItemProps, HStack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  GridItem,
+  GridItemProps,
+  HStack,
+  Text,
+} from '@chakra-ui/react';
 import { DEFAULT_STYLES } from '@/styles';
 import { ActionTitle, TandaVDivider } from '../../shared';
 import { OfferCard } from './OfferCard';
@@ -12,18 +19,7 @@ interface Props {
 
 export const CongratulateBanner = ({ colSpan, showBtns }: Props) => {
   return (
-    <GridItem
-      minH='212px'
-      border={DEFAULT_STYLES.border}
-      borderRadius={DEFAULT_STYLES.borderRadius}
-      bg={DEFAULT_STYLES.white}
-      display='flex'
-      flexDirection='column'
-      justifyContent='center'
-      colSpan={colSpan}
-      p='30px'
-      gap='7'
-    >
+    <GridItem minH='212px' layerStyle='gridItem' colSpan={colSpan} gap='7'>
       {showBtns && (
         <Flex align='center' gap='4'>
           <ActionTitle
@@ -52,7 +48,9 @@ export const CongratulateBanner = ({ colSpan, showBtns }: Props) => {
             Congràtulations, you’re ready to start with tanda financing
           </Text>
 
-          <Image src={party} alt='party' />
+          <Box display={{ base: 'none', md: 'flex' }}>
+            <Image src={party} alt='party' />
+          </Box>
         </Flex>
 
         <Text color={DEFAULT_STYLES.primaryColor} pt='1' opacity={0.4}>

@@ -46,7 +46,12 @@ export const ActionCard = ({
       position='relative'
       overflow='hidden'
     >
-      <HStack width='85%' align='center' justify='space-between' pb='4'>
+      <HStack
+        width={{ base: '90%', lg: '85%' }}
+        align='center'
+        justify='space-between'
+        pb='4'
+      >
         <ActionTitle
           header={header}
           headerColor={headerColor}
@@ -61,7 +66,7 @@ export const ActionCard = ({
 
       <TandaHDivider />
 
-      <Stack w='85%' pt='4' flex='1' gap='2'>
+      <Stack width={{ base: '90%', lg: '85%' }} pt='4' flex='1' gap='2'>
         <Text textStyle='title' maxW='60%'>
           {title}
         </Text>

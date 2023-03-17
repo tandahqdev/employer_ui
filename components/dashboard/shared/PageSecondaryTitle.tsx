@@ -4,7 +4,7 @@ import { Text } from '@chakra-ui/react';
 
 export const PageSecondaryTitle = () => {
   return (
-    <ColumnFlex gap='0.5'>
+    <ColumnFlex gap='0.5' px={DEFAULT_STYLES.mobilePx}>
       <Text textStyle='title'>Financing overview</Text>
 
       <Text

@@ -5,7 +5,7 @@ import { GridItem } from '@chakra-ui/react';
 
 export const SharedBannerContainer = ({ children }: LayoutProps) => {
   return (
-    <GridItem colSpan={{ base: 1, lg: 2 }} display='flex' minH='221'>
+    <GridItem colSpan={{ base: 1, md: 2 }} display='flex' minH='221'>
       <ColumnFlex
         bg={DEFAULT_STYLES.white}
         border={DEFAULT_STYLES.border}

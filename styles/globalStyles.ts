@@ -40,16 +40,11 @@ export const DEFAULT_STYLES = {
 };
 
 export const sharedGridStyles = {
-  gridTemplateColumns: { base: 'repeat(1,1fr)', lg: 'repeat(2,1fr)' },
+  gridTemplateColumns: { base: 'repeat(1,1fr)', md: 'repeat(2,1fr)' },
   w: DEFAULT_STYLES.pageWidth,
-  columnGap: '50px',
+  columnGap: { base: '20px', lg: '50px' },
   rowGap: '5',
   px: DEFAULT_STYLES.mobilePx,
   maxW: '1000px',
 };
 
-export const containerStyles = {
-  border: DEFAULT_STYLES.border,
-  borderRadius: DEFAULT_STYLES.borderRadius,
-  bg: DEFAULT_STYLES.white,
-};
