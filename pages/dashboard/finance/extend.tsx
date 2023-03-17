@@ -14,9 +14,9 @@ import { DashRoutes } from '@/utils';
 import { Grid, GridItem } from '@chakra-ui/react';
 
 const FinanceExtend = () => {
-  const screenMain = false;
-  const evScreen = false;
-  const Congratulations = true;
+  const screenMain = true;
+  const evScreen = true;
+  const Congratulations = false;
   const financeS = false;
 
   const topbar = (
