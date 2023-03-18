@@ -59,6 +59,9 @@ export const SideBar = () => {
           icon={AiTwotoneHome}
           title='Home'
           path={DashRoutes.dashboard}
+          onClick={() => {
+            upDateMediaQuery(false);
+          }}
         />
 
         <TandaHDivider />

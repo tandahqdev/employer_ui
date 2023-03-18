@@ -2,7 +2,7 @@ export class DashRoutes {
   static home = '/';
   static dashboard = '/dashboard';
 
-  // Finance
+  // Financing
   static dashboardFinanceOverview = `${this.dashboard}/finance`;
   static dashboardFinanceGrow = `${this.dashboardFinanceOverview}/grow`;
   static dashboardFinanceExtend = `${this.dashboardFinanceOverview}/extend`;
