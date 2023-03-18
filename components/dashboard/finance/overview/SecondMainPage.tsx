@@ -1,4 +1,4 @@
-import { growIcon, extendIcon, growcurve, extendcurve } from '@/store';
+import { growIcon, growcurve, extendIcon, extendcurve } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { AddIcon } from '@chakra-ui/icons';
@@ -8,7 +8,7 @@ import { CreditDetails } from './CreditDetails';
 import { SharedFinanceOverview } from './SharedFinanceOverview';
 import { Transaction } from './Transaction';
 
-export const MainPage = () => {
+export const SecondMainPage = () => {
   return (
     <SharedFinanceOverview>
       <CreditDetails />
@@ -44,7 +44,7 @@ export const MainPage = () => {
         leftIcon={<AddIcon />}
       />
 
-      <Transaction buttons={['Payment Schedule', 'Past Transactions']} />
+      <Transaction buttons={['Upcoming Debits', 'Complete Transactions']} />
     </SharedFinanceOverview>
   );
 };
