@@ -1,4 +1,4 @@
-import { TextProps } from '@chakra-ui/react';
+import { BackgroundProps, TextProps } from '@chakra-ui/react';
 import { StaticImageData } from 'next/image';
 import { ReactElement, ReactNode } from 'react';
 
@@ -7,8 +7,8 @@ export interface LayoutProps {
 }
 
 export interface IProps {
-  title: string;
-  desc: string;
+  title?: string;
+  desc?: string;
 }
 
 export interface NewPageItemsModel extends IProps {
@@ -31,4 +31,7 @@ export interface ActionCardModel extends IProps, ActionTitleModel {
   gradientImg?: StaticImageData;
   atEdge?: boolean;
   leftIcon?: ReactElement;
+  btnBg?: BackgroundProps['bg'];
+  details?: ReactNode;
+  showTexts?: boolean;
 }

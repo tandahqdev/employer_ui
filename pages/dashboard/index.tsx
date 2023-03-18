@@ -19,6 +19,7 @@ export default function Home() {
           desc='Convert future revenue into upfront capital, without debt or dilution.'
           btnText='Get started'
           path={DashRoutes.dashboardFinanceOverview}
+          showTexts
         />
 
         <ActionCard
@@ -29,6 +30,7 @@ export default function Home() {
           title='Banking for what  you are building'
           desc='Get access to the cash management account built for startups.'
           btnText='Get started'
+          showTexts
         />
       </Grid>
     </DashBoardLayout>

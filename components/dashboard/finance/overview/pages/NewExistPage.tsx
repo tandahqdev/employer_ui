@@ -21,6 +21,7 @@ export const NewExistPage = () => {
         path={DashRoutes.dashboardFinanceGrow}
         gradientImg={growcurve}
         atEdge
+        showTexts
       />
 
       <ActionCard
@@ -35,6 +36,7 @@ export const NewExistPage = () => {
         btnText='Learn more'
         path={DashRoutes.dashboardFinanceExtend}
         gradientImg={extendcurve}
+        showTexts
       />
     </SharedFinanceOverview>
   );

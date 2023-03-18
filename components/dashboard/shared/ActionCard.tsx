@@ -20,6 +20,9 @@ export const ActionCard = ({
   atEdge,
   gradientImg,
   leftIcon,
+  btnBg,
+  showTexts,
+  details,
 }: ActionCardModel) => {
   const buttonLink = (
     <Link
@@ -28,7 +31,14 @@ export const ActionCard = ({
         alignSelf: isShowTopBtn ? 'center' : 'flex-start',
       }}
     >
-      <Button variant='noBgBtn' onClick={onClick} leftIcon={leftIcon}>
+      <Button
+        variant='noBgBtn'
+        bg={btnBg}
+        border={btnBg ? 'none' : `1px solid ${DEFAULT_STYLES.darkGray}`}
+        color={btnBg ? DEFAULT_STYLES.borderColor : DEFAULT_STYLES.darkGray}
+        onClick={onClick}
+        leftIcon={leftIcon}
+      >
         {btnText}
       </Button>
     </Link>
@@ -46,43 +56,46 @@ export const ActionCard = ({
       position='relative'
       overflow='hidden'
     >
-      <HStack
-        width={{ base: '90%', lg: '85%' }}
-        align='center'
-        justify='space-between'
-        pb='4'
-      >
-        <ActionTitle
-          header={header}
-          headerColor={headerColor}
-          icon={icon}
-          textProps={{
-            fontSize: '1.3rem',
-          }}
-        />
+      <ColumnFlex width={{ base: '90%', lg: '85%' }}>
+        <HStack align='center' justify='space-between' pb='4'>
+          <ActionTitle
+            header={header}
+            headerColor={headerColor}
+            icon={icon}
+            textProps={{
+              fontSize: '1.3rem',
+            }}
+          />
 
-        {isShowTopBtn && buttonLink}
-      </HStack>
+          {isShowTopBtn && buttonLink}
+        </HStack>
+      </ColumnFlex>
 
       <TandaHDivider />
 
-      <Stack width={{ base: '90%', lg: '85%' }} pt='4' flex='1' gap='2'>
-        <Text textStyle='title' maxW='60%'>
-          {title}
-        </Text>
+      {showTexts && (
+        <Stack width={{ base: '90%', lg: '85%' }} pt='4' flex='1' gap='2'>
+          <Text textStyle='title' maxW='60%'>
+            {title}
+          </Text>
 
-        <Text
-          textStyle='bodyText'
-          maxW='324px'
-          color={DEFAULT_STYLES.primaryColor}
-          opacity={0.4}
-          flex='1'
-        >
-          {desc}
-        </Text>
+          <Text
+            textStyle='bodyText'
+            maxW='324px'
+            color={DEFAULT_STYLES.primaryColor}
+            opacity={0.4}
+            flex='1'
+          >
+            {desc}
+          </Text>
+        </Stack>
+      )}
 
+      <Stack width={{ base: '90%', lg: '85%' }}>
         {!isShowTopBtn && buttonLink}
       </Stack>
+
+      {details}
 
       {gradientImg && (
         <Box

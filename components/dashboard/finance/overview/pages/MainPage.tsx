@@ -26,6 +26,7 @@ export const MainPage = () => {
         path={DashRoutes.dashboardFinanceGrow}
         gradientImg={growcurve}
         atEdge
+        showTexts
         leftIcon={<AddIcon />}
       />
 
@@ -42,6 +43,7 @@ export const MainPage = () => {
         path={DashRoutes.dashboardFinanceExtend}
         gradientImg={extendcurve}
         leftIcon={<AddIcon />}
+        showTexts
       />
 
       <Transaction buttons={['Payment Schedule', 'Past Transactions']} />
