@@ -3,16 +3,14 @@ import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { AddIcon } from '@chakra-ui/icons';
 import { ActionCard } from '../../shared';
-import { CongratulateBanner } from '../shared';
-import { CreditDetails } from './CreditDetails';
+import { PaymentDetails } from './PaymentDetails';
 import { SharedFinanceOverview } from './SharedFinanceOverview';
 import { Transaction } from './Transaction';
 
 export const SecondMainPage = () => {
   return (
     <SharedFinanceOverview>
-      <CreditDetails />
-      <CongratulateBanner colSpan={{ base: 1, md: 2 }} showBtns />
+      <PaymentDetails />
 
       <ActionCard
         header='Grow'
