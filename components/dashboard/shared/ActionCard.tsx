@@ -23,6 +23,7 @@ export const ActionCard = ({
   btnBg,
   showTexts,
   details,
+  info,
 }: ActionCardModel) => {
   const buttonLink = (
     <Link
@@ -47,17 +48,15 @@ export const ActionCard = ({
   return (
     <ColumnFlex
       minH='350px'
-      rounded={DEFAULT_STYLES.borderRadius}
-      bg={DEFAULT_STYLES.white}
-      border={DEFAULT_STYLES.border}
+      layerStyle='card'
       align='center'
       pt='4'
       pb='5'
       position='relative'
       overflow='hidden'
     >
-      <ColumnFlex width={{ base: '90%', lg: '85%' }}>
-        <HStack align='center' justify='space-between' pb='4'>
+      <ColumnFlex width={{ base: '90%', lg: '85%' }} pb='4' gap='0.5'>
+        <HStack align='center' justify='space-between'>
           <ActionTitle
             header={header}
             headerColor={headerColor}
@@ -69,6 +68,15 @@ export const ActionCard = ({
 
           {isShowTopBtn && buttonLink}
         </HStack>
+
+        <Text
+          fontSize={DEFAULT_STYLES.fontSize}
+          fontWeight={DEFAULT_STYLES.semibold}
+          color={DEFAULT_STYLES.primaryColor}
+          opacity={0.4}
+        >
+          {info}
+        </Text>
       </ColumnFlex>
 
       <TandaHDivider />

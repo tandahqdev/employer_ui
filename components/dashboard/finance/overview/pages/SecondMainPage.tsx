@@ -21,6 +21,7 @@ export const SecondMainPage = () => {
         path={DashRoutes.dashboardFinanceGrow}
         leftIcon={<AddIcon />}
         btnBg={DEFAULT_STYLES.lightPurple}
+        info='2 active draws'
       />
 
       <ActionCard
@@ -32,6 +33,7 @@ export const SecondMainPage = () => {
         path={DashRoutes.dashboardFinanceExtend}
         leftIcon={<AddIcon />}
         btnBg={DEFAULT_STYLES.pink}
+        info='2 active draws'
       />
 
       <Transaction buttons={['Upcoming Debits', 'Complete Transactions']} />

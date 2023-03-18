@@ -34,4 +34,5 @@ export interface ActionCardModel extends IProps, ActionTitleModel {
   btnBg?: BackgroundProps['bg'];
   details?: ReactNode;
   showTexts?: boolean;
+  info?: string;
 }
