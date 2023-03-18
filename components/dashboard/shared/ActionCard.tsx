@@ -39,6 +39,7 @@ export const ActionCard = ({
         color={btnBg ? DEFAULT_STYLES.borderColor : DEFAULT_STYLES.darkGray}
         onClick={onClick}
         leftIcon={leftIcon}
+        size={{ base: 'smPadding', lg: 'lgPadding' }}
       >
         {btnText}
       </Button>

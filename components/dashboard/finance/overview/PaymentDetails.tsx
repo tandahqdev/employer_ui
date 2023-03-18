@@ -3,7 +3,7 @@ import { getDay } from '@/utils';
 import { Center, Flex, GridItem, Text } from '@chakra-ui/react';
 import { BsFillCreditCardFill } from 'react-icons/bs';
 import { WiMoonAltWaxingCrescent6 } from 'react-icons/wi';
-import { TandaVDivider } from '../../shared';
+import { TandaHDivider, TandaVDivider } from '../../shared';
 import { FinanceCard } from '../shared/FinanceCard';
 
 export const PaymentDetails = () => {
@@ -16,7 +16,7 @@ export const PaymentDetails = () => {
       colSpan={{ base: 1, md: 2 }}
       gap='7'
     >
-      <Flex align='center' gap='10'>
+      <Flex align='center' gap='10' direction={{ base: 'column', md: 'row' }}>
         <FinanceCard
           title='Next Payment'
           desc='$22,644,94'
@@ -29,7 +29,8 @@ export const PaymentDetails = () => {
           }
         />
 
-        <TandaVDivider />
+        <TandaVDivider display={{ base: 'none', md: 'block' }} />
+        <TandaHDivider display={{ base: 'block', md: 'none' }} />
 
         <FinanceCard
           title='Outstanding'

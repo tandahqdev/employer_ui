@@ -24,9 +24,8 @@ export const FinanceCard = ({ title, desc, icon, w, extra, info }: Props) => {
       justify='space-between'
     >
       <ColumnFlex
-        direction={{ base: 'row', md: 'column' }}
-        align={{ base: 'center', md: 'flex-start' }}
-        justify={{ base: 'space-between', md: 'flex-start' }}
+        direction={{ base: 'column', md: 'column' }}
+        align='flex-start'
         gap='12px'
       >
         <Flex align='center' color={DEFAULT_STYLES.primaryColor} gap='3'>
