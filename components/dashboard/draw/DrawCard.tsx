@@ -1,11 +1,18 @@
 import { DEFAULT_STYLES } from '@/styles';
-import { Box, Center, Flex, GridItem, Icon, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  Flex,
+  GridItem,
+  Icon,
+  Radio,
+  Text,
+} from '@chakra-ui/react';
 import { useState } from 'react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 
 export const DrawCard = () => {
   const [selectedIndex, setSelectedIndex] = useState([0]);
-
   const progressTab = [0, 1].map((_, i, arr) => {
     const showRightBar = i === 0;
     const showLeftBar = i === arr.length - 1;
@@ -72,6 +79,8 @@ export const DrawCard = () => {
 
         <Icon as={RiErrorWarningLine} color='#A3A7B7' />
       </Flex>
+
+      <Radio size='lg' />
     </GridItem>
   );
 };

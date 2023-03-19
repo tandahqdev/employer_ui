@@ -2,6 +2,7 @@ import { extendTheme } from '@chakra-ui/react';
 import { DEFAULT_STYLES } from '../globalStyles';
 import { buttonTheme } from './button';
 import { inputTheme } from './input';
+import { radioTheme } from './radio';
 import { selectTheme } from './select';
 import { spinnerTheme } from './spinner';
 
@@ -11,6 +12,7 @@ export const theme = extendTheme({
     Input: inputTheme,
     Spinner: spinnerTheme,
     Select: selectTheme,
+    Radio: radioTheme,
   },
   textStyles: {
     label: {
