@@ -23,7 +23,7 @@ export const SecondMainPage = () => {
         headerColor={DEFAULT_STYLES.lightPurple}
         btnText='New draw'
         isShowTopBtn
-        path={DashRoutes.dashboardFinanceGrow}
+        path={DashRoutes.draw}
         leftIcon={<AddIcon />}
         btnBg={DEFAULT_STYLES.lightPurple}
         info='2 active draws'

@@ -17,4 +17,5 @@ export class DashRoutes {
   static dashboardSettings = `${this.dashboard}/settings`;
   static dashboardHelp = `${this.dashboard}/help`;
   static faq = `${this.dashboard}/faq`;
+  static draw = `${this.dashboard}/draw`;
 }

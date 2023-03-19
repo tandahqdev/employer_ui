@@ -1,16 +1,19 @@
 import { ColumnFlex, IconBtn } from '@/components';
 import { useCustomMediaQuery } from '@/context';
 import { DEFAULT_STYLES } from '@/styles';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import { Center, Flex, HStack } from '@chakra-ui/react';
+import { HamburgerIcon, ChevronLeftIcon } from '@chakra-ui/icons';
+import { Center, Flex, HStack, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 
 interface Props {
   header?: ReactNode;
+  showBckBtn?: boolean;
 }
 
-export const Topbar = ({ header }: Props) => {
+export const Topbar = ({ header, showBckBtn }: Props) => {
   const { upDateMediaQuery } = useCustomMediaQuery();
+  const router = useRouter();
 
   return (
     <Flex
@@ -29,7 +32,31 @@ export const Topbar = ({ header }: Props) => {
         align='center'
         justify='space-between'
       >
-        <ColumnFlex>{header}</ColumnFlex>
+        <Flex align='center' gap='4'>
+          {showBckBtn && (
+            <Center
+              border='1px solid #E8ECF4'
+              rounded='4px'
+              cursor='pointer'
+              padding='4px 10px'
+              onClick={() => {
+                router.back();
+              }}
+              _hover={{
+                transform: 'scale(0.99)',
+              }}
+            >
+              <ChevronLeftIcon fontSize='1.3rem' />
+              <Text
+                color={DEFAULT_STYLES.primaryHeaderColor}
+                fontWeight={DEFAULT_STYLES.semibold}
+              >
+                Back
+              </Text>
+            </Center>
+          )}
+          <ColumnFlex>{header}</ColumnFlex>
+        </Flex>
 
         <Flex w='max-content' gap='4'>
           <Center
