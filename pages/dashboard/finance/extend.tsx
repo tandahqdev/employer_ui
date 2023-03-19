@@ -1,23 +1,18 @@
 import {
   ActionTitle,
-  ExistingBanner,
+  ExtendNewExistPage,
   FinanceDetails,
-  NewBanner,
   NewDrawBtn,
-  NewPageCard,
   SharedCongratulate,
 } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { extendIcon } from '@/store';
-import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
-import { DashRoutes } from '@/utils';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { DEFAULT_STYLES } from '@/styles';
 
 const FinanceExtend = () => {
   const screenMain = false;
-  const evScreen = true;
-  const Congratulations = false;
-  const financeS = true;
+  const Congratulations = true;
+  const financeS = false;
 
   const topbar = (
     <ActionTitle
@@ -29,7 +24,7 @@ const FinanceExtend = () => {
 
   return (
     <DashBoardLayout topBar={topbar}>
-      {Congratulations && <SharedCongratulate />}
+      {Congratulations && <SharedCongratulate title='Extend' />}
 
       {financeS && (
         <FinanceDetails
@@ -38,20 +33,7 @@ const FinanceExtend = () => {
         />
       )}
 
-      {screenMain && (
-        <Grid {...sharedGridStyles}>
-          <NewBanner />
-          {evScreen && <ExistingBanner />}
-          <GridItem width={{ base: DEFAULT_STYLES.fullWidth, md: '717px' }}>
-            <NewPageCard
-              title='Extend'
-              desc='Take control of your cash flows by investing in bigger things today
-          and paying back at your own pace.'
-              path={DashRoutes.dashboard}
-            />
-          </GridItem>
-        </Grid>
-      )}
+      {screenMain && <ExtendNewExistPage />}
     </DashBoardLayout>
   );
 };

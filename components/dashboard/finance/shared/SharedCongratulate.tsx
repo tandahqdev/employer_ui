@@ -4,7 +4,12 @@ import { HelpText, NewPageCard } from '../../shared';
 import { GrowActionCard } from './GrowActionCard';
 import { CongratulateBanner } from './CongratulateBanner';
 
-export const SharedCongratulate = () => {
+interface Props {
+  path?: string;
+  title: string;
+}
+
+export const SharedCongratulate = ({ path, title }: Props) => {
   return (
     <Grid
       gap='33px'
@@ -19,8 +24,9 @@ export const SharedCongratulate = () => {
 
       <GridItem colSpan={3}>
         <NewPageCard
-          title='Grow'
+          title={title}
           desc='Access up to 60% of your predictable ARR on day one. Fuel your growth without taking on debt or diluting our equity.'
+          path={path}
         />
       </GridItem>
     </Grid>
