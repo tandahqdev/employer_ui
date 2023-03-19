@@ -1,13 +1,5 @@
 import { DEFAULT_STYLES } from '@/styles';
-import {
-  Box,
-  Center,
-  Flex,
-  GridItem,
-  Icon,
-  Radio,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Center, Flex, GridItem, Icon, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 
@@ -79,8 +71,6 @@ export const DrawCard = () => {
 
         <Icon as={RiErrorWarningLine} color='#A3A7B7' />
       </Flex>
-
-      <Radio size='lg' />
     </GridItem>
   );
 };
