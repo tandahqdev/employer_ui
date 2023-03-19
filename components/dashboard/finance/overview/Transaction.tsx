@@ -1,4 +1,5 @@
 import { ColumnFlex } from '@/components/shared';
+import { TransactionData } from '@/models/finance';
 import { DEFAULT_STYLES } from '@/styles';
 import {
   GridItem,
@@ -17,17 +18,13 @@ import {
   Td,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { AiOutlineDownload } from 'react-icons/ai';
+import { AiFillInfoCircle, AiOutlineDownload } from 'react-icons/ai';
 import { RiErrorWarningLine } from 'react-icons/ri';
+import { WiMoonAltWaxingCrescent6 } from 'react-icons/wi';
 
 interface Props {
   buttons: string[];
-  tableData?: {
-    dueDate: string;
-    status: string;
-    expected: string;
-    outstanding: string;
-  }[];
+  tableData?: TransactionData[];
 }
 
 export const Transaction = ({ buttons, tableData }: Props) => {
@@ -49,7 +46,7 @@ export const Transaction = ({ buttons, tableData }: Props) => {
             : DEFAULT_STYLES.primaryHeaderColor
         }
         opacity={isSelected ? 1 : 0.5}
-        bg={isSelected ? 'rgba(110, 49, 240, 0.2)' : 'transparent'}
+        bg={isSelected ? DEFAULT_STYLES.lightPurpleBg : 'transparent'}
       >
         {text}
       </Button>
@@ -77,10 +74,43 @@ export const Transaction = ({ buttons, tableData }: Props) => {
 
   const renderTableBody = tableData?.map((item, i) => {
     return (
-      <Tr key={`${item.dueDate}_${i}`}>
-        <Td>inches</Td>
-        <Td isNumeric>millimetres (mm)</Td>
-        <Td isNumeric>25.4</Td>
+      <Tr key={`${item.outstanding}_${i}`} textStyle='desc'>
+        <Td>{item.dueDate}</Td>
+        <Td>
+          <Center
+            rounded={8}
+            p='8px 0px'
+            gap='3'
+            bg={
+              item.statusBg
+                ? DEFAULT_STYLES.lightPurpleBg
+                : DEFAULT_STYLES.lightGrayBg
+            }
+            color={
+              item.statusBg
+                ? DEFAULT_STYLES.lightPurple
+                : DEFAULT_STYLES.darkGray
+            }
+          >
+            <Icon
+              as={item.statusBg ? WiMoonAltWaxingCrescent6 : AiFillInfoCircle}
+            />
+            <Text
+              textStyle='desc'
+              textTransform='capitalize'
+              fontWeight={DEFAULT_STYLES.semibold}
+              color={
+                item.statusBg
+                  ? DEFAULT_STYLES.lightPurple
+                  : DEFAULT_STYLES.darkGray
+              }
+            >
+              {item.status}
+            </Text>
+          </Center>
+        </Td>
+        <Td isNumeric>{`$${item.paymentData.repay}`}</Td>
+        <Td isNumeric>{`$${item.paymentData.outstanding}`}</Td>
       </Tr>
     );
   });

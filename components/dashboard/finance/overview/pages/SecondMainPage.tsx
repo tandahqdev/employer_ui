@@ -1,5 +1,5 @@
 import { ActionCard, TandaHDivider } from '@/components';
-import { growIcon, extendIcon } from '@/store';
+import { growIcon, extendIcon, tableItems } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { AddIcon } from '@chakra-ui/icons';
@@ -71,7 +71,10 @@ export const SecondMainPage = () => {
         }
       />
 
-      <Transaction buttons={['Upcoming Debits', 'Complete Transactions']} />
+      <Transaction
+        buttons={['Upcoming Debits', 'Complete Transactions']}
+        tableData={tableItems}
+      />
     </SharedFinanceOverview>
   );
 };
