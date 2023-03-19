@@ -17,23 +17,20 @@ const DashboardDraw = () => {
           xl: 'repeat(2,627px 340px)',
           '2xl': 'repeat(2,727px 424px)',
         }}
+        alignItems='flex-start'
         px={DEFAULT_STYLES.mobilePx}
-        w='full'
+        w={DEFAULT_STYLES.fullWidth}
       >
         <GridItem
           colSpan={{ base: 1, lg: 'auto' }}
           minH='417px'
-          alignItems='center'
           layerStyle='gridItem'
-          gap='7'
         ></GridItem>
 
         <GridItem
           colSpan={{ base: 1, lg: 'auto' }}
           minH='598px'
-          alignItems='center'
           layerStyle='gridItem'
-          gap='7'
         ></GridItem>
       </Grid>
     </DashBoardLayout>
