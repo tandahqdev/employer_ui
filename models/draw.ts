@@ -1,6 +1,6 @@
 export interface DrawModel {
   selectedIndexs: number[];
-  term: PaymentTerms[];
+  terms: PaymentTerms[];
   repay: number;
   rate: number;
   total: number;
