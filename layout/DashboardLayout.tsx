@@ -6,9 +6,10 @@ import { ReactNode } from 'react';
 
 interface Props extends LayoutProps {
   topBar?: ReactNode;
+  showBckBtn?: boolean;
 }
 
-export const DashBoardLayout = ({ children, topBar }: Props) => {
+export const DashBoardLayout = ({ children, topBar, showBckBtn }: Props) => {
   return (
     <Flex
       width={DEFAULT_STYLES.fullWidth}
@@ -24,7 +25,7 @@ export const DashBoardLayout = ({ children, topBar }: Props) => {
         align='center'
         position='relative'
       >
-        <Topbar header={topBar} />
+        <Topbar header={topBar} showBckBtn={showBckBtn} />
 
         <Flex
           w={DEFAULT_STYLES.containerWidth}
