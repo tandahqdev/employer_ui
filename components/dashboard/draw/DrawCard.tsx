@@ -1,6 +1,7 @@
 import { DEFAULT_STYLES } from '@/styles';
-import { Box, Center, Flex, GridItem } from '@chakra-ui/react';
+import { Box, Center, Flex, GridItem, Icon, Text } from '@chakra-ui/react';
 import { useState } from 'react';
+import { RiErrorWarningLine } from 'react-icons/ri';
 
 export const DrawCard = () => {
   const [selectedIndex, setSelectedIndex] = useState([0]);
@@ -54,9 +55,22 @@ export const DrawCard = () => {
       layerStyle='gridItem'
       justifyContent='flex-start'
       gridRowStart={{ base: 1, lg: 'auto' }}
+      gap='5'
     >
       <Flex align='center' w={DEFAULT_STYLES.fullWidth} justify='center'>
         {progressTab}
+      </Flex>
+
+      <Flex align='center' gap='1.5' w={DEFAULT_STYLES.fullWidth}>
+        <Text
+          textStyle='title'
+          color={DEFAULT_STYLES.primaryHeaderColor}
+          fontSize='1.12rem'
+        >
+          Choose your payment terms
+        </Text>
+
+        <Icon as={RiErrorWarningLine} color='#A3A7B7' />
       </Flex>
     </GridItem>
   );
