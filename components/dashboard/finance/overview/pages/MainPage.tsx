@@ -2,11 +2,11 @@ import { growIcon, extendIcon, growcurve, extendcurve } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { AddIcon } from '@chakra-ui/icons';
-import { ActionCard } from '../../shared';
-import { CongratulateBanner } from '../shared/CongratulateBanner';
-import { CreditDetails } from './CreditDetails';
-import { SharedFinanceOverview } from './SharedFinanceOverview';
-import { Transaction } from './Transaction';
+import { ActionCard } from '../../../shared';
+import { CongratulateBanner } from '../../shared';
+import { CreditDetails } from '../CreditDetails';
+import { SharedFinanceOverview } from '../SharedFinanceOverview';
+import { Transaction } from '../Transaction';
 
 export const MainPage = () => {
   return (
@@ -26,6 +26,7 @@ export const MainPage = () => {
         path={DashRoutes.dashboardFinanceGrow}
         gradientImg={growcurve}
         atEdge
+        showTexts
         leftIcon={<AddIcon />}
       />
 
@@ -42,9 +43,10 @@ export const MainPage = () => {
         path={DashRoutes.dashboardFinanceExtend}
         gradientImg={extendcurve}
         leftIcon={<AddIcon />}
+        showTexts
       />
 
-      <Transaction />
+      <Transaction buttons={['Payment Schedule', 'Past Transactions']} />
     </SharedFinanceOverview>
   );
 };

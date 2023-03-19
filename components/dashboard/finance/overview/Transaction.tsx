@@ -1,4 +1,5 @@
 import { ColumnFlex } from '@/components/shared';
+import { TransactionData } from '@/models/finance';
 import { DEFAULT_STYLES } from '@/styles';
 import {
   GridItem,
@@ -13,38 +14,44 @@ import {
   Th,
   Thead,
   Tr,
+  Tbody,
+  Td,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { AiOutlineDownload } from 'react-icons/ai';
+import { AiFillInfoCircle, AiOutlineDownload } from 'react-icons/ai';
 import { RiErrorWarningLine } from 'react-icons/ri';
+import { WiMoonAltWaxingCrescent6 } from 'react-icons/wi';
 
-export const Transaction = () => {
+interface Props {
+  buttons: string[];
+  tableData?: TransactionData[];
+}
+
+export const Transaction = ({ buttons, tableData }: Props) => {
   const [isActive, setIsActive] = useState(0);
 
-  const renderButtons = ['Payment Schedule', 'Past Transactions'].map(
-    (text, i) => {
-      const isSelected = isActive === i;
+  const renderButtons = buttons.map((text, i) => {
+    const isSelected = isActive === i;
 
-      return (
-        <Button
-          key={`${text}_${i}`}
-          size='smPadding'
-          onClick={() => {
-            setIsActive(i);
-          }}
-          color={
-            isSelected
-              ? DEFAULT_STYLES.lightPurple
-              : DEFAULT_STYLES.primaryHeaderColor
-          }
-          opacity={isSelected ? 1 : 0.5}
-          bg={isSelected ? 'rgba(110, 49, 240, 0.2)' : 'transparent'}
-        >
-          {text}
-        </Button>
-      );
-    }
-  );
+    return (
+      <Button
+        key={`${text}_${i}`}
+        size='smPadding'
+        onClick={() => {
+          setIsActive(i);
+        }}
+        color={
+          isSelected
+            ? DEFAULT_STYLES.lightPurple
+            : DEFAULT_STYLES.primaryHeaderColor
+        }
+        opacity={isSelected ? 1 : 0.5}
+        bg={isSelected ? DEFAULT_STYLES.lightPurpleBg : 'transparent'}
+      >
+        {text}
+      </Button>
+    );
+  });
 
   const renderTableHeaders = [
     'Due Date',
@@ -62,6 +69,49 @@ export const Transaction = () => {
       >
         <Text>{h}</Text>
       </Th>
+    );
+  });
+
+  const renderTableBody = tableData?.map((item, i) => {
+    return (
+      <Tr key={`${item.outstanding}_${i}`} textStyle='desc'>
+        <Td>{item.dueDate}</Td>
+        <Td>
+          <Center
+            rounded={8}
+            p='8px 0px'
+            gap='3'
+            bg={
+              item.statusBg
+                ? DEFAULT_STYLES.lightPurpleBg
+                : DEFAULT_STYLES.lightGrayBg
+            }
+            color={
+              item.statusBg
+                ? DEFAULT_STYLES.lightPurple
+                : DEFAULT_STYLES.darkGray
+            }
+          >
+            <Icon
+              as={item.statusBg ? WiMoonAltWaxingCrescent6 : AiFillInfoCircle}
+            />
+            <Text
+              textStyle='desc'
+              textTransform='capitalize'
+              fontWeight={DEFAULT_STYLES.semibold}
+              color={
+                item.statusBg
+                  ? DEFAULT_STYLES.lightPurple
+                  : DEFAULT_STYLES.darkGray
+              }
+            >
+              {item.status}
+            </Text>
+          </Center>
+        </Td>
+        <Td isNumeric>{`$${item.paymentData.repay}`}</Td>
+        <Td isNumeric>{`$${item.paymentData.outstanding}`}</Td>
+      </Tr>
     );
   });
 
@@ -112,16 +162,20 @@ export const Transaction = () => {
           <Thead>
             <Tr>{renderTableHeaders}</Tr>
           </Thead>
+
+          <Tbody>{renderTableBody}</Tbody>
         </Table>
       </TableContainer>
 
-      <ColumnFlex mt='10' gap='1'>
-        <Text textStyle='title' color={DEFAULT_STYLES.darkGray}>
-          You don’t have any payments pending
-        </Text>
+      {!tableData && (
+        <ColumnFlex mt='10' gap='1'>
+          <Text textStyle='title' color={DEFAULT_STYLES.darkGray}>
+            You don’t have any payments pending
+          </Text>
 
-        <Button variant='textBtn'>Launch a new draw</Button>
-      </ColumnFlex>
+          <Button variant='textBtn'>Launch a new draw</Button>
+        </ColumnFlex>
+      )}
     </GridItem>
   );
 };

@@ -1,8 +1,8 @@
+import { NewBanner, ExistingBanner, ActionCard } from '@/components';
 import { growIcon, growcurve, extendIcon, extendcurve } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
-import { NewBanner, ExistingBanner, ActionCard } from '../../shared';
-import { SharedFinanceOverview } from './SharedFinanceOverview';
+import { SharedFinanceOverview } from '../SharedFinanceOverview';
 
 export const NewExistPage = () => {
   return (
@@ -21,6 +21,7 @@ export const NewExistPage = () => {
         path={DashRoutes.dashboardFinanceGrow}
         gradientImg={growcurve}
         atEdge
+        showTexts
       />
 
       <ActionCard
@@ -35,6 +36,7 @@ export const NewExistPage = () => {
         btnText='Learn more'
         path={DashRoutes.dashboardFinanceExtend}
         gradientImg={extendcurve}
+        showTexts
       />
     </SharedFinanceOverview>
   );
