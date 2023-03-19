@@ -1,6 +1,6 @@
 import { DEFAULT_STYLES } from '@/styles';
 import { Box, Center, Flex, GridItem } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export const DrawCard = () => {
   const [selectedIndex, setSelectedIndex] = useState([0]);
