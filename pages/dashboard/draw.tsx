@@ -1,10 +1,38 @@
 import { Header } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { DEFAULT_STYLES } from '@/styles';
-import { Grid, GridItem } from '@chakra-ui/react';
+import {
+  Grid,
+  GridItem,
+  Table,
+  TableContainer,
+  Text,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 
 const DashboardDraw = () => {
   const topbar = <Header>New draw set up</Header>;
+
+  const renderTableHeaders = [
+    'Month',
+    'New Draw',
+    'Existing Draws',
+    'Total',
+  ].map((h, i, arr) => {
+    const isNumeric = i === arr.length - 1 || i === arr.length - 2;
+    return (
+      <Th
+        key={`${h}+${i}`}
+        isNumeric={isNumeric}
+        color={DEFAULT_STYLES.primaryHeaderColor}
+        opacity={0.8}
+      >
+        <Text>{h}</Text>
+      </Th>
+    );
+  });
 
   return (
     <DashBoardLayout topBar={topbar} showBckBtn>
@@ -25,7 +53,25 @@ const DashboardDraw = () => {
           colSpan={{ base: 1, lg: 'auto' }}
           minH='417px'
           layerStyle='gridItem'
-        ></GridItem>
+          justifyContent='flex-start'
+          gap='50px'
+        >
+          <Text
+            textStyle='title'
+            color={DEFAULT_STYLES.primaryHeaderColor}
+            fontSize='1.4rem'
+          >
+            Payment Schedule
+          </Text>
+
+          <TableContainer minW={DEFAULT_STYLES.fullWidth}>
+            <Table variant='simple'>
+              <Thead>
+                <Tr>{renderTableHeaders}</Tr>
+              </Thead>
+            </Table>
+          </TableContainer>
+        </GridItem>
 
         <GridItem
           colSpan={{ base: 1, lg: 'auto' }}

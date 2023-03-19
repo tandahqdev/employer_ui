@@ -157,7 +157,7 @@ export const Transaction = ({ buttons, tableData }: Props) => {
         </Center>
       </Flex>
 
-      <TableContainer w={DEFAULT_STYLES.fullWidth}>
+      <TableContainer minW={DEFAULT_STYLES.fullWidth}>
         <Table variant='simple'>
           <Thead>
             <Tr>{renderTableHeaders}</Tr>
