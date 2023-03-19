@@ -1,7 +1,7 @@
 import { ColumnFlex } from '@/components/shared';
 import { DashBoardLayout } from '@/layout';
 import { LayoutProps } from '@/models';
-import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
+import { sharedGridStyles } from '@/styles';
 import { Grid } from '@chakra-ui/react';
 import { WelcomeCard, PageSecondaryTitle } from '../../shared';
 
@@ -10,7 +10,7 @@ export const SharedFinanceOverview = ({ children }: LayoutProps) => {
 
   return (
     <DashBoardLayout topBar={<WelcomeCard name='John' />}>
-      <ColumnFlex gap='5' w={DEFAULT_STYLES.fullWidth}>
+      <ColumnFlex gap='5' w='max-content'>
         <PageSecondaryTitle />
 
         <Grid {...sharedGridStyles}>{children}</Grid>
