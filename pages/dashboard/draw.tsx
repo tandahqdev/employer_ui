@@ -74,6 +74,17 @@ const DashboardDraw = () => {
               </Thead>
             </Table>
           </TableContainer>
+
+          <Text
+            textStyle='bodyText'
+            color={DEFAULT_STYLES.primaryHeaderColor}
+            fontWeight={DEFAULT_STYLES.mediumbold}
+            mt='10'
+            alignSelf='center'
+            textAlign='center'
+          >
+            Add a new draw amount to preview your schedule
+          </Text>
         </GridItem>
 
         <GridItem
