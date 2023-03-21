@@ -7,6 +7,7 @@ import {
   Button,
   Center,
   Flex,
+  Grid,
   GridItem,
   Icon,
   Radio,
@@ -193,9 +194,24 @@ export const DrawCard = () => {
         }
       />
 
+      <Grid w='full' gridTemplateColumns='repeat(2,1fr)' gap='2'>
+        <Button
+          bg={DEFAULT_STYLES.lightGrayBg}
+          color={DEFAULT_STYLES.primaryHeaderColor}
+          size='smPadding'
+        >
+          Cancel
+        </Button>
+
+        <Button variant='darkBtn' size='smPadding' isDisabled>
+          Confirm
+        </Button>
+      </Grid>
+
       <Button
         variant='darkBtn'
         size='smPadding'
+        isDisabled
         rightIcon={<ChevronRightIcon fontSize='1.5rem' />}
       >
         Continue
