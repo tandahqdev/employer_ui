@@ -47,7 +47,7 @@ export const theme = extendTheme({
       fontWeight: 600,
     },
     desc: {
-      fontSize: '0.8rem',
+      fontSize: '0.73rem',
       lineHeight: 1.4,
       color: DEFAULT_STYLES.primaryColor,
       fontWeight: 400,

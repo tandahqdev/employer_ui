@@ -1,4 +1,4 @@
-import { ColumnFlex } from '@/components/shared';
+import { ColumnFlex, Desc } from '@/components/shared';
 import { DEFAULT_STYLES } from '@/styles';
 import { BackgroundProps, Box, Flex, Icon, Text } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
@@ -46,15 +46,7 @@ export const FinanceActionCardDetails = ({
           {subTitle}
         </Text>
 
-        {priceDesc && (
-          <Text
-            textStyle='desc'
-            color={DEFAULT_STYLES.primaryColor}
-            opacity={0.4}
-          >
-            From {priceDesc}
-          </Text>
-        )}
+        {priceDesc && <Desc>From {priceDesc}</Desc>}
       </Flex>
 
       {bg && (

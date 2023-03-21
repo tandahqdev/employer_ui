@@ -134,7 +134,7 @@ export const DrawCard = () => {
         <Icon as={RiErrorWarningLine} color='#A3A7B7' />
       </Flex>
 
-      <ColumnFlex gap='3' mt='1'>
+      <ColumnFlex gap='3.5' mt='1'>
         {renderTabs}
       </ColumnFlex>
 
@@ -178,7 +178,9 @@ export const DrawCard = () => {
         </Text>
       </Flex>
 
-      <Desc alignSelf='flex-end'>$670, 000,00 Credit remaining</Desc>
+      <Desc fontWeight={DEFAULT_STYLES.mediumbold} alignSelf='flex-end'>
+        $670, 000,00 Credit remaining
+      </Desc>
 
       <Button
         variant='darkBtn'

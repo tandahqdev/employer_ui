@@ -1,3 +1,4 @@
+import { Desc } from '@/components';
 import { useModalContext } from '@/context';
 import { DEFAULT_STYLES } from '@/styles';
 import {
@@ -39,12 +40,12 @@ export const DrawModal = () => {
         >
           <Text textStyle='title'>Your Draw is all set!</Text>
 
-          <Text textStyle='desc'>
+          <Desc>
             You have successfully launched your Draw. It will remain on a
             pending state until we review it internally. This process usually
             takes a few minutes to a couple of hours. Once reviewed, the cash
             will be transferred to your account and you will be notified.
-          </Text>
+          </Desc>
 
           <Button
             w='full'
