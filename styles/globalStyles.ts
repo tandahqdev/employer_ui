@@ -17,7 +17,7 @@ export const DEFAULT_STYLES = {
   primaryColor: '#19224C',
   lightPrimaryColor: '#FDE7E3',
   bgColor: '#F6F6F6',
-  lightPurpleBg: 'rgba(110, 49, 240, 0.2)',
+  lightPurpleBg: 'rgba(110, 49, 240, 0.1)',
   lightGrayBg: 'rgba(177, 185, 192, 0.2);',
   errorColor: 'red',
   successColor: '#34A853',

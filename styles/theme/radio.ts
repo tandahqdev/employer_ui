@@ -13,6 +13,11 @@ const baseStyle = definePartsStyle({
       bg: DEFAULT_STYLES.white,
       color: DEFAULT_STYLES.lightPurple,
       borderColor: DEFAULT_STYLES.lightPurple,
+      _hover: {
+        bg: DEFAULT_STYLES.white,
+        color: DEFAULT_STYLES.lightPurple,
+        borderColor: DEFAULT_STYLES.lightPurple,
+      },
     },
   },
 });

@@ -1,14 +1,24 @@
+import { ColumnFlex } from '@/components';
+import { DrawChangeHandler, useDrawStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
-import { Box, Center, Flex, GridItem, Icon, Text } from '@chakra-ui/react';
-import { useState } from 'react';
+import {
+  Box,
+  Center,
+  Flex,
+  GridItem,
+  Icon,
+  Radio,
+  Text,
+} from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 
 export const DrawCard = () => {
-  const [selectedIndex, setSelectedIndex] = useState([0]);
+  const { terms, selectedIndexs } = useDrawStore();
+
   const progressTab = [0, 1].map((_, i, arr) => {
     const showRightBar = i === 0;
     const showLeftBar = i === arr.length - 1;
-    const isActive = selectedIndex.includes(i);
+    const isActive = selectedIndexs.includes(i);
 
     return (
       <Flex align='center' key={i}>
@@ -27,7 +37,7 @@ export const DrawCard = () => {
           h='24px'
           border={`3px solid ${DEFAULT_STYLES.lightPurple}`}
           onClick={() => {
-            setSelectedIndex((p) => [...p, i]);
+            DrawChangeHandler.onIndexChange(i);
           }}
         >
           <Center
@@ -42,6 +52,56 @@ export const DrawCard = () => {
         {showRightBar && (
           <Box w='39px' h='3px' bg={DEFAULT_STYLES.lightPurple} />
         )}
+      </Flex>
+    );
+  });
+
+  const renderTabs = terms.map((term) => {
+    return (
+      <Flex
+        key={term.id}
+        border={
+          term.isChecked ? `2px solid ${DEFAULT_STYLES.lightPurple}` : 'none'
+        }
+        bg={term.isChecked ? DEFAULT_STYLES.lightPurpleBg : 'transparent'}
+        transition='background 0.3s linear'
+        minH='63px'
+        rounded='6px'
+        padding='12px 18px'
+        align='center'
+        gap='20px'
+        cursor='pointer'
+        onClick={() => {
+          if (term.isChecked) {
+            DrawChangeHandler.onTermCheckedChange(false, term.id);
+          } else {
+            DrawChangeHandler.onTermCheckedChange(true, term.id);
+          }
+        }}
+      >
+        <Radio isChecked={term.isChecked} />
+
+        <ColumnFlex>
+          <Text textStyle='bodyText' color={DEFAULT_STYLES.darkGray}>
+            <span
+              style={{
+                color: DEFAULT_STYLES.lightPurple,
+                fontWeight: DEFAULT_STYLES.semibold,
+              }}
+            >
+              {term.month} month{term.month > 1 ? 's' : ''}
+            </span>{' '}
+            of 2.00%
+          </Text>
+
+          <Text
+            textStyle='bodyText'
+            color={DEFAULT_STYLES.darkGray}
+            fontWeight={DEFAULT_STYLES.mediumbold}
+          >
+            ${term.price.toFixed(2)}/month
+          </Text>
+        </ColumnFlex>
       </Flex>
     );
   });
@@ -71,6 +131,10 @@ export const DrawCard = () => {
 
         <Icon as={RiErrorWarningLine} color='#A3A7B7' />
       </Flex>
+
+      <ColumnFlex gap='4' mt='4'>
+        {renderTabs}
+      </ColumnFlex>
     </GridItem>
   );
 };
