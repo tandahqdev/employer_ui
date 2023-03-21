@@ -13,6 +13,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
+import { DrawInfo } from './DrawInfo';
 
 export const DrawCard = () => {
   const { terms, selectedIndexs, repay, rate, total } = useDrawStore();
@@ -181,6 +182,16 @@ export const DrawCard = () => {
       <Desc fontWeight={DEFAULT_STYLES.mediumbold} alignSelf='flex-end'>
         $670, 000,00 Credit remaining
       </Desc>
+
+      <DrawInfo
+        isInfo
+        text={
+          <Text textStyle='desc' color={DEFAULT_STYLES.darkGray}>
+            Use the field above to enter the amount of funds you’d like to
+            receive in your bank account.
+          </Text>
+        }
+      />
 
       <Button
         variant='darkBtn'
