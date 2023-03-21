@@ -22,6 +22,11 @@ const bgBtn = defineStyle({
   color: DEFAULT_STYLES.white,
 });
 
+const darkBtn = defineStyle({
+  background: DEFAULT_STYLES.primaryHeaderColor,
+  color: DEFAULT_STYLES.white,
+});
+
 const textBtn = defineStyle((_) => ({
   backgroundColor: 'transparent',
   color: DEFAULT_STYLES.lightPurple,
@@ -45,7 +50,7 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
       transform: 'scale(0.99)',
     },
     _hover: {
-      opacity: 0.8,
+      opacity: 0.9,
       _disabled: {
         bg: 'gray',
       },
@@ -58,6 +63,7 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     noBgBtn,
     bgBtn,
     textBtn,
+    darkBtn,
   },
   defaultProps: {
     size: 'lgPadding',

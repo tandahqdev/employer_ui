@@ -158,6 +158,7 @@ export const FinanceDetails = ({ header, actionChildren }: Props) => {
           </Center>
         </Flex>
 
+        {/* Todo: Change to table */}
         <ColumnFlex w={DEFAULT_STYLES.fullWidth} gap='4'>
           <Grid templateColumns='repeat(6,1fr)' gap='8'>
             {renderDrawsHeaders}

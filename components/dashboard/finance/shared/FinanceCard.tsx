@@ -1,4 +1,4 @@
-import { ColumnFlex } from '@/components';
+import { ColumnFlex, Desc } from '@/components';
 import { IProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { Center, Flex, Icon, Text } from '@chakra-ui/react';
@@ -45,16 +45,7 @@ export const FinanceCard = ({ title, desc, icon, w, extra, info }: Props) => {
           {desc}
         </Text>
 
-        {info && (
-          <Text
-            textStyle='desc'
-            color={DEFAULT_STYLES.primaryColor}
-            opacity={0.4}
-            flex='1'
-          >
-            {info}
-          </Text>
-        )}
+        {info && <Desc flex='1'>{info}</Desc>}
       </ColumnFlex>
 
       {extra}

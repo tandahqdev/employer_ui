@@ -1,19 +1,23 @@
-import { ColumnFlex } from '@/components';
+import { ColumnFlex, Desc, TandaHDivider } from '@/components';
 import { DrawChangeHandler, useDrawStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
+import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
   Box,
+  Button,
   Center,
   Flex,
+  Grid,
   GridItem,
   Icon,
   Radio,
   Text,
 } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
+import { DrawInfo } from './DrawInfo';
 
 export const DrawCard = () => {
-  const { terms, selectedIndexs } = useDrawStore();
+  const { terms, selectedIndexs, repay, rate, total } = useDrawStore();
 
   const progressTab = [0, 1].map((_, i, arr) => {
     const showRightBar = i === 0;
@@ -132,9 +136,86 @@ export const DrawCard = () => {
         <Icon as={RiErrorWarningLine} color='#A3A7B7' />
       </Flex>
 
-      <ColumnFlex gap='3' mt='4'>
+      <ColumnFlex gap='3.5' mt='1'>
         {renderTabs}
       </ColumnFlex>
+
+      <Flex w={DEFAULT_STYLES.fullWidth} justify='space-between'>
+        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
+          Amount to pay back
+        </Text>
+
+        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
+          ${repay.toFixed(2)}
+        </Text>
+      </Flex>
+
+      <Flex w={DEFAULT_STYLES.fullWidth} justify='space-between'>
+        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
+          Rate
+        </Text>
+
+        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
+          <span
+            style={{
+              fontSize: '0.87rem',
+              fontWeight: 400,
+            }}
+          >
+            ({rate.toFixed(2)}%)
+          </span>{' '}
+          ${repay.toFixed(2)}
+        </Text>
+      </Flex>
+
+      <TandaHDivider />
+
+      <Flex w={DEFAULT_STYLES.fullWidth} justify='space-between'>
+        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
+          Total Payout
+        </Text>
+
+        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
+          ${total.toFixed(2)}
+        </Text>
+      </Flex>
+
+      <Desc fontWeight={DEFAULT_STYLES.mediumbold} alignSelf='flex-end'>
+        $670, 000,00 Credit remaining
+      </Desc>
+
+      <DrawInfo
+        isInfo
+        text={
+          <Text textStyle='desc' color={DEFAULT_STYLES.darkGray}>
+            Use the field above to enter the amount of funds you’d like to
+            receive in your bank account.
+          </Text>
+        }
+      />
+
+      <Grid w='full' gridTemplateColumns='repeat(2,1fr)' gap='2'>
+        <Button
+          bg={DEFAULT_STYLES.lightGrayBg}
+          color={DEFAULT_STYLES.primaryHeaderColor}
+          size='smPadding'
+        >
+          Cancel
+        </Button>
+
+        <Button variant='darkBtn' size='smPadding' isDisabled>
+          Confirm
+        </Button>
+      </Grid>
+
+      <Button
+        variant='darkBtn'
+        size='smPadding'
+        isDisabled
+        rightIcon={<ChevronRightIcon fontSize='1.5rem' />}
+      >
+        Continue
+      </Button>
     </GridItem>
   );
 };

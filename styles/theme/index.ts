@@ -40,8 +40,14 @@ export const theme = extendTheme({
       color: DEFAULT_STYLES.primaryColor,
       fontWeight: 600,
     },
+    subtitle: {
+      fontSize: '1rem',
+      lineHeight: 1.3,
+      color: DEFAULT_STYLES.darkGray,
+      fontWeight: 600,
+    },
     desc: {
-      fontSize: '0.8rem',
+      fontSize: '0.73rem',
       lineHeight: 1.4,
       color: DEFAULT_STYLES.primaryColor,
       fontWeight: 400,
@@ -51,6 +57,11 @@ export const theme = extendTheme({
       lineHeight: 1.5,
       color: DEFAULT_STYLES.primaryHeaderColor,
       fontWeight: 600,
+    },
+    tiny: {
+      fontSize: '0.625rem',
+      lineHeight: 1.8,
+      color: DEFAULT_STYLES.darkGray,
     },
   },
   colors: {

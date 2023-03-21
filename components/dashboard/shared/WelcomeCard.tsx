@@ -1,6 +1,5 @@
-import { Text } from '@chakra-ui/react';
 import { getDay } from '@/utils';
-import { ColumnFlex } from '@/components';
+import { ColumnFlex, Desc } from '@/components';
 import { Header } from './Header';
 import { DEFAULT_STYLES } from '@/styles';
 
@@ -12,13 +11,12 @@ export const WelcomeCard = ({ name }: Props) => {
   return (
     <ColumnFlex>
       <Header>{`Welcome back, ${name}`}</Header>
-      <Text
-        textStyle='desc'
+      <Desc
         fontWeight={DEFAULT_STYLES.semibold}
         color={DEFAULT_STYLES.darkGray}
       >
         {getDay(true)}
-      </Text>
+      </Desc>
     </ColumnFlex>
   );
 };
