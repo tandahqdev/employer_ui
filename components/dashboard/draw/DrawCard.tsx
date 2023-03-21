@@ -134,7 +134,7 @@ export const DrawCard = () => {
         <Icon as={RiErrorWarningLine} color='#A3A7B7' />
       </Flex>
 
-      <ColumnFlex gap='3' mt='4'>
+      <ColumnFlex gap='3' mt='1'>
         {renderTabs}
       </ColumnFlex>
 
