@@ -12,8 +12,8 @@ import { DashRoutes } from '@/utils';
 
 const FinanceGrow = () => {
   const screenMain = false;
-  const congratulations = true;
-  const financeS = false;
+  const congratulations = false;
+  const financeS = true;
 
   const topbar = (
     <ActionTitle

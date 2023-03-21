@@ -13,8 +13,7 @@ export const NewDrawBtn = ({ btnText, onClick }: Props) => {
   return (
     <Button
       width={DEFAULT_STYLES.fullWidth}
-      bg={DEFAULT_STYLES.primaryHeaderColor}
-      border='1px solid #2B2B2B'
+      variant='darkBtn'
       rounded={8}
       onClick={() => {
         onClick?.();
