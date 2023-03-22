@@ -11,10 +11,12 @@ import {
   Grid,
   GridItem,
   Icon,
+  Input,
   Radio,
   Text,
 } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
+import { DrawFlexItem } from './DrawFlexItem';
 import { DrawInfo } from './DrawInfo';
 
 export const DrawCard = () => {
@@ -145,49 +147,66 @@ export const DrawCard = () => {
         </>
       )}
 
-      <Flex w={DEFAULT_STYLES.fullWidth} justify='space-between'>
-        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
-          Amount to pay back
-        </Text>
+      {isConclusionTab && (
+        <>
+          <DrawFlexItem title='Term Cap' desc='3 months' />
+          <DrawFlexItem title='Rate' desc={<>({rate.toFixed(2)}%)</>} />
+          <DrawFlexItem
+            title='Available Credit'
+            desc={
+              <span style={{ color: DEFAULT_STYLES.lightPurple }}>
+                $920,000.00
+              </span>
+            }
+          />
 
-        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
-          ${repay.toFixed(2)}
-        </Text>
-      </Flex>
+          <TandaHDivider />
+        </>
+      )}
 
-      <Flex w={DEFAULT_STYLES.fullWidth} justify='space-between'>
-        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
-          Rate
-        </Text>
-
-        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
-          <span
-            style={{
-              fontSize: '0.87rem',
-              fontWeight: 400,
-            }}
-          >
-            ({rate.toFixed(2)}%)
-          </span>{' '}
-          ${repay.toFixed(2)}
-        </Text>
-      </Flex>
+      <DrawFlexItem title='Amount to pay back' desc={`$${repay.toFixed(2)}`} />
+      <DrawFlexItem
+        title='Fee'
+        desc={
+          <>
+            <span
+              style={{
+                fontSize: '0.87rem',
+                fontWeight: 400,
+              }}
+            >
+              ({rate.toFixed(2)}%)
+            </span>{' '}
+            ${repay.toFixed(2)}
+          </>
+        }
+      />
 
       <TandaHDivider />
 
-      <Flex w={DEFAULT_STYLES.fullWidth} justify='space-between'>
-        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
-          Total Payout
-        </Text>
+      <DrawFlexItem
+        title='Total Payout'
+        desc={
+          isConclusionTab ? (
+            <Input
+              variant='tandaXs'
+              value={total}
+              type='number'
+              onChange={(e) => {
+                DrawChangeHandler.onTotalChange(e.target.valueAsNumber);
+              }}
+            />
+          ) : (
+            `$${total.toFixed(2)}`
+          )
+        }
+      />
 
-        <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
-          ${total.toFixed(2)}
-        </Text>
-      </Flex>
-
-      <Desc fontWeight={DEFAULT_STYLES.mediumbold} alignSelf='flex-end'>
-        $670, 000,00 Credit remaining
-      </Desc>
+      {isInitTab && (
+        <Desc fontWeight={DEFAULT_STYLES.mediumbold} alignSelf='flex-end'>
+          $670, 000,00 Credit remaining
+        </Desc>
+      )}
 
       {isConclusionTab && (
         <>

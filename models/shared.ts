@@ -8,7 +8,7 @@ export interface LayoutProps {
 
 export interface IProps {
   title?: string;
-  desc?: string;
+  desc?: ReactNode;
 }
 
 export interface NewPageItemsModel extends IProps {

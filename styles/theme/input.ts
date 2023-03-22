@@ -4,6 +4,7 @@ import {
   createMultiStyleConfigHelpers,
   defineStyle,
 } from '@chakra-ui/react';
+import { DEFAULT_STYLES } from '../globalStyles';
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(inputAnatomy.keys);
@@ -27,6 +28,22 @@ const tanda2 = definePartsStyle({
   },
 });
 
+const tandaXs = definePartsStyle({
+  field: {
+    border: '2px solid',
+    borderColor: '#DEE5E9',
+    background: 'transparent',
+    borderRadius: '4px',
+    transition: 'all 0.3s ease-in-out',
+    h: '37px',
+    w: '123px',
+    _focus: {
+      border: '1px solid',
+      borderColor: DEFAULT_STYLES.lightPurple,
+    },
+  },
+});
+
 // How to define sizes
 const tandaXl = defineStyle({
   px: '4',
@@ -38,10 +55,9 @@ const sizes = {
 };
 
 export const inputTheme: ComponentMultiStyleConfig = defineMultiStyleConfig({
-  variants: { tanda, tanda2 },
+  variants: { tanda, tanda2, tandaXs },
   sizes,
   defaultProps: {
     size: 'xl',
   },
 });
-
