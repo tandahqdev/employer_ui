@@ -4,24 +4,22 @@ import { DrawChangeHandler, drawTab, useDrawStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
-  Box,
   Button,
-  Center,
   Flex,
   Grid,
   GridItem,
   Icon,
   Input,
-  Radio,
   Text,
 } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { DrawFlexItem } from './DrawFlexItem';
 import { DrawInfo } from './DrawInfo';
+import { DrawInitCard } from './DrawInitCard';
+import { DrawTab } from './DrawTab';
 
 export const DrawCard = () => {
   const { terms, selectedIndexs, repay, rate, total } = useDrawStore();
-
   const isInitTab = selectedIndexs.at(-1) === DrawStatus.Initialisation;
   const isConclusionTab = selectedIndexs.at(-1) === DrawStatus.Conclusion;
 
@@ -31,86 +29,17 @@ export const DrawCard = () => {
     const isActive = selectedIndexs.includes(i);
 
     return (
-      <Flex align='center' key={i}>
-        {showLeftBar && (
-          <Box
-            w='19px'
-            h='3px'
-            transition='all 0.3s ease'
-            bg={isActive ? DEFAULT_STYLES.lightPurple : '#DBD7F4'}
-          />
-        )}
-
-        <Center
-          borderRadius='full'
-          w='24px'
-          h='24px'
-          border={`3px solid ${DEFAULT_STYLES.lightPurple}`}
-        >
-          <Center
-            w='14px'
-            h='14px'
-            bg={DEFAULT_STYLES.lightPurple}
-            borderRadius='full'
-            transition='all 0.3s ease'
-            transform={isActive ? 'scale(1)' : 'scale(0)'}
-          />
-        </Center>
-        {showRightBar && (
-          <Box w='39px' h='3px' bg={DEFAULT_STYLES.lightPurple} />
-        )}
-      </Flex>
+      <DrawTab
+        showLeftBar={showLeftBar}
+        showRightBar={showRightBar}
+        isActive={isActive}
+        key={i}
+      />
     );
   });
 
   const renderTabs = terms.map((term) => {
-    return (
-      <Flex
-        key={term.id}
-        border={
-          term.isChecked ? `2px solid ${DEFAULT_STYLES.lightPurple}` : 'none'
-        }
-        bg={term.isChecked ? DEFAULT_STYLES.lightPurpleBg : 'transparent'}
-        transition='background 0.3s linear'
-        minH='63px'
-        rounded='6px'
-        padding='12px 18px'
-        align='center'
-        gap='20px'
-        cursor='pointer'
-        onClick={() => {
-          if (term.isChecked) {
-            DrawChangeHandler.onTermCheckedChange(false, term.id);
-          } else {
-            DrawChangeHandler.onTermCheckedChange(true, term.id);
-          }
-        }}
-      >
-        <Radio isChecked={term.isChecked} />
-
-        <ColumnFlex>
-          <Text textStyle='bodyText' color={DEFAULT_STYLES.darkGray}>
-            <span
-              style={{
-                color: DEFAULT_STYLES.lightPurple,
-                fontWeight: DEFAULT_STYLES.semibold,
-              }}
-            >
-              {term.month} month{term.month > 1 ? 's' : ''}
-            </span>{' '}
-            of 2.00%
-          </Text>
-
-          <Text
-            textStyle='bodyText'
-            color={DEFAULT_STYLES.darkGray}
-            fontWeight={DEFAULT_STYLES.mediumbold}
-          >
-            ${term.price.toFixed(2)}/month
-          </Text>
-        </ColumnFlex>
-      </Flex>
-    );
+    return <DrawInitCard {...term} key={term.id} />;
   });
 
   return (
@@ -165,6 +94,7 @@ export const DrawCard = () => {
       )}
 
       <DrawFlexItem title='Amount to pay back' desc={`$${repay.toFixed(2)}`} />
+
       <DrawFlexItem
         title='Fee'
         desc={
@@ -191,6 +121,12 @@ export const DrawCard = () => {
             <Input
               variant='tandaXs'
               value={total}
+              isInvalid
+              _invalid={{
+                border: '1px solid',
+                borderColor: DEFAULT_STYLES.errorColor,
+              }}
+              textAlign='right'
               type='number'
               onChange={(e) => {
                 DrawChangeHandler.onTotalChange(e.target.valueAsNumber);
@@ -244,9 +180,9 @@ export const DrawCard = () => {
             DrawChangeHandler.onIndexChange(DrawStatus.Conclusion);
           }
         }}
-        rightIcon={<ChevronRightIcon fontSize='1.5rem' />}
+        rightIcon={total ? undefined : <ChevronRightIcon fontSize='1.5rem' />}
       >
-        Continue
+        {total ? 'Review your credit' : 'Continue'}
       </Button>
     </GridItem>
   );
