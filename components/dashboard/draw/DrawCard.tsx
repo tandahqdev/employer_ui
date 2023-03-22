@@ -121,11 +121,6 @@ export const DrawCard = () => {
             <Input
               variant='tandaXs'
               value={total}
-              isInvalid
-              _invalid={{
-                border: '1px solid',
-                borderColor: DEFAULT_STYLES.errorColor,
-              }}
               textAlign='right'
               type='number'
               onChange={(e) => {
@@ -156,19 +151,21 @@ export const DrawCard = () => {
             }
           />
 
-          <Grid w='full' gridTemplateColumns='repeat(2,1fr)' gap='2'>
-            <Button
-              bg={DEFAULT_STYLES.lightGrayBg}
-              color={DEFAULT_STYLES.primaryHeaderColor}
-              size='smPadding'
-            >
-              Cancel
-            </Button>
+          {!!total && (
+            <Grid w='full' gridTemplateColumns='repeat(2,1fr)' gap='2'>
+              <Button
+                bg={DEFAULT_STYLES.lightGrayBg}
+                color={DEFAULT_STYLES.primaryHeaderColor}
+                size='smPadding'
+              >
+                Cancel
+              </Button>
 
-            <Button variant='darkBtn' size='smPadding' isDisabled>
-              Confirm
-            </Button>
-          </Grid>
+              <Button variant='darkBtn' size='smPadding' isDisabled>
+                Confirm
+              </Button>
+            </Grid>
+          )}
         </>
       )}
 
