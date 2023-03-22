@@ -45,7 +45,7 @@ export const DrawCard = () => {
   return (
     <GridItem
       colSpan={{ base: 1, md: 'auto', lg: 'auto' }}
-      minH='598px'
+      minH='473px'
       width={{ base: 'auto', md: '374px', lg: 'auto' }}
       layerStyle='gridItem'
       justifyContent='flex-start'
