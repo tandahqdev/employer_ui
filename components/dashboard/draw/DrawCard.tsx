@@ -1,5 +1,6 @@
 import { ColumnFlex, Desc, TandaHDivider } from '@/components';
-import { DrawChangeHandler, useDrawStore } from '@/store';
+import { DrawStatus } from '@/models';
+import { DrawChangeHandler, drawTab, useDrawStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
@@ -19,7 +20,10 @@ import { DrawInfo } from './DrawInfo';
 export const DrawCard = () => {
   const { terms, selectedIndexs, repay, rate, total } = useDrawStore();
 
-  const progressTab = [0, 1].map((_, i, arr) => {
+  const isInitTab = selectedIndexs.at(-1) === DrawStatus.Initialisation;
+  const isConclusionTab = selectedIndexs.at(-1) === DrawStatus.Conclusion;
+
+  const progressTab = drawTab.map((_, i, arr) => {
     const showRightBar = i === 0;
     const showLeftBar = i === arr.length - 1;
     const isActive = selectedIndexs.includes(i);
@@ -40,9 +44,6 @@ export const DrawCard = () => {
           w='24px'
           h='24px'
           border={`3px solid ${DEFAULT_STYLES.lightPurple}`}
-          onClick={() => {
-            DrawChangeHandler.onIndexChange(i);
-          }}
         >
           <Center
             w='14px'
@@ -124,21 +125,25 @@ export const DrawCard = () => {
         {progressTab}
       </Flex>
 
-      <Flex align='center' gap='1.5' w={DEFAULT_STYLES.fullWidth}>
-        <Text
-          textStyle='title'
-          color={DEFAULT_STYLES.primaryHeaderColor}
-          fontSize='1.12rem'
-        >
-          Choose your payment terms
-        </Text>
+      {isInitTab && (
+        <>
+          <Flex align='center' gap='1.5' w={DEFAULT_STYLES.fullWidth}>
+            <Text
+              textStyle='title'
+              color={DEFAULT_STYLES.primaryHeaderColor}
+              fontSize='1.12rem'
+            >
+              Choose your payment terms
+            </Text>
 
-        <Icon as={RiErrorWarningLine} color='#A3A7B7' />
-      </Flex>
+            <Icon as={RiErrorWarningLine} color='#A3A7B7' />
+          </Flex>
 
-      <ColumnFlex gap='3.5' mt='1'>
-        {renderTabs}
-      </ColumnFlex>
+          <ColumnFlex gap='3.5' mt='1'>
+            {renderTabs}
+          </ColumnFlex>
+        </>
+      )}
 
       <Flex w={DEFAULT_STYLES.fullWidth} justify='space-between'>
         <Text textStyle='subtitle' color={DEFAULT_STYLES.darkGray}>
@@ -184,34 +189,42 @@ export const DrawCard = () => {
         $670, 000,00 Credit remaining
       </Desc>
 
-      <DrawInfo
-        isInfo
-        text={
-          <Text textStyle='desc' color={DEFAULT_STYLES.darkGray}>
-            Use the field above to enter the amount of funds you’d like to
-            receive in your bank account.
-          </Text>
-        }
-      />
+      {isConclusionTab && (
+        <>
+          <DrawInfo
+            isInfo
+            text={
+              <Text textStyle='desc' color={DEFAULT_STYLES.darkGray}>
+                Use the field above to enter the amount of funds you’d like to
+                receive in your bank account.
+              </Text>
+            }
+          />
 
-      <Grid w='full' gridTemplateColumns='repeat(2,1fr)' gap='2'>
-        <Button
-          bg={DEFAULT_STYLES.lightGrayBg}
-          color={DEFAULT_STYLES.primaryHeaderColor}
-          size='smPadding'
-        >
-          Cancel
-        </Button>
+          <Grid w='full' gridTemplateColumns='repeat(2,1fr)' gap='2'>
+            <Button
+              bg={DEFAULT_STYLES.lightGrayBg}
+              color={DEFAULT_STYLES.primaryHeaderColor}
+              size='smPadding'
+            >
+              Cancel
+            </Button>
 
-        <Button variant='darkBtn' size='smPadding' isDisabled>
-          Confirm
-        </Button>
-      </Grid>
+            <Button variant='darkBtn' size='smPadding' isDisabled>
+              Confirm
+            </Button>
+          </Grid>
+        </>
+      )}
 
       <Button
         variant='darkBtn'
         size='smPadding'
-        isDisabled
+        onClick={() => {
+          if (isInitTab) {
+            DrawChangeHandler.onIndexChange(DrawStatus.Conclusion);
+          }
+        }}
         rightIcon={<ChevronRightIcon fontSize='1.5rem' />}
       >
         Continue
