@@ -1,7 +1,8 @@
 export interface DrawModel {
-  selectedIndexs: number[];
+  selectedIndexs: DrawStatus[];
   terms: PaymentTerms[];
   repay: number;
+  selectedTerms?: PaymentTerms;
   rate: number;
   total: number;
   id: string;
@@ -12,4 +13,9 @@ export interface PaymentTerms {
   month: number;
   price: number;
   id: string;
+}
+
+export enum DrawStatus {
+  Initialisation = 0,
+  Conclusion = 1,
 }

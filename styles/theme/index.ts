@@ -63,6 +63,12 @@ export const theme = extendTheme({
       lineHeight: 1.8,
       color: DEFAULT_STYLES.darkGray,
     },
+    bolderBody: {
+      fontSize: '0.87rem',
+      fontWeight: 600,
+      lineHeight: 1.4,
+      color: DEFAULT_STYLES.darkGray,
+    },
   },
   colors: {
     tandaColors: {

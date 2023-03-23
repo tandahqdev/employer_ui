@@ -6,19 +6,20 @@ import {
   ModalContent,
   ModalCloseButton,
   ModalBody,
-  Text,
   Button,
 } from '@chakra-ui/react';
 
-export const DrawModal = () => {
-  const { isOpen, onClose } = useModalContext();
+export const TandaModal = () => {
+  const { isOpen, onClose, btn, onClick, onClickAction, data } =
+    useModalContext();
 
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
       isCentered
-      motionPreset='slideInRight'
+      motionPreset='slideInBottom'
+      size='sm'
     >
       <ModalOverlay />
       <ModalContent>
@@ -35,24 +36,25 @@ export const DrawModal = () => {
           flexDirection='column'
           gap='3'
           minH='240px'
+          pt='10'
+          pb='7'
           justifyContent='center'
         >
-          <Text textStyle='title'>Your Draw is all set!</Text>
+          {data}
 
-          <Text textStyle='desc' opacity={0.7}>
-            You have successfully launched your Draw. It will remain on a
-            pending state until we review it internally. This process usually
-            takes a few minutes to a couple of hours. Once reviewed, the cash
-            will be transferred to your account and you will be notified.
-          </Text>
-
-          <Button
-            w={DEFAULT_STYLES.fullWidth}
-            variant='darkBtn'
-            size='smPadding'
-          >
-            View all draws
-          </Button>
+          {btn.text && (
+            <Button
+              w={DEFAULT_STYLES.fullWidth}
+              variant='darkBtn'
+              size='smPadding'
+              isDisabled={btn.isDisabled}
+              onClick={() => {
+                onClick(onClickAction);
+              }}
+            >
+              {btn.text}
+            </Button>
+          )}
         </ModalBody>
       </ModalContent>
     </Modal>
