@@ -1,35 +1,16 @@
 import { ColumnFlex, InputComp } from '@/components';
-import { useModalContext } from '@/context';
 import { useDrawStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { Text } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
 import { TandaHDivider } from '../shared';
 import { DrawFlexItem } from './DrawFlexItem';
 
 export const ConfirmDrawCard = () => {
   const { repay, rate } = useDrawStore();
-  const { updateBtn, btn } = useModalContext();
-  const [isTest] = useState(false);
   const sharedStyles = {
     px: '3',
     pb: '3',
   };
-
-  useEffect(() => {
-    if (isTest) {
-      updateBtn({
-        ...btn,
-        isDisabled: false,
-      });
-    } else {
-      updateBtn({
-        ...btn,
-        isDisabled: true,
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isTest]);
 
   return (
     <ColumnFlex width='full' gap='3'>

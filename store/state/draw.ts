@@ -21,5 +21,6 @@ interface Draw extends DrawModel {
 
 export const useDrawStore = create<Draw>((set) => ({
   ...initialState,
+  selectedTerms: initialState.terms[0],
   reset: () => set(() => ({ ...initialState, id: nanoid() })),
 }));
