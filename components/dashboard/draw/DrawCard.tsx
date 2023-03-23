@@ -1,4 +1,5 @@
 import { ColumnFlex, Desc, TandaHDivider } from '@/components';
+import { useModalContext } from '@/context';
 import { DrawStatus } from '@/models';
 import { DrawChangeHandler, drawTab, useDrawStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
@@ -13,6 +14,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
+import { ConfirmDrawCard } from './ConfirmDrawCard';
 import { DrawFlexItem } from './DrawFlexItem';
 import { DrawInfo } from './DrawInfo';
 import { DrawInitCard } from './DrawInitCard';
@@ -20,6 +22,7 @@ import { DrawTab } from './DrawTab';
 
 export const DrawCard = () => {
   const { terms, selectedIndexs, repay, rate, total } = useDrawStore();
+  const { updateData, onOpen, updateBtn } = useModalContext();
   const isInitTab = selectedIndexs.at(-1) === DrawStatus.Initialisation;
   const isConclusionTab = selectedIndexs.at(-1) === DrawStatus.Conclusion;
 
@@ -175,6 +178,13 @@ export const DrawCard = () => {
         onClick={() => {
           if (isInitTab) {
             DrawChangeHandler.onIndexChange(DrawStatus.Conclusion);
+          } else {
+            updateData(<ConfirmDrawCard />);
+            onOpen();
+            updateBtn({
+              text: 'Confirm Submission',
+              isDisabled: true,
+            });
           }
         }}
         rightIcon={total ? undefined : <ChevronRightIcon fontSize='1.5rem' />}

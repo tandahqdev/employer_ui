@@ -6,7 +6,7 @@ interface Props {
   onClick?: () => void;
 }
 
-export const DrawBtn = ({ btnText, onClick }: Props) => {
+export const UtilsBtn = ({ btnText, onClick }: Props) => {
   return (
     <Button
       width={DEFAULT_STYLES.fullWidth}

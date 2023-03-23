@@ -9,8 +9,8 @@ import {
   Button,
 } from '@chakra-ui/react';
 
-export const DrawModal = () => {
-  const { isOpen, onClose, btnText, onClick, onClickAction, data } =
+export const TandaModal = () => {
+  const { isOpen, onClose, btn, onClick, onClickAction, data } =
     useModalContext();
 
   return (
@@ -18,12 +18,12 @@ export const DrawModal = () => {
       isOpen={isOpen}
       onClose={onClose}
       isCentered
-      motionPreset='slideInRight'
+      motionPreset='slideInBottom'
+      size='sm'
     >
       <ModalOverlay />
-      <ModalContent position='relative'>
+      <ModalContent>
         <ModalCloseButton
-          position='absolute'
           border={DEFAULT_STYLES.border}
           rounded='full'
           fontSize='0.8rem'
@@ -36,21 +36,25 @@ export const DrawModal = () => {
           flexDirection='column'
           gap='3'
           minH='240px'
-          py='2.5'
+          pt='10'
+          pb='7'
           justifyContent='center'
         >
           {data}
 
-          <Button
-            w={DEFAULT_STYLES.fullWidth}
-            variant='darkBtn'
-            size='smPadding'
-            onClick={() => {
-              onClick(onClickAction);
-            }}
-          >
-            {btnText}
-          </Button>
+          {btn.text && (
+            <Button
+              w={DEFAULT_STYLES.fullWidth}
+              variant='darkBtn'
+              size='smPadding'
+              isDisabled={btn.isDisabled}
+              onClick={() => {
+                onClick(onClickAction);
+              }}
+            >
+              {btn.text}
+            </Button>
+          )}
         </ModalBody>
       </ModalContent>
     </Modal>

@@ -2,6 +2,11 @@ import { LayoutProps } from '@/models';
 import { useDisclosure } from '@chakra-ui/react';
 import { createContext, ReactNode, useContext, useState } from 'react';
 // * This is an interesting method that I am using
+
+export interface BtnModel {
+  text?: string;
+  isDisabled?: boolean;
+}
 interface ModalContextModel {
   isOpen: boolean;
   onClose: () => void;
@@ -11,8 +16,8 @@ interface ModalContextModel {
   updateClickAction?: (e?: () => void) => void;
   data: ReactNode;
   updateData: (data: ReactNode) => void;
-  btnText: string;
-  updateBtn: (e: string) => void;
+  btn: BtnModel;
+  updateBtn: (e: BtnModel) => void;
 }
 
 const ModalContext = createContext<ModalContextModel>({
@@ -22,7 +27,9 @@ const ModalContext = createContext<ModalContextModel>({
   onClick: () => {},
   data: '',
   updateData: () => {},
-  btnText: '',
+  btn: {
+    text: '',
+  },
   updateBtn: () => {},
   updateClickAction: () => {},
   onClickAction: () => {},
@@ -31,7 +38,10 @@ const ModalContext = createContext<ModalContextModel>({
 export const ModalContextProvider = ({ children }: LayoutProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [data, setData] = useState<ReactNode>('');
-  const [btn, setBtn] = useState('');
+  const [btn, setBtn] = useState<BtnModel>({
+    text: '',
+    isDisabled: false,
+  });
   const [clickAction, setClickAction] = useState<VoidFunction | undefined>();
 
   const onClick = (e?: () => void) => {
@@ -42,7 +52,7 @@ export const ModalContextProvider = ({ children }: LayoutProps) => {
     setData(e);
   };
 
-  const updateBtn = (e: string) => {
+  const updateBtn = (e: BtnModel) => {
     setBtn(e);
   };
 
@@ -59,7 +69,7 @@ export const ModalContextProvider = ({ children }: LayoutProps) => {
         onClick,
         data,
         updateData,
-        btnText: btn,
+        btn,
         updateBtn,
         onClickAction: clickAction,
         updateClickAction,

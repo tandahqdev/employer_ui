@@ -3,7 +3,7 @@ import {
   ActionTitle,
   FinanceDetails,
   GrowNewExistPage,
-  DrawBtn,
+  UtilsBtn,
   SharedCongratulate,
 } from '@/components';
 import { DashBoardLayout } from '@/layout';
@@ -43,7 +43,7 @@ const FinanceGrow = () => {
                 width: DEFAULT_STYLES.fullWidth,
               }}
             >
-              <DrawBtn btnText='New draw' />
+              <UtilsBtn btnText='New draw' />
             </Link>
           }
         />
