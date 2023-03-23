@@ -26,6 +26,8 @@ export const DrawCard = () => {
   const isInitTab = selectedIndexs.at(-1) === DrawStatus.Initialisation;
   const isConclusionTab = selectedIndexs.at(-1) === DrawStatus.Conclusion;
 
+  
+
   const progressTab = drawTab.map((_, i, arr) => {
     const showRightBar = i === 0;
     const showLeftBar = i === arr.length - 1;
