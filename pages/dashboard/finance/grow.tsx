@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import {
   ActionTitle,
   FinanceDetails,
   GrowNewExistPage,
-  NewDrawBtn,
+  DrawBtn,
   SharedCongratulate,
 } from '@/components';
 import { DashBoardLayout } from '@/layout';
@@ -35,7 +36,16 @@ const FinanceGrow = () => {
       {financeS && (
         <FinanceDetails
           header='Need more funds?'
-          actionChildren={<NewDrawBtn btnText='New draw' />}
+          actionChildren={
+            <Link
+              href={DashRoutes.draw}
+              style={{
+                width: DEFAULT_STYLES.fullWidth,
+              }}
+            >
+              <DrawBtn btnText='New draw' />
+            </Link>
+          }
         />
       )}
 
@@ -45,3 +55,12 @@ const FinanceGrow = () => {
 };
 
 export default FinanceGrow;
+
+// <Text textStyle='subtitle'>Your Draw is all set!</Text>
+
+//         <Text textStyle='desc' opacity={0.7}>
+//           You have successfully launched your Draw. It will remain on a
+//           pending state until we review it internally. This process usually
+//           takes a few minutes to a couple of hours. Once reviewed, the cash
+//           will be transferred to your account and you will be notified.
+//         </Text>

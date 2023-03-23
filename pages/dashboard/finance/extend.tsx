@@ -2,7 +2,7 @@ import {
   ActionTitle,
   ExtendNewExistPage,
   FinanceDetails,
-  NewDrawBtn,
+  DrawBtn,
   SharedCongratulate,
 } from '@/components';
 import { DashBoardLayout } from '@/layout';
@@ -29,7 +29,7 @@ const FinanceExtend = () => {
       {financeS && (
         <FinanceDetails
           header='Finance new expenses?'
-          actionChildren={<NewDrawBtn btnText='Select Expenses' />}
+          actionChildren={<DrawBtn btnText='Select Expenses' />}
         />
       )}
 

@@ -6,12 +6,12 @@ import {
   ModalContent,
   ModalCloseButton,
   ModalBody,
-  Text,
   Button,
 } from '@chakra-ui/react';
 
 export const DrawModal = () => {
-  const { isOpen, onClose } = useModalContext();
+  const { isOpen, onClose, btnText, onClick, onClickAction, data } =
+    useModalContext();
 
   return (
     <Modal
@@ -21,8 +21,9 @@ export const DrawModal = () => {
       motionPreset='slideInRight'
     >
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent position='relative'>
         <ModalCloseButton
+          position='absolute'
           border={DEFAULT_STYLES.border}
           rounded='full'
           fontSize='0.8rem'
@@ -35,23 +36,20 @@ export const DrawModal = () => {
           flexDirection='column'
           gap='3'
           minH='240px'
+          py='2.5'
           justifyContent='center'
         >
-          <Text textStyle='title'>Your Draw is all set!</Text>
-
-          <Text textStyle='desc' opacity={0.7}>
-            You have successfully launched your Draw. It will remain on a
-            pending state until we review it internally. This process usually
-            takes a few minutes to a couple of hours. Once reviewed, the cash
-            will be transferred to your account and you will be notified.
-          </Text>
+          {data}
 
           <Button
             w={DEFAULT_STYLES.fullWidth}
             variant='darkBtn'
             size='smPadding'
+            onClick={() => {
+              onClick(onClickAction);
+            }}
           >
-            View all draws
+            {btnText}
           </Button>
         </ModalBody>
       </ModalContent>

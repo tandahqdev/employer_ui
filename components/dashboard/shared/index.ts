@@ -5,7 +5,7 @@ export * from './ExistingBanner';
 export * from './Header';
 export * from './HelpText';
 export * from './NewBanner';
-export * from './NewDrawBtn';
+export * from './DrawBtn';
 export * from './NewPageCard';
 export * from './PageSecondaryTitle';
 export * from './SharedBannerContainer';

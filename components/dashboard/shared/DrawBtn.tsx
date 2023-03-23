@@ -1,4 +1,3 @@
-import { useModalContext } from '@/context';
 import { DEFAULT_STYLES } from '@/styles';
 import { Button } from '@chakra-ui/react';
 
@@ -7,9 +6,7 @@ interface Props {
   onClick?: () => void;
 }
 
-export const NewDrawBtn = ({ btnText, onClick }: Props) => {
-  const { onOpen } = useModalContext();
-
+export const DrawBtn = ({ btnText, onClick }: Props) => {
   return (
     <Button
       width={DEFAULT_STYLES.fullWidth}
@@ -17,7 +14,6 @@ export const NewDrawBtn = ({ btnText, onClick }: Props) => {
       rounded={8}
       onClick={() => {
         onClick?.();
-        onOpen();
       }}
       size='smPadding'
     >
