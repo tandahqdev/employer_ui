@@ -11,6 +11,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 const baseStyle = definePartsStyle({
   field: {
+    borderRadius: '4px',
     _invalid: {
       border: '2px solid',
       borderColor: DEFAULT_STYLES.errorColor,

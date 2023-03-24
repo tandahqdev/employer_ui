@@ -63,7 +63,7 @@ export const InputComp = ({
     h: lgPadding ? '48px' : '40px',
     width: DEFAULT_STYLES.fullWidth,
     _placeholder: textStyles.placeholder,
-    ...textStyles.body,
+    ...textStyles.bodyText,
   };
 
   return (
