@@ -1,53 +1,46 @@
 import React, { HTMLInputTypeAttribute } from 'react';
-import { UseFormRegisterReturn } from 'react-hook-form';
 import { ReactNode } from 'react';
 import {
-  Button,
-  Flex,
   FormControl,
   FormControlProps,
+  FormHelperText,
   FormLabel,
-  FormLabelProps,
   Input,
   InputGroup,
   InputProps,
   InputRightElement,
   Text,
-  TextProps,
 } from '@chakra-ui/react';
-import { DEFAULT_STYLES } from '@/styles';
+import { UseFormRegisterReturn } from 'react-hook-form';
+import { DEFAULT_STYLES, textStyles } from '@/styles';
 
 interface Props {
-  mainLabel?: string;
-  secondaryLabel?: string;
+  // Pass either label or placeholder for either one to show
+  label?: string;
   placeholder?: string;
   errorMessage?: string;
-  helper?: String;
-  formWidth?: number | string;
-  formWidthMedium?: string | number;
+  helperText?: string;
 
   id?: string;
   type?: HTMLInputTypeAttribute;
   value?: string;
-
+  lgPadding?: boolean;
   register?: UseFormRegisterReturn;
+  // Use this when not using register
   options?: {
     custom: (e: string) => void;
   };
-  onClickSecondaryLabel?: () => void;
-  onClickHelper?: () => void;
 
-  formStyle?: FormControlProps;
+  // For passing additional styles to elements
   inputStyle?: InputProps;
-  labelStyles?: FormLabelProps;
-  errorStyles?: TextProps;
+  formStyle?: FormControlProps;
   rightAddon?: ReactNode;
+  // This is when I just wanted to use the form label and error of this inputcomp with select for example
   children?: ReactNode;
 }
 
 export const InputComp = ({
-  mainLabel,
-  secondaryLabel,
+  label,
   placeholder,
   errorMessage,
   id,
@@ -55,139 +48,89 @@ export const InputComp = ({
   options,
   type,
   value,
-  formWidth,
+  lgPadding,
   formStyle,
   inputStyle,
-  formWidthMedium,
-  labelStyles,
-  errorStyles,
   rightAddon,
   children,
-  helper,
-  onClickHelper,
-  onClickSecondaryLabel,
+  helperText,
 }: Props) => {
   // Shared input props
   const inputProps = {
     placeholder: placeholder,
     id: id,
     type: type,
+    h: lgPadding ? '48px' : '40px',
     width: DEFAULT_STYLES.fullWidth,
+    _placeholder: textStyles.placeholder,
+    ...textStyles.body,
   };
 
   return (
     <FormControl
-      w={{
-        base: formWidth ?? DEFAULT_STYLES.fullWidth,
-        md: formWidthMedium ?? DEFAULT_STYLES.fullWidth,
-      }}
       display='flex'
       justifyContent='center'
-      alignItems='center'
+      alignItems='start'
       flexDirection='column'
       {...formStyle}
     >
-      <Flex
-        w={DEFAULT_STYLES.fullWidth}
-        alignItems='center'
-        justifyContent='space-between'
-        position='relative'
-      >
-        {mainLabel && (
-          <FormLabel
-            width='max-content'
-            htmlFor={id}
-            pl={2}
-            {...labelStyles}
-            className='capitalize'
-          >
-            {mainLabel}
-          </FormLabel>
-        )}
-
-        {secondaryLabel && (
-          <Button
-            variant='textBtn'
-            width='max-content'
-            size='xs'
-            position='absolute'
-            right='0'
-            color={DEFAULT_STYLES.primaryHeaderColor}
-            onClick={onClickSecondaryLabel}
-          >
-            {secondaryLabel}
-          </Button>
-        )}
-      </Flex>
-
-      {register && (
-        <InputGroup>
-          <Input
-            value={value}
-            {...inputProps}
-            {...register}
-            {...inputStyle}
-            fontSize={DEFAULT_STYLES.smFontSize}
-          />
-
-          {rightAddon && (
-            <InputRightElement pt={2}>{rightAddon}</InputRightElement>
-          )}
-        </InputGroup>
+      {label && (
+        <FormLabel
+          {...textStyles.label}
+          width={DEFAULT_STYLES.fullWidth}
+          pt={1}
+          className='capitalize'
+        >
+          {label}
+        </FormLabel>
       )}
 
-      {/* When register is nt used */}
-      {options && (
+      {!children && (
         <InputGroup>
-          <Input
-            value={value}
-            {...inputProps}
-            {...inputStyle}
-            fontSize={DEFAULT_STYLES.smFontSize}
-            onChange={(e) => options?.custom(e.target.value)}
-          />
-
-          {rightAddon && (
-            <InputRightElement pt={2}>{rightAddon}</InputRightElement>
+          {register && (
+            <Input
+              value={value}
+              {...inputProps}
+              {...register}
+              {...inputStyle}
+            />
           )}
+          {/* When register is not used */}
+          {options && (
+            <Input
+              value={value}
+              {...inputProps}
+              {...inputStyle}
+              onChange={(e) => options?.custom(e.target.value)}
+            />
+          )}
+          {rightAddon && <InputRightElement>{rightAddon}</InputRightElement>}
         </InputGroup>
       )}
 
       {children}
 
-      <Flex
-        w={DEFAULT_STYLES.fullWidth}
-        alignItems='center'
-        justifyContent={!!errorMessage ? 'space-between' : 'flex-end'}
-        position='relative'
-      >
-        {errorMessage && (
-          <Text
-            w={DEFAULT_STYLES.fullWidth}
-            fontSize={DEFAULT_STYLES.smFontSize}
-            color={DEFAULT_STYLES.errorColor}
-            flex={1}
-            {...errorStyles}
-            pt={1}
-          >
-            {errorMessage}
-          </Text>
-        )}
+      {errorMessage && (
+        <Text
+          alignSelf='start'
+          textStyle='info'
+          color={DEFAULT_STYLES.errorColor}
+          pt={1}
+          className='capitalize'
+        >
+          {errorMessage}
+        </Text>
+      )}
 
-        {helper && (
-          <Button
-            variant='textBtn'
-            width='max-content'
-            size='xs'
-            color={DEFAULT_STYLES.primaryHeaderColor}
-            justifySelf='flex-end'
-            onClick={onClickHelper}
-          >
-            {helper}
-          </Button>
-        )}
-      </Flex>
+      {helperText && (
+        <FormHelperText
+          {...textStyles.info}
+          color='rgba(0, 0, 0, 0.5)'
+          alignSelf='flex-start'
+        >
+          {helperText}
+        </FormHelperText>
+      )}
     </FormControl>
   );
 };
-

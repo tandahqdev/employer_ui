@@ -1,3 +1,4 @@
+import { PaymentTerms } from '@/models';
 import { useDrawStore } from '../state';
 
 export class DrawChangeHandler {
@@ -25,6 +26,12 @@ export class DrawChangeHandler {
     }));
   };
 
+  static onSelectedTermChange = (term: PaymentTerms) => {
+    useDrawStore.setState(() => ({
+      selectedTerms: term,
+    }));
+  };
+
   static onTermCheckedChange = (val: boolean, id: string) => {
     useDrawStore.setState((state) => ({
       terms: state.terms.map((term) => {
@@ -34,6 +41,8 @@ export class DrawChangeHandler {
           return { ...term, isChecked: false };
         }
       }),
+
+      selectedTerms: state.terms.find((term) => term.isChecked),
     }));
   };
 }

@@ -6,6 +6,65 @@ import { radioTheme } from './radio';
 import { selectTheme } from './select';
 import { spinnerTheme } from './spinner';
 
+export const textStyles = {
+  header: {
+    fontSize: '1.5rem',
+    lineHeight: 1.8,
+    fontWeight: 500,
+    fontFamily: DEFAULT_STYLES.fontFamily,
+    textTransform: 'capitalize',
+  },
+  title: {
+    fontSize: '1rem',
+    lineHeight: 1.5,
+    fontWeight: 600,
+    fontFamily: DEFAULT_STYLES.fontFamily,
+    textTransform: 'capitalize',
+  },
+  body: {
+    fontSize: '0.875rem',
+    lineHeight: 1.5,
+  },
+  body2: {
+    fontSize: '0.8rem',
+    lineHeight: 1.5,
+  },
+  subtitle: {
+    fontSize: '0.875rem',
+    lineHeight: 1.5,
+    fontWeight: 500,
+  },
+  placeholder: {
+    fontSize: '0.85rem',
+    lineHeight: 1.5,
+    color: 'gray',
+  },
+  label: {
+    fontSize: '0.75rem',
+    lineHeight: 1.5,
+    fontWeight: 450,
+  },
+  info: {
+    fontSize: '0.75rem',
+    lineHeight: 1.8,
+    color: 'rgba(0, 0, 0, 0.5)',
+  },
+  tiny: {
+    fontSize: '0.625rem',
+    lineHeight: 1.8,
+  },
+  darkInfo: {
+    fontSize: '0.75rem',
+    lineHeight: 1.8,
+    color: 'rgba(0, 0, 0, 1)',
+  },
+  bolderSubtitle: {
+    fontSize: '0.87rem',
+    lineHeight: 1.5,
+    fontWeight: 600,
+  },
+};
+
 export const theme = extendTheme({
   components: {
     Button: buttonTheme,

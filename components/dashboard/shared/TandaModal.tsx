@@ -1,4 +1,3 @@
-import { useModalContext } from '@/context';
 import { DEFAULT_STYLES } from '@/styles';
 import {
   Modal,
@@ -7,12 +6,24 @@ import {
   ModalCloseButton,
   ModalBody,
   Button,
+  ButtonProps,
 } from '@chakra-ui/react';
+import { ReactNode } from 'react';
 
-export const TandaModal = () => {
-  const { isOpen, onClose, btn, onClick, onClickAction, data } =
-    useModalContext();
+interface Props extends ButtonProps {
+  isOpen: boolean;
+  onClose: () => void;
+  data: ReactNode;
+  btnText?: string;
+}
 
+export const TandaModal = ({
+  isOpen,
+  onClose,
+  data,
+  btnText,
+  ...restBtn
+}: Props) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -42,17 +53,14 @@ export const TandaModal = () => {
         >
           {data}
 
-          {btn.text && (
+          {btnText && (
             <Button
               w={DEFAULT_STYLES.fullWidth}
               variant='darkBtn'
               size='smPadding'
-              isDisabled={btn.isDisabled}
-              onClick={() => {
-                onClick(onClickAction);
-              }}
+              {...restBtn}
             >
-              {btn.text}
+              {btnText}
             </Button>
           )}
         </ModalBody>

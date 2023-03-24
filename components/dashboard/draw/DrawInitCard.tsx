@@ -18,6 +18,12 @@ export const DrawInitCard = ({ isChecked, month, id, price }: PaymentTerms) => {
       cursor='pointer'
       onClick={() => {
         if (isChecked) {
+          DrawChangeHandler.onSelectedTermChange({
+            isChecked,
+            month,
+            id,
+            price,
+          });
           DrawChangeHandler.onTermCheckedChange(false, id);
         } else {
           DrawChangeHandler.onTermCheckedChange(true, id);
