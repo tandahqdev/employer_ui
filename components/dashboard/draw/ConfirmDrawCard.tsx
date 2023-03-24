@@ -32,16 +32,19 @@ export const ConfirmDrawCard = () => {
           pt='3'
           {...sharedStyles}
         />
+
         <DrawFlexItem
           title='Rate'
           desc={<>({rate.toFixed(2)}%)</>}
           {...sharedStyles}
         />
+
         <DrawFlexItem
           title='Available Credit'
           desc='$920,000.00'
           {...sharedStyles}
         />
+
         <TandaHDivider />
 
         <DrawFlexItem
@@ -50,13 +53,14 @@ export const ConfirmDrawCard = () => {
           {...sharedStyles}
           pt='3'
         />
+
         <DrawFlexItem
           title='Fee'
           desc={
             <>
               <span
                 style={{
-                  fontSize: '0.87rem',
+                  fontSize: '0.8rem',
                   fontWeight: 400,
                 }}
               >
@@ -83,7 +87,7 @@ export const ConfirmDrawCard = () => {
         />
       </ColumnFlex>
 
-      <Text textStyle='subtitle' fontSize='0.75rem'>
+      <Text textStyle='smallSubtitle'>
         Please, add a name to identity and submit your new draw.
       </Text>
 

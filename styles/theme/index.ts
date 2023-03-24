@@ -14,7 +14,7 @@ export const textStyles = {
     color: DEFAULT_STYLES.primaryHeaderColor,
   },
   bodyText: {
-    fontSize: '0.87rem',
+    fontSize: '0.8rem',
     fontWeight: 400,
     lineHeight: 1.5,
     color: DEFAULT_STYLES.primaryColor,
@@ -34,7 +34,14 @@ export const textStyles = {
   subtitle: {
     fontSize: '1rem',
     lineHeight: 1.3,
-    color: DEFAULT_STYLES.darkGray,
+    color: DEFAULT_STYLES.primaryHeaderColor,
+    fontWeight: 600,
+  },
+
+  smallSubtitle: {
+    fontSize: '0.75rem',
+    lineHeight: 1.3,
+    color: DEFAULT_STYLES.primaryHeaderColor,
     fontWeight: 600,
   },
   desc: {
@@ -55,7 +62,7 @@ export const textStyles = {
     color: DEFAULT_STYLES.darkGray,
   },
   bolderBody: {
-    fontSize: '0.87rem',
+    fontSize: '0.8rem',
     fontWeight: 600,
     lineHeight: 1.4,
     color: DEFAULT_STYLES.darkGray,
