@@ -88,7 +88,7 @@ export const ConfirmDrawCard = () => {
       </Text>
 
       <InputComp
-        mainLabel='Draw name'
+        label='Draw name'
         options={{
           custom: (e) => {
             console.log(e);
