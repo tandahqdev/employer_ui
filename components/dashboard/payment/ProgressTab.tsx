@@ -1,7 +1,5 @@
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
 import { Flex, Box, Center } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
+import { useColor } from './useColor';
 
 interface Props {
   showRightBar: boolean;
@@ -9,12 +7,8 @@ interface Props {
   isActive: boolean;
 }
 
-export const DrawTab = ({ showLeftBar, isActive, showRightBar }: Props) => {
-  const router = useRouter();
-
-  const isExpense = router.pathname === DashRoutes.expense;
-
-  const color = isExpense ? DEFAULT_STYLES.pink : DEFAULT_STYLES.lightPurple;
+export const ProgressTab = ({ showLeftBar, isActive, showRightBar }: Props) => {
+  const { color } = useColor();
 
   return (
     <Flex align='center'>

@@ -1,20 +1,21 @@
 import { ColumnFlex } from '@/components/shared';
 import { PaymentTerms } from '@/models';
-import { DrawChangeHandler } from '@/store';
+import { PaymentChangeHandler } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { Flex, Radio, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { useColor } from './useColor';
 
-export const DrawInitCard = ({ isChecked, month, id, price }: PaymentTerms) => {
+export const PaymentInitCard = ({
+  isChecked,
+  month,
+  id,
+  price,
+}: PaymentTerms) => {
   const router = useRouter();
   const isExpense = router.pathname === DashRoutes.expense;
-
-  const color = isExpense ? DEFAULT_STYLES.pink : DEFAULT_STYLES.lightPurple;
-
-  const bg = isExpense
-    ? DEFAULT_STYLES.lightPinkBg
-    : DEFAULT_STYLES.lightPurpleBg;
+  const { color, bg } = useColor(true);
 
   return (
     <Flex
@@ -29,15 +30,15 @@ export const DrawInitCard = ({ isChecked, month, id, price }: PaymentTerms) => {
       cursor='pointer'
       onClick={() => {
         if (isChecked) {
-          DrawChangeHandler.onSelectedTermChange({
+          PaymentChangeHandler.onSelectedTermChange({
             isChecked,
             month,
             id,
             price,
           });
-          DrawChangeHandler.onTermCheckedChange(false, id);
+          PaymentChangeHandler.onTermCheckedChange(false, id);
         } else {
-          DrawChangeHandler.onTermCheckedChange(true, id);
+          PaymentChangeHandler.onTermCheckedChange(true, id);
         }
       }}
     >

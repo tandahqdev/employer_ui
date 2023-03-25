@@ -1,8 +1,7 @@
 import { ColumnFlex, Desc, TandaHDivider, TandaModal } from '@/components';
-import { DrawStatus } from '@/models';
-import { DrawChangeHandler, drawTab, useDrawStore } from '@/store';
+import { PaymentStatus } from '@/models';
+import { PaymentChangeHandler, paymentTab, usePaymentStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
   Button,
@@ -14,31 +13,28 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
 import { RiErrorWarningLine } from 'react-icons/ri';
-import { ConfirmDrawCard } from './ConfirmDrawCard';
-import { DrawFlexItem } from './DrawFlexItem';
-import { DrawInfo } from './DrawInfo';
-import { DrawInitCard } from './DrawInitCard';
-import { DrawTab } from './DrawTab';
+import { ConfirmPayment } from './ConfirmPayment';
+import { InfoAlert } from './InfoAlert';
+import { PaymentFlexItem } from './PaymentFlexItem';
+import { PaymentInitCard } from './PaymentInitCard';
+import { ProgressTab } from './ProgressTab';
+import { useColor } from './useColor';
 
-export const DrawCard = () => {
-  const { terms, selectedIndexs, repay, rate, total } = useDrawStore();
-  const isInitTab = selectedIndexs.at(-1) === DrawStatus.Initialisation;
-  const isConclusionTab = selectedIndexs.at(-1) === DrawStatus.Conclusion;
+export const PaymentCard = () => {
+  const { terms, selectedIndexs, repay, rate, total } = usePaymentStore();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const router = useRouter();
-  const isExpense = router.pathname === DashRoutes.expense;
+  const isInitTab = selectedIndexs.at(-1) === PaymentStatus.Initialisation;
+  const isConclusionTab = selectedIndexs.at(-1) === PaymentStatus.Conclusion;
+  const { color } = useColor();
 
-  const color = isExpense ? DEFAULT_STYLES.pink : DEFAULT_STYLES.lightPurple;
-
-  const progressTab = drawTab.map((_, i, arr) => {
+  const progressTab = paymentTab.map((_, i, arr) => {
     const showRightBar = i === 0;
     const showLeftBar = i === arr.length - 1;
     const isActive = selectedIndexs.includes(i);
 
     return (
-      <DrawTab
+      <ProgressTab
         showLeftBar={showLeftBar}
         showRightBar={showRightBar}
         isActive={isActive}
@@ -48,7 +44,7 @@ export const DrawCard = () => {
   });
 
   const renderTabs = terms.map((term) => {
-    return <DrawInitCard {...term} key={term.id} />;
+    return <PaymentInitCard {...term} key={term.id} />;
   });
 
   return (
@@ -88,9 +84,9 @@ export const DrawCard = () => {
 
         {isConclusionTab && (
           <>
-            <DrawFlexItem title='Term Cap' desc='3 months' />
-            <DrawFlexItem title='Rate' desc={<>({rate.toFixed(2)}%)</>} />
-            <DrawFlexItem
+            <PaymentFlexItem title='Term Cap' desc='3 months' />
+            <PaymentFlexItem title='Rate' desc={<>({rate.toFixed(2)}%)</>} />
+            <PaymentFlexItem
               title='Available Credit'
               desc={<span style={{ color }}>$920,000.00</span>}
             />
@@ -99,12 +95,12 @@ export const DrawCard = () => {
           </>
         )}
 
-        <DrawFlexItem
+        <PaymentFlexItem
           title='Amount to pay back'
           desc={`$${repay.toFixed(2)}`}
         />
 
-        <DrawFlexItem
+        <PaymentFlexItem
           title='Fee'
           desc={
             <>
@@ -123,7 +119,7 @@ export const DrawCard = () => {
 
         <TandaHDivider />
 
-        <DrawFlexItem
+        <PaymentFlexItem
           title='Total Payout'
           desc={
             isConclusionTab ? (
@@ -133,7 +129,7 @@ export const DrawCard = () => {
                 textAlign='right'
                 type='number'
                 onChange={(e) => {
-                  DrawChangeHandler.onTotalChange(e.target.valueAsNumber);
+                  PaymentChangeHandler.onTotalChange(e.target.valueAsNumber);
                 }}
               />
             ) : (
@@ -150,7 +146,7 @@ export const DrawCard = () => {
 
         {isConclusionTab && (
           <>
-            <DrawInfo
+            <InfoAlert
               isInfo
               text={
                 <Text textStyle='desc' color={DEFAULT_STYLES.darkGray}>
@@ -183,7 +179,7 @@ export const DrawCard = () => {
           size='smPadding'
           onClick={() => {
             if (isInitTab) {
-              DrawChangeHandler.onIndexChange(DrawStatus.Conclusion);
+              PaymentChangeHandler.onIndexChange(PaymentStatus.Conclusion);
             } else {
               onOpen();
             }
@@ -197,7 +193,7 @@ export const DrawCard = () => {
       <TandaModal
         isOpen={isOpen}
         onClose={onClose}
-        data={<ConfirmDrawCard />}
+        data={<ConfirmPayment />}
         btnText='Confirm submission'
       />
     </>

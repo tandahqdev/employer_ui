@@ -9,7 +9,7 @@ interface Props {
   text: ReactNode;
 }
 
-export const DrawInfo = ({ isInfo, text }: Props) => {
+export const InfoAlert = ({ isInfo, text }: Props) => {
   return (
     <Flex
       w={DEFAULT_STYLES.fullWidth}

@@ -2,7 +2,7 @@ import {
   ProfileNavCard,
   SharedExpensesAndDraw,
   ExpenseTable,
-  DrawCard,
+  PaymentCard,
 } from '@/components';
 
 const SelectExpenses = () => {
@@ -16,7 +16,7 @@ const SelectExpenses = () => {
   return (
     <SharedExpensesAndDraw header={topbar} showBckBtn>
       <ExpenseTable />
-      <DrawCard />
+      <PaymentCard />
     </SharedExpensesAndDraw>
   );
 };

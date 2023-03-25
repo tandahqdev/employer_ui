@@ -1,12 +1,12 @@
 import { ColumnFlex, InputComp } from '@/components';
-import { useDrawStore } from '@/store';
+import { usePaymentStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { Text } from '@chakra-ui/react';
 import { TandaHDivider } from '../shared';
-import { DrawFlexItem } from './DrawFlexItem';
+import { PaymentFlexItem } from './PaymentFlexItem';
 
-export const ConfirmDrawCard = () => {
-  const { repay, rate } = useDrawStore();
+export const ConfirmPayment = () => {
+  const { repay, rate } = usePaymentStore();
   const sharedStyles = {
     px: '3',
     pb: '3',
@@ -26,20 +26,20 @@ export const ConfirmDrawCard = () => {
         rounded='6px'
         gap='3px'
       >
-        <DrawFlexItem
+        <PaymentFlexItem
           title='Term Cap'
           desc='3 months'
           pt='3'
           {...sharedStyles}
         />
 
-        <DrawFlexItem
+        <PaymentFlexItem
           title='Rate'
           desc={<>({rate.toFixed(2)}%)</>}
           {...sharedStyles}
         />
 
-        <DrawFlexItem
+        <PaymentFlexItem
           title='Available Credit'
           desc='$920,000.00'
           {...sharedStyles}
@@ -47,14 +47,14 @@ export const ConfirmDrawCard = () => {
 
         <TandaHDivider />
 
-        <DrawFlexItem
+        <PaymentFlexItem
           title='Amount to pay back'
           desc={`$${repay.toFixed(2)}`}
           {...sharedStyles}
           pt='3'
         />
 
-        <DrawFlexItem
+        <PaymentFlexItem
           title='Fee'
           desc={
             <>
@@ -74,7 +74,7 @@ export const ConfirmDrawCard = () => {
 
         <TandaHDivider />
 
-        <DrawFlexItem
+        <PaymentFlexItem
           title='Total Payout'
           pt='3'
           px={sharedStyles.px}

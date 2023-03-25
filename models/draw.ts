@@ -1,5 +1,5 @@
-export interface DrawModel {
-  selectedIndexs: DrawStatus[];
+export interface PaymentModel {
+  selectedIndexs: PaymentStatus[];
   terms: PaymentTerms[];
   repay: number;
   selectedTerms?: PaymentTerms;
@@ -15,7 +15,7 @@ export interface PaymentTerms {
   id: string;
 }
 
-export enum DrawStatus {
+export enum PaymentStatus {
   Initialisation = 0,
   Conclusion = 1,
 }

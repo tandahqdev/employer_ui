@@ -1,8 +1,8 @@
-import { DrawModel } from '@/models';
+import { PaymentModel } from '@/models';
 import { nanoid } from 'nanoid';
 import { create } from 'zustand';
 
-const initialState: DrawModel = {
+const initialState: PaymentModel = {
   rate: 2,
   repay: 0,
   selectedIndexs: [0],
@@ -15,11 +15,11 @@ const initialState: DrawModel = {
   id: nanoid(),
 };
 
-interface Draw extends DrawModel {
+interface Payment extends PaymentModel {
   reset: () => void;
 }
 
-export const useDrawStore = create<Draw>((set) => ({
+export const usePaymentStore = create<Payment>((set) => ({
   ...initialState,
   selectedTerms: initialState.terms[0],
   reset: () => set(() => ({ ...initialState, id: nanoid() })),

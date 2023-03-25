@@ -1,39 +1,39 @@
 import { PaymentTerms } from '@/models';
-import { useDrawStore } from '../state';
+import { usePaymentStore } from '../state';
 
-export class DrawChangeHandler {
+export class PaymentChangeHandler {
   static onIndexChange = (index: number) => {
-    useDrawStore.setState((state) => ({
+    usePaymentStore.setState((state) => ({
       selectedIndexs: [...state.selectedIndexs, index],
     }));
   };
 
   static onRepayChange = (num: number) => {
-    useDrawStore.setState(() => ({
+    usePaymentStore.setState(() => ({
       repay: num,
     }));
   };
 
   static onRateChange = (num: number) => {
-    useDrawStore.setState(() => ({
+    usePaymentStore.setState(() => ({
       rate: num,
     }));
   };
 
   static onTotalChange = (num: number) => {
-    useDrawStore.setState(() => ({
+    usePaymentStore.setState(() => ({
       total: num,
     }));
   };
 
   static onSelectedTermChange = (term: PaymentTerms) => {
-    useDrawStore.setState(() => ({
+    usePaymentStore.setState(() => ({
       selectedTerms: term,
     }));
   };
 
   static onTermCheckedChange = (val: boolean, id: string) => {
-    useDrawStore.setState((state) => ({
+    usePaymentStore.setState((state) => ({
       terms: state.terms.map((term) => {
         if (term.id === id) {
           return { ...term, isChecked: val };
