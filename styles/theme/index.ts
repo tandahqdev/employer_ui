@@ -51,7 +51,7 @@ export const textStyles = {
     fontWeight: 400,
   },
   header: {
-    fontSize: { base: '1.3rem', md: '2rem' },
+    fontSize: { base: '1.1rem', md: '2rem' },
     lineHeight: 1.5,
     color: DEFAULT_STYLES.primaryHeaderColor,
     fontWeight: 600,
