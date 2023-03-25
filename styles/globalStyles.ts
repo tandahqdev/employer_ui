@@ -11,6 +11,7 @@ export const DEFAULT_STYLES = {
   white: '#FFFFFF',
   darkColor: '#000000',
   pink: '#EF567E',
+  lightPinkBg: 'rgba(239, 86, 126, 0.1)',
   lightDarkColor: '#888888',
   lightPurple: '#6E31F0',
   primaryHeaderColor: '#2B2B2B',
