@@ -1,13 +1,13 @@
-import { getDay } from '@/utils';
 import { ColumnFlex, Desc } from '@/components';
 import { Header } from './Header';
 import { DEFAULT_STYLES } from '@/styles';
 
 interface Props {
   name: string;
+  desc?: string;
 }
 
-export const WelcomeCard = ({ name }: Props) => {
+export const WelcomeCard = ({ name, desc }: Props) => {
   return (
     <ColumnFlex>
       <Header>{`Welcome back, ${name}`}</Header>
@@ -15,7 +15,7 @@ export const WelcomeCard = ({ name }: Props) => {
         fontWeight={DEFAULT_STYLES.semibold}
         color={DEFAULT_STYLES.darkGray}
       >
-        {getDay(true)}
+        {desc}
       </Desc>
     </ColumnFlex>
   );
