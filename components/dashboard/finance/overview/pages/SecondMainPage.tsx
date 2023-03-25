@@ -50,7 +50,7 @@ export const SecondMainPage = () => {
         headerColor={DEFAULT_STYLES.pink}
         isShowTopBtn
         btnText='New extension'
-        path={DashRoutes.dashboardFinanceExtend}
+        path={DashRoutes.expense}
         leftIcon={<AddIcon />}
         btnBg={DEFAULT_STYLES.pink}
         info='2 active draws'

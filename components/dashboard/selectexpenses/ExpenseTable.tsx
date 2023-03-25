@@ -26,15 +26,10 @@ export const ExpenseTable = () => {
           alignSelf='center'
           textAlign='center'
         >
-          You don’t hae any invoice needing to be financed
+          You don’t have any invoice needing to be financed
         </Text>
 
-        <Button
-          bg={DEFAULT_STYLES.pink}
-          color='white'
-          w='241px'
-          size='smPadding'
-        >
+        <Button bg={DEFAULT_STYLES.pink} color='white' size='smPadding'>
           Upload invoice now
         </Button>
       </ColumnFlex>

@@ -1,8 +1,11 @@
-import { DrawCard } from '../draw';
-import { ProfileNavCard, SharedExpensesAndDraw } from '../shared';
-import { ExpenseTable } from './ExpenseTable';
+import {
+  ProfileNavCard,
+  SharedExpensesAndDraw,
+  ExpenseTable,
+  DrawCard,
+} from '@/components';
 
-export const SelectExpenses = () => {
+const SelectExpenses = () => {
   const topbar = (
     <ProfileNavCard
       title='Expense finance'
@@ -17,3 +20,5 @@ export const SelectExpenses = () => {
     </SharedExpensesAndDraw>
   );
 };
+
+export default SelectExpenses;
