@@ -2,11 +2,14 @@ import { DashBoardLayout } from '@/layout';
 import { DEFAULT_STYLES } from '@/styles';
 import { Grid } from '@chakra-ui/react';
 import { DrawTable, DrawCard } from '../draw';
-import { Header } from '../shared';
+import { ProfileNavCard } from '../shared';
 
 export const SelectExpenses = () => {
   const topbar = (
-    <Header fontSize={{ base: '1.1rem', md: '1.5rem' }}>New draw set up</Header>
+    <ProfileNavCard
+      title='Expense finance'
+      desc='Please select the transactions you want to finance with us and choose your payment terms'
+    />
   );
 
   return (

@@ -1,16 +1,12 @@
 import { ColumnFlex, Desc } from '@/components';
 import { Header } from './Header';
 import { DEFAULT_STYLES } from '@/styles';
+import { IProps } from '@/models';
 
-interface Props {
-  name: string;
-  desc?: string;
-}
-
-export const WelcomeCard = ({ name, desc }: Props) => {
+export const ProfileNavCard = ({ title, desc }: IProps) => {
   return (
     <ColumnFlex>
-      <Header>{`Welcome back, ${name}`}</Header>
+      <Header>{title}</Header>
       <Desc
         fontWeight={DEFAULT_STYLES.semibold}
         color={DEFAULT_STYLES.darkGray}
