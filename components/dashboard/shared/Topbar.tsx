@@ -1,17 +1,12 @@
 import { ColumnFlex, IconBtn } from '@/components';
 import { useCustomMediaQuery } from '@/context';
+import { TopBarProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { HamburgerIcon, ChevronLeftIcon } from '@chakra-ui/icons';
 import { Center, Flex, HStack, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { ReactNode } from 'react';
 
-interface Props {
-  header?: ReactNode;
-  showBckBtn?: boolean;
-}
-
-export const Topbar = ({ header, showBckBtn }: Props) => {
+export const Topbar = ({ header, showBckBtn }: TopBarProps) => {
   const { upDateMediaQuery } = useCustomMediaQuery();
   const router = useRouter();
 
@@ -55,6 +50,7 @@ export const Topbar = ({ header, showBckBtn }: Props) => {
               </Text>
             </Center>
           )}
+
           <ColumnFlex>{header}</ColumnFlex>
         </Flex>
 
