@@ -42,8 +42,13 @@ export const TandaTable = ({ tableHeaders, children }: Props) => {
     </TableContainer>
   );
 };
+interface RowProps extends LayoutProps {
+  bg?: string;
+}
 
-export const TandaTableRow = ({ children }: LayoutProps) => (
-  <Tr textStyle='bolderBody'>{children}</Tr>
+export const TandaTableRow = ({ children, bg }: RowProps) => (
+  <Tr textStyle='bolderBody' bg={bg}>
+    {children}
+  </Tr>
 );
 
