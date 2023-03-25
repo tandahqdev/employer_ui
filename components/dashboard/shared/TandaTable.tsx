@@ -42,3 +42,8 @@ export const TandaTable = ({ tableHeaders, children }: Props) => {
     </TableContainer>
   );
 };
+
+export const TandaTableRow = ({ children }: LayoutProps) => (
+  <Tr textStyle='bolderBody'>{children}</Tr>
+);
+

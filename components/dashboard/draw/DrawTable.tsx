@@ -1,16 +1,16 @@
 import { ColumnFlex, Desc } from '@/components';
 import { drawTable } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
-import { GridItem, Tr, Text, Td } from '@chakra-ui/react';
+import { GridItem, Text, Td } from '@chakra-ui/react';
 import { useState } from 'react';
-import { TandaTable } from '../shared/TandaTable';
+import { TandaTable, TandaTableRow } from '../shared';
 
 export const DrawTable = () => {
   const [show] = useState(false);
 
   const renderTableBody = drawTable.map((e) => {
     return (
-      <Tr key={e.id} textStyle='bolderBody'>
+      <TandaTableRow key={e.id}>
         <Td>{e.month}</Td>
         <Td>
           <ColumnFlex>
@@ -22,7 +22,7 @@ export const DrawTable = () => {
         <Td isNumeric fontWeight={DEFAULT_STYLES.semibold}>
           {e.total}
         </Td>
-      </Tr>
+      </TandaTableRow>
     );
   });
 
