@@ -4,6 +4,7 @@ import { DEFAULT_STYLES } from '@/styles';
 import { Text } from '@chakra-ui/react';
 import { TandaHDivider } from '../shared';
 import { PaymentFlexItem } from './PaymentFlexItem';
+import { useColor } from './useColor';
 
 export const ConfirmPayment = () => {
   const { repay, rate } = usePaymentStore();
@@ -11,6 +12,8 @@ export const ConfirmPayment = () => {
     px: '3',
     pb: '3',
   };
+
+  const { color } = useColor();
 
   return (
     <ColumnFlex width='full' gap='3'>
@@ -79,11 +82,7 @@ export const ConfirmPayment = () => {
           pt='3'
           px={sharedStyles.px}
           pb='4'
-          desc={
-            <span style={{ color: DEFAULT_STYLES.lightPurple }}>
-              $920,000.00
-            </span>
-          }
+          desc={<span style={{ color }}>$920,000.00</span>}
         />
       </ColumnFlex>
 

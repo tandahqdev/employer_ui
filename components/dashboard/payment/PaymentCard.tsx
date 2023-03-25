@@ -162,6 +162,13 @@ export const PaymentCard = () => {
                   bg={DEFAULT_STYLES.lightGrayBg}
                   color={DEFAULT_STYLES.primaryHeaderColor}
                   size='smPadding'
+                  onClick={() => {
+                    PaymentChangeHandler.onIndexChange(
+                      PaymentStatus.Conclusion,
+                      true
+                    );
+                    PaymentChangeHandler.onTotalChange(0);
+                  }}
                 >
                   Cancel
                 </Button>

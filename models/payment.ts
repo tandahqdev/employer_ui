@@ -6,10 +6,10 @@ export interface PaymentModel {
   rate: number;
   total: number;
   id: string;
+  name?: string;
 }
 
 export interface PaymentTerms {
-  isChecked?: boolean;
   month: number;
   price: number;
   id: string;

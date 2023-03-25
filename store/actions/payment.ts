@@ -2,47 +2,42 @@ import { PaymentTerms } from '@/models';
 import { usePaymentStore } from '../state';
 
 export class PaymentChangeHandler {
-  static onIndexChange = (index: number) => {
+  static onIndexChange = (index: number, remove?: boolean) => {
     usePaymentStore.setState((state) => ({
-      selectedIndexs: [...state.selectedIndexs, index],
+      selectedIndexs: !remove
+        ? [...state.selectedIndexs, index]
+        : state.selectedIndexs.filter((i) => i !== index),
     }));
   };
 
-  static onRepayChange = (num: number) => {
+  static onRepayChange = (repay: number) => {
     usePaymentStore.setState(() => ({
-      repay: num,
+      repay,
     }));
   };
 
-  static onRateChange = (num: number) => {
+  static onRateChange = (rate: number) => {
     usePaymentStore.setState(() => ({
-      rate: num,
+      rate: rate,
     }));
   };
 
-  static onTotalChange = (num: number) => {
+  static onTotalChange = (total: number) => {
     usePaymentStore.setState(() => ({
-      total: num,
+      total: total,
     }));
   };
 
-  static onSelectedTermChange = (term: PaymentTerms) => {
+  static onNameChange = (name: string) => {
     usePaymentStore.setState(() => ({
-      selectedTerms: term,
+      name,
     }));
   };
 
-  static onTermCheckedChange = (val: boolean, id: string) => {
+  static onSelectedTermChange = (payment: PaymentTerms) => {
     usePaymentStore.setState((state) => ({
-      terms: state.terms.map((term) => {
-        if (term.id === id) {
-          return { ...term, isChecked: val };
-        } else {
-          return { ...term, isChecked: false };
-        }
-      }),
-
-      selectedTerms: state.terms.find((term) => term.isChecked),
+      selectedTerms:
+        state.selectedTerms?.id === payment.id ? undefined : payment,
     }));
   };
 }

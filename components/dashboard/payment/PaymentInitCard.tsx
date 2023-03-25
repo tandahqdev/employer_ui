@@ -1,21 +1,19 @@
 import { ColumnFlex } from '@/components/shared';
 import { PaymentTerms } from '@/models';
-import { PaymentChangeHandler } from '@/store';
+import { PaymentChangeHandler, usePaymentStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { Flex, Radio, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useColor } from './useColor';
 
-export const PaymentInitCard = ({
-  isChecked,
-  month,
-  id,
-  price,
-}: PaymentTerms) => {
+export const PaymentInitCard = ({ month, id, price }: PaymentTerms) => {
   const router = useRouter();
+  const { selectedTerms } = usePaymentStore();
+
   const isExpense = router.pathname === DashRoutes.expense;
   const { color, bg } = useColor(true);
+  const isChecked = id === selectedTerms?.id;
 
   return (
     <Flex
@@ -29,17 +27,11 @@ export const PaymentInitCard = ({
       gap='20px'
       cursor='pointer'
       onClick={() => {
-        if (isChecked) {
-          PaymentChangeHandler.onSelectedTermChange({
-            isChecked,
-            month,
-            id,
-            price,
-          });
-          PaymentChangeHandler.onTermCheckedChange(false, id);
-        } else {
-          PaymentChangeHandler.onTermCheckedChange(true, id);
-        }
+        PaymentChangeHandler.onSelectedTermChange({
+          month,
+          id,
+          price,
+        });
       }}
     >
       <Radio

@@ -29,6 +29,7 @@ export const GlobalLayout = ({ children }: LayoutProps) => {
         style={{
           width: DEFAULT_STYLES.fullWidth,
           minHeight: DEFAULT_STYLES.fullHeight,
+          position: 'relative',
         }}
       >
         <MediaContextProvider>{children}</MediaContextProvider>
