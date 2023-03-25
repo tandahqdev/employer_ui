@@ -36,3 +36,9 @@ export interface ActionCardModel extends IProps, ActionTitleModel {
   showTexts?: boolean;
   info?: string;
 }
+
+
+export interface TopBarProps {
+  header?: ReactNode;
+  showBckBtn?: boolean;
+}

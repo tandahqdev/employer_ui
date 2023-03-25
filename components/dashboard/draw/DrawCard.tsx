@@ -21,8 +21,7 @@ import { DrawInitCard } from './DrawInitCard';
 import { DrawTab } from './DrawTab';
 
 export const DrawCard = () => {
-  const { terms, selectedIndexs, repay, rate, total, selectedTerms } =
-    useDrawStore();
+  const { terms, selectedIndexs, repay, rate, total } = useDrawStore();
   const isInitTab = selectedIndexs.at(-1) === DrawStatus.Initialisation;
   const isConclusionTab = selectedIndexs.at(-1) === DrawStatus.Conclusion;
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -41,8 +40,6 @@ export const DrawCard = () => {
       />
     );
   });
-
-  console.log(selectedTerms);
 
   const renderTabs = terms.map((term) => {
     return <DrawInitCard {...term} key={term.id} />;

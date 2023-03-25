@@ -1,19 +1,17 @@
 import { DashBoardLayout } from '@/layout';
+import { LayoutProps, TopBarProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { Grid } from '@chakra-ui/react';
-import { DrawTable, DrawCard } from '../draw';
-import { ProfileNavCard } from '../shared';
 
-export const SelectExpenses = () => {
-  const topbar = (
-    <ProfileNavCard
-      title='Expense finance'
-      desc='Please select the transactions you want to finance with us and choose your payment terms'
-    />
-  );
+interface Props extends LayoutProps, TopBarProps {}
 
+export const SharedExpensesAndDraw = ({
+  header,
+  showBckBtn,
+  children,
+}: Props) => {
   return (
-    <DashBoardLayout topBar={topbar} showBckBtn>
+    <DashBoardLayout topBar={header} showBckBtn={showBckBtn}>
       <Grid
         gap={{ base: '33px', lg: '10px', xl: '33px' }}
         templateColumns={{
@@ -27,8 +25,7 @@ export const SelectExpenses = () => {
         px={DEFAULT_STYLES.mobilePx}
         w={DEFAULT_STYLES.fullWidth}
       >
-        <DrawTable />
-        <DrawCard />
+        {children}
       </Grid>
     </DashBoardLayout>
   );

@@ -1,40 +1,12 @@
 import { ColumnFlex, Desc } from '@/components';
 import { drawTable } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
-import {
-  GridItem,
-  TableContainer,
-  Table,
-  Thead,
-  Tr,
-  Text,
-  Th,
-  Tbody,
-  Td,
-} from '@chakra-ui/react';
+import { GridItem, Tr, Text, Td } from '@chakra-ui/react';
 import { useState } from 'react';
+import { TandaTable } from '../shared/TandaTable';
 
 export const DrawTable = () => {
   const [show] = useState(false);
-
-  const renderTableHeaders = [
-    'Month',
-    'New Draw',
-    'Existing Draws',
-    'Total',
-  ].map((h, i, arr) => {
-    const isNumeric = i === arr.length - 1 || i === arr.length - 2;
-    return (
-      <Th
-        key={`${h}+${i}`}
-        isNumeric={isNumeric}
-        color={DEFAULT_STYLES.primaryHeaderColor}
-        opacity={0.8}
-      >
-        <Text>{h}</Text>
-      </Th>
-    );
-  });
 
   const renderTableBody = drawTable.map((e) => {
     return (
@@ -46,7 +18,7 @@ export const DrawTable = () => {
             <Desc>{e.draw.month}</Desc>
           </ColumnFlex>
         </Td>
-        <Td isNumeric>{e.exist}</Td>
+        <Td>{e.exist}</Td>
         <Td isNumeric fontWeight={DEFAULT_STYLES.semibold}>
           {e.total}
         </Td>
@@ -71,15 +43,11 @@ export const DrawTable = () => {
         Payment Schedule
       </Text>
 
-      <TableContainer minW={DEFAULT_STYLES.fullWidth}>
-        <Table variant='simple'>
-          <Thead>
-            <Tr>{renderTableHeaders}</Tr>
-          </Thead>
-
-          <Tbody>{renderTableBody}</Tbody>
-        </Table>
-      </TableContainer>
+      <TandaTable
+        tableHeaders={['Month', 'New Draw', 'Existing Draws', 'Total']}
+      >
+        {renderTableBody}
+      </TandaTable>
 
       {show && (
         <Text

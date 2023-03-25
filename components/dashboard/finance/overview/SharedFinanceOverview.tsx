@@ -11,7 +11,13 @@ export const SharedFinanceOverview = ({ children }: LayoutProps) => {
 
   return (
     <DashBoardLayout
-      topBar={<ProfileNavCard title='Welcome back, John' desc={getDay(true)} />}
+      topBar={
+        <ProfileNavCard
+          showOnMobile
+          title='Welcome back, John'
+          desc={getDay(true)}
+        />
+      }
     >
       <ColumnFlex gap='5' w='max-content'>
         <PageSecondaryTitle />

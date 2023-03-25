@@ -1,19 +1,20 @@
 import { ColumnFlex, IconBtn } from '@/components';
 import { useCustomMediaQuery } from '@/context';
+import { TopBarProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
+import { DashRoutes } from '@/utils';
 import { HamburgerIcon, ChevronLeftIcon } from '@chakra-ui/icons';
 import { Center, Flex, HStack, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { ReactNode } from 'react';
 
-interface Props {
-  header?: ReactNode;
-  showBckBtn?: boolean;
-}
-
-export const Topbar = ({ header, showBckBtn }: Props) => {
+export const Topbar = ({ header, showBckBtn }: TopBarProps) => {
   const { upDateMediaQuery } = useCustomMediaQuery();
   const router = useRouter();
+
+  const color =
+    router.pathname === DashRoutes.expense
+      ? DEFAULT_STYLES.pink
+      : DEFAULT_STYLES.primaryHeaderColor;
 
   return (
     <Flex
@@ -46,15 +47,13 @@ export const Topbar = ({ header, showBckBtn }: Props) => {
                 transform: 'scale(0.99)',
               }}
             >
-              <ChevronLeftIcon fontSize='1.3rem' />
-              <Text
-                color={DEFAULT_STYLES.primaryHeaderColor}
-                fontWeight={DEFAULT_STYLES.semibold}
-              >
+              <ChevronLeftIcon fontSize='1.3rem' color={color} />
+              <Text color={color} fontWeight={DEFAULT_STYLES.semibold}>
                 Back
               </Text>
             </Center>
           )}
+
           <ColumnFlex>{header}</ColumnFlex>
         </Flex>
 
