@@ -2,6 +2,7 @@ import { ColumnFlex, Desc, TandaHDivider, TandaModal } from '@/components';
 import { DrawStatus } from '@/models';
 import { DrawChangeHandler, drawTab, useDrawStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
+import { DashRoutes } from '@/utils';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
   Button,
@@ -13,6 +14,7 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { ConfirmDrawCard } from './ConfirmDrawCard';
 import { DrawFlexItem } from './DrawFlexItem';
@@ -25,6 +27,10 @@ export const DrawCard = () => {
   const isInitTab = selectedIndexs.at(-1) === DrawStatus.Initialisation;
   const isConclusionTab = selectedIndexs.at(-1) === DrawStatus.Conclusion;
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useRouter();
+  const isExpense = router.pathname === DashRoutes.expense;
+
+  const color = isExpense ? DEFAULT_STYLES.pink : DEFAULT_STYLES.lightPurple;
 
   const progressTab = drawTab.map((_, i, arr) => {
     const showRightBar = i === 0;
@@ -86,11 +92,7 @@ export const DrawCard = () => {
             <DrawFlexItem title='Rate' desc={<>({rate.toFixed(2)}%)</>} />
             <DrawFlexItem
               title='Available Credit'
-              desc={
-                <span style={{ color: DEFAULT_STYLES.lightPurple }}>
-                  $920,000.00
-                </span>
-              }
+              desc={<span style={{ color }}>$920,000.00</span>}
             />
 
             <TandaHDivider />
