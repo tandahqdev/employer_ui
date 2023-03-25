@@ -32,7 +32,7 @@ export const DEFAULT_STYLES = {
   smFontSize: '0.75rem',
   fontSize: '0.95rem', // 1rem = 16px
   textFontSize: '0.9rem',
-  cardText: '0.8rem',
+  desc: '0.75rem',
   alt: 'Tanda',
   fontFamily: "'Outfit', sans-serif",
   lineHeight: 1.6,

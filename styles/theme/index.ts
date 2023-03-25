@@ -45,7 +45,7 @@ export const textStyles = {
     fontWeight: 600,
   },
   desc: {
-    fontSize: '0.73rem',
+    fontSize: '0.7rem',
     lineHeight: 1.4,
     color: DEFAULT_STYLES.primaryColor,
     fontWeight: 400,
