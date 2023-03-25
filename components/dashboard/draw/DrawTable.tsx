@@ -1,3 +1,5 @@
+import { ColumnFlex, Desc } from '@/components';
+import { drawTable } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import {
   GridItem,
@@ -7,9 +9,14 @@ import {
   Tr,
   Text,
   Th,
+  Tbody,
+  Td,
 } from '@chakra-ui/react';
+import { useState } from 'react';
 
 export const DrawTable = () => {
+  const [show] = useState(false);
+
   const renderTableHeaders = [
     'Month',
     'New Draw',
@@ -26,6 +33,24 @@ export const DrawTable = () => {
       >
         <Text>{h}</Text>
       </Th>
+    );
+  });
+
+  const renderTableBody = drawTable.map((e) => {
+    return (
+      <Tr key={e.id} textStyle='bolderBody'>
+        <Td>{e.month}</Td>
+        <Td>
+          <ColumnFlex>
+            <Text color={DEFAULT_STYLES.lightPurple}>{e.draw.amount}</Text>
+            <Desc>{e.draw.month}</Desc>
+          </ColumnFlex>
+        </Td>
+        <Td isNumeric>{e.exist}</Td>
+        <Td isNumeric fontWeight={DEFAULT_STYLES.semibold}>
+          {e.total}
+        </Td>
+      </Tr>
     );
   });
 
@@ -51,19 +76,23 @@ export const DrawTable = () => {
           <Thead>
             <Tr>{renderTableHeaders}</Tr>
           </Thead>
+
+          <Tbody>{renderTableBody}</Tbody>
         </Table>
       </TableContainer>
 
-      <Text
-        textStyle='bodyText'
-        color={DEFAULT_STYLES.primaryHeaderColor}
-        fontWeight={DEFAULT_STYLES.mediumbold}
-        mt='10'
-        alignSelf='center'
-        textAlign='center'
-      >
-        Add a new draw amount to preview your schedule
-      </Text>
+      {show && (
+        <Text
+          textStyle='bodyText'
+          color={DEFAULT_STYLES.primaryHeaderColor}
+          fontWeight={DEFAULT_STYLES.mediumbold}
+          mt='10'
+          alignSelf='center'
+          textAlign='center'
+        >
+          Add a new draw amount to preview your schedule
+        </Text>
+      )}
     </GridItem>
   );
 };

@@ -1,6 +1,13 @@
 import { useSharedColor } from '@/customHooks';
+import { DEFAULT_STYLES } from '@/styles';
 import { getDay } from '@/utils';
-import { Center, Flex, GridItem, Text } from '@chakra-ui/react';
+import {
+  CircularProgress,
+  CircularProgressLabel,
+  Flex,
+  GridItem,
+  Text,
+} from '@chakra-ui/react';
 import { BsFillCreditCardFill } from 'react-icons/bs';
 import { WiMoonAltWaxingCrescent6 } from 'react-icons/wi';
 import { TandaHDivider, TandaVDivider } from '../../shared';
@@ -38,14 +45,21 @@ export const PaymentDetails = () => {
           info='Due in 28 day(s)'
           icon={WiMoonAltWaxingCrescent6}
           extra={
-            <Center
-              border='10px solid #F0EAFD'
-              w='72px'
-              h='72px'
-              borderRadius='full'
+            <CircularProgress
+              size='72px'
+              capIsRound
+              color={DEFAULT_STYLES.lightPurple}
+              trackColor='#F0EAFD'
+              value={0}
             >
-              0%
-            </Center>
+              <CircularProgressLabel
+                fontSize={DEFAULT_STYLES.desc}
+                color={DEFAULT_STYLES.lightPurple}
+                fontWeight={DEFAULT_STYLES.semibold}
+              >
+                0%
+              </CircularProgressLabel>
+            </CircularProgress>
           }
         />
       </Flex>

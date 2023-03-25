@@ -12,4 +12,4 @@ export * from './SharedBannerContainer';
 export * from './TandaDivider';
 export * from './Topbar';
 export * from './TandaModal';
-export * from './WelcomeCard';
+export * from './ProfileNavCard';
