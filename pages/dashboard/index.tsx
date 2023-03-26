@@ -9,7 +9,7 @@ export default function Home() {
   const topbar = <Header>Hello!</Header>;
 
   return (
-    <DashBoardLayout topBar={topbar}>
+    <DashBoardLayout header={topbar}>
       <Grid {...sharedGridStyles}>
         <ActionCard
           header='Financing'

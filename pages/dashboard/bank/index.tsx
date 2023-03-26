@@ -5,7 +5,7 @@ const BankOverview = () => {
   const topbar = <Header>Hello!</Header>;
 
   return (
-    <DashBoardLayout topBar={topbar}>
+    <DashBoardLayout header={topbar}>
       <h1>Bank Overview</h1>
     </DashBoardLayout>
   );

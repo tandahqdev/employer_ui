@@ -5,7 +5,7 @@ const DashboardSettings = () => {
   const topbar = <Header>Settings</Header>;
 
   return (
-    <DashBoardLayout topBar={topbar}>
+    <DashBoardLayout header={topbar}>
       <h1>Settings</h1>
     </DashBoardLayout>
   );

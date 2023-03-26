@@ -28,7 +28,7 @@ const FinanceGrow = () => {
   );
 
   return (
-    <DashBoardLayout topBar={topbar}>
+    <DashBoardLayout header={topbar}>
       {congratulations && (
         <SharedCongratulate path={DashRoutes.dashboard} title='Grow' />
       )}

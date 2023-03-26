@@ -23,7 +23,7 @@ const FinanceExtend = () => {
   );
 
   return (
-    <DashBoardLayout topBar={topbar}>
+    <DashBoardLayout header={topbar}>
       {Congratulations && <SharedCongratulate title='Extend' />}
 
       {financeS && (

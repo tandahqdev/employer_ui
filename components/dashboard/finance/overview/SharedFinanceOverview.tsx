@@ -11,7 +11,7 @@ export const SharedFinanceOverview = ({ children }: LayoutProps) => {
 
   return (
     <DashBoardLayout
-      topBar={
+      header={
         <ProfileNavCard
           showOnMobile
           title='Welcome back, John'
