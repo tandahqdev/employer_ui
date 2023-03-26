@@ -5,7 +5,12 @@ import { Flex } from '@chakra-ui/react';
 
 interface Props extends LayoutProps, TopBarProps {}
 
-export const DashBoardLayout = ({ children, header, showBckBtn }: Props) => {
+export const DashBoardLayout = ({
+  children,
+  header,
+  showBckBtn,
+  otherBtn,
+}: Props) => {
   return (
     <Flex
       width={DEFAULT_STYLES.fullWidth}
@@ -21,7 +26,7 @@ export const DashBoardLayout = ({ children, header, showBckBtn }: Props) => {
         align='center'
         position='relative'
       >
-        <Topbar header={header} showBckBtn={showBckBtn} />
+        <Topbar header={header} showBckBtn={showBckBtn} otherBtn={otherBtn} />
 
         <Flex
           w={DEFAULT_STYLES.containerWidth}

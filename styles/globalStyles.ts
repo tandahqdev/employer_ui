@@ -31,7 +31,7 @@ export const DEFAULT_STYLES = {
   mediumbold: 600,
   bold: 700,
   smFontSize: '0.75rem',
-  fontSize: '0.95rem', // 1rem = 16px
+  fontSize: '0.95rem',
   textFontSize: '0.9rem',
   desc: '0.75rem',
   alt: 'Tanda',

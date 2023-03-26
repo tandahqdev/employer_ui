@@ -1,7 +1,7 @@
 import { ColumnFlex } from '@/components/shared';
 import { DashBoardLayout } from '@/layout';
 import { LayoutProps } from '@/models';
-import { sharedGridStyles } from '@/styles';
+import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { getDay } from '@/utils';
 import { Grid } from '@chakra-ui/react';
 import { ProfileNavCard, PageSecondaryTitle } from '../../shared';
@@ -20,7 +20,13 @@ export const SharedFinanceOverview = ({ children }: LayoutProps) => {
       }
     >
       <ColumnFlex gap='5' w='max-content'>
-        <PageSecondaryTitle />
+        <PageSecondaryTitle
+          title='Financing overview'
+          desc='A quick glance at the aggregated status of your financing products with tanda'
+          textStyle='bodyText'
+          color={DEFAULT_STYLES.primaryColor}
+          opacity={0.4}
+        />
 
         <Grid {...sharedGridStyles}>{children}</Grid>
       </ColumnFlex>

@@ -1,20 +1,16 @@
-import { ColumnFlex } from '@/components';
+import { ColumnFlex, Desc } from '@/components';
+import { IProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
-import { Text } from '@chakra-ui/react';
+import { Text, TextProps } from '@chakra-ui/react';
 
-export const PageSecondaryTitle = () => {
+interface Props extends IProps, TextProps {}
+
+export const PageSecondaryTitle = ({ title, desc, ...r }: Props) => {
   return (
     <ColumnFlex gap='0.5' px={DEFAULT_STYLES.mobilePx}>
-      <Text textStyle='title'>Financing overview</Text>
+      <Text textStyle='title'>{title}</Text>
 
-      <Text
-        textStyle='bodyText'
-        color={DEFAULT_STYLES.primaryColor}
-        opacity={0.4}
-      >
-        A quick glance at the aggregated status of your financing products with
-        tanda
-      </Text>
+      <Desc {...r}>{desc}</Desc>
     </ColumnFlex>
   );
 };

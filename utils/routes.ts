@@ -10,6 +10,7 @@ export class DashRoutes {
   // Banking
   static dashboardBankOverview = `${this.dashboard}/bank`;
   static dashboardBankAccts = `${this.dashboardBankOverview}/accounts`;
+  static dashboardBankAcctsStatements = `${this.dashboardBankAccts}/statements`;
   static dashboardBankCards = `${this.dashboardBankOverview}/cards`;
   static dashboardBankPay = `${this.dashboardBankOverview}/payments`;
   static dashboardBankRepts = `${this.dashboardBankOverview}/recipients`;
