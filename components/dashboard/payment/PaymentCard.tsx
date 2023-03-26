@@ -2,6 +2,7 @@ import { ColumnFlex, Desc, TandaHDivider, TandaModal } from '@/components';
 import { PaymentStatus } from '@/models';
 import { PaymentChangeHandler, paymentTab, usePaymentStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
+import { DashRoutes } from '@/utils';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
   Button,
@@ -13,6 +14,7 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { ConfirmPayment } from './ConfirmPayment';
 import { InfoAlert } from './InfoAlert';
@@ -27,6 +29,8 @@ export const PaymentCard = () => {
   const isInitTab = selectedIndexs.at(-1) === PaymentStatus.Initialisation;
   const isConclusionTab = selectedIndexs.at(-1) === PaymentStatus.Conclusion;
   const { color } = useColor();
+  const router = useRouter();
+  const isExpense = router.pathname === DashRoutes.expense;
 
   const progressTab = paymentTab.map((_, i, arr) => {
     const showRightBar = i === 0;
@@ -182,7 +186,7 @@ export const PaymentCard = () => {
         )}
 
         <Button
-          variant='darkBtn'
+          variant={isExpense ? 'pinkBtn' : 'darkBtn'}
           size='smPadding'
           onClick={() => {
             if (isInitTab) {

@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 
 export const useColor = (addBg?: boolean) => {
   const router = useRouter();
-
   const isExpense = router.pathname === DashRoutes.expense;
   const color = isExpense ? DEFAULT_STYLES.pink : DEFAULT_STYLES.lightPurple;
 

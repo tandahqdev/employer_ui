@@ -27,6 +27,12 @@ const darkBtn = defineStyle({
   color: DEFAULT_STYLES.white,
 });
 
+
+const pinkBtn = defineStyle({
+  background: DEFAULT_STYLES.pink,
+  color: DEFAULT_STYLES.white,
+});
+
 const textBtn = defineStyle((_) => ({
   backgroundColor: 'transparent',
   color: DEFAULT_STYLES.lightPurple,
@@ -64,6 +70,7 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     bgBtn,
     textBtn,
     darkBtn,
+    pinkBtn,
   },
   defaultProps: {
     size: 'lgPadding',

@@ -7,13 +7,26 @@ import { TandaTable, TandaTableRow } from '../shared';
 
 export const ExpenseTable = () => {
   const [show] = useState(false);
+  const [isSelected, setIsSelected] = useState<string[]>([]);
 
   const renderTableBody = expenseTableBody.map((e) => {
+    const isActive = isSelected.includes(e.id);
+
     return (
-      <TandaTableRow key={e.id}>
+      <TandaTableRow
+        key={e.id}
+        cursor='pointer'
+        transition='all 300ms linear'
+        bg={isActive ? DEFAULT_STYLES.lightPinkBg : 'inherit'}
+        onClick={() => {
+          isActive
+            ? setIsSelected(isSelected.filter((id) => id !== e.id))
+            : setIsSelected((p) => [...p, e.id]);
+        }}
+      >
         <Td>
           <Flex align='center' gap='4'>
-            <Checkbox variant='pinkvariant' />
+            <Checkbox variant='pinkvariant' isChecked={isActive} />
             <ColumnFlex>
               <Text>{e.description.name}</Text>
               <Desc>{e.description.desc}</Desc>
