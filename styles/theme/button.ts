@@ -47,6 +47,14 @@ const noBgBtn = defineStyle({
   color: DEFAULT_STYLES.darkGray,
 });
 
+
+const noBgPurpleBtn = defineStyle({
+  border: '1px solid',
+  borderColor: DEFAULT_STYLES.lightPurple,
+  backgroundColor: 'transparent',
+  color: DEFAULT_STYLES.lightPurple,
+});
+
 export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
   baseStyle: {
     borderRadius: 8,
@@ -58,7 +66,7 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     _hover: {
       opacity: 0.9,
       _disabled: {
-        bg: 'gray',
+        opacity: 0.9,
       },
     },
   },
@@ -71,6 +79,7 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     textBtn,
     darkBtn,
     pinkBtn,
+    noBgPurpleBtn,
   },
   defaultProps: {
     size: 'lgPadding',

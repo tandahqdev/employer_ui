@@ -73,6 +73,8 @@ export const Topbar = ({ header, showBckBtn, otherBtn }: TopBarProps) => {
               />
             </Center>
           )}
+
+          {otherBtn}
           <IconBtn
             aria-label='Close button'
             icon={<HamburgerIcon fontSize='2rem' />}
