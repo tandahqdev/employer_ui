@@ -17,7 +17,7 @@ const BankStatements = () => {
   );
 
   const otherBtn = (
-    <Flex align='center' gap='4'>
+    <Flex align='center' gap='4' display={{ base: 'none', md: 'flex' }}>
       <Button size='smPadding' leftIcon={<HiArrowRight />}>
         Move
       </Button>

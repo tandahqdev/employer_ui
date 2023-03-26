@@ -20,7 +20,7 @@ export const AccountPageContainer = ({
       otherBtn={otherBtn}
       showBckBtn={showBckBtn}
     >
-      <ColumnFlex gap='5' w='max-content'>
+      <ColumnFlex gap='5' w='full' px={DEFAULT_STYLES.mobilePx}>
         <PageSecondaryTitle
           title='Total balance'
           desc='N 5,459.00'
@@ -31,9 +31,8 @@ export const AccountPageContainer = ({
         />
 
         <Grid
-          w={DEFAULT_STYLES.pageWidth}
+          w={DEFAULT_STYLES.fullWidth}
           px={DEFAULT_STYLES.mobilePx}
-          maxW='1000px'
           minH='400px'
           layerStyle='card'
           alignContent='flex-start'
