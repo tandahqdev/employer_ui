@@ -5,7 +5,7 @@ const DashboardFAQ = () => {
   const topbar = <Header>FAQ</Header>;
 
   return (
-    <DashBoardLayout topBar={topbar}>
+    <DashBoardLayout header={topbar}>
       <h1>FAQ</h1>
     </DashBoardLayout>
   );

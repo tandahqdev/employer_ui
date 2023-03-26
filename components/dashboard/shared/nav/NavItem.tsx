@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const NavItem = ({ icon, title, path, onClick }: Props) => {
-  const pathname = useRouter().pathname;
+  const { pathname } = useRouter();
   const isActive = path === pathname;
 
   const navItem = (

@@ -1,6 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 import { DEFAULT_STYLES } from '../globalStyles';
 import { buttonTheme } from './button';
+import { checkboxTheme } from './checkbox';
 import { inputTheme } from './input';
 import { radioTheme } from './radio';
 import { selectTheme } from './select';
@@ -81,6 +82,7 @@ export const theme = extendTheme({
     Spinner: spinnerTheme,
     Select: selectTheme,
     Radio: radioTheme,
+    Checkbox: checkboxTheme,
   },
   textStyles,
   colors: {

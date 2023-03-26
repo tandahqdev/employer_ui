@@ -1,8 +1,9 @@
-import { LayoutProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import {
   Table,
   TableContainer,
+  TableProps,
+  TableRowProps,
   Tbody,
   Text,
   Th,
@@ -10,11 +11,11 @@ import {
   Tr,
 } from '@chakra-ui/react';
 
-interface Props extends LayoutProps {
+interface Props extends TableProps {
   tableHeaders: string[];
 }
 
-export const TandaTable = ({ tableHeaders, children }: Props) => {
+export const TandaTable = ({ tableHeaders, children, ...t }: Props) => {
   const renderTableHeaders = tableHeaders.map((h, i, arr) => {
     const isNumeric = i === arr.length - 1;
 
@@ -32,7 +33,7 @@ export const TandaTable = ({ tableHeaders, children }: Props) => {
 
   return (
     <TableContainer minW={DEFAULT_STYLES.fullWidth}>
-      <Table variant='simple'>
+      <Table variant='simple' {...t}>
         <Thead>
           <Tr>{renderTableHeaders}</Tr>
         </Thead>
@@ -42,3 +43,9 @@ export const TandaTable = ({ tableHeaders, children }: Props) => {
     </TableContainer>
   );
 };
+
+export const TandaTableRow = ({ ...r }: TableRowProps) => (
+  <Tr textStyle='bolderBody' {...r}>
+    {r.children}
+  </Tr>
+);

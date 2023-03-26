@@ -27,6 +27,12 @@ const darkBtn = defineStyle({
   color: DEFAULT_STYLES.white,
 });
 
+
+const pinkBtn = defineStyle({
+  background: DEFAULT_STYLES.pink,
+  color: DEFAULT_STYLES.white,
+});
+
 const textBtn = defineStyle((_) => ({
   backgroundColor: 'transparent',
   color: DEFAULT_STYLES.lightPurple,
@@ -41,18 +47,24 @@ const noBgBtn = defineStyle({
   color: DEFAULT_STYLES.darkGray,
 });
 
+
+const noBgPurpleBtn = defineStyle({
+  border: '1px solid',
+  borderColor: DEFAULT_STYLES.lightPurple,
+  backgroundColor: 'transparent',
+  color: DEFAULT_STYLES.lightPurple,
+});
+
 export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
   baseStyle: {
     borderRadius: 8,
     fontWeight: DEFAULT_STYLES.semibold,
     fontSize: '0.95rem',
-    _active: {
-      transform: 'scale(0.99)',
-    },
     _hover: {
       opacity: 0.9,
       _disabled: {
-        bg: 'gray',
+        opacity: 0.9,
+        bg: 'gray.300',
       },
     },
   },
@@ -64,6 +76,8 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     bgBtn,
     textBtn,
     darkBtn,
+    pinkBtn,
+    noBgPurpleBtn,
   },
   defaultProps: {
     size: 'lgPadding',

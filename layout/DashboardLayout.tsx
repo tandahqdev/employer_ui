@@ -1,15 +1,16 @@
 import { ColumnFlex, SideBar, Topbar } from '@/components';
-import { LayoutProps } from '@/models';
+import { LayoutProps, TopBarProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { Flex } from '@chakra-ui/react';
-import { ReactNode } from 'react';
 
-interface Props extends LayoutProps {
-  topBar?: ReactNode;
-  showBckBtn?: boolean;
-}
+interface Props extends LayoutProps, TopBarProps {}
 
-export const DashBoardLayout = ({ children, topBar, showBckBtn }: Props) => {
+export const DashBoardLayout = ({
+  children,
+  header,
+  showBckBtn,
+  otherBtn,
+}: Props) => {
   return (
     <Flex
       width={DEFAULT_STYLES.fullWidth}
@@ -25,7 +26,7 @@ export const DashBoardLayout = ({ children, topBar, showBckBtn }: Props) => {
         align='center'
         position='relative'
       >
-        <Topbar header={topBar} showBckBtn={showBckBtn} />
+        <Topbar header={header} showBckBtn={showBckBtn} otherBtn={otherBtn} />
 
         <Flex
           w={DEFAULT_STYLES.containerWidth}

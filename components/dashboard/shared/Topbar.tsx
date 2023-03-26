@@ -7,7 +7,7 @@ import { HamburgerIcon, ChevronLeftIcon } from '@chakra-ui/icons';
 import { Center, Flex, HStack, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
-export const Topbar = ({ header, showBckBtn }: TopBarProps) => {
+export const Topbar = ({ header, showBckBtn, otherBtn }: TopBarProps) => {
   const { upDateMediaQuery } = useCustomMediaQuery();
   const router = useRouter();
 
@@ -58,20 +58,23 @@ export const Topbar = ({ header, showBckBtn }: TopBarProps) => {
         </Flex>
 
         <Flex w='max-content' gap='4'>
-          <Center
-            width='54px'
-            height='54px'
-            bgColor={DEFAULT_STYLES.lightPurple}
-            borderRadius='full'
-          >
+          {!otherBtn && (
             <Center
-              width='16px'
-              height='16px'
-              bg={DEFAULT_STYLES.lightGray}
+              width='54px'
+              height='54px'
+              bgColor={DEFAULT_STYLES.lightPurple}
               borderRadius='full'
-            />
-          </Center>
+            >
+              <Center
+                width='16px'
+                height='16px'
+                bg={DEFAULT_STYLES.lightGray}
+                borderRadius='full'
+              />
+            </Center>
+          )}
 
+          {otherBtn}
           <IconBtn
             aria-label='Close button'
             icon={<HamburgerIcon fontSize='2rem' />}

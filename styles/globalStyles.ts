@@ -11,6 +11,7 @@ export const DEFAULT_STYLES = {
   white: '#FFFFFF',
   darkColor: '#000000',
   pink: '#EF567E',
+  lightPinkBg: 'rgba(239, 86, 126, 0.1)',
   lightDarkColor: '#888888',
   lightPurple: '#6E31F0',
   primaryHeaderColor: '#2B2B2B',
@@ -30,7 +31,7 @@ export const DEFAULT_STYLES = {
   mediumbold: 600,
   bold: 700,
   smFontSize: '0.75rem',
-  fontSize: '0.95rem', // 1rem = 16px
+  fontSize: '0.95rem',
   textFontSize: '0.9rem',
   desc: '0.75rem',
   alt: 'Tanda',

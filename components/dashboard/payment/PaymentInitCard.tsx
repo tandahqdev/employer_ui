@@ -1,14 +1,24 @@
 import { ColumnFlex } from '@/components/shared';
 import { PaymentTerms } from '@/models';
-import { DrawChangeHandler } from '@/store';
+import { PaymentChangeHandler, usePaymentStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
+import { DashRoutes } from '@/utils';
 import { Flex, Radio, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import { useColor } from './useColor';
 
-export const DrawInitCard = ({ isChecked, month, id, price }: PaymentTerms) => {
+export const PaymentInitCard = ({ month, id, price }: PaymentTerms) => {
+  const router = useRouter();
+  const { selectedTerms } = usePaymentStore();
+
+  const isExpense = router.pathname === DashRoutes.expense;
+  const { color, bg } = useColor(true);
+  const isChecked = id === selectedTerms?.id;
+
   return (
     <Flex
-      border={isChecked ? `2px solid ${DEFAULT_STYLES.lightPurple}` : 'none'}
-      bg={isChecked ? DEFAULT_STYLES.lightPurpleBg : 'transparent'}
+      border={isChecked ? `2px solid ${color}` : 'none'}
+      bg={isChecked ? bg : 'transparent'}
       transition='background 0.3s linear'
       minH='63px'
       rounded='6px'
@@ -17,26 +27,23 @@ export const DrawInitCard = ({ isChecked, month, id, price }: PaymentTerms) => {
       gap='20px'
       cursor='pointer'
       onClick={() => {
-        if (isChecked) {
-          DrawChangeHandler.onSelectedTermChange({
-            isChecked,
-            month,
-            id,
-            price,
-          });
-          DrawChangeHandler.onTermCheckedChange(false, id);
-        } else {
-          DrawChangeHandler.onTermCheckedChange(true, id);
-        }
+        PaymentChangeHandler.onSelectedTermChange({
+          month,
+          id,
+          price,
+        });
       }}
     >
-      <Radio isChecked={isChecked} />
+      <Radio
+        isChecked={isChecked}
+        variant={isExpense ? 'pinkvariant' : undefined}
+      />
 
       <ColumnFlex>
         <Text textStyle='bodyText' color={DEFAULT_STYLES.darkGray}>
           <span
             style={{
-              color: DEFAULT_STYLES.lightPurple,
+              color: color,
               fontWeight: DEFAULT_STYLES.semibold,
             }}
           >

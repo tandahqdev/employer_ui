@@ -1,7 +1,4 @@
-import { DrawStatus } from '@/models';
 import { nanoid } from 'nanoid';
-
-export const drawTab = [DrawStatus.Initialisation, DrawStatus.Conclusion];
 
 export const drawTable = [
   {

@@ -1,21 +1,21 @@
-export interface DrawModel {
-  selectedIndexs: DrawStatus[];
+export interface PaymentModel {
+  selectedIndexs: PaymentStatus[];
   terms: PaymentTerms[];
   repay: number;
   selectedTerms?: PaymentTerms;
   rate: number;
   total: number;
   id: string;
+  name?: string;
 }
 
 export interface PaymentTerms {
-  isChecked?: boolean;
   month: number;
   price: number;
   id: string;
 }
 
-export enum DrawStatus {
+export enum PaymentStatus {
   Initialisation = 0,
   Conclusion = 1,
 }

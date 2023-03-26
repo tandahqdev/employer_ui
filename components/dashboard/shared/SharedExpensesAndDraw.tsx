@@ -11,7 +11,7 @@ export const SharedExpensesAndDraw = ({
   children,
 }: Props) => {
   return (
-    <DashBoardLayout topBar={header} showBckBtn={showBckBtn}>
+    <DashBoardLayout header={header} showBckBtn={showBckBtn}>
       <Grid
         gap={{ base: '33px', lg: '10px', xl: '33px' }}
         templateColumns={{

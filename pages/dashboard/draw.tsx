@@ -1,7 +1,7 @@
 import {
-  DrawCard,
   DrawTable,
   Header,
+  PaymentCard,
   SharedExpensesAndDraw,
 } from '@/components';
 
@@ -13,7 +13,7 @@ const DashboardDraw = () => {
   return (
     <SharedExpensesAndDraw header={topbar} showBckBtn>
       <DrawTable />
-      <DrawCard />
+      <PaymentCard />
     </SharedExpensesAndDraw>
   );
 };
