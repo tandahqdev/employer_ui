@@ -39,7 +39,6 @@ export const AccountPageContainer = ({
         >
           <AcctNav />
           <TandaHDivider />
-
           {children}
         </Grid>
       </ColumnFlex>
