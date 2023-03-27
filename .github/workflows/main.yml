@@ -22,3 +22,5 @@ jobs:
       run: pnpm install 
     - name: Run ESLint
       run: pnpm lint
+    - name: Run tsc
+      run: pnpm tsc
