@@ -3,7 +3,7 @@ import { DashBoardLayout } from '@/layout';
 import { LayoutProps, TopBarProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { Grid } from '@chakra-ui/react';
-import { PageSecondaryTitle, TandaHDivider } from '../shared';
+import { PageSecondaryTitle, TandaHDivider } from '../../shared';
 import { AcctNav } from './AcctNav';
 
 interface Props extends LayoutProps, TopBarProps {}
