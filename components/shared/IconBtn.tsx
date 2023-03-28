@@ -3,7 +3,7 @@ import { IconButton, IconButtonProps } from '@chakra-ui/react';
 
 interface Props extends IconButtonProps {
   icon: ReactElement;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const IconBtn = ({ icon, onClick, ...rest }: Props) => {

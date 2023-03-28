@@ -11,7 +11,7 @@ export const accountItems: AccountModel[] = [
   {
     id: nanoid(12),
     accountNumber: '32364534832',
-    name: 'N32,990',
+    name: 'Subscriptions',
     amount: 'N32,990',
   },
   {
