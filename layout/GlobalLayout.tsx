@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { LayoutProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles/globalStyles';
+import { DEFAULT_STYLES } from '@/styles';
 import { MediaContextProvider } from '@/context';
 
 export const GlobalLayout = ({ children }: LayoutProps) => {

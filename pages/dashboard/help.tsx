@@ -6,7 +6,7 @@ const DashboardHelp = () => {
 
   return (
     <DashBoardLayout header={topbar}>
-      <h1>Help</h1>
+      <h1>You will be helped</h1>
     </DashBoardLayout>
   );
 };
