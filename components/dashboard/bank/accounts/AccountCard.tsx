@@ -14,7 +14,7 @@ export const AccountCard = ({ name, amount, accountNumber }: AccountModel) => {
       pl='3'
     >
       <Stack>
-        <ColumnFlex>
+        <ColumnFlex opacity={0.75}>
           <Text
             textStyle='bolderBody'
             color={DEFAULT_STYLES.primaryHeaderColor}
@@ -28,10 +28,7 @@ export const AccountCard = ({ name, amount, accountNumber }: AccountModel) => {
         </ColumnFlex>
 
         <ColumnFlex>
-          <Text
-            textStyle='bolderBody'
-            color={DEFAULT_STYLES.primaryHeaderColor}
-          >
+          <Text textStyle='bolderBody' color={DEFAULT_STYLES.lightPurple}>
             Account Number
           </Text>
 
