@@ -53,7 +53,7 @@ export const FinanceActionCardDetails = ({
         <Box w={DEFAULT_STYLES.fullWidth} h='13px' bg='#DDE0F1' rounded={39}>
           <Box
             w={`${percent ?? '0'}%`}
-            transition='all 0.5s ease-in-out'
+            transition={DEFAULT_STYLES.transition}
             h='full'
             bg={bg}
             rounded={39}

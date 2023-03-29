@@ -16,7 +16,7 @@ export const ExpenseTable = () => {
       <TandaTableRow
         key={e.id}
         cursor='pointer'
-        transition='all 300ms linear'
+        transition={DEFAULT_STYLES.transition}
         bg={isActive ? DEFAULT_STYLES.lightPinkBg : 'inherit'}
         onClick={() => {
           isActive

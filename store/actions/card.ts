@@ -3,14 +3,14 @@ import { useCardStore } from '../state';
 
 export class CardChangeHandler {
   static onTypeChange = (type: CardType) => {
-    useCardStore.setState(() => ({
-      type,
+    useCardStore.setState((state) => ({
+      type: state.type === type ? undefined : type,
     }));
   };
 
   static onBrandChange = (brand: CardBrand) => {
-    useCardStore.setState(() => ({
-      brand,
+    useCardStore.setState((state) => ({
+      brand: state.brand === brand ? undefined : brand,
     }));
   };
 

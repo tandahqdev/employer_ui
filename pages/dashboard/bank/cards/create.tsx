@@ -1,9 +1,16 @@
-import { ColumnFlex } from '@/components';
+import { ColumnFlex, SelectCardType } from '@/components';
 import { DashBoardLayout } from '@/layout';
+import { useCardStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { Grid, Stack, Text } from '@chakra-ui/react';
 
 const Create = () => {
+  const { supportedTypes } = useCardStore();
+
+  const renderTypes = supportedTypes.map((type) => {
+    return <SelectCardType key={type.id} {...type} />;
+  });
+
   return (
     <DashBoardLayout showBckBtn otherBtn={true}>
       <Grid
@@ -16,7 +23,6 @@ const Create = () => {
           alignSelf='center'
           justifySelf='center'
           w='80%'
-          border='2px solid red'
           minH='400px'
           mt='80px'
           mb='120px'
@@ -34,11 +40,9 @@ const Create = () => {
               </Text>
             </ColumnFlex>
 
-            <Grid
-              w='full'
-              border='1px solid green'
-              templateColumns='repeat(2,1fr)'
-            ></Grid>
+            <Grid w='max-content' templateColumns='repeat(2,1fr)' gap='70px'>
+              {renderTypes}
+            </Grid>
           </Stack>
         </ColumnFlex>
       </Grid>

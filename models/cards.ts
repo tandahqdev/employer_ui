@@ -2,7 +2,7 @@ import { StaticImageData } from 'next/image';
 import { IconType } from 'react-icons';
 
 export interface CreateCard {
-  supportedType: SupportedCardType[];
+  supportedTypes: SupportedCardType[];
   supportedBrand: SupportedCardBrand[];
   type?: CardType;
   brand?: CardBrand;
@@ -14,8 +14,8 @@ export interface CreateCard {
   id: string;
 }
 
-export interface CardDetails {
-  value: string;
+export interface CardDetails<T> {
+  value: T;
   id: string;
 }
 
@@ -39,11 +39,11 @@ export interface Address {
   country?: string;
 }
 
-export interface SupportedCardType extends CardDetails {
+export interface SupportedCardType extends CardDetails<CardType> {
   icon?: IconType;
 }
 
-export interface SupportedCardBrand extends CardDetails {
+export interface SupportedCardBrand extends CardDetails<CardBrand> {
   image?: StaticImageData;
   text?: string;
 }

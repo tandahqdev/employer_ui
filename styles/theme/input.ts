@@ -48,7 +48,7 @@ const tandaXs = definePartsStyle({
     borderColor: '#DEE5E9',
     background: 'transparent',
     borderRadius: '4px',
-    transition: 'all 0.3s ease-in-out',
+    transition: DEFAULT_STYLES.transition,
     h: '37px',
     w: '123px',
   },

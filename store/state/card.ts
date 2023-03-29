@@ -6,7 +6,7 @@ import { supportedBrand, supportedTypes } from '../data';
 const initialState: CreateCard = {
   id: nanoid(),
   supportedBrand: supportedBrand,
-  supportedType: supportedTypes,
+  supportedTypes: supportedTypes,
   type: undefined,
   brand: undefined,
   name: undefined,

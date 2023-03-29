@@ -58,7 +58,7 @@ const noBgPurpleBtn = defineStyle({
 export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
   baseStyle: {
     borderRadius: 8,
-    transition: 'all 0.3s linear',
+    transition: DEFAULT_STYLES.transition,
     fontWeight: DEFAULT_STYLES.semibold,
     fontSize: '0.95rem',
     _hover: {

@@ -38,7 +38,7 @@ export const CreditDetails = () => {
         w='40px'
         h='7px'
         key={`${e}_${i}`}
-        transition='all 0.5s ease-in-out'
+        transition={DEFAULT_STYLES.transition}
         bg={isActive ? DEFAULT_STYLES.lightPurple : '#D9D9D9'}
         borderRadius={5}
         onClick={() => {

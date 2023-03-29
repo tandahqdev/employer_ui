@@ -20,6 +20,7 @@ export const DEFAULT_STYLES = {
   bgColor: '#F6F6F6',
   lightPurpleBg: 'rgba(110, 49, 240, 0.1)',
   lightGrayBg: 'rgba(177, 185, 192, 0.2);',
+  grayBg: 'rgba(228, 226, 226, 0.6)',
   errorColor: '#C5292A',
   lightErrorBg: 'rgba(197, 41, 42, 0.1);',
   successColor: '#34A853',
@@ -41,6 +42,7 @@ export const DEFAULT_STYLES = {
   mobilePx: { base: '2', xl: 0 },
   sidePl: '30px',
   border: `1px solid #E4E2E2`,
+  transition: 'all 250ms linear',
 };
 
 export const sharedGridStyles = {

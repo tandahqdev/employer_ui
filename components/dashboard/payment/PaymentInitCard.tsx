@@ -19,7 +19,7 @@ export const PaymentInitCard = ({ month, id, price }: PaymentTerms) => {
     <Flex
       border={isChecked ? `2px solid ${color}` : 'none'}
       bg={isChecked ? bg : 'transparent'}
-      transition='background 0.3s linear'
+      transition='background 300ms linear'
       minH='63px'
       rounded='6px'
       padding='12px 18px'
