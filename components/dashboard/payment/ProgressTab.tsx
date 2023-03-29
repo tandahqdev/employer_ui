@@ -1,3 +1,4 @@
+import { DEFAULT_STYLES } from '@/styles';
 import { Flex, Box, Center } from '@chakra-ui/react';
 import { useColor } from './useColor';
 
@@ -16,7 +17,7 @@ export const ProgressTab = ({ showLeftBar, isActive, showRightBar }: Props) => {
         <Box
           w='19px'
           h='3px'
-          transition='all 0.3s ease'
+          transition={DEFAULT_STYLES.transition}
           bg={isActive ? color : '#DBD7F4'}
         />
       )}
@@ -32,7 +33,7 @@ export const ProgressTab = ({ showLeftBar, isActive, showRightBar }: Props) => {
           h='14px'
           bg={color}
           borderRadius='full'
-          transition='all 0.3s ease'
+          transition={DEFAULT_STYLES.transition}
           transform={isActive ? 'scale(1)' : 'scale(0)'}
         />
       </Center>

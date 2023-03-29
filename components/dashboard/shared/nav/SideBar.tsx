@@ -36,7 +36,7 @@ export const SideBar = () => {
         base: `translate( ${mediaQuery ? '0px' : '-200px'})`,
         xl: `translate(0px)`,
       }}
-      transition='all 0.5s ease-in-out'
+      transition={DEFAULT_STYLES.transition}
       overflow='auto'
       gap='0.5'
     >
