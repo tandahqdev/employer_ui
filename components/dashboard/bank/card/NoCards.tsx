@@ -7,7 +7,7 @@ export const NoCards = () => {
   return (
     <Grid
       w={DEFAULT_STYLES.fullWidth}
-      px={DEFAULT_STYLES.mobilePx}
+      mx={DEFAULT_STYLES.mobilePx}
       minH='500px'
       layerStyle='card'
     >

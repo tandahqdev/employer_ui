@@ -17,7 +17,7 @@ export interface NewPageItemsModel extends IProps {
 }
 
 export interface ActionTitleModel {
-  header: string;
+  header?: string;
   headerColor: string;
   icon: StaticImageData;
   textProps?: TextProps;

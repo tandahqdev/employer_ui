@@ -32,6 +32,12 @@ export const textStyles = {
     color: DEFAULT_STYLES.primaryColor,
     fontWeight: 600,
   },
+  darkTitle: {
+    fontSize: { base: '1rem', md: '1.2rem' },
+    lineHeight: 1.3,
+    color: DEFAULT_STYLES.primaryHeaderColor,
+    fontWeight: 600,
+  },
   subtitle: {
     fontSize: '1rem',
     lineHeight: 1.3,
