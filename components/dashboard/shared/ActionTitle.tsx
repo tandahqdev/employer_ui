@@ -12,7 +12,7 @@ export const ActionTitle = ({
   return (
     <Flex align='center' gap='7px'>
       <Center bgColor={headerColor} borderRadius='full' w='37px' h='37px'>
-        <Image src={icon} alt={header} />
+        <Image src={icon} alt={header ?? 'Tanda'} />
       </Center>
 
       <Text
