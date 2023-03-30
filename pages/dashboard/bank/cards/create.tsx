@@ -140,20 +140,19 @@ const Create = () => {
                   />
                 )}
               </ColumnFlex>
+              <Flex align='center' gap='3' pt='28'>
+                {!isVirtual && (
+                  <Button variant='noBgBtn' size='smPadding'>
+                    Discard
+                  </Button>
+                )}
+
+                <Button size='smPadding'>
+                  {isVirtual ? 'Create card' : 'Continue'}
+                </Button>
+              </Flex>
             </Stack>
           )}
-
-          <Flex align='center' gap='3' mt='28'>
-            {!isVirtual && (
-              <Button variant='noBgBtn' size='smPadding'>
-                Discard
-              </Button>
-            )}
-
-            <Button size='smPadding'>
-              {isVirtual ? 'Create card' : 'Continue'}
-            </Button>
-          </Flex>
         </ColumnFlex>
       </Grid>
     </DashBoardLayout>
