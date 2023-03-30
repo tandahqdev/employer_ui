@@ -29,12 +29,11 @@ const Create = () => {
         mx={DEFAULT_STYLES.mobilePx}
         minH='500px'
         layerStyle='card'
-        transition={DEFAULT_STYLES.transition}
       >
         <ColumnFlex
           alignSelf='center'
           justifySelf='center'
-          minW='80%'
+          minW={{ base: 'full', lg: '854px' }}
           minH='400px'
           mt='80px'
           mb='120px'
@@ -54,7 +53,7 @@ const Create = () => {
               </Text>
             </ColumnFlex>
 
-            <Grid w='854px' templateColumns='repeat(2,1fr)' gap='75px'>
+            <Grid w='full' templateColumns='repeat(2,1fr)' gap='75px'>
               {renderTypes}
             </Grid>
           </Stack>
@@ -65,13 +64,13 @@ const Create = () => {
                 Card information
               </Text>
 
-              <ColumnFlex gap='7'>
+              <ColumnFlex gap='7' pb='4'>
                 <Text textStyle='subtitle' opacity={DEFAULT_STYLES.opacity}>
                   Card brand
                 </Text>
 
                 <Grid
-                  w='854px'
+                  w='full'
                   templateColumns='repeat(3,1fr)'
                   alignItems='flex-start'
                   gridAutoColumns='1fr'
@@ -81,7 +80,7 @@ const Create = () => {
                 </Grid>
               </ColumnFlex>
 
-              <ColumnFlex w='854px' gap='4'>
+              <ColumnFlex gap='6'>
                 {isVirtual && (
                   <InputComp
                     label='Card nickname'
@@ -135,7 +134,7 @@ const Create = () => {
             </Stack>
           )}
 
-          <Flex align='center' gap='3'>
+          <Flex align='center' gap='3' mt='28'>
             {!isVirtual && (
               <Button variant='noBgBtn' size='smPadding'>
                 Discard
