@@ -1,11 +1,18 @@
-import { ColumnFlex, SelectCardBrand, SelectCardType } from '@/components';
+import {
+  ColumnFlex,
+  InputComp,
+  SelectCardBrand,
+  SelectCardType,
+} from '@/components';
 import { DashBoardLayout } from '@/layout';
+import { CardType } from '@/models';
 import { useCardStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
-import { Grid, Stack, Text } from '@chakra-ui/react';
+import { Grid, Select, Stack, Text } from '@chakra-ui/react';
 
 const Create = () => {
   const { supportedTypes, type, supportedBrands } = useCardStore();
+  const isVirtual = type === CardType.Virtual;
 
   const renderTypes = supportedTypes.map((type) => {
     return <SelectCardType key={type.id} {...type} />;
@@ -27,7 +34,7 @@ const Create = () => {
         <ColumnFlex
           alignSelf='center'
           justifySelf='center'
-          w='80%'
+          minW='80%'
           minH='400px'
           mt='80px'
           mb='120px'
@@ -72,6 +79,58 @@ const Create = () => {
                 >
                   {renderBrands}
                 </Grid>
+              </ColumnFlex>
+
+              <ColumnFlex w='854px' gap='4'>
+                {isVirtual && (
+                  <InputComp
+                    label='Card nickname'
+                    inputStyle={{
+                      bg: DEFAULT_STYLES.grayBg,
+                    }}
+                    options={{
+                      custom(e) {
+                        console.log(e);
+                      },
+                    }}
+                  />
+                )}
+
+                <Grid
+                  w={DEFAULT_STYLES.fullWidth}
+                  templateColumns='repeat(2,1fr)'
+                  gap='5'
+                >
+                  <InputComp label='Associated account'>
+                    <Select
+                      size='md'
+                      bg={DEFAULT_STYLES.grayBg}
+                      placeholder='Select an account'
+                    ></Select>
+                  </InputComp>
+
+                  <InputComp label='Currency'>
+                    <Select
+                      size='md'
+                      bg={DEFAULT_STYLES.grayBg}
+                      placeholder='US Dollars - USD'
+                    ></Select>
+                  </InputComp>
+                </Grid>
+
+                {isVirtual && (
+                  <InputComp
+                    label='Amount to fund'
+                    inputStyle={{
+                      bg: DEFAULT_STYLES.grayBg,
+                    }}
+                    options={{
+                      custom(e) {
+                        console.log(e);
+                      },
+                    }}
+                  />
+                )}
               </ColumnFlex>
             </Stack>
           )}
