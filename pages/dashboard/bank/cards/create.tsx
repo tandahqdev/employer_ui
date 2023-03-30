@@ -1,14 +1,18 @@
-import { ColumnFlex, SelectCardType } from '@/components';
+import { ColumnFlex, SelectCardBrand, SelectCardType } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { useCardStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
 import { Grid, Stack, Text } from '@chakra-ui/react';
 
 const Create = () => {
-  const { supportedTypes, type } = useCardStore();
+  const { supportedTypes, type, supportedBrands } = useCardStore();
 
   const renderTypes = supportedTypes.map((type) => {
     return <SelectCardType key={type.id} {...type} />;
+  });
+
+  const renderBrands = supportedBrands.map((brand) => {
+    return <SelectCardBrand {...brand} key={brand.id} />;
   });
 
   return (
@@ -18,6 +22,7 @@ const Create = () => {
         mx={DEFAULT_STYLES.mobilePx}
         minH='500px'
         layerStyle='card'
+        transition={DEFAULT_STYLES.transition}
       >
         <ColumnFlex
           alignSelf='center'
@@ -42,16 +47,32 @@ const Create = () => {
               </Text>
             </ColumnFlex>
 
-            <Grid w='max-content' templateColumns='repeat(2,1fr)' gap='70px'>
+            <Grid w='854px' templateColumns='repeat(2,1fr)' gap='75px'>
               {renderTypes}
             </Grid>
           </Stack>
 
           {type && (
-            <Stack pt='5'>
+            <Stack pt='5' gap='5'>
               <Text textStyle='subtitle' opacity={DEFAULT_STYLES.opacity}>
                 Card information
               </Text>
+
+              <ColumnFlex gap='7'>
+                <Text textStyle='subtitle' opacity={DEFAULT_STYLES.opacity}>
+                  Card brand
+                </Text>
+
+                <Grid
+                  w='854px'
+                  templateColumns='repeat(3,1fr)'
+                  alignItems='flex-start'
+                  gridAutoColumns='1fr'
+                  gap='4'
+                >
+                  {renderBrands}
+                </Grid>
+              </ColumnFlex>
             </Stack>
           )}
         </ColumnFlex>
