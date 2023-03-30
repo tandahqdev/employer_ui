@@ -8,7 +8,7 @@ import { DashBoardLayout } from '@/layout';
 import { CardType } from '@/models';
 import { useCardStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
-import { Grid, Select, Stack, Text } from '@chakra-ui/react';
+import { Button, Flex, Grid, Select, Stack, Text } from '@chakra-ui/react';
 
 const Create = () => {
   const { supportedTypes, type, supportedBrands } = useCardStore();
@@ -134,6 +134,15 @@ const Create = () => {
               </ColumnFlex>
             </Stack>
           )}
+
+          <Flex align='center' gap='3'>
+            {!isVirtual && (
+              <Button variant='noBgBtn' size='smPadding'>
+                Discard
+              </Button>
+            )}
+            <Button size='smPadding'>Continue</Button>
+          </Flex>
         </ColumnFlex>
       </Grid>
     </DashBoardLayout>
