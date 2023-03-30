@@ -24,7 +24,6 @@ interface Props {
   id?: string;
   type?: HTMLInputTypeAttribute;
   value?: string;
-  lgPadding?: boolean;
   register?: UseFormRegisterReturn;
   // Use this when not using register
   options?: {
@@ -48,7 +47,6 @@ export const InputComp = ({
   options,
   type,
   value,
-  lgPadding,
   formStyle,
   inputStyle,
   rightAddon,
@@ -60,7 +58,6 @@ export const InputComp = ({
     placeholder: placeholder,
     id: id,
     type: type,
-    h: lgPadding ? '48px' : '40px',
     width: DEFAULT_STYLES.fullWidth,
     _placeholder: textStyles.placeholder,
     ...textStyles.bodyText,
@@ -100,6 +97,7 @@ export const InputComp = ({
             <Input
               value={value}
               {...inputProps}
+              size='md'
               {...inputStyle}
               onChange={(e) => options?.custom(e.target.value)}
             />

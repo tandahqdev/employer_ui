@@ -3,7 +3,7 @@ import { IconType } from 'react-icons';
 
 export interface CreateCard {
   supportedTypes: SupportedCardType[];
-  supportedBrand: SupportedCardBrand[];
+  supportedBrands: SupportedCardBrand[];
   type?: CardType;
   brand?: CardBrand;
   name?: string;
@@ -44,6 +44,6 @@ export interface SupportedCardType extends CardDetails<CardType> {
 }
 
 export interface SupportedCardBrand extends CardDetails<CardBrand> {
-  image?: StaticImageData;
+  image: StaticImageData;
   text?: string;
 }

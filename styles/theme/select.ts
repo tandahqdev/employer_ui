@@ -4,6 +4,7 @@ import {
   createMultiStyleConfigHelpers,
   defineStyle,
 } from '@chakra-ui/react';
+import { DEFAULT_STYLES } from '../globalStyles';
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(selectAnatomy.keys);
@@ -14,13 +15,15 @@ const tanda2 = definePartsStyle({
     borderColor: 'rgba(25, 34, 76, 0.03);',
     background: 'rgba(25, 34, 76, 0.02)',
     borderRadius: '8px',
+    _placeholder: {
+      fontSize: DEFAULT_STYLES.fontSize,
+    },
   },
 });
 
 const tandaXl = defineStyle({
-  fontSize: '1rem',
+  fontSize: '0.9rem',
   px: '4',
-  h: '56px',
 });
 
 const sizes = {
@@ -32,5 +35,6 @@ export const selectTheme: ComponentMultiStyleConfig = defineMultiStyleConfig({
   variants: { tanda2 },
   defaultProps: {
     size: 'xl',
+    variant: 'tanda2',
   },
 });

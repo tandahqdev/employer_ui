@@ -1,10 +1,4 @@
 export const DEFAULT_STYLES = {
-  containerWidth: {
-    base: '100%',
-    lg: '95%',
-    xl: '1020px',
-    '2xl': '1200px',
-  },
   fullWidth: '100%',
   fullHeight: '100vh',
   pageWidth: { base: '100%', xl: '984px' },
@@ -20,7 +14,7 @@ export const DEFAULT_STYLES = {
   bgColor: '#F6F6F6',
   lightPurpleBg: 'rgba(110, 49, 240, 0.1)',
   lightGrayBg: 'rgba(177, 185, 192, 0.2);',
-  grayBg: 'rgba(228, 226, 226, 0.6)',
+  grayBg: 'rgba(228, 226, 226, 0.3)',
   errorColor: '#C5292A',
   lightErrorBg: 'rgba(197, 41, 42, 0.1);',
   successColor: '#34A853',
@@ -43,6 +37,7 @@ export const DEFAULT_STYLES = {
   sidePl: '30px',
   border: `1px solid #E4E2E2`,
   transition: 'all 250ms linear',
+  opacity: 0.8,
 };
 
 export const sharedGridStyles = {
@@ -53,4 +48,3 @@ export const sharedGridStyles = {
   px: DEFAULT_STYLES.mobilePx,
   maxW: '1000px',
 };
-

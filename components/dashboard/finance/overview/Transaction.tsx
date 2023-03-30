@@ -65,7 +65,7 @@ export const Transaction = ({ buttons, tableData }: Props) => {
         key={`${h}+${i}`}
         isNumeric={isNumeric}
         color={DEFAULT_STYLES.primaryHeaderColor}
-        opacity={0.8}
+        opacity={DEFAULT_STYLES.opacity}
       >
         <Text>{h}</Text>
       </Th>

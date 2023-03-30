@@ -1,11 +1,11 @@
 import { CreateCard } from '@/models';
 import { nanoid } from 'nanoid';
 import { create } from 'zustand';
-import { supportedBrand, supportedTypes } from '../data';
+import { supportedBrands, supportedTypes } from '../data';
 
 const initialState: CreateCard = {
   id: nanoid(),
-  supportedBrand: supportedBrand,
+  supportedBrands: supportedBrands,
   supportedTypes: supportedTypes,
   type: undefined,
   brand: undefined,

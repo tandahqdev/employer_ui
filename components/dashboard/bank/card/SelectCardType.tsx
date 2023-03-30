@@ -31,7 +31,7 @@ export const SelectCardType = ({ icon, value }: SupportedCardType) => {
 
   return (
     <ColumnFlex
-      w='381px'
+      w={{ base: 'full', md: '350px', lg: '381px' }}
       minH='215px'
       layerStyle='card'
       transition={DEFAULT_STYLES.transition}
@@ -52,7 +52,7 @@ export const SelectCardType = ({ icon, value }: SupportedCardType) => {
         p='3.5'
       />
 
-      <ColumnFlex>
+      <ColumnFlex gap='1.5' pl='3'>
         <Center
           bg={bg}
           transition={DEFAULT_STYLES.transition}
@@ -68,7 +68,7 @@ export const SelectCardType = ({ icon, value }: SupportedCardType) => {
           />
         </Center>
 
-        <Text color={DEFAULT_STYLES.darkGray} opacity={0.8}>
+        <Text color={DEFAULT_STYLES.darkGray} opacity={DEFAULT_STYLES.opacity}>
           Order{' '}
           <span
             style={{

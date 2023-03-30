@@ -11,7 +11,7 @@ import { nanoid } from 'nanoid';
 import { AiFillCreditCard } from 'react-icons/ai';
 import { MdPhoneAndroid } from 'react-icons/md';
 
-export const supportedBrand: SupportedCardBrand[] = [
+export const supportedBrands: SupportedCardBrand[] = [
   {
     id: nanoid(),
     value: CardBrand.Verve,

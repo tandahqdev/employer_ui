@@ -27,7 +27,7 @@ export const AccountPageContainer = ({
           fontSize='2.25rem'
           color={DEFAULT_STYLES.lightPurple}
           fontWeight={DEFAULT_STYLES.mediumbold}
-          opacity={0.8}
+          opacity={DEFAULT_STYLES.opacity}
         />
 
         <Grid

@@ -24,7 +24,7 @@ export const TandaTable = ({ tableHeaders, children, ...t }: Props) => {
         key={`${h}_${i}`}
         isNumeric={isNumeric}
         color={DEFAULT_STYLES.primaryHeaderColor}
-        opacity={0.8}
+        opacity={DEFAULT_STYLES.opacity}
       >
         <Text>{h}</Text>
       </Th>

@@ -36,7 +36,7 @@ export const textStyles = {
     fontSize: { base: '1rem', md: '1.2rem' },
     lineHeight: 1.3,
     color: DEFAULT_STYLES.primaryHeaderColor,
-    fontWeight: 600,
+    fontWeight: 500,
   },
   subtitle: {
     fontSize: '1rem',
@@ -112,6 +112,14 @@ export const theme = extendTheme({
       borderColor: '#E4E2E2',
       bg: 'white',
       borderRadius: 16,
+    },
+    container: {
+      width: {
+        base: '100%',
+        lg: '95%',
+        xl: '1020px',
+        '2xl': '1200px',
+      },
     },
   },
 });
