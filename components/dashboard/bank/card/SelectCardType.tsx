@@ -31,7 +31,7 @@ export const SelectCardType = ({ icon, value }: SupportedCardType) => {
 
   return (
     <ColumnFlex
-      w='381px'
+      w={{ base: 'full', md: '350px', lg: '381px' }}
       minH='215px'
       layerStyle='card'
       transition={DEFAULT_STYLES.transition}

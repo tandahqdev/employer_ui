@@ -7,7 +7,7 @@ import {
 import { DashBoardLayout } from '@/layout';
 import { CardType } from '@/models';
 import { useCardStore } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { Button, Flex, Grid, Select, Stack, Text } from '@chakra-ui/react';
 
 const Create = () => {
@@ -38,6 +38,7 @@ const Create = () => {
           mt='80px'
           mb='120px'
           gap='5'
+          px={DEFAULT_STYLES.mobilePx}
         >
           <Stack gap='8'>
             <ColumnFlex>
@@ -53,7 +54,11 @@ const Create = () => {
               </Text>
             </ColumnFlex>
 
-            <Grid w='full' templateColumns='repeat(2,1fr)' gap='75px'>
+            <Grid
+              w='full'
+              templateColumns={sharedGridStyles.gridTemplateColumns}
+              gap={{ base: '30px', lg: '75px' }}
+            >
               {renderTypes}
             </Grid>
           </Stack>
@@ -71,10 +76,14 @@ const Create = () => {
 
                 <Grid
                   w='full'
-                  templateColumns='repeat(3,1fr)'
+                  templateColumns={{
+                    base: 'repeat(1,1fr)',
+                    lg: 'repeat(3,1fr)',
+                  }}
                   alignItems='flex-start'
                   gridAutoColumns='1fr'
                   gap='4'
+                  justifyItems={{ base: 'center', md: 'flex-start' }}
                 >
                   {renderBrands}
                 </Grid>
@@ -97,7 +106,7 @@ const Create = () => {
 
                 <Grid
                   w={DEFAULT_STYLES.fullWidth}
-                  templateColumns='repeat(2,1fr)'
+                  templateColumns={sharedGridStyles.gridTemplateColumns}
                   gap='5'
                 >
                   <InputComp label='Associated account'>
