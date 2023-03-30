@@ -5,7 +5,7 @@ import { DEFAULT_STYLES } from '@/styles';
 import { Grid, Stack, Text } from '@chakra-ui/react';
 
 const Create = () => {
-  const { supportedTypes } = useCardStore();
+  const { supportedTypes, type } = useCardStore();
 
   const renderTypes = supportedTypes.map((type) => {
     return <SelectCardType key={type.id} {...type} />;
@@ -26,10 +26,11 @@ const Create = () => {
           minH='400px'
           mt='80px'
           mb='120px'
+          gap='5'
         >
           <Stack gap='8'>
             <ColumnFlex>
-              <Text textStyle='darkTitle'>Create card</Text>
+              <Text textStyle='header'>Create card</Text>
 
               <Text
                 textStyle='desc'
@@ -45,6 +46,14 @@ const Create = () => {
               {renderTypes}
             </Grid>
           </Stack>
+
+          {type && (
+            <Stack pt='5'>
+              <Text textStyle='subtitle' opacity={DEFAULT_STYLES.opacity}>
+                Card information
+              </Text>
+            </Stack>
+          )}
         </ColumnFlex>
       </Grid>
     </DashBoardLayout>

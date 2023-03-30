@@ -52,7 +52,7 @@ export const SelectCardType = ({ icon, value }: SupportedCardType) => {
         p='3.5'
       />
 
-      <ColumnFlex>
+      <ColumnFlex gap='1.5'>
         <Center
           bg={bg}
           transition={DEFAULT_STYLES.transition}
