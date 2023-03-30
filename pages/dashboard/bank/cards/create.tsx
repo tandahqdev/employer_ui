@@ -141,7 +141,10 @@ const Create = () => {
                 Discard
               </Button>
             )}
-            <Button size='smPadding'>Continue</Button>
+
+            <Button size='smPadding'>
+              {isVirtual ? 'Create card' : 'Continue'}
+            </Button>
           </Flex>
         </ColumnFlex>
       </Grid>
