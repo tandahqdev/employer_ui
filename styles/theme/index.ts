@@ -113,5 +113,13 @@ export const theme = extendTheme({
       bg: 'white',
       borderRadius: 16,
     },
+    container: {
+      width: {
+        base: '100%',
+        lg: '95%',
+        xl: '1020px',
+        '2xl': '1200px',
+      },
+    },
   },
 });

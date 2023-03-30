@@ -68,7 +68,7 @@ export const SelectCardType = ({ icon, value }: SupportedCardType) => {
           />
         </Center>
 
-        <Text color={DEFAULT_STYLES.darkGray} opacity={0.8}>
+        <Text color={DEFAULT_STYLES.darkGray} opacity={DEFAULT_STYLES.opacity}>
           Order{' '}
           <span
             style={{

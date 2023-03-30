@@ -27,7 +27,7 @@ const Create = () => {
           mt='80px'
           mb='120px'
         >
-          <Stack>
+          <Stack gap='8'>
             <ColumnFlex>
               <Text textStyle='darkTitle'>Create card</Text>
 
@@ -35,6 +35,7 @@ const Create = () => {
                 textStyle='desc'
                 fontWeight={DEFAULT_STYLES.mediumbold}
                 color={DEFAULT_STYLES.primaryHeaderColor}
+                opacity={DEFAULT_STYLES.opacity}
               >
                 Please select card type
               </Text>

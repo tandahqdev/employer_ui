@@ -28,11 +28,7 @@ export const Topbar = ({ header, showBckBtn, otherBtn }: TopBarProps) => {
       zIndex={5}
       px={DEFAULT_STYLES.mobilePx}
     >
-      <HStack
-        width={DEFAULT_STYLES.containerWidth}
-        align='center'
-        justify='space-between'
-      >
+      <HStack layerStyle='container' align='center' justify='space-between'>
         <Flex align='center' gap='4'>
           {showBckBtn && (
             <Center

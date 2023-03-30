@@ -29,7 +29,7 @@ export const DashBoardLayout = ({
         <Topbar header={header} showBckBtn={showBckBtn} otherBtn={otherBtn} />
 
         <Flex
-          w={DEFAULT_STYLES.containerWidth}
+          layerStyle='container'
           maxW={DEFAULT_STYLES.fullWidth}
           mt={{ base: '120px', lg: '150px' }}
           mb={{ base: '35px', lg: '50px' }}
