@@ -64,7 +64,7 @@ const Create = () => {
           </Stack>
 
           {type && (
-            <Stack pt='5' gap='5'>
+            <Stack pt='10' gap='5'>
               <Text textStyle='subtitle' opacity={DEFAULT_STYLES.opacity}>
                 Card information
               </Text>
@@ -140,20 +140,19 @@ const Create = () => {
                   />
                 )}
               </ColumnFlex>
+              <Flex align='center' gap='3' pt='24'>
+                {!isVirtual && (
+                  <Button variant='noBgBtn' size='smPadding'>
+                    Discard
+                  </Button>
+                )}
+
+                <Button size='smPadding'>
+                  {isVirtual ? 'Create card' : 'Continue'}
+                </Button>
+              </Flex>
             </Stack>
           )}
-
-          <Flex align='center' gap='3' mt='28'>
-            {!isVirtual && (
-              <Button variant='noBgBtn' size='smPadding'>
-                Discard
-              </Button>
-            )}
-
-            <Button size='smPadding'>
-              {isVirtual ? 'Create card' : 'Continue'}
-            </Button>
-          </Flex>
         </ColumnFlex>
       </Grid>
     </DashBoardLayout>
