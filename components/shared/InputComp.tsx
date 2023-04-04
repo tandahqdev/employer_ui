@@ -26,9 +26,7 @@ interface Props {
   value?: string;
   register?: UseFormRegisterReturn;
   // Use this when not using register
-  options?: {
-    custom: (e: string) => void;
-  };
+  onChange?: (e: any) => void;
 
   // For passing additional styles to elements
   inputStyle?: InputProps;
@@ -44,7 +42,7 @@ export const InputComp = ({
   errorMessage,
   id,
   register,
-  options,
+  onChange,
   type,
   value,
   formStyle,
@@ -93,13 +91,13 @@ export const InputComp = ({
             />
           )}
           {/* When register is not used */}
-          {options && (
+          {onChange && (
             <Input
               value={value}
               {...inputProps}
               size='md'
               {...inputStyle}
-              onChange={(e) => options?.custom(e.target.value)}
+              onChange={(e) => onChange(e.target.value)}
             />
           )}
           {rightAddon && <InputRightElement>{rightAddon}</InputRightElement>}

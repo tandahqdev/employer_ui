@@ -1,17 +1,18 @@
 import {
   ColumnFlex,
+  GrayInfoCard,
   InputComp,
   SelectCardBrand,
   SelectCardType,
 } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { CardType } from '@/models';
-import { useCardStore } from '@/store';
+import { CardChangeHandler, useCardStore } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { Button, Flex, Grid, Select, Stack, Text } from '@chakra-ui/react';
 
 const Create = () => {
-  const { supportedTypes, type, supportedBrands } = useCardStore();
+  const { supportedTypes, type, supportedBrands, amount } = useCardStore();
   const isVirtual = type === CardType.Virtual;
 
   const renderTypes = supportedTypes.map((type) => {
@@ -96,10 +97,8 @@ const Create = () => {
                     inputStyle={{
                       bg: DEFAULT_STYLES.grayBg,
                     }}
-                    options={{
-                      custom(e) {
-                        console.log(e);
-                      },
+                    onChange={(e) => {
+                      CardChangeHandler.onNameChange(e);
                     }}
                   />
                 )}
@@ -114,6 +113,9 @@ const Create = () => {
                       size='md'
                       bg={DEFAULT_STYLES.grayBg}
                       placeholder='Select an account'
+                      onChange={(e) => {
+                        CardChangeHandler.onAccountChange(e.target.value);
+                      }}
                     ></Select>
                   </InputComp>
 
@@ -122,6 +124,9 @@ const Create = () => {
                       size='md'
                       bg={DEFAULT_STYLES.grayBg}
                       placeholder='US Dollars - USD'
+                      onChange={(e) => {
+                        CardChangeHandler.onCurrencyChange(e.target.value);
+                      }}
                     ></Select>
                   </InputComp>
                 </Grid>
@@ -132,16 +137,32 @@ const Create = () => {
                     inputStyle={{
                       bg: DEFAULT_STYLES.grayBg,
                     }}
-                    options={{
-                      custom(e) {
-                        console.log(e);
-                      },
+                    onChange={(e) => {
+                      CardChangeHandler.onAmountChange(e);
                     }}
                   />
                 )}
               </ColumnFlex>
 
-              <Flex align='center' gap='3' pt='24'>
+              {amount && (
+                <>
+                  <GrayInfoCard alignSelf='center'>#1.00/$754.00</GrayInfoCard>
+                  <Flex align='center' justify='space-between'>
+                    <Text textStyle='darkTitle' fontSize='1rem'>
+                      Debit Amount:
+                    </Text>
+                    <Text
+                      textStyle='darkTitle'
+                      fontSize='1rem'
+                      color='rgba(43, 43, 43, 1)'
+                    >
+                      #188,500.00
+                    </Text>
+                  </Flex>
+                </>
+              )}
+
+              <Flex align='center' gap='3' pt='16'>
                 {!isVirtual && (
                   <Button variant='noBgBtn' size='smPadding'>
                     Discard
