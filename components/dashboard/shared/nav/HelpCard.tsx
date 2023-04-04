@@ -17,7 +17,7 @@ export const HelpCard = () => {
       borderRadius={5}
     >
       <Text
-        fontSize={DEFAULT_STYLES.smFontSize}
+        fontSize={DEFAULT_STYLES.desc}
         fontWeight={DEFAULT_STYLES.mediumbold}
       >
         Need help?

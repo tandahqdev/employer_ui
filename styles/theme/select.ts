@@ -16,7 +16,7 @@ const tanda2 = definePartsStyle({
     background: 'rgba(25, 34, 76, 0.02)',
     borderRadius: '8px',
     _placeholder: {
-      fontSize: DEFAULT_STYLES.fontSize,
+      fontSize: DEFAULT_STYLES.textFontSize,
     },
   },
 });

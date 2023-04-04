@@ -75,7 +75,7 @@ export const CreditDetails = () => {
         </Flex>
 
         <Button
-          variant='textBtn'
+          variant='text'
           rightIcon={<ChevronRightIcon fontSize='1.5rem' />}
         >
           View details

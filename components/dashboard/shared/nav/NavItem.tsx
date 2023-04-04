@@ -41,7 +41,7 @@ export const NavItem = ({ icon, title, path, onClick }: Props) => {
 
       <Text
         color={isActive ? DEFAULT_STYLES.lightPurple : DEFAULT_STYLES.darkGray}
-        fontSize={DEFAULT_STYLES.smFontSize}
+        fontSize={DEFAULT_STYLES.desc}
         _groupHover={{
           color: DEFAULT_STYLES.lightPurple,
         }}

@@ -21,7 +21,7 @@ export const TandaBreadCrumb = () => {
           <BreadcrumbLink
             isCurrentPage={isCurrent}
             textTransform='capitalize'
-            fontSize={DEFAULT_STYLES.smFontSize}
+            fontSize={DEFAULT_STYLES.desc}
             href={route}
             color={isCurrent ? DEFAULT_STYLES.primaryColor : 'inherit'}
             _hover={{

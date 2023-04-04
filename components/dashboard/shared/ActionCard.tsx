@@ -33,7 +33,7 @@ export const ActionCard = ({
       }}
     >
       <Button
-        variant='noBgBtn'
+        variant='noBg'
         bg={btnBg}
         border={btnBg ? 'none' : `1px solid ${DEFAULT_STYLES.darkGray}`}
         color={btnBg ? DEFAULT_STYLES.borderColor : DEFAULT_STYLES.darkGray}

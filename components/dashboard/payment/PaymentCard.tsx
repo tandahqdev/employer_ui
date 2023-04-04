@@ -177,7 +177,7 @@ export const PaymentCard = () => {
                   Cancel
                 </Button>
 
-                <Button variant='darkBtn' size='smPadding' isDisabled>
+                <Button variant='dark' size='smPadding' isDisabled>
                   Confirm
                 </Button>
               </Grid>
@@ -186,7 +186,7 @@ export const PaymentCard = () => {
         )}
 
         <Button
-          variant={isExpense ? 'pinkBtn' : 'darkBtn'}
+          variant={isExpense ? 'pink' : 'dark'}
           size='smPadding'
           onClick={() => {
             if (isInitTab) {
