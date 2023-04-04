@@ -20,6 +20,7 @@ const pink = definePartsStyle({
     },
   },
 });
+
 const dark = definePartsStyle({
   control: {
     borderColor: DEFAULT_STYLES.darkColor,
@@ -33,6 +34,9 @@ const dark = definePartsStyle({
         borderColor: DEFAULT_STYLES.darkColor,
       },
     },
+  },
+  label: {
+    fontSize: DEFAULT_STYLES.textFontSize,
   },
 });
 
@@ -49,7 +53,7 @@ const baseStyle = definePartsStyle({
     },
   },
   label: {
-    fontSize: DEFAULT_STYLES.desc,
+    fontSize: DEFAULT_STYLES.textFontSize,
   },
 });
 
