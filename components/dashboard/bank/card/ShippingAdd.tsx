@@ -1,10 +1,17 @@
-import { ColumnFlex, InputComp } from '@/components';
+import { ColumnFlex, Desc, InputComp } from '@/components';
 import { CardChangeHandler } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
-import { Checkbox, Grid, GridItem, Stack, Text } from '@chakra-ui/react';
+import {
+  Center,
+  Checkbox,
+  Grid,
+  GridItem,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
 
 export const ShippingAdd = () => {
-  const cols = { base: 2, xl: 1 };
+  const cols = { base: 2, md: 1 };
   return (
     <Stack gap='8'>
       <ColumnFlex gap='5'>
@@ -98,6 +105,27 @@ export const ShippingAdd = () => {
           />
         </GridItem>
       </Grid>
+
+      <Center
+        bg='rgba(228, 226, 226, 0.08)'
+        w={{ base: 'full', md: '568px' }}
+        minH='86px'
+        border={`3px solid ${DEFAULT_STYLES.borderColor}`}
+        borderRadius='10px'
+      >
+        <Desc fontSize='1rem' maxW='80%' textAlign='center'>
+          Your default account will be changed -{' '}
+          <span
+            style={{
+              fontWeight: DEFAULT_STYLES.mediumbold,
+              color: DEFAULT_STYLES.darkGray,
+            }}
+          >
+            #2,000.00 VAT exclusive
+          </span>{' '}
+          for the physical card
+        </Desc>
+      </Center>
     </Stack>
   );
 };
