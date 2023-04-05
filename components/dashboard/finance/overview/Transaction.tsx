@@ -1,6 +1,7 @@
 import { ColumnFlex } from '@/components/shared';
 import { TransactionData } from '@/models/finance';
 import { DEFAULT_STYLES } from '@/styles';
+import { DashRoutes } from '@/utils';
 import {
   GridItem,
   Flex,
@@ -17,6 +18,7 @@ import {
   Tbody,
   Td,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { useState } from 'react';
 import { AiFillInfoCircle, AiOutlineDownload } from 'react-icons/ai';
 import { RiErrorWarningLine } from 'react-icons/ri';
@@ -173,7 +175,9 @@ export const Transaction = ({ buttons, tableData }: Props) => {
             You don’t have any payments pending
           </Text>
 
-          <Button variant='textBtn'>Launch a new draw</Button>
+          <Link href={DashRoutes.draw}>
+            <Button variant='text'>Launch a new draw</Button>
+          </Link>
         </ColumnFlex>
       )}
     </GridItem>

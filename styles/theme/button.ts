@@ -17,38 +17,36 @@ const smPadding = defineStyle({
 });
 
 // Variants
-const bgBtn = defineStyle({
+const bg = defineStyle({
   background: DEFAULT_STYLES.lightPurple,
   color: DEFAULT_STYLES.white,
 });
 
-const darkBtn = defineStyle({
+const dark = defineStyle({
   background: DEFAULT_STYLES.primaryHeaderColor,
   color: DEFAULT_STYLES.white,
 });
 
-
-const pinkBtn = defineStyle({
+const pink = defineStyle({
   background: DEFAULT_STYLES.pink,
   color: DEFAULT_STYLES.white,
 });
 
-const textBtn = defineStyle((_) => ({
+const text = defineStyle((_) => ({
   backgroundColor: 'transparent',
   color: DEFAULT_STYLES.lightPurple,
   py: 0,
   px: 0,
 }));
 
-const noBgBtn = defineStyle({
+const noBg = defineStyle({
   border: '1px solid',
   borderColor: DEFAULT_STYLES.darkGray,
   backgroundColor: 'transparent',
   color: DEFAULT_STYLES.darkGray,
 });
 
-
-const noBgPurpleBtn = defineStyle({
+const noBgPurple = defineStyle({
   border: '1px solid',
   borderColor: DEFAULT_STYLES.lightPurple,
   backgroundColor: 'transparent',
@@ -73,15 +71,15 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
   sizes: { lgPadding, smPadding },
 
   variants: {
-    noBgBtn,
-    bgBtn,
-    textBtn,
-    darkBtn,
-    pinkBtn,
-    noBgPurpleBtn,
+    noBg,
+    bg,
+    text,
+    dark,
+    pink,
+    noBgPurple,
   },
   defaultProps: {
     size: 'lgPadding',
-    variant: 'bgBtn',
+    variant: 'bg',
   },
 });

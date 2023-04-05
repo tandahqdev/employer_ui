@@ -5,7 +5,7 @@ import { DEFAULT_STYLES } from '../globalStyles';
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(checkboxAnatomy.keys);
 
-const pinkvariant = definePartsStyle({
+const pink = definePartsStyle({
   control: {
     borderColor: DEFAULT_STYLES.pink,
     _checked: {
@@ -21,6 +21,25 @@ const pinkvariant = definePartsStyle({
   },
 });
 
+const dark = definePartsStyle({
+  control: {
+    borderColor: DEFAULT_STYLES.darkColor,
+    _checked: {
+      bg: DEFAULT_STYLES.darkColor,
+      color: DEFAULT_STYLES.white,
+      borderColor: DEFAULT_STYLES.darkColor,
+      _hover: {
+        bg: DEFAULT_STYLES.darkColor,
+        color: DEFAULT_STYLES.white,
+        borderColor: DEFAULT_STYLES.darkColor,
+      },
+    },
+  },
+  label: {
+    fontSize: DEFAULT_STYLES.textFontSize,
+  },
+});
+
 const baseStyle = definePartsStyle({
   control: {
     borderColor: DEFAULT_STYLES.lightPurple,
@@ -33,11 +52,15 @@ const baseStyle = definePartsStyle({
       },
     },
   },
+  label: {
+    fontSize: DEFAULT_STYLES.textFontSize,
+  },
 });
 
 export const checkboxTheme = defineMultiStyleConfig({
   baseStyle,
   variants: {
-    pinkvariant,
+    pink,
+    dark,
   },
 });

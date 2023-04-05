@@ -10,7 +10,7 @@ export const UtilsBtn = ({ btnText, onClick }: Props) => {
   return (
     <Button
       width={DEFAULT_STYLES.fullWidth}
-      variant='darkBtn'
+      variant='dark'
       rounded={8}
       onClick={() => {
         onClick?.();

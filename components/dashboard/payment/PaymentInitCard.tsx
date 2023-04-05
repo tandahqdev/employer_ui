@@ -34,10 +34,7 @@ export const PaymentInitCard = ({ month, id, price }: PaymentTerms) => {
         });
       }}
     >
-      <Radio
-        isChecked={isChecked}
-        variant={isExpense ? 'pinkvariant' : undefined}
-      />
+      <Radio isChecked={isChecked} variant={isExpense ? 'pink' : undefined} />
 
       <ColumnFlex>
         <Text textStyle='bodyText' color={DEFAULT_STYLES.darkGray}>

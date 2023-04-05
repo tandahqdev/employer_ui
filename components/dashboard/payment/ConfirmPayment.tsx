@@ -92,10 +92,8 @@ export const ConfirmPayment = () => {
 
       <InputComp
         label='Draw name'
-        options={{
-          custom: (e) => {
-            console.log(e);
-          },
+        onChange={(e) => {
+          console.log(e);
         }}
       />
     </ColumnFlex>

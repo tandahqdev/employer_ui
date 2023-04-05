@@ -43,7 +43,7 @@ export const NewPageCard = ({ desc, title, path, onClick }: Props) => {
             href={path}
             style={{ marginTop: '20px', alignSelf: 'flex-start' }}
           >
-            <Button variant='darkBtn' onClick={onClick}>
+            <Button variant='dark' onClick={onClick}>
               Get started
             </Button>
           </Link>

@@ -1,17 +1,20 @@
 import {
   ColumnFlex,
+  GrayInfoCard,
   InputComp,
   SelectCardBrand,
   SelectCardType,
+  ShippingAdd,
 } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { CardType } from '@/models';
-import { useCardStore } from '@/store';
+import { CardChangeHandler, useCardStore } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { Button, Flex, Grid, Select, Stack, Text } from '@chakra-ui/react';
 
 const Create = () => {
-  const { supportedTypes, type, supportedBrands } = useCardStore();
+  const { supportedTypes, type, supportedBrands, amount, reset, brand } =
+    useCardStore();
   const isVirtual = type === CardType.Virtual;
 
   const renderTypes = supportedTypes.map((type) => {
@@ -40,119 +43,167 @@ const Create = () => {
           gap='5'
           px={DEFAULT_STYLES.mobilePx}
         >
-          <Stack gap='8'>
-            <ColumnFlex>
-              <Text textStyle='header'>Create card</Text>
+          <ShippingAdd />
 
-              <Text
-                textStyle='desc'
-                fontWeight={DEFAULT_STYLES.mediumbold}
-                color={DEFAULT_STYLES.primaryHeaderColor}
-                opacity={DEFAULT_STYLES.opacity}
-              >
-                Please select card type
-              </Text>
-            </ColumnFlex>
+          {false && (
+            <>
+              <Stack gap='8'>
+                <ColumnFlex>
+                  <Text textStyle='header'>Create card</Text>
 
-            <Grid
-              w='full'
-              templateColumns={sharedGridStyles.gridTemplateColumns}
-              gap={{ base: '30px', lg: '75px' }}
-            >
-              {renderTypes}
-            </Grid>
-          </Stack>
-
-          {type && (
-            <Stack pt='10' gap='5'>
-              <Text textStyle='subtitle' opacity={DEFAULT_STYLES.opacity}>
-                Card information
-              </Text>
-
-              <ColumnFlex gap='7' pb='4'>
-                <Text textStyle='subtitle' opacity={DEFAULT_STYLES.opacity}>
-                  Card brand
-                </Text>
+                  <Text
+                    textStyle='desc'
+                    fontWeight={DEFAULT_STYLES.mediumbold}
+                    color={DEFAULT_STYLES.primaryHeaderColor}
+                    opacity={DEFAULT_STYLES.opacity}
+                  >
+                    Please select card type
+                  </Text>
+                </ColumnFlex>
 
                 <Grid
                   w='full'
-                  templateColumns={{
-                    base: 'repeat(1,1fr)',
-                    lg: 'repeat(3,1fr)',
-                  }}
-                  alignItems='flex-start'
-                  gridAutoColumns='1fr'
-                  gap='4'
-                  justifyItems={{ base: 'center', md: 'flex-start' }}
-                >
-                  {renderBrands}
-                </Grid>
-              </ColumnFlex>
-
-              <ColumnFlex gap='6'>
-                {isVirtual && (
-                  <InputComp
-                    label='Card nickname'
-                    inputStyle={{
-                      bg: DEFAULT_STYLES.grayBg,
-                    }}
-                    options={{
-                      custom(e) {
-                        console.log(e);
-                      },
-                    }}
-                  />
-                )}
-
-                <Grid
-                  w={DEFAULT_STYLES.fullWidth}
                   templateColumns={sharedGridStyles.gridTemplateColumns}
-                  gap='5'
+                  gap={{ base: '30px', lg: '75px' }}
                 >
-                  <InputComp label='Associated account'>
-                    <Select
-                      size='md'
-                      bg={DEFAULT_STYLES.grayBg}
-                      placeholder='Select an account'
-                    ></Select>
-                  </InputComp>
-
-                  <InputComp label='Currency'>
-                    <Select
-                      size='md'
-                      bg={DEFAULT_STYLES.grayBg}
-                      placeholder='US Dollars - USD'
-                    ></Select>
-                  </InputComp>
+                  {renderTypes}
                 </Grid>
+              </Stack>
 
-                {isVirtual && (
-                  <InputComp
-                    label='Amount to fund'
-                    inputStyle={{
-                      bg: DEFAULT_STYLES.grayBg,
-                    }}
-                    options={{
-                      custom(e) {
-                        console.log(e);
-                      },
-                    }}
-                  />
-                )}
-              </ColumnFlex>
+              {type && (
+                <Stack pt='10' gap='5'>
+                  <Text textStyle='subtitle' opacity={DEFAULT_STYLES.opacity}>
+                    Card information
+                  </Text>
 
-              <Flex align='center' gap='3' pt='24'>
-                {!isVirtual && (
-                  <Button variant='noBgBtn' size='smPadding'>
-                    Discard
-                  </Button>
-                )}
+                  <ColumnFlex gap='7' pb='4'>
+                    <Text textStyle='subtitle' opacity={DEFAULT_STYLES.opacity}>
+                      Card brand
+                    </Text>
 
-                <Button size='smPadding'>
-                  {isVirtual ? 'Create card' : 'Continue'}
-                </Button>
-              </Flex>
-            </Stack>
+                    <Grid
+                      w='full'
+                      templateColumns={{
+                        base: 'repeat(1,1fr)',
+                        lg: 'repeat(3,1fr)',
+                      }}
+                      alignItems='flex-start'
+                      gridAutoColumns='1fr'
+                      gap='4'
+                      justifyItems={{ base: 'center', md: 'flex-start' }}
+                    >
+                      {renderBrands}
+                    </Grid>
+                  </ColumnFlex>
+
+                  {brand && (
+                    <>
+                      <ColumnFlex gap='6'>
+                        {isVirtual && (
+                          <InputComp
+                            label='Card nickname'
+                            inputStyle={{
+                              bg: DEFAULT_STYLES.grayBg,
+                            }}
+                            onChange={(e) => {
+                              CardChangeHandler.onNameChange(e);
+                            }}
+                          />
+                        )}
+
+                        <Grid
+                          w={DEFAULT_STYLES.fullWidth}
+                          templateColumns={sharedGridStyles.gridTemplateColumns}
+                          gap='5'
+                        >
+                          <InputComp label='Associated account'>
+                            <Select
+                              size='md'
+                              bg={DEFAULT_STYLES.grayBg}
+                              placeholder='Select an account'
+                              onChange={(e) => {
+                                CardChangeHandler.onAccountChange(
+                                  e.target.value
+                                );
+                              }}
+                            ></Select>
+                          </InputComp>
+
+                          <InputComp label='Currency'>
+                            <Select
+                              size='md'
+                              bg={DEFAULT_STYLES.grayBg}
+                              placeholder='US Dollars - USD'
+                              onChange={(e) => {
+                                CardChangeHandler.onCurrencyChange(
+                                  e.target.value
+                                );
+                              }}
+                            ></Select>
+                          </InputComp>
+                        </Grid>
+
+                        {isVirtual && (
+                          <InputComp
+                            label='Amount to fund'
+                            inputStyle={{
+                              bg: DEFAULT_STYLES.grayBg,
+                            }}
+                            onChange={(e) => {
+                              CardChangeHandler.onAmountChange(e);
+                            }}
+                          />
+                        )}
+                      </ColumnFlex>
+
+                      {amount && (
+                        <>
+                          <GrayInfoCard alignSelf='center'>
+                            #1.00/$754.00
+                          </GrayInfoCard>
+                          <Flex align='center' justify='space-between'>
+                            <Text textStyle='darkTitle' fontSize='1rem'>
+                              Debit Amount:
+                            </Text>
+                            <Text
+                              textStyle='darkTitle'
+                              fontSize='1rem'
+                              color='rgba(43, 43, 43, 1)'
+                            >
+                              #188,500.00
+                            </Text>
+                          </Flex>
+                        </>
+                      )}
+
+                      <Flex align='center' gap='3' pt='16'>
+                        {!isVirtual && (
+                          <Button
+                            variant='noBg'
+                            size='smPadding'
+                            onClick={reset}
+                          >
+                            Discard
+                          </Button>
+                        )}
+
+                        <Button
+                          size='smPadding'
+                          onClick={() => {
+                            if (isVirtual) {
+                              alert('Card created successfully!');
+                            } else {
+                            }
+                          }}
+                        >
+                          {isVirtual ? 'Create card' : 'Continue'}
+                        </Button>
+                      </Flex>
+                    </>
+                  )}
+                </Stack>
+              )}
+            </>
           )}
         </ColumnFlex>
       </Grid>

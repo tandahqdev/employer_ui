@@ -10,11 +10,7 @@ const BankAccounts = () => {
 
   const otherBtn = (
     <Flex align='center' gap='4' display={{ base: 'none', md: 'flex' }}>
-      <Button
-        size='smPadding'
-        variant='noBgPurpleBtn'
-        leftIcon={<HiArrowRight />}
-      >
+      <Button size='smPadding' variant='noBgPurple' leftIcon={<HiArrowRight />}>
         Move Money
       </Button>
 
@@ -49,7 +45,7 @@ const BankAccounts = () => {
           border={DEFAULT_STYLES.border}
           borderRadius='10px'
         >
-          <Button variant='noBgPurpleBtn' size='smPadding'>
+          <Button variant='noBgPurple' size='smPadding'>
             Add Account
           </Button>
         </Center>

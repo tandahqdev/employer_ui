@@ -25,7 +25,6 @@ export const DEFAULT_STYLES = {
   semibold: 500,
   mediumbold: 600,
   bold: 700,
-  smFontSize: '0.75rem',
   fontSize: '0.95rem',
   textFontSize: '0.9rem',
   desc: '0.75rem',

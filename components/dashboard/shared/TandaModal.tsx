@@ -56,7 +56,7 @@ export const TandaModal = ({
           {btnText && (
             <Button
               w={DEFAULT_STYLES.fullWidth}
-              variant='darkBtn'
+              variant='dark'
               size='smPadding'
               {...restBtn}
             >

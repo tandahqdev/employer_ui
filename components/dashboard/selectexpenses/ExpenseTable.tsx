@@ -26,7 +26,7 @@ export const ExpenseTable = () => {
       >
         <Td>
           <Flex align='center' gap='4'>
-            <Checkbox variant='pinkvariant' isChecked={isActive} />
+            <Checkbox variant='pink' isChecked={isActive} />
             <ColumnFlex>
               <Text>{e.description.name}</Text>
               <Desc>{e.description.desc}</Desc>

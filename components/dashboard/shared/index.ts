@@ -15,3 +15,4 @@ export * from './TandaModal';
 export * from './TandaTable';
 export * from './ProfileNavCard';
 export * from './SharedExpensesAndDraw';
+export * from './GrayInfoCard';

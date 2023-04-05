@@ -5,7 +5,7 @@ import { DEFAULT_STYLES } from '../globalStyles';
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(radioAnatomy.keys);
 
-  const pinkvariant = definePartsStyle({
+  const pink = definePartsStyle({
     control: {
       borderRadius: 'full',
       borderColor: DEFAULT_STYLES.pink,
@@ -42,6 +42,6 @@ const { definePartsStyle, defineMultiStyleConfig } =
   export const radioTheme = defineMultiStyleConfig({
     baseStyle,
     variants: {
-      pinkvariant,
+      pink,
     },
   });
