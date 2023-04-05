@@ -12,6 +12,7 @@ import {
 
 export const ShippingAdd = () => {
   const cols = { base: 2, md: 1 };
+
   return (
     <Stack gap='8'>
       <ColumnFlex gap='5'>
@@ -24,7 +25,7 @@ export const ShippingAdd = () => {
         w='full'
         templateColumns={sharedGridStyles.gridTemplateColumns}
         columnGap='30px'
-        rowGap='50px'
+        rowGap='40px'
       >
         <GridItem colSpan={cols.base}>
           <InputComp
