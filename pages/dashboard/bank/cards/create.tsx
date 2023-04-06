@@ -11,10 +11,12 @@ import { CardType } from '@/models';
 import { CardChangeHandler, useCardStore } from '@/store';
 import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
 import { Button, Flex, Grid, Select, Stack, Text } from '@chakra-ui/react';
+import { useState } from 'react';
 
 const Create = () => {
   const { supportedTypes, type, supportedBrands, amount, reset, brand } =
     useCardStore();
+  const [showAddress, setShowAddress] = useState(false);
   const isVirtual = type === CardType.Virtual;
 
   const renderTypes = supportedTypes.map((type) => {
@@ -43,9 +45,7 @@ const Create = () => {
           gap='5'
           px={DEFAULT_STYLES.mobilePx}
         >
-          <ShippingAdd />
-
-          {false && (
+          {!showAddress ? (
             <>
               <Stack gap='8'>
                 <ColumnFlex>
@@ -175,35 +175,50 @@ const Create = () => {
                           </Flex>
                         </>
                       )}
-
-                      <Flex align='center' gap='3' pt='16'>
-                        {!isVirtual && (
-                          <Button
-                            variant='noBg'
-                            size='smPadding'
-                            onClick={reset}
-                          >
-                            Discard
-                          </Button>
-                        )}
-
-                        <Button
-                          size='smPadding'
-                          onClick={() => {
-                            if (isVirtual) {
-                              alert('Card created successfully!');
-                            } else {
-                            }
-                          }}
-                        >
-                          {isVirtual ? 'Create card' : 'Continue'}
-                        </Button>
-                      </Flex>
                     </>
                   )}
                 </Stack>
               )}
             </>
+          ) : (
+            <ShippingAdd />
+          )}
+
+          {brand && (
+            <Flex align='center' gap='3' pt='16'>
+              {!isVirtual && (
+                <Button
+                  variant='noBg'
+                  size='smPadding'
+                  onClick={() => {
+                    setShowAddress(false);
+                    reset();
+                  }}
+                >
+                  Discard
+                </Button>
+              )}
+
+              <Button
+                size='smPadding'
+                onClick={() => {
+                  if (isVirtual) {
+                    alert('Card created successfully!');
+                    reset();
+                  } else {
+                    if (showAddress) {
+                      alert('Card created successfully!');
+                      setShowAddress(false);
+                      reset();
+                    } else {
+                      setShowAddress(true);
+                    }
+                  }
+                }}
+              >
+                {isVirtual ? 'Create card' : 'Continue'}
+              </Button>
+            </Flex>
           )}
         </ColumnFlex>
       </Grid>
