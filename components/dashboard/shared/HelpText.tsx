@@ -15,7 +15,7 @@ export const HelpText = () => {
           color: color,
         }}
       >
-        <Link href={DashRoutes.dashboardHelp}>book a call</Link>
+        <Link href={DashRoutes.help}>book a call</Link>
       </span>{' '}
       with one of our experts
     </Desc>

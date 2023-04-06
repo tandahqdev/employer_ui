@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Card, Header, NoCards } from '@/components';
+import { CardPage, Header, NoCards } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
@@ -10,7 +10,7 @@ const BankCards = () => {
   const topbar = <Header>Cards</Header>;
 
   const otherBtn = (
-    <Link href={DashRoutes.dashboardBankCardsCreate}>
+    <Link href={DashRoutes.bankCardsCreate}>
       <Button
         size='smPadding'
         leftIcon={<AddIcon color={DEFAULT_STYLES.white} />}
@@ -24,7 +24,7 @@ const BankCards = () => {
 
   return (
     <DashBoardLayout header={topbar} otherBtn={otherBtn}>
-      {showCard ? <Card /> : <NoCards />}
+      {showCard ? <CardPage /> : <NoCards />}
     </DashBoardLayout>
   );
 };

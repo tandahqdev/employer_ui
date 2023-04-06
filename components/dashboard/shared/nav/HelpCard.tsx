@@ -30,7 +30,7 @@ export const HelpCard = () => {
             color: DEFAULT_STYLES.lightPurple,
           }}
         >
-          <Link href={DashRoutes.dashboardHelp}>get in touch</Link>
+          <Link href={DashRoutes.help}>get in touch</Link>
         </span>{' '}
         with one of our experts or visit our
         <span

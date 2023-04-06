@@ -4,3 +4,11 @@ export interface AccountModel {
   accountNumber: string;
   id: string;
 }
+
+
+export enum CurrencyType {
+  NGN = 'NGN',
+  EUR = 'EUR',
+  USD = 'USD',
+  GBP = 'GBP',
+}

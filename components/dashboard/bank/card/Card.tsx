@@ -1,17 +1,22 @@
 import Image from 'next/image';
 import cardscan from '@/assets/images/cardscan.png';
 import cardlogo from '@/assets/images/cardlogo.png';
-import cardVerve from '@/assets/images/cardverve.png';
 import { ColumnFlex } from '@/components';
-import { CardType } from '@/models';
+import { CardData } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
-import { cardColorHandler, hidePin } from '@/utils';
+import { hidePin } from '@/utils';
 import { Box, Circle, Flex, HStack, Spacer, Text } from '@chakra-ui/react';
+import { cardImages } from '@/store';
 
-export const Card = () => {
+interface Props {
+  data: CardData;
+}
+
+export const Card = ({
+  data: { getCardColor, type, getPin, brand, cvc },
+}: Props) => {
   return (
     <ColumnFlex
-      minW='368px'
       minH='230px'
       p='10px 20px 25px 20px'
       borderRadius={DEFAULT_STYLES.borderRadius}
@@ -19,7 +24,7 @@ export const Card = () => {
       boxShadow='0px 4px 4px rgba(0, 0, 0, 0.25)'
     >
       <Flex layerStyle='flex' alignSelf='flex-end' gap='1.5'>
-        <Circle bg={cardColorHandler(CardType.Physical)} p='1' />
+        <Circle bg={getCardColor} p='1' />
 
         <Text
           textTransform='capitalize'
@@ -29,7 +34,7 @@ export const Card = () => {
           className='card-text'
           userSelect='none'
         >
-          {CardType.Physical}
+          {type}
         </Text>
       </Flex>
 
@@ -49,7 +54,7 @@ export const Card = () => {
 
         <ColumnFlex pt='2' w='max-content' gap='1'>
           <Text color='white' fontSize='1.4rem'>
-            {hidePin('1234123456782145')}
+            {getPin}
           </Text>
 
           <Flex layerStyle='flex' justify='space-between'>
@@ -68,7 +73,7 @@ export const Card = () => {
               </Text>
 
               <Text color='white' fontSize='0.9rem'>
-                {hidePin('123', 0)}
+                {hidePin(cvc, 0)}
               </Text>
             </HStack>
           </Flex>
@@ -79,7 +84,7 @@ export const Card = () => {
 
       <Flex layerStyle='flex' justify='space-between'>
         <Image src={cardlogo} alt='cardLogo' priority quality={100} />
-        <Image src={cardVerve} alt='cardVerve' priority quality={100} />
+        <Image src={cardImages[brand]} alt='cardVerve' priority quality={100} />
       </Flex>
     </ColumnFlex>
   );
