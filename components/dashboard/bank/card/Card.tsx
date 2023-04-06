@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import cardscan from '@/assets/images/cardscan.png';
+import cardlogo from '@/assets/images/cardlogo.png';
+import cardVerve from '@/assets/images/cardverve.png';
 import { ColumnFlex } from '@/components';
 import { CardType } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
@@ -16,7 +18,7 @@ export const Card = () => {
       bg={DEFAULT_STYLES.darkColor}
       boxShadow='0px 4px 4px rgba(0, 0, 0, 0.25)'
     >
-      <Flex align='center' alignSelf='flex-end' gap='1.5'>
+      <Flex layerStyle='flex' alignSelf='flex-end' gap='1.5'>
         <Circle bg={cardColorHandler(CardType.Physical)} p='1' />
 
         <Text
@@ -33,7 +35,7 @@ export const Card = () => {
 
       <Spacer />
 
-      <Flex gap='6' align='center'>
+      <Flex gap='6' layerStyle='flex'>
         <Box
           w='50px'
           minH='37px'
@@ -50,13 +52,13 @@ export const Card = () => {
             {hidePin('1234123456782145')}
           </Text>
 
-          <Flex align='center' justify='space-between'>
+          <Flex layerStyle='flex' justify='space-between'>
             <HStack>
               <Text color='white' fontSize='0.9rem'>
                 EXP{' '}
               </Text>
               <Text color='white' fontSize='0.9rem'>
-                EXP{' '}
+                **/**
               </Text>
             </HStack>
 
@@ -75,16 +77,9 @@ export const Card = () => {
 
       <Spacer />
 
-      <Flex>
-        <Box
-          w='50px'
-          minH='37px'
-          borderRadius={8}
-          bg='linear-gradient(164.43deg, #FFF27A 26.39%, #F4C33F 73.93%);'
-          position='relative'
-        >
-          <Image src={cardscan} alt='cardscan' priority quality={100} fill />
-        </Box>
+      <Flex layerStyle='flex' justify='space-between'>
+        <Image src={cardlogo} alt='cardLogo' priority quality={100} />
+        <Image src={cardVerve} alt='cardVerve' priority quality={100} />
       </Flex>
     </ColumnFlex>
   );
