@@ -1,9 +1,21 @@
-import { CardPage, Header } from '@/components';
+import { CardPage } from '@/components';
 import { DashBoardLayout } from '@/layout';
-import { Button, Flex } from '@chakra-ui/react';
+import { DEFAULT_STYLES } from '@/styles';
+import { Button, Flex, Text } from '@chakra-ui/react';
 
 const CardDetails = () => {
-  const topbar = <Header>Cards</Header>;
+  const topbar = (
+    <Text textStyle='title' color={DEFAULT_STYLES.lightPurple}>
+      Card Details:{' '}
+      <span
+        style={{
+          color: DEFAULT_STYLES.darkGray,
+        }}
+      >
+        Sam Smith
+      </span>{' '}
+    </Text>
+  );
 
   const otherBtn = (
     <Flex layerStyle='flex' gap='4' display={{ base: 'none', md: 'flex' }}>
@@ -19,7 +31,7 @@ const CardDetails = () => {
 
   return (
     <DashBoardLayout header={topbar} otherBtn={otherBtn}>
-      {<CardPage />}
+      <CardPage />
     </DashBoardLayout>
   );
 };

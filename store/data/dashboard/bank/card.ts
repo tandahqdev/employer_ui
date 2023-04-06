@@ -51,7 +51,7 @@ export const supportedTypes: SupportedCardType[] = [
 
 export const cardExamples: CardData[] = [
   new CardData({
-    id: nanoid(),
+    id: nanoid(5),
     balance: 20000,
     brand: CardBrand.Verve,
     currency: CurrencyType.NGN,
@@ -68,7 +68,7 @@ export const cardExamples: CardData[] = [
     suite: 'my house',
   }),
   new CardData({
-    id: nanoid(),
+    id: nanoid(5),
     balance: 25000,
     brand: CardBrand.Visa,
     currency: CurrencyType.USD,
@@ -79,7 +79,7 @@ export const cardExamples: CardData[] = [
     type: CardType.Virtual,
   }),
   new CardData({
-    id: nanoid(),
+    id: nanoid(5),
     balance: 30000,
     brand: CardBrand.MasterCard,
     currency: CurrencyType.EUR,

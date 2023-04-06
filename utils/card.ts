@@ -7,7 +7,7 @@ export const cardColorHandler = (type: CardType) => {
   if (type === CardType.Physical) {
     color = DEFAULT_STYLES.redColor;
   } else {
-    color = DEFAULT_STYLES.lightBlue;
+    color = DEFAULT_STYLES.lightGreen;
   }
 
   return color;

@@ -1,12 +1,18 @@
+import Link from 'next/link';
 import { ColumnFlex } from '@/components/shared';
 import { cardExamples } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
+import { DashRoutes } from '@/utils';
 import { Grid } from '@chakra-ui/react';
 import { Card } from './Card';
 
 export const CardPage = () => {
   const renderCardExample = cardExamples.map((item) => {
-    return <Card data={item} key={item.id} />;
+    return (
+      <Link key={item.id} href={DashRoutes.bankCardDetail(item.id)}>
+        <Card data={item} />
+      </Link>
+    );
   });
 
   return (
