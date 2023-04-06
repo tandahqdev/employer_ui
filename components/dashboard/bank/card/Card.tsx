@@ -4,7 +4,7 @@ import { ColumnFlex } from '@/components';
 import { CardType } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 import { cardColorHandler, hidePin } from '@/utils';
-import { Box, Circle, Flex, Spacer, Text } from '@chakra-ui/react';
+import { Box, Circle, Flex, HStack, Spacer, Text } from '@chakra-ui/react';
 
 export const Card = () => {
   return (
@@ -33,10 +33,11 @@ export const Card = () => {
 
       <Spacer />
 
-      <Flex gap='6'>
+      <Flex gap='6' align='center'>
         <Box
           w='50px'
           minH='37px'
+          maxH='40px'
           borderRadius={8}
           bg='linear-gradient(164.43deg, #FFF27A 26.39%, #F4C33F 73.93%);'
           position='relative'
@@ -44,10 +45,31 @@ export const Card = () => {
           <Image src={cardscan} alt='cardscan' priority quality={100} />
         </Box>
 
-        <ColumnFlex>
+        <ColumnFlex pt='2' w='max-content' gap='1'>
           <Text color='white' fontSize='1.4rem'>
             {hidePin('1234123456782145')}
           </Text>
+
+          <Flex align='center' justify='space-between'>
+            <HStack>
+              <Text color='white' fontSize='0.9rem'>
+                EXP{' '}
+              </Text>
+              <Text color='white' fontSize='0.9rem'>
+                EXP{' '}
+              </Text>
+            </HStack>
+
+            <HStack>
+              <Text color='white' fontSize='0.9rem'>
+                CVC{' '}
+              </Text>
+
+              <Text color='white' fontSize='0.9rem'>
+                {hidePin('123', 0)}
+              </Text>
+            </HStack>
+          </Flex>
         </ColumnFlex>
       </Flex>
 
