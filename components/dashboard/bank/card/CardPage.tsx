@@ -10,7 +10,7 @@ export const CardPage = () => {
   });
 
   return (
-    <ColumnFlex border='1px solid red'>
+    <ColumnFlex>
       <Grid
         w={DEFAULT_STYLES.fullWidth}
         mx={DEFAULT_STYLES.mobilePx}
