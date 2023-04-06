@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Header, NoCards } from '@/components';
+import { Card, Header, NoCards } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
@@ -20,9 +20,11 @@ const BankCards = () => {
     </Link>
   );
 
+  const showCard = true;
+
   return (
     <DashBoardLayout header={topbar} otherBtn={otherBtn}>
-      <NoCards />
+      {showCard ? <Card /> : <NoCards />}
     </DashBoardLayout>
   );
 };
