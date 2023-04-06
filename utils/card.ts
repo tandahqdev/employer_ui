@@ -25,7 +25,7 @@ export const hidePin = (pin: string | number) => {
         prev += ' ';
       }
       return prev + cur;
-    });
+    }, '');
 
   return ans;
 };
