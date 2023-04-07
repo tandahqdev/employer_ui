@@ -113,6 +113,9 @@ export const theme = extendTheme({
       bg: 'white',
       borderRadius: 16,
     },
+    flex: {
+      alignItems: 'center',
+    },
     container: {
       width: {
         base: '100%',

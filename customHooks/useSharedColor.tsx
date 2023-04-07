@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 export const useSharedColor = () => {
   const router = useRouter();
-  const isExtend = router.pathname === DashRoutes.dashboardFinanceExtend;
+  const isExtend = router.pathname === DashRoutes.financeExtend;
 
   return isExtend ? DEFAULT_STYLES.pink : DEFAULT_STYLES.lightPurple;
 };

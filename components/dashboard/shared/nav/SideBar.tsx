@@ -75,11 +75,7 @@ export const SideBar = () => {
 
       <HelpCard />
 
-      <NavItem
-        icon={FiSettings}
-        title='Settings'
-        path={DashRoutes.dashboardSettings}
-      />
+      <NavItem icon={FiSettings} title='Settings' path={DashRoutes.settings} />
 
       <NavItem
         icon={BiLogOut}

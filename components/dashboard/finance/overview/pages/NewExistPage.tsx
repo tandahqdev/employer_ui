@@ -18,7 +18,7 @@ export const NewExistPage = () => {
                 revenue on day one.'
         btnText='Learn more'
         isShowTopBtn
-        path={DashRoutes.dashboardFinanceGrow}
+        path={DashRoutes.financeGrow}
         gradientImg={growcurve}
         atEdge
         showTexts
@@ -34,7 +34,7 @@ export const NewExistPage = () => {
               by buying now and paying later.'
         isShowTopBtn
         btnText='Learn more'
-        path={DashRoutes.dashboardFinanceExtend}
+        path={DashRoutes.financeExtend}
         gradientImg={extendcurve}
         showTexts
       />

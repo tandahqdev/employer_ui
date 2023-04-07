@@ -7,19 +7,19 @@ export const cardColorHandler = (type: CardType) => {
   if (type === CardType.Physical) {
     color = DEFAULT_STYLES.redColor;
   } else {
-    color = DEFAULT_STYLES.lightBlue;
+    color = DEFAULT_STYLES.lightGreen;
   }
 
   return color;
 };
 
-export const hidePin = (pin: string | number) => {
+export const hidePin = (pin: string | number, len: number = 4) => {
   let newPin = `${pin}`;
   const length = newPin.length;
 
   const ans = newPin
     .split('')
-    .fill('*', 0, length - 4)
+    .fill('*', 0, length - len)
     .reduce((prev, cur, index) => {
       if (index !== 0 && !(index % 4)) {
         prev += ' ';

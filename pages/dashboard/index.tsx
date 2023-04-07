@@ -18,7 +18,7 @@ export default function Home() {
           title='Upfront funding to accelerate your growth'
           desc='Convert future revenue into upfront capital, without debt or dilution.'
           btnText='Get started'
-          path={DashRoutes.dashboardFinanceOverview}
+          path={DashRoutes.financeOverview}
           showTexts
         />
 
@@ -26,7 +26,7 @@ export default function Home() {
           header='Banking'
           icon={bankIcon}
           headerColor={DEFAULT_STYLES.pink}
-          path={DashRoutes.dashboardBankOverview}
+          path={DashRoutes.bankOverview}
           title='Banking for what  you are building'
           desc='Get access to the cash management account built for startups.'
           btnText='Get started'

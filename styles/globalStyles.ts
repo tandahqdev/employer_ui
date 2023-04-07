@@ -22,7 +22,7 @@ export const DEFAULT_STYLES = {
   darkGray: '#637381',
   borderColor: '#E4E2E2',
   redColor: '#FF4242',
-  lightBlue: '#5EE3AE',
+  lightGreen: '#5EE3AE',
   normalFontWeight: 400,
   semibold: 500,
   mediumbold: 600,

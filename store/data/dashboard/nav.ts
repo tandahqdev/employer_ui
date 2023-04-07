@@ -13,19 +13,19 @@ export const financeItems: NavItemProps[] = [
   {
     icon: TfiMenuAlt,
     title: 'Overview',
-    path: DashRoutes.dashboardFinanceOverview,
+    path: DashRoutes.financeOverview,
     id: nanoid(),
   },
   {
     icon: MdStackedLineChart,
     title: 'Grow',
-    path: DashRoutes.dashboardFinanceGrow,
+    path: DashRoutes.financeGrow,
     id: nanoid(),
   },
   {
     icon: FiCheckCircle,
     title: 'Extend',
-    path: DashRoutes.dashboardFinanceExtend,
+    path: DashRoutes.financeExtend,
     id: nanoid(),
   },
 ];
@@ -34,31 +34,31 @@ export const bankingItems: NavItemProps[] = [
   {
     icon: TfiMenuAlt,
     title: 'Overview',
-    path: DashRoutes.dashboardBankOverview,
+    path: DashRoutes.bankOverview,
     id: nanoid(),
   },
   {
     icon: ImStack,
     title: 'Accounts',
-    path: DashRoutes.dashboardBankAccts,
+    path: DashRoutes.bankAccts,
     id: nanoid(),
   },
   {
     icon: BsCreditCard,
     title: 'Cards',
-    path: DashRoutes.dashboardBankCards,
+    path: DashRoutes.bankCards,
     id: nanoid(),
   },
   {
     icon: BsCashStack,
     title: 'Payments',
-    path: DashRoutes.dashboardBankPay,
+    path: DashRoutes.bankPay,
     id: nanoid(),
   },
   {
     icon: HiOutlineUsers,
     title: 'Recipients',
-    path: DashRoutes.dashboardBankRepts,
+    path: DashRoutes.bankRepts,
     id: nanoid(),
   },
 ];

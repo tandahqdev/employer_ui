@@ -3,21 +3,24 @@ export class DashRoutes {
   static dashboard = '/dashboard';
 
   // Financing
-  static dashboardFinanceOverview = `${this.dashboard}/finance`;
-  static dashboardFinanceGrow = `${this.dashboardFinanceOverview}/grow`;
-  static dashboardFinanceExtend = `${this.dashboardFinanceOverview}/extend`;
+  static financeOverview = `${this.dashboard}/finance`;
+  static financeGrow = `${this.financeOverview}/grow`;
+  static financeExtend = `${this.financeOverview}/extend`;
 
   // Banking
-  static dashboardBankOverview = `${this.dashboard}/bank`;
-  static dashboardBankAccts = `${this.dashboardBankOverview}/accounts`;
-  static dashboardBankAcctsStatements = `${this.dashboardBankAccts}/statements`;
-  static dashboardBankCards = `${this.dashboardBankOverview}/cards`;
-  static dashboardBankCardsCreate = `${this.dashboardBankOverview}/cards/create`;
-  static dashboardBankPay = `${this.dashboardBankOverview}/payments`;
-  static dashboardBankRepts = `${this.dashboardBankOverview}/recipients`;
+  static bankOverview = `${this.dashboard}/bank`;
+  static bankAccts = `${this.bankOverview}/accounts`;
+  static bankAcctsStatements = `${this.bankAccts}/statements`;
+  static bankCards = `${this.bankOverview}/cards`;
+  static bankCardsCreate = `${this.bankOverview}/cards/create`;
 
-  static dashboardSettings = `${this.dashboard}/settings`;
-  static dashboardHelp = `${this.dashboard}/help`;
+  static bankCardDetail = (id: string) => `${this.bankOverview}/cards/${id}`;
+
+  static bankPay = `${this.bankOverview}/payments`;
+  static bankRepts = `${this.bankOverview}/recipients`;
+
+  static settings = `${this.dashboard}/settings`;
+  static help = `${this.dashboard}/help`;
   static faq = `${this.dashboard}/faq`;
   static draw = `${this.dashboard}/draw`;
   static expense = `${this.dashboard}/expense`;

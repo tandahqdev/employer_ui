@@ -53,6 +53,11 @@ const noBgPurple = defineStyle({
   color: DEFAULT_STYLES.lightPurple,
 });
 
+const lightPurple = defineStyle({
+  backgroundColor: DEFAULT_STYLES.lightPurpleBg,
+  color: DEFAULT_STYLES.lightPurple,
+});
+
 export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
   baseStyle: {
     borderRadius: 8,
@@ -77,6 +82,7 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     dark,
     pink,
     noBgPurple,
+    lightPurple,
   },
   defaultProps: {
     size: 'lgPadding',

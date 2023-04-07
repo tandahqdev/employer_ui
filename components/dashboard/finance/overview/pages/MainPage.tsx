@@ -23,7 +23,7 @@ export const MainPage = () => {
                 revenue on day one.'
         btnText='New draw'
         isShowTopBtn
-        path={DashRoutes.dashboardFinanceGrow}
+        path={DashRoutes.financeGrow}
         gradientImg={growcurve}
         atEdge
         showTexts
@@ -40,7 +40,7 @@ export const MainPage = () => {
               by buying now and paying later.'
         isShowTopBtn
         btnText='New extension'
-        path={DashRoutes.dashboardFinanceExtend}
+        path={DashRoutes.financeExtend}
         gradientImg={extendcurve}
         leftIcon={<AddIcon />}
         showTexts
