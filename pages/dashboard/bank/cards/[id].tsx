@@ -1,4 +1,4 @@
-import { CardPage } from '@/components';
+import { SharedCardContainer } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { DEFAULT_STYLES } from '@/styles';
 import { Button, Flex, Text } from '@chakra-ui/react';
@@ -31,7 +31,7 @@ const CardDetails = () => {
 
   return (
     <DashBoardLayout header={topbar} otherBtn={otherBtn}>
-      <CardPage />
+      <SharedCardContainer renderItems='' tableSection='' />
     </DashBoardLayout>
   );
 };
