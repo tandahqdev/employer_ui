@@ -85,7 +85,7 @@ export const cardExamples: CardData[] = [
     currency: CurrencyType.EUR,
     cvc: '123',
     expDate: '123',
-    name: 'Sam James',
+    name: 'John London',
     number: '1234567898762138',
     type: CardType.Physical,
     city: 'Enugu',
