@@ -15,7 +15,7 @@ export const SharedFinanceOverview = ({ children }: LayoutProps) => {
         <ProfileNavCard
           showOnMobile
           title='Welcome back, John'
-          desc={getDay(true)}
+          desc={getDay('medium')}
         />
       }
     >

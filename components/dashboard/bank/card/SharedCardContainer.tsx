@@ -1,4 +1,4 @@
-import { ColumnFlex } from '@/components/shared';
+import { ColumnFlex } from '@/components';
 import { DEFAULT_STYLES } from '@/styles';
 import { Grid } from '@chakra-ui/react';
 import { ReactNode } from 'react';
@@ -26,7 +26,7 @@ export const SharedCardContainer = ({ renderItems, tableSection }: Props) => {
         {renderItems}
       </Grid>
 
-      <ColumnFlex layerStyle='card' w='full' minH='400px'>
+      <ColumnFlex layerStyle='card' w='full' minH='400px' p='5' gap='7'>
         {tableSection}
       </ColumnFlex>
     </ColumnFlex>

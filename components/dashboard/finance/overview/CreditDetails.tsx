@@ -99,7 +99,7 @@ export const CreditDetails = () => {
         <HStack h='40px' gap='2'>
           <OfferCard title='Amount' desc='$5,000,000.00' />
           <TandaVDivider />
-          <OfferCard title='Date initiated' desc={getDay(true)} />
+          <OfferCard title='Date initiated' desc={getDay('medium')} />
         </HStack>
       </Flex>
     </GridItem>

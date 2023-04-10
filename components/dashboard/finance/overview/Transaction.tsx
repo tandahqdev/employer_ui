@@ -170,7 +170,7 @@ export const Transaction = ({ buttons, tableData }: Props) => {
       </TableContainer>
 
       {!tableData && (
-        <ColumnFlex mt='10' gap='1'>
+        <ColumnFlex mt='10' gap='1' align='center'>
           <Text textStyle='title' color={DEFAULT_STYLES.darkGray}>
             You don’t have any payments pending
           </Text>

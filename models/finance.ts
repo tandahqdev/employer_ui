@@ -26,7 +26,7 @@ export class TransactionData implements TransactionModel {
   outstanding: number;
 
   get dueDate(): string {
-    return getDay(true);
+    return getDay('medium');
   }
 
   get paymentData() {
