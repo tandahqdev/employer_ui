@@ -17,7 +17,7 @@ interface Props extends ButtonProps {
   btnText?: string;
 }
 
-export const TandaModal = ({
+export const DrawModal = ({
   isOpen,
   onClose,
   data,
