@@ -30,8 +30,8 @@ export const cardStatusColor = (status: CardStatus) => {
     };
   } else {
     return {
-      color: DEFAULT_STYLES.lightPurpleBg,
-      bg: DEFAULT_STYLES.lightPurple,
+      color: DEFAULT_STYLES.lightPurple,
+      bg: DEFAULT_STYLES.lightPurpleBg,
     };
   }
 };

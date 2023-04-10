@@ -26,7 +26,7 @@ export const SharedCardContainer = ({ renderItems, tableSection }: Props) => {
         {renderItems}
       </Grid>
 
-      <ColumnFlex layerStyle='card' w='full' minH='400px' p='5' gap='4'>
+      <ColumnFlex layerStyle='card' w='full' minH='400px' p='5' gap='7'>
         {tableSection}
       </ColumnFlex>
     </ColumnFlex>

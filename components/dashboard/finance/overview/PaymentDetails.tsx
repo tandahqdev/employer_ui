@@ -31,7 +31,7 @@ export const PaymentDetails = () => {
           icon={BsFillCreditCardFill}
           extra={
             <Text textStyle='title' fontSize='0.9rem' color={color}>
-              {getDay(true)}
+              {getDay('medium')}
             </Text>
           }
         />

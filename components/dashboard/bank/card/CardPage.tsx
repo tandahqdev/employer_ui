@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { cardExamples, cardPageTableHeaders } from '@/store';
-import { DashRoutes } from '@/utils';
+import { DashRoutes, getDay } from '@/utils';
 import { Card } from './Card';
 import { SharedCardContainer } from './SharedCardContainer';
 import { SearchIcon } from '@chakra-ui/icons';
 import { Center, Flex, Td, Text } from '@chakra-ui/react';
 import { TandaTable, TandaTableRow } from '../../shared';
 import { ColumnFlex } from '@/components';
+import { DEFAULT_STYLES } from '@/styles';
 
 export const CardPage = () => {
   const renderCardExample = cardExamples.map((item) => {
@@ -19,7 +20,7 @@ export const CardPage = () => {
 
   const renderTableBody = cardExamples.map((data) => {
     return (
-      <TandaTableRow key={data.id}>
+      <TandaTableRow key={data.id} textStyle='desc'>
         <Td>{data.name}</Td>
         <Td>
           <ColumnFlex>
@@ -42,6 +43,21 @@ export const CardPage = () => {
         </Td>
 
         <Td>09 / 24</Td>
+
+        <Td>
+          <Center
+            p='1'
+            rounded='8px'
+            maxW='83px'
+            textTransform='capitalize'
+            color={data.tableStatusColor.color}
+            bg={data.tableStatusColor.bg}
+          >
+            {data.status}
+          </Center>
+        </Td>
+
+        <Td isNumeric>{getDay('medium', data.createdOn)}</Td>
       </TandaTableRow>
     );
   });
@@ -55,7 +71,10 @@ export const CardPage = () => {
         </Text>
       </Flex>
 
-      <TandaTable tableHeaders={cardPageTableHeaders}>
+      <TandaTable
+        tableHeaders={cardPageTableHeaders}
+        borderTop={DEFAULT_STYLES.border}
+      >
         {renderTableBody}
       </TandaTable>
     </>
