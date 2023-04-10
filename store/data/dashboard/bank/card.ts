@@ -53,7 +53,7 @@ export const supportedTypes: SupportedCardType[] = [
 
 export const cardExamples: CardData[] = [
   new CardData({
-    id: nanoid(5),
+    id: '1',
     balance: 20000,
     brand: CardBrand.Verve,
     currency: CurrencyType.NGN,
@@ -66,7 +66,7 @@ export const cardExamples: CardData[] = [
     country: 'Nigeria',
     postalCode: '400103',
     state: 'Enugu',
-    street: '24 Lumumba streett',
+    street: '24 Lumumba street',
     suite: 'my house',
     account: '12345678987',
     createdOn: new Date(),
@@ -107,7 +107,7 @@ export const cardExamples: CardData[] = [
     ],
   }),
   new CardData({
-    id: nanoid(5),
+    id: '2',
     balance: 25000,
     brand: CardBrand.Visa,
     currency: CurrencyType.USD,
@@ -155,7 +155,7 @@ export const cardExamples: CardData[] = [
     ],
   }),
   new CardData({
-    id: nanoid(5),
+    id: '3',
     balance: 30000,
     brand: CardBrand.MasterCard,
     currency: CurrencyType.EUR,
@@ -168,7 +168,7 @@ export const cardExamples: CardData[] = [
     country: 'Nigeria',
     postalCode: '400103',
     state: 'Enugu',
-    street: '24 Lumumba streett',
+    street: '24 Lumumba street',
     suite: 'my house',
     account: '12345678987',
     createdOn: new Date(),
@@ -209,7 +209,7 @@ export const cardExamples: CardData[] = [
     ],
   }),
   new CardData({
-    id: nanoid(5),
+    id: '4',
     balance: 30000,
     brand: CardBrand.Visa,
     currency: CurrencyType.NGN,
@@ -222,7 +222,7 @@ export const cardExamples: CardData[] = [
     country: 'Nigeria',
     postalCode: '400103',
     state: 'Enugu',
-    street: '24 Lumumba streett',
+    street: '24 Lumumba street',
     suite: 'my house',
     account: '12345678987',
     createdOn: new Date(),
