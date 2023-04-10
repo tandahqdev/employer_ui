@@ -10,10 +10,16 @@ interface Props {
 
 export const SharedCardContainer = ({ renderItems, tableSection }: Props) => {
   return (
-    <ColumnFlex gap='75px'>
+    <ColumnFlex
+      gap='75px'
+      width='full'
+      align='center'
+      px={DEFAULT_STYLES.mobilePx}
+    >
       <Grid
         w={DEFAULT_STYLES.fullWidth}
         mx={DEFAULT_STYLES.mobilePx}
+        justifyContent={{ base: 'center', xl: 'flex-start' }}
         minH='max-content'
         templateColumns={{
           base: 'repeat(1,1fr)',

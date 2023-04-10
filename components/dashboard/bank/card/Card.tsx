@@ -59,22 +59,14 @@ export const Card = ({
 
           <Flex layerStyle='flex' justify='space-between'>
             <HStack>
-              <Text color='white' fontSize='0.9rem'>
-                EXP{' '}
-              </Text>
-              <Text color='white' fontSize='0.9rem'>
-                **/**
-              </Text>
+              <Text textStyle='card'>EXP </Text>
+              <Text textStyle='card'>**/**</Text>
             </HStack>
 
             <HStack>
-              <Text color='white' fontSize='0.9rem'>
-                CVC{' '}
-              </Text>
+              <Text textStyle='card'>CVC </Text>
 
-              <Text color='white' fontSize='0.9rem'>
-                {hidePin(cvc, 0)}
-              </Text>
+              <Text textStyle='card'>{hidePin(cvc, 0)}</Text>
             </HStack>
           </Flex>
         </ColumnFlex>
@@ -83,8 +75,8 @@ export const Card = ({
       <Spacer />
 
       <Flex layerStyle='flex' justify='space-between'>
-        <Image src={cardlogo} alt='cardLogo' priority quality={100} />
-        <Image src={cardImages[brand]} alt='cardVerve' priority quality={100} />
+        <Image src={cardlogo} alt='cardLogo' quality={100} />
+        <Image src={cardImages[brand]} alt='cardVerve' quality={100} />
       </Flex>
     </ColumnFlex>
   );

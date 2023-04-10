@@ -79,6 +79,10 @@ export const textStyles = {
     lineHeight: 1.5,
     color: DEFAULT_STYLES.darkGray,
   },
+  card: {
+    color: 'white',
+    fontSize: DEFAULT_STYLES.textFontSize,
+  },
 };
 
 export const theme = extendTheme({
