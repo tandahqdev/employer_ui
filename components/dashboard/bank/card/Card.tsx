@@ -32,7 +32,9 @@ export const Card = ({
       >
         {showBalance && (
           <ColumnFlex>
-            <Text textStyle='card'>Available balance</Text>
+            <Text textStyle='card' opacity={DEFAULT_STYLES.opacity}>
+              Available balance
+            </Text>
             <Text textStyle='card'>{currentBalance}</Text>
           </ColumnFlex>
         )}

@@ -1,7 +1,8 @@
 import { ColumnFlex } from '@/components';
 import { IProps, LayoutProps } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
-import { Flex, Text } from '@chakra-ui/react';
+import { Center, Flex, Text } from '@chakra-ui/react';
+import Image, { StaticImageData } from 'next/image';
 
 interface Props extends LayoutProps {
   header: string;
@@ -48,5 +49,23 @@ export const CardListDetails = ({
       <Text>{title}</Text>
       <Text textTransform='capitalize'>{desc}</Text>
     </Flex>
+  );
+};
+
+interface CardActionBtnProps {
+  icon: StaticImageData;
+  onClick?: () => void;
+  text: string;
+}
+
+export const CardActionBtn = ({ icon, text, onClick }: CardActionBtnProps) => {
+  return (
+    <ColumnFlex onClick={onClick} layerStyle='flex' cursor='pointer' gap='1'>
+      <Center bg='#FAFAFA' w='36px' h='36px' rounded='full'>
+        <Image src={icon} alt={text} />
+      </Center>
+
+      <Text textStyle='desc'>{text}</Text>
+    </ColumnFlex>
   );
 };

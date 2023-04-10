@@ -1,5 +1,10 @@
+import withdraw from '@/assets/images/withdraw.png';
+import fund from '@/assets/images/fund.png';
+import hide from '@/assets/images/hide.png';
+import freeze from '@/assets/images/freeze.png';
 import {
   Card,
+  CardActionBtn,
   CardDetails,
   CardListDetails,
   ColumnFlex,
@@ -46,8 +51,14 @@ const Details = () => {
     <>
       {card && (
         <>
-          <ColumnFlex>
+          <ColumnFlex gap='5'>
             <Card data={card} showBalance />
+            <Flex w='full' layerStyle='flex' justify='space-between'>
+              <CardActionBtn icon={withdraw} text='Withdraw' />
+              <CardActionBtn icon={fund} text='Fund Card' />
+              <CardActionBtn icon={hide} text='Hide Details' />
+              <CardActionBtn icon={freeze} text='Freeze Card' />
+            </Flex>
           </ColumnFlex>
 
           <CardDetails header='Card'>
