@@ -12,7 +12,7 @@ export const SharedCardContainer = ({ renderItems, tableSection }: Props) => {
   return (
     <ColumnFlex
       gap='75px'
-      width='full'
+      width='max-content'
       align='center'
       px={DEFAULT_STYLES.mobilePx}
     >
