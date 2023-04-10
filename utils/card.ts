@@ -1,16 +1,39 @@
-import { CardType } from '@/models';
+import { CardStatus, CardType } from '@/models';
 import { DEFAULT_STYLES } from '@/styles';
 
 export const cardColorHandler = (type: CardType) => {
-  let color: string;
-
   if (type === CardType.Physical) {
-    color = DEFAULT_STYLES.redColor;
+    return DEFAULT_STYLES.redColor;
   } else {
-    color = DEFAULT_STYLES.lightGreen;
+    return DEFAULT_STYLES.lightGreen;
   }
+};
+export const cardTableColorHandler = (type: CardType) => {
+  if (type === CardType.Physical) {
+    return {
+      color: DEFAULT_STYLES.lightGreen,
+      bg: DEFAULT_STYLES.lightGreenBg,
+    };
+  } else {
+    return {
+      color: DEFAULT_STYLES.orange,
+      bg: DEFAULT_STYLES.lightOrangeBg,
+    };
+  }
+};
 
-  return color;
+export const cardStatusColor = (status: CardStatus) => {
+  if (status === CardStatus.Active) {
+    return {
+      color: DEFAULT_STYLES.redColor,
+      bg: DEFAULT_STYLES.lightErrorBg,
+    };
+  } else {
+    return {
+      color: DEFAULT_STYLES.lightPurpleBg,
+      bg: DEFAULT_STYLES.lightPurple,
+    };
+  }
 };
 
 export const hidePin = (pin: string | number, len: number = 4) => {

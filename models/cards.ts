@@ -1,7 +1,8 @@
-import { cardColorHandler, hidePin } from '@/utils';
+import { cardColorHandler, cardTableColorHandler, hidePin } from '@/utils';
 import { StaticImageData } from 'next/image';
 import { IconType } from 'react-icons';
 import { CurrencyType } from './account';
+import { ColorsModel } from './shared';
 
 export interface CreateCard {
   supportedTypes: SupportedCardType[];
@@ -130,6 +131,10 @@ export class CardData implements CardModel {
 
   get getCardColor(): string {
     return cardColorHandler(this.type);
+  }
+
+  get tableTypeColor(): ColorsModel {
+    return cardTableColorHandler(this.type);
   }
 
   get getPin(): string {

@@ -43,3 +43,9 @@ export interface TopBarProps {
   showBckBtn?: boolean;
   otherBtn?: ReactNode;
 }
+
+
+export interface ColorsModel {
+  color: string;
+  bg: string;
+}
