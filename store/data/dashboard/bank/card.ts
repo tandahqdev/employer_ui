@@ -7,10 +7,12 @@ import cardmaster from '@/assets/images/cardmaster.png';
 import {
   CardBrand,
   CardData,
+  CardStatus,
   CardType,
   CurrencyType,
   SupportedCardBrand,
   SupportedCardType,
+  TransactionType,
 } from '@/models';
 import { nanoid } from 'nanoid';
 import { AiFillCreditCard } from 'react-icons/ai';
@@ -66,6 +68,43 @@ export const cardExamples: CardData[] = [
     state: 'Enugu',
     street: '24 Lumumba streett',
     suite: 'my house',
+    account: '12345678987',
+    createdOn: new Date(),
+    status: CardStatus.Active,
+    transaction: [
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Debit,
+        id: nanoid(10),
+      },
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Debit,
+        id: nanoid(10),
+      },
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Debit,
+        id: nanoid(10),
+      },
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Debit,
+        id: nanoid(10),
+      },
+    ],
   }),
   new CardData({
     id: nanoid(5),
@@ -77,6 +116,43 @@ export const cardExamples: CardData[] = [
     name: 'Sam Johnn',
     number: '1234567898762905',
     type: CardType.Virtual,
+    account: '12345678987',
+    createdOn: new Date(),
+    status: CardStatus.Active,
+    transaction: [
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Credit,
+        id: nanoid(10),
+      },
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Debit,
+        id: nanoid(10),
+      },
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Debit,
+        id: nanoid(10),
+      },
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Debit,
+        id: nanoid(10),
+      },
+    ],
   }),
   new CardData({
     id: nanoid(5),
@@ -94,6 +170,43 @@ export const cardExamples: CardData[] = [
     state: 'Enugu',
     street: '24 Lumumba streett',
     suite: 'my house',
+    account: '12345678987',
+    createdOn: new Date(),
+    status: CardStatus.InActive,
+    transaction: [
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Debit,
+        id: nanoid(10),
+      },
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Debit,
+        id: nanoid(10),
+      },
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Credit,
+        id: nanoid(10),
+      },
+      {
+        amount: 300000,
+        balance: 500000,
+        summary: 'Purchase from Konga | Address: Lekki, LG | **5674',
+        time: new Date(),
+        type: TransactionType.Credit,
+        id: nanoid(10),
+      },
+    ],
   }),
 ];
 
@@ -102,3 +215,12 @@ export const cardImages: Record<string, StaticImageData> = {
   visa: cardvisa,
   mastercard: cardmaster,
 };
+
+export const cardPageTableHeaders = [
+  'Card Nickname',
+  'Account',
+  'Card Type',
+  'Expiry Date',
+  'Status',
+  'Created on',
+];

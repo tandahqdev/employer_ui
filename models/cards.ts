@@ -32,6 +32,11 @@ export enum CardBrand {
   MasterCard = 'mastercard',
 }
 
+export enum CardStatus {
+  Active = 'active',
+  InActive = 'inactive',
+}
+
 export interface Address {
   street?: string;
   suite?: string;
@@ -50,6 +55,20 @@ export interface SupportedCardBrand extends CardDetails<CardBrand> {
   text?: string;
 }
 
+export interface CardTransactions {
+  time: Date;
+  summary: string;
+  type: TransactionType;
+  amount: number;
+  balance: number;
+  id: string;
+}
+
+export enum TransactionType {
+  Debit = 'debit',
+  Credit = 'credit',
+}
+
 export interface CardModel extends Address {
   type: CardType;
   brand: CardBrand;
@@ -60,6 +79,10 @@ export interface CardModel extends Address {
   balance: number;
   id: string;
   currency: CurrencyType;
+  account: string;
+  status: CardStatus;
+  createdOn: Date;
+  transaction: CardTransactions[];
 }
 
 export class CardData implements CardModel {
@@ -78,6 +101,10 @@ export class CardData implements CardModel {
   country?: string;
   id: string;
   currency: CurrencyType;
+  account: string;
+  status: CardStatus;
+  createdOn: Date;
+  transaction: CardTransactions[];
 
   constructor(data: CardModel) {
     this.type = data.type;
@@ -95,6 +122,10 @@ export class CardData implements CardModel {
     this.number = data.number;
     this.id = data.id;
     this.currency = data.currency;
+    this.account = data.account;
+    this.status = data.status;
+    this.createdOn = data.createdOn;
+    this.transaction = data.transaction;
   }
 
   get getCardColor(): string {
