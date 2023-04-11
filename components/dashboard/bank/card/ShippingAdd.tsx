@@ -1,6 +1,6 @@
 import { ColumnFlex, Desc, InputComp } from '@/components';
 import { CardChangeHandler } from '@/store';
-import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
+import { DEFAULT_STYLES } from '@/styles';
 import {
   Center,
   Checkbox,
@@ -23,7 +23,7 @@ export const ShippingAdd = () => {
 
       <Grid
         w='full'
-        templateColumns={sharedGridStyles.gridTemplateColumns}
+        templateColumns={DEFAULT_STYLES.gridColumns}
         columnGap='30px'
         rowGap='40px'
       >

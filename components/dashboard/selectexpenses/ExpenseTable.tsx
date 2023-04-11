@@ -54,8 +54,8 @@ export const ExpenseTable = () => {
       colSpan={{ base: 1, md: 3, lg: 'auto' }}
       minH='417px'
       layerStyle='gridItem'
-      justifyContent='flex-start'
       gap='50px'
+      justifyContent={show ? 'center' : 'flex-start'}
       minW={DEFAULT_STYLES.fullWidth}
     >
       <TandaTable tableHeaders={['Vendor name', 'Due date', 'Amount']}>

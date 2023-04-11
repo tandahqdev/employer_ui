@@ -8,6 +8,8 @@ export const cardColorHandler = (type: CardType) => {
     return DEFAULT_STYLES.lightGreen;
   }
 };
+
+
 export const cardTableColorHandler = (type: CardType) => {
   if (type === CardType.Physical) {
     return {

@@ -9,7 +9,7 @@ import {
 import { DashBoardLayout } from '@/layout';
 import { CardType } from '@/models';
 import { CardChangeHandler, useCardStore } from '@/store';
-import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
+import { DEFAULT_STYLES } from '@/styles';
 import { Button, Flex, Grid, Select, Stack, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 
@@ -63,7 +63,7 @@ const Create = () => {
 
                 <Grid
                   w='full'
-                  templateColumns={sharedGridStyles.gridTemplateColumns}
+                  templateColumns={DEFAULT_STYLES.gridColumns}
                   gap={{ base: '30px', lg: '75px' }}
                 >
                   {renderTypes}
@@ -85,7 +85,7 @@ const Create = () => {
                       w='full'
                       templateColumns={{
                         base: 'repeat(1,1fr)',
-                        lg: 'repeat(3,1fr)',
+                        md: 'repeat(3,1fr)',
                       }}
                       alignItems='flex-start'
                       gridAutoColumns='1fr'
@@ -113,7 +113,7 @@ const Create = () => {
 
                         <Grid
                           w={DEFAULT_STYLES.fullWidth}
-                          templateColumns={sharedGridStyles.gridTemplateColumns}
+                          templateColumns={DEFAULT_STYLES.gridColumns}
                           gap='5'
                         >
                           <InputComp label='Associated account'>

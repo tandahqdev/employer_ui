@@ -29,7 +29,7 @@ export const SelectCardBrand = ({ value, image, text }: SupportedCardBrand) => {
 
   return (
     <ColumnFlex
-      w='274px'
+      w={{ base: '274px', md: 'full', lg: '274px' }}
       minH='125px'
       layerStyle='card'
       transition={DEFAULT_STYLES.transition}
