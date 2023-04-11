@@ -38,7 +38,7 @@ export const SideBar = () => {
       }}
       transition={DEFAULT_STYLES.transition}
       overflow='auto'
-      gap='0.5'
+      gap='1'
     >
       <IconBtn
         aria-label='Close button'

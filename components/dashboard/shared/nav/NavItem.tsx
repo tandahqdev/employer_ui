@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { DEFAULT_STYLES } from '@/styles';
-import { Flex, Icon, Text } from '@chakra-ui/react';
+import { Flex, Icon } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { IconType } from 'react-icons/lib';
+import { Desc } from '@/components/shared';
 
 interface Props {
   icon: IconType;
@@ -39,15 +40,14 @@ export const NavItem = ({ icon, title, path, onClick }: Props) => {
         }}
       />
 
-      <Text
+      <Desc
         color={isActive ? DEFAULT_STYLES.lightPurple : DEFAULT_STYLES.darkGray}
-        fontSize={DEFAULT_STYLES.desc}
         _groupHover={{
           color: DEFAULT_STYLES.lightPurple,
         }}
       >
         {title}
-      </Text>
+      </Desc>
     </Flex>
   );
 
