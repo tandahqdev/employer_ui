@@ -91,7 +91,7 @@ export const Card = ({
 
       <Spacer />
 
-      <Flex layerStyle='flex' justify='space-between'>
+      <Flex layerStyle='flex' justify='space-between' userSelect='none'>
         <Image src={cardlogo} alt='cardLogo' quality={100} />
         <Image src={cardImages[brand]} alt='cardVerve' quality={100} />
       </Flex>
