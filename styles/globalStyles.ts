@@ -36,18 +36,11 @@ export const DEFAULT_STYLES = {
   fontFamily: "'Outfit', sans-serif",
   lineHeight: 1.6,
   borderRadius: 16,
-  mobilePx: { base: '2', xl: 0 },
+  mobilePx: { base: '2', md: '3', xl: 0 },
   sidePl: '30px',
   border: `1px solid #E4E2E2`,
   transition: 'all 250ms linear',
   opacity: 0.8,
+  gridColumns: { base: 'repeat(1,1fr)', md: 'repeat(2,1fr)' },
 };
 
-export const sharedGridStyles = {
-  gridTemplateColumns: { base: 'repeat(1,1fr)', md: 'repeat(2,1fr)' },
-  w: DEFAULT_STYLES.pageWidth,
-  columnGap: { base: '20px', lg: '50px' },
-  rowGap: '5',
-  px: DEFAULT_STYLES.mobilePx,
-  maxW: '1000px',
-};

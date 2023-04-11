@@ -1,7 +1,7 @@
 import { ActionCard, Header } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { bankIcon, financeIcon } from '@/store';
-import { DEFAULT_STYLES, sharedGridStyles } from '@/styles';
+import { DEFAULT_STYLES } from '@/styles';
 import { DashRoutes } from '@/utils';
 import { Grid } from '@chakra-ui/react';
 
@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <DashBoardLayout header={topbar}>
-      <Grid {...sharedGridStyles}>
+      <Grid layerStyle='sharedGrid'>
         <ActionCard
           header='Financing'
           icon={financeIcon}

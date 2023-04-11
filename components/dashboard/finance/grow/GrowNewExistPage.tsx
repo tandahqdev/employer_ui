@@ -1,10 +1,10 @@
-import { sharedGridStyles, DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from '@/styles';
 import { Grid, GridItem } from '@chakra-ui/react';
 import { NewBanner, ExistingBanner, NewPageCard } from '../../shared';
 
 export const GrowNewExistPage = () => {
   return (
-    <Grid {...sharedGridStyles}>
+    <Grid layerStyle='sharedGrid'>
       <NewBanner />
       <ExistingBanner />
 

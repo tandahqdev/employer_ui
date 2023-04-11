@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { cardExamples, cardPageTableHeaders } from '@/store';
-import { DashRoutes, getDay } from '@/utils';
+import { DashRoutes, getDay, hidePin } from '@/utils';
 import { Card } from './Card';
 import { SharedCardContainer } from './SharedCardContainer';
 import { SearchIcon } from '@chakra-ui/icons';
@@ -25,7 +25,7 @@ export const CardPage = () => {
         <Td>
           <ColumnFlex>
             <Text>Corporate Acoount</Text>
-            <Text>{data.account}</Text>
+            <Text>{hidePin(data.account)}</Text>
           </ColumnFlex>
         </Td>
 

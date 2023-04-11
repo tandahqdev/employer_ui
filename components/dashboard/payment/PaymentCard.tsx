@@ -1,4 +1,4 @@
-import { ColumnFlex, Desc, TandaHDivider, TandaModal } from '@/components';
+import { ColumnFlex, Desc, TandaHDivider, DrawModal } from '@/components';
 import { PaymentStatus } from '@/models';
 import { PaymentChangeHandler, paymentTab, usePaymentStore } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
@@ -201,7 +201,7 @@ export const PaymentCard = () => {
         </Button>
       </GridItem>
 
-      <TandaModal
+      <DrawModal
         isOpen={isOpen}
         onClose={onClose}
         data={<ConfirmPayment />}

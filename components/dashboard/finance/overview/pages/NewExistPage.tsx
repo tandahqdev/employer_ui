@@ -7,8 +7,9 @@ import { SharedFinanceOverview } from '../SharedFinanceOverview';
 export const NewExistPage = () => {
   return (
     <SharedFinanceOverview>
-      {true && <NewBanner />}
+      <NewBanner />
       <ExistingBanner />
+
       <ActionCard
         header='Grow'
         icon={growIcon}

@@ -10,32 +10,49 @@ import { cardImages } from '@/store';
 
 interface Props {
   data: CardData;
+  showBalance?: boolean;
 }
 
 export const Card = ({
-  data: { getCardColor, type, getPin, brand, cvc },
+  data: { getCardColor, type, getPin, brand, cvc, currentBalance },
+  showBalance,
 }: Props) => {
   return (
     <ColumnFlex
       minH='230px'
+      maxH='230px'
       p='10px 20px 25px 20px'
       borderRadius={DEFAULT_STYLES.borderRadius}
       bg={DEFAULT_STYLES.darkColor}
       boxShadow='0px 4px 4px rgba(0, 0, 0, 0.25)'
     >
-      <Flex layerStyle='flex' alignSelf='flex-end' gap='1.5'>
-        <Circle bg={getCardColor} p='1' />
+      <Flex
+        justify={showBalance ? 'space-between' : 'flex-end'}
+        align='flex-start'
+      >
+        {showBalance && (
+          <ColumnFlex>
+            <Text textStyle='card' opacity={DEFAULT_STYLES.opacity}>
+              Available balance
+            </Text>
+            <Text textStyle='card'>{currentBalance}</Text>
+          </ColumnFlex>
+        )}
 
-        <Text
-          textTransform='capitalize'
-          color={DEFAULT_STYLES.white}
-          bg='linear-gradient(90deg, #FFFFFF 4.57%, rgba(255, 255, 255, 0.56) 73.56%, rgba(246, 241, 241, 0.46) 98.96%)'
-          bgClip='text'
-          className='card-text'
-          userSelect='none'
-        >
-          {type}
-        </Text>
+        <Flex layerStyle='flex' gap='1.5'>
+          <Circle bg={getCardColor} p='1' />
+
+          <Text
+            textTransform='capitalize'
+            color={DEFAULT_STYLES.white}
+            bg='linear-gradient(90deg, #FFFFFF 4.57%, rgba(255, 255, 255, 0.56) 73.56%, rgba(246, 241, 241, 0.46) 98.96%)'
+            bgClip='text'
+            className='card-text'
+            userSelect='none'
+          >
+            {type}
+          </Text>
+        </Flex>
       </Flex>
 
       <Spacer />
@@ -45,7 +62,7 @@ export const Card = ({
           w='50px'
           minH='37px'
           maxH='40px'
-          borderRadius={8}
+          borderRadius='8'
           bg='linear-gradient(164.43deg, #FFF27A 26.39%, #F4C33F 73.93%);'
           position='relative'
         >
@@ -59,22 +76,14 @@ export const Card = ({
 
           <Flex layerStyle='flex' justify='space-between'>
             <HStack>
-              <Text color='white' fontSize='0.9rem'>
-                EXP{' '}
-              </Text>
-              <Text color='white' fontSize='0.9rem'>
-                **/**
-              </Text>
+              <Text textStyle='card'>EXP </Text>
+              <Text textStyle='card'>**/**</Text>
             </HStack>
 
             <HStack>
-              <Text color='white' fontSize='0.9rem'>
-                CVC{' '}
-              </Text>
+              <Text textStyle='card'>CVC </Text>
 
-              <Text color='white' fontSize='0.9rem'>
-                {hidePin(cvc, 0)}
-              </Text>
+              <Text textStyle='card'>{hidePin(cvc, 0)}</Text>
             </HStack>
           </Flex>
         </ColumnFlex>
@@ -82,9 +91,9 @@ export const Card = ({
 
       <Spacer />
 
-      <Flex layerStyle='flex' justify='space-between'>
-        <Image src={cardlogo} alt='cardLogo' priority quality={100} />
-        <Image src={cardImages[brand]} alt='cardVerve' priority quality={100} />
+      <Flex layerStyle='flex' justify='space-between' userSelect='none'>
+        <Image src={cardlogo} alt='cardLogo' quality={100} />
+        <Image src={cardImages[brand]} alt='cardVerve' quality={100} />
       </Flex>
     </ColumnFlex>
   );

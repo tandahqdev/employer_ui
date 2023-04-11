@@ -27,7 +27,7 @@ export const NewBanner = () => {
       </Button>
 
       <Button
-        variant='textBtn'
+        variant='text'
         rightIcon={<ChevronRightIcon fontSize='1.6rem' mt='0.5' />}
       >
         Talk to our team

@@ -2,6 +2,7 @@ import {
   cardColorHandler,
   cardStatusColor,
   cardTableColorHandler,
+  currencyMap,
   hidePin,
 } from '@/utils';
 import { StaticImageData } from 'next/image';
@@ -123,9 +124,9 @@ export class CardData implements CardModel {
     this.street = data.street;
     this.suite = data.suite;
     this.city = data.city;
-    this.number = data.number;
-    this.number = data.number;
-    this.number = data.number;
+    this.postalCode = data.postalCode;
+    this.state = data.state;
+    this.country = data.country;
     this.id = data.id;
     this.currency = data.currency;
     this.account = data.account;
@@ -148,5 +149,8 @@ export class CardData implements CardModel {
 
   get getPin(): string {
     return hidePin(this.number);
+  }
+  get currentBalance(): string {
+    return `${currencyMap[this.currency]} ${this.balance.toLocaleString()}`;
   }
 }

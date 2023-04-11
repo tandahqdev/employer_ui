@@ -79,6 +79,10 @@ export const textStyles = {
     lineHeight: 1.5,
     color: DEFAULT_STYLES.darkGray,
   },
+  card: {
+    color: 'white',
+    fontSize: DEFAULT_STYLES.textFontSize,
+  },
 };
 
 export const theme = extendTheme({
@@ -123,6 +127,16 @@ export const theme = extendTheme({
         xl: '1020px',
         '2xl': '1200px',
       },
+    },
+    sharedGrid: {
+      gridTemplateColumns: { base: 'repeat(1,1fr)', md: 'repeat(2,1fr)' },
+      w: DEFAULT_STYLES.pageWidth,
+      columnGap: { base: '20px', lg: '50px' },
+      rowGap: '5',
+      px: DEFAULT_STYLES.mobilePx,
+      maxW: { base: '100%', lg: '1000px' },
+      justifyContent: 'center',
+      alignSelf: { base: 'center', xl: 'flex-start' },
     },
   },
 });

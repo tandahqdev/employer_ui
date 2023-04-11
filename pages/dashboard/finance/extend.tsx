@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   ActionTitle,
   ExtendNewExistPage,
@@ -8,11 +9,12 @@ import {
 import { DashBoardLayout } from '@/layout';
 import { extendIcon } from '@/store';
 import { DEFAULT_STYLES } from '@/styles';
+import { DashRoutes } from '@/utils';
 
 const FinanceExtend = () => {
   const screenMain = false;
-  const Congratulations = true;
-  const financeS = false;
+  const Congratulations = false;
+  const financeS = true;
 
   const topbar = (
     <ActionTitle
@@ -29,7 +31,16 @@ const FinanceExtend = () => {
       {financeS && (
         <FinanceDetails
           header='Finance new expenses?'
-          actionChildren={<UtilsBtn btnText='Select Expenses' />}
+          actionChildren={
+            <Link
+              href={DashRoutes.expense}
+              style={{
+                width: DEFAULT_STYLES.fullWidth,
+              }}
+            >
+              <UtilsBtn btnText='Select Expenses' />
+            </Link>
+          }
         />
       )}
 

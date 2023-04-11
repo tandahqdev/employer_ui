@@ -11,7 +11,7 @@ import { Transaction } from '../Transaction';
 export const SecondMainPage = () => {
   // Calculations to use for the bar percent
   const percent = (5000 / 100000) * 100;
-  const percent2 = (25000 / 100000) * 100;
+  const percent2 = (50000 / 100000) * 100;
 
   return (
     <SharedFinanceOverview>
@@ -58,7 +58,7 @@ export const SecondMainPage = () => {
           <>
             <FinanceActionCardDetails
               title='Outstanding'
-              subTitle='$25,000'
+              subTitle='$50,000'
               priceDesc='$100,000'
               bg='linear-gradient(270deg, #EF567E 50%, rgba(239, 86, 126, 0.64) 63.42%);'
               percent={`${percent2}`}
