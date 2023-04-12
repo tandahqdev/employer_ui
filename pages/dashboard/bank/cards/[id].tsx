@@ -56,7 +56,16 @@ const Details = () => {
 
   const otherBtn = (
     <Flex layerStyle='flex' gap='4' display={{ base: 'none', md: 'flex' }}>
-      <Button size='smPadding' variant='lightPurple'>
+      <Button
+        size='smPadding'
+        variant='lightPurple'
+        onClick={() => {
+          updateCardModalHandler({
+            header: 'Block Card',
+            desc: 'Select the reason for cancellation',
+          });
+        }}
+      >
         Block card
       </Button>
 
