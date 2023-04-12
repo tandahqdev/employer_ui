@@ -154,3 +154,25 @@ export class CardData implements CardModel {
     return `${currencyMap[this.currency]} ${this.balance.toLocaleString()}`;
   }
 }
+
+export interface CardActionsModel {
+  transfer: CardTransfer;
+  pin?: string;
+  block?: BlockCard;
+}
+
+export interface BlockCard {
+  desc?: string;
+  account?: string;
+}
+
+export interface CardTransfer extends BlockCard {
+  amount?: number;
+  currency?: string;
+  status?: TransferStatus;
+}
+
+export enum TransferStatus {
+  Fund = 'fund',
+  WithDraw = 'withdraw',
+}

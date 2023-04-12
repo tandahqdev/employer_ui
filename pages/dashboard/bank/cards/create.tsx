@@ -1,9 +1,9 @@
 import {
   ColumnFlex,
-  GrayInfoCard,
   InputComp,
   SelectCardBrand,
   SelectCardType,
+  ExchangeCard,
   ShippingAdd,
 } from '@/components';
 import { DashBoardLayout } from '@/layout';
@@ -157,23 +157,12 @@ const Create = () => {
                       </ColumnFlex>
 
                       {amount && (
-                        <>
-                          <GrayInfoCard alignSelf='center'>
-                            #1.00/$754.00
-                          </GrayInfoCard>
-                          <Flex align='center' justify='space-between'>
-                            <Text textStyle='darkTitle' fontSize='1rem'>
-                              Debit Amount:
-                            </Text>
-                            <Text
-                              textStyle='darkTitle'
-                              fontSize='1rem'
-                              color='rgba(43, 43, 43, 1)'
-                            >
-                              #188,500.00
-                            </Text>
-                          </Flex>
-                        </>
+                        <ExchangeCard
+                          title='Debit'
+                          desc=' #188,500.00'
+                          exChange='#1.00/$754.00'
+                          color={DEFAULT_STYLES.primaryHeaderColor}
+                        />
                       )}
                     </>
                   )}

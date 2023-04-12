@@ -69,3 +69,5 @@ export const CardActionBtn = ({ icon, text, onClick }: CardActionBtnProps) => {
     </ColumnFlex>
   );
 };
+
+
