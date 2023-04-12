@@ -22,7 +22,7 @@ import { ReactNode, useState } from 'react';
 
 interface CardModalProps {
   header: string;
-  desc: string;
+  desc?: string;
   data?: ReactNode;
 }
 
@@ -32,7 +32,7 @@ const Details = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [cardModal, setCardModal] = useState<CardModalProps>({
     header: '',
-    desc: '',
+    desc: 'Fìll in the transaction details.',
   });
 
   const updateCardModalHandler = (opts: CardModalProps) => {
@@ -59,7 +59,16 @@ const Details = () => {
         Block card
       </Button>
 
-      <Button size='smPadding' variant='lightPurple'>
+      <Button
+        size='smPadding'
+        variant='lightPurple'
+        onClick={() => {
+          updateCardModalHandler({
+            header: 'Change pin',
+            desc: 'Enter the current 4 digit pin',
+          });
+        }}
+      >
         Set new pin
       </Button>
     </Flex>
@@ -78,11 +87,18 @@ const Details = () => {
                 onClick={() => {
                   updateCardModalHandler({
                     header: 'Withdraw from Tanda’s Card',
-                    desc: 'Fìll in the transaction details.',
                   });
                 }}
               />
-              <CardActionBtn icon={fund} text='Fund Card' />
+              <CardActionBtn
+                icon={fund}
+                text='Fund Card'
+                onClick={() => {
+                  updateCardModalHandler({
+                    header: 'Fund Tanda’s Card',
+                  });
+                }}
+              />
               <CardActionBtn icon={hide} text='Hide Details' />
               <CardActionBtn icon={freeze} text='Freeze Card' />
             </Flex>
