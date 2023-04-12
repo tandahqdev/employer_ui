@@ -6,4 +6,5 @@ export * from './Card';
 export * from './CardPage';
 export * from './CardDetails';
 export * from './CardModal';
+export * from './CardActions';
 export * from './SharedCardContainer';

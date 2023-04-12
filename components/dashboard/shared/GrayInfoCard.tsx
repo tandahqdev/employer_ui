@@ -10,7 +10,9 @@ export const GrayInfoCard = ({ children, ...r }: CenterProps) => {
       color='rgba(43, 43, 43, 0.6)'
       bg='rgba(99, 115, 129, 0.5)'
       rounded='10px'
+      fontSize={DEFAULT_STYLES.textFontSize}
       fontWeight={DEFAULT_STYLES.mediumbold}
+      opacity={DEFAULT_STYLES.opacity}
       {...r}
     >
       {children}

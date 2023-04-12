@@ -10,6 +10,7 @@ import {
   CardModal,
   ColumnFlex,
   SharedCardContainer,
+  WithdrawFundActions,
 } from '@/components';
 import { DashBoardLayout } from '@/layout';
 import { CardType } from '@/models';
@@ -87,6 +88,7 @@ const Details = () => {
                 onClick={() => {
                   updateCardModalHandler({
                     header: 'Withdraw from Tanda’s Card',
+                    data: <WithdrawFundActions />,
                   });
                 }}
               />
