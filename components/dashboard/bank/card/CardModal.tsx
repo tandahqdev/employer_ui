@@ -41,7 +41,11 @@ export const CardModal = ({ isOpen, onClose, data, header, label }: Props) => {
         >
           <ColumnFlex gap='2.5'>
             <Flex w='full' layerStyle='flex' justify='space-between'>
-              <Text textStyle='title' color={DEFAULT_STYLES.lightPurple}>
+              <Text
+                textStyle='title'
+                color={DEFAULT_STYLES.lightPurple}
+                fontWeight={DEFAULT_STYLES.bold}
+              >
                 {header ?? 'Hello James'}
               </Text>
 
