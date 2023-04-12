@@ -5,4 +5,5 @@ export * from './ShippingAdd';
 export * from './Card';
 export * from './CardPage';
 export * from './CardDetails';
+export * from './CardModal';
 export * from './SharedCardContainer';
