@@ -4,6 +4,7 @@ import { DEFAULT_STYLES } from '@/styles';
 import { Flex } from '@chakra-ui/react';
 
 interface Props extends LayoutProps, TopBarProps {}
+// Look at the dashboardlayout
 
 export const DashBoardLayout = ({
   children,
