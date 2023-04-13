@@ -49,3 +49,7 @@ export interface ColorsModel {
   color: string;
   bg: string;
 }
+
+export interface Reset {
+  reset: () => void;
+}

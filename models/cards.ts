@@ -156,7 +156,7 @@ export class CardData implements CardModel {
 }
 
 export interface CardActionsModel {
-  transfer: CardTransfer;
+  transfer?: CardTransfer;
   pin?: string;
   block?: BlockCard;
 }
