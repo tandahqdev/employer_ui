@@ -29,16 +29,13 @@ export const SideBar = () => {
       zIndex={10}
       bg={DEFAULT_STYLES.white}
       shadow='0px 1px 12px rgba(195, 203, 222, 0.58806)'
-      pt='40px'
       px='0.5'
-      pb='20px'
+      pt='40px'
       transform={{
         base: `translate( ${mediaQuery ? '0px' : '-200px'})`,
         xl: `translate(0px)`,
       }}
       transition={DEFAULT_STYLES.transition}
-      overflow='auto'
-      gap='1'
     >
       <IconBtn
         aria-label='Close button'
@@ -54,36 +51,39 @@ export const SideBar = () => {
       />
       <Logo />
 
-      <ColumnFlex pt='30px' gap='1' flex='1'>
+      <ColumnFlex overflow='auto' gap='1' flex='1' pb='20px' mt='30px'>
+        <ColumnFlex gap='1'>
+          <NavItem
+            icon={AiTwotoneHome}
+            title='Home'
+            path={DashRoutes.dashboard}
+          />
+
+          <TandaHDivider />
+
+          <NavCard header='Financing' list={financeItems} />
+
+          <TandaHDivider />
+
+          <NavCard header='Banking' list={bankingItems} />
+        </ColumnFlex>
+
+        <HelpCard />
+
         <NavItem
-          icon={AiTwotoneHome}
-          title='Home'
-          path={DashRoutes.dashboard}
-          onClick={() => {
-            upDateMediaQuery(false);
-          }}
+          icon={FiSettings}
+          title='Settings'
+          path={DashRoutes.settings}
         />
 
-        <TandaHDivider />
-
-        <NavCard header='Financing' list={financeItems} />
-
-        <TandaHDivider />
-
-        <NavCard header='Banking' list={bankingItems} />
+        <NavItem
+          icon={BiLogOut}
+          title='Logout'
+          onClick={() => {
+            push(DashRoutes.home);
+          }}
+        />
       </ColumnFlex>
-
-      <HelpCard />
-
-      <NavItem icon={FiSettings} title='Settings' path={DashRoutes.settings} />
-
-      <NavItem
-        icon={BiLogOut}
-        title='Logout'
-        onClick={() => {
-          push(DashRoutes.home);
-        }}
-      />
     </ColumnFlex>
   );
 };
