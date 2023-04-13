@@ -6,6 +6,7 @@ import { GlobalLayout } from '@/layout';
 import '@/styles/globals.css';
 
 const outFit = Outfit({ subsets: ['latin'] });
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
