@@ -37,8 +37,8 @@ const Details = () => {
   });
 
   const updateCardModalHandler = (opts: CardModalProps) => {
-    onOpen();
     setCardModal(opts);
+    onOpen();
   };
 
   const topbar = (
@@ -88,7 +88,7 @@ const Details = () => {
     <>
       {card && (
         <>
-          <ColumnFlex gap='5'>
+          <ColumnFlex gap='3'>
             <Card data={card} showBalance />
             <Flex w='full' layerStyle='flex' justify='space-between'>
               <CardActionBtn

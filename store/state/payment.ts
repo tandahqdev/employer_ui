@@ -1,4 +1,4 @@
-import { PaymentModel } from '@/models';
+import { PaymentModel, Reset } from '@/models';
 import { nanoid } from 'nanoid';
 import { create } from 'zustand';
 
@@ -15,9 +15,7 @@ const initialState: PaymentModel = {
   id: nanoid(),
 };
 
-interface Payment extends PaymentModel {
-  reset: () => void;
-}
+interface Payment extends PaymentModel, Reset {}
 
 export const usePaymentStore = create<Payment>((set) => ({
   ...initialState,
