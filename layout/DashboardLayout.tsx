@@ -4,6 +4,7 @@ import { DEFAULT_STYLES } from '@/styles';
 import { Flex } from '@chakra-ui/react';
 
 interface Props extends LayoutProps, TopBarProps {}
+// Look at the dashboardlayout
 
 export const DashBoardLayout = ({
   children,
@@ -20,6 +21,7 @@ export const DashBoardLayout = ({
     >
       <SideBar />
 
+      {/* ?? When moving to app. I have to extract all code below to a separate component so I can still pass props. This sholud help fix the layout issues */}
       <ColumnFlex
         ml={{ base: '0', xl: '200px' }}
         width={DEFAULT_STYLES.fullWidth}

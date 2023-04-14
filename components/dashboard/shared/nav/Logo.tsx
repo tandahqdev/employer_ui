@@ -10,8 +10,8 @@ export const Logo = () => {
   return (
     <Link href={DashRoutes.dashboard}>
       <Flex align='center' gap='1' pl={DEFAULT_STYLES.sidePl}>
-        <Image src={logo1} alt='Tanda' />
-        <Image src={logo2} alt='Logo' />
+        <Image src={logo1} alt='Tanda' priority />
+        <Image src={logo2} alt='Logo' priority />
       </Flex>
     </Link>
   );
