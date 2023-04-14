@@ -73,7 +73,7 @@ export const Topbar = ({ header, showBckBtn, otherBtn }: TopBarProps) => {
           {otherBtn}
           <IconBtn
             aria-label='Close button'
-            icon={<HamburgerIcon fontSize='2rem' />}
+            icon={<HamburgerIcon fontSize='1.8rem' />}
             display={{ base: 'flex', xl: 'none' }}
             bgColor='transparent'
             onClick={() => {
