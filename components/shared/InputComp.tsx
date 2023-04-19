@@ -86,6 +86,7 @@ export const InputComp = ({
             <Input
               value={value}
               {...inputProps}
+              size='md'
               {...register}
               {...inputStyle}
             />
