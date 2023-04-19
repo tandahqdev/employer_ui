@@ -24,14 +24,7 @@ const baseStyle = definePartsStyle({
 });
 
 // Variants
-const tanda = definePartsStyle({
-  field: {
-    border: '1px solid',
-    borderColor: 'gray.200',
-    background: 'white',
-    borderRadius: '8px',
-  },
-});
+;
 
 const tandaXs = definePartsStyle({
   field: {
@@ -56,7 +49,7 @@ const sizes = {
 };
 
 export const inputTheme: ComponentMultiStyleConfig = defineMultiStyleConfig({
-  variants: { tanda, tandaXs },
+  variants: {  tandaXs },
   baseStyle,
   sizes,
   defaultProps: {
