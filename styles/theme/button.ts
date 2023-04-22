@@ -63,7 +63,7 @@ export const buttonTheme: ComponentSingleStyleConfig = defineStyleConfig({
     borderRadius: 8,
     transition: DEFAULT_STYLES.transition,
     fontWeight: DEFAULT_STYLES.semibold,
-    fontSize: '0.95rem',
+    fontSize: { base: DEFAULT_STYLES.desc, md: '0.9rem' },
     _hover: {
       opacity: 0.85,
       _disabled: {
