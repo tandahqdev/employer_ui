@@ -151,13 +151,8 @@ export const PaymentCard = () => {
         {isConclusionTab && (
           <>
             <InfoAlert
-              isInfo
-              text={
-                <Text textStyle='desc' color={DEFAULT_STYLES.darkGray}>
-                  Use the field above to enter the amount of funds you’d like to
-                  receive in your bank account.
-                </Text>
-              }
+              type='info'
+              text={`Use the field above to enter the amount of funds you’d like to receive in your bank account`}
             />
 
             {!!total && (

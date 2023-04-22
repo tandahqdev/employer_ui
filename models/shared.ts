@@ -53,3 +53,6 @@ export interface ColorsModel {
 export interface Reset {
   reset: () => void;
 }
+
+
+export type AlertStatus = 'error' | 'success' | 'warning' | 'info';

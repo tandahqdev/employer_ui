@@ -6,7 +6,7 @@ export const TandaHDivider = ({ ...r }: BoxProps) => {
     <Box
       w={DEFAULT_STYLES.fullWidth}
       border={DEFAULT_STYLES.border}
-      opacity={0.1}
+      opacity={0.5}
       {...r}
     />
   );
@@ -14,6 +14,6 @@ export const TandaHDivider = ({ ...r }: BoxProps) => {
 
 export const TandaVDivider = ({ ...r }: BoxProps) => {
   return (
-    <Box border={DEFAULT_STYLES.border} opacity={0.1} height='100%' {...r} />
+    <Box border={DEFAULT_STYLES.border} opacity={0.5} height='100%' {...r} />
   );
 };

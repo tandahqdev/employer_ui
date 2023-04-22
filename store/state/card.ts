@@ -17,7 +17,7 @@ const initialState: CreateCard = {
 };
 
 interface Card extends CreateCard, Reset {}
-
+// For creating cards
 export const useCardStore = create<Card>((set) => ({
   ...initialState,
   reset: () => set(() => ({ ...initialState, id: nanoid() })),
@@ -29,6 +29,7 @@ const initialCardActionState: CardActionsModel = {
   pin: undefined,
 };
 
+// For single card actions
 interface Actions extends CardActionsModel, Reset {}
 
 export const useCardActions = create<Actions>((set) => ({

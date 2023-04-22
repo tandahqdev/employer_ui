@@ -48,7 +48,7 @@ export const ConfirmPayment = () => {
           {...sharedStyles}
         />
 
-        <TandaHDivider />
+        <TandaHDivider opacity={0.7} />
 
         <PaymentFlexItem
           title='Amount to pay back'
@@ -75,7 +75,7 @@ export const ConfirmPayment = () => {
           {...sharedStyles}
         />
 
-        <TandaHDivider />
+        <TandaHDivider opacity={0.7} />
 
         <PaymentFlexItem
           title='Total Payout'
