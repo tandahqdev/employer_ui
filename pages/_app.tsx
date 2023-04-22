@@ -5,7 +5,10 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { GlobalLayout } from '@/layout';
 import '@/styles/globals.css';
 
-const outFit = Outfit({ subsets: ['latin'] });
+const outFit = Outfit({
+  weight: ['400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
