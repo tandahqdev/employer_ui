@@ -151,7 +151,7 @@ export const PaymentCard = () => {
         {isConclusionTab && (
           <>
             <InfoAlert
-              isInfo
+              type='info'
               text={`Use the field above to enter the amount of funds you’d like to receive in your bank account`}
             />
 
