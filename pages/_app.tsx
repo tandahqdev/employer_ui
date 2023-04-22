@@ -1,14 +1,8 @@
 import type { AppProps } from 'next/app';
-import { Outfit } from "next/font/google";
-import { theme } from '@/styles';
+import { outFit, theme } from '@/styles';
 import { ChakraProvider } from '@chakra-ui/react';
 import { GlobalLayout } from '@/layout';
 import '@/styles/globals.css';
-
-const outFit = Outfit({
-  weight: ['400', '500', '600', '700', '800', '900'],
-  subsets: ['latin'],
-});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
