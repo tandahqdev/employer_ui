@@ -1,5 +1,5 @@
 import { DEFAULT_STYLES } from '@/styles';
-import { Flex, Icon } from '@chakra-ui/react';
+import { Flex, Icon, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { AiFillInfoCircle } from 'react-icons/ai';
 import { MdWarning } from 'react-icons/md';
@@ -26,7 +26,9 @@ export const InfoAlert = ({ isInfo, text }: Props) => {
         color={isInfo ? DEFAULT_STYLES.lightPurple : DEFAULT_STYLES.errorColor}
       />
 
-      {text}
+      <Text textStyle='desc' color={DEFAULT_STYLES.darkGray}>
+        {text}
+      </Text>
     </Flex>
   );
 };

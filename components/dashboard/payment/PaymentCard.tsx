@@ -152,12 +152,7 @@ export const PaymentCard = () => {
           <>
             <InfoAlert
               isInfo
-              text={
-                <Text textStyle='desc' color={DEFAULT_STYLES.darkGray}>
-                  Use the field above to enter the amount of funds you’d like to
-                  receive in your bank account.
-                </Text>
-              }
+              text={`Use the field above to enter the amount of funds you’d like to receive in your bank account`}
             />
 
             {!!total && (
