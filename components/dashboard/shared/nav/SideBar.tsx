@@ -34,9 +34,6 @@ export const SideBar = () => {
         base: `translate( ${mediaQuery ? '0%' : '-100%'})`,
         xl: 'translate(0px)',
       }}
-      onClick={() => {
-        upDateMediaQuery(false);
-      }}
     >
       <ColumnFlex
         w='200px'
