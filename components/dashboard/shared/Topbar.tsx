@@ -1,8 +1,8 @@
-import { ColumnFlex, IconBtn } from '@/components';
-import { useCustomMediaQuery } from '@/context';
-import { TopBarProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { ColumnFlex, IconBtn } from 'components';
+import { useCustomMediaQuery } from 'context';
+import { TopBarProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { HamburgerIcon, ChevronLeftIcon } from '@chakra-ui/icons';
 import { Center, Flex, HStack, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';

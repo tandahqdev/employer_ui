@@ -1,6 +1,6 @@
-import { ColumnFlex, IconBtn } from '@/components';
-import { AccountModel } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, IconBtn } from 'components';
+import { AccountModel } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { CopyIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Flex, Stack, Text } from '@chakra-ui/react';
 

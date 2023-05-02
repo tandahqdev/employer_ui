@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
-import { useSharedColor } from '@/customHooks';
-import { Desc } from '@/components';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
+import { useSharedColor } from 'customHooks';
+import { Desc } from 'components';
 
 export const HelpText = () => {
   const color = useSharedColor();

@@ -1,5 +1,5 @@
-import { Header } from '@/components';
-import { DashBoardLayout } from '@/layout';
+import { Header } from 'components';
+import { DashBoardLayout } from 'layout';
 
 const BankPayments = () => {
   const topbar = <Header>Hello!</Header>;

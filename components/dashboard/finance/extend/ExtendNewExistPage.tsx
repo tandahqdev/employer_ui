@@ -1,5 +1,5 @@
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { Grid, GridItem } from '@chakra-ui/react';
 import { NewBanner, ExistingBanner, NewPageCard } from '../../shared';
 

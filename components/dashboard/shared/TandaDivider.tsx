@@ -1,4 +1,4 @@
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from 'styles';
 import { Box, BoxProps } from '@chakra-ui/react';
 
 export const TandaHDivider = ({ ...r }: BoxProps) => {

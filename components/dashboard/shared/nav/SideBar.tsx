@@ -1,18 +1,18 @@
 import { AiTwotoneHome } from 'react-icons/ai';
-import { ColumnFlex, IconBtn } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, IconBtn } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 import { Logo } from './Logo';
 import { NavItem } from './NavItem';
 import { TandaHDivider } from '../TandaDivider';
 import { NavCard } from './NavCard';
-import { bankingItems, financeItems } from '@/store';
+import { bankingItems, financeItems } from 'store';
 import { FiSettings } from 'react-icons/fi';
 import { BiLogOut } from 'react-icons/bi';
 import { HelpCard } from './HelpCard';
-import { DashRoutes } from '@/utils';
+import { DashRoutes } from 'utils';
 import { useRouter } from 'next/router';
 import { CloseIcon } from '@chakra-ui/icons';
-import { useCustomMediaQuery } from '@/context';
+import { useCustomMediaQuery } from 'context';
 import { Flex } from '@chakra-ui/react';
 
 // TODO: Remove nextjs data collection

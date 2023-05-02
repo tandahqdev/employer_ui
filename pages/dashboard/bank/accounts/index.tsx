@@ -1,6 +1,6 @@
-import { AccountCard, AccountPageContainer, Header } from '@/components';
-import { accountItems } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { AccountCard, AccountPageContainer, Header } from 'components';
+import { accountItems } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { Flex, Button, Grid, Center } from '@chakra-ui/react';
 import { HiArrowRight } from 'react-icons/hi';
 import { RiAddLine } from 'react-icons/ri';

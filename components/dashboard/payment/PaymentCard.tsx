@@ -1,8 +1,8 @@
-import { ColumnFlex, Desc, TandaHDivider, DrawModal } from '@/components';
-import { PaymentStatus } from '@/models';
-import { PaymentChangeHandler, paymentTab, usePaymentStore } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { ColumnFlex, Desc, TandaHDivider, DrawModal } from 'components';
+import { PaymentStatus } from 'models';
+import { PaymentChangeHandler, paymentTab, usePaymentStore } from 'store';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
   Button,

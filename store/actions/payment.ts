@@ -1,4 +1,4 @@
-import { PaymentTerms } from '@/models';
+import { PaymentTerms } from 'models';
 import { usePaymentStore } from '../state';
 
 export class PaymentChangeHandler {

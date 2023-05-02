@@ -1,6 +1,6 @@
-import { ColumnFlex, Desc } from '@/components';
-import { IProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Desc } from 'components';
+import { IProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Text, TextProps } from '@chakra-ui/react';
 
 interface Props extends IProps, TextProps {}

@@ -1,4 +1,4 @@
-import { AccountModel } from '@/models';
+import { AccountModel } from 'models';
 import { nanoid } from 'nanoid';
 
 export const accountItems: AccountModel[] = [

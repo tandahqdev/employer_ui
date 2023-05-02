@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import pending from '@/assets/images/pending.png';
-import { ColumnFlex, TandaVDivider } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import pending from 'assets/images/pending.png';
+import { ColumnFlex, TandaVDivider } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -15,7 +15,7 @@ import {
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { useEffect, useState } from 'react';
 import { OfferCard } from '../shared/OfferCard';
-import { getDay } from '@/utils';
+import { getDay } from 'utils';
 
 export const CreditDetails = () => {
   const [test, setTest] = useState(0);

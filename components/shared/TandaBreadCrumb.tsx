@@ -1,5 +1,5 @@
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 

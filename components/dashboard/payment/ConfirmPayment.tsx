@@ -1,6 +1,6 @@
-import { ColumnFlex, InputComp } from '@/components';
-import { usePaymentStore } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, InputComp } from 'components';
+import { usePaymentStore } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { Text } from '@chakra-ui/react';
 import { TandaHDivider } from '../shared';
 import { PaymentFlexItem } from './PaymentFlexItem';

@@ -4,7 +4,7 @@ import {
   cardTableColorHandler,
   currencyMap,
   hidePin,
-} from '@/utils';
+} from 'utils';
 import { StaticImageData } from 'next/image';
 import { IconType } from 'react-icons';
 import { CurrencyType } from './account';

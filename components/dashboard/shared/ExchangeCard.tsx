@@ -1,6 +1,6 @@
-import { ColumnFlex } from '@/components';
-import { IProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { IProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Flex, Text } from '@chakra-ui/react';
 import { GrayInfoCard } from './GrayInfoCard';
 

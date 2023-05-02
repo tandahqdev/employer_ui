@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import bulk from '@/assets/images/bulk.png';
-import { AccountPageContainer, Header } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import bulk from 'assets/images/bulk.png';
+import { AccountPageContainer, Header } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 import { Button, Flex } from '@chakra-ui/react';
 import { HiArrowRight } from 'react-icons/hi';
 import { RxArrowTopRight } from 'react-icons/rx';

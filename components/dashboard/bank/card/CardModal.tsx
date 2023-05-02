@@ -1,5 +1,5 @@
-import { ColumnFlex, Desc, IconBtn } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Desc, IconBtn } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 import { CloseIcon } from '@chakra-ui/icons';
 import {
   Modal,

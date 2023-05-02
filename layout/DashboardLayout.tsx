@@ -1,6 +1,6 @@
-import { ColumnFlex, SideBar, Topbar } from '@/components';
-import { LayoutProps, TopBarProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, SideBar, Topbar } from 'components';
+import { LayoutProps, TopBarProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Flex } from '@chakra-ui/react';
 
 interface Props extends LayoutProps, TopBarProps {}
@@ -21,7 +21,7 @@ export const DashBoardLayout = ({
     >
       <SideBar />
 
-      {/* ?? When moving to app. I have to extract all code below to a separate component so I can still pass props. This sholud help fix the layout issues */}
+      {/* ?? When moving to app. I have to extract all code below to a separate component so I can still pass props. This should help fix the layout issues */}
       <ColumnFlex
         ml={{ base: '0', xl: '200px' }}
         width={DEFAULT_STYLES.fullWidth}

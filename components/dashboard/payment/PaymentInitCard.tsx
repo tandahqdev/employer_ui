@@ -1,8 +1,8 @@
-import { ColumnFlex } from '@/components/shared';
-import { PaymentTerms } from '@/models';
-import { PaymentChangeHandler, usePaymentStore } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { ColumnFlex } from 'components/shared';
+import { PaymentTerms } from 'models';
+import { PaymentChangeHandler, usePaymentStore } from 'store';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { Flex, Radio, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useColor } from './useColor';

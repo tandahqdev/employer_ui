@@ -1,6 +1,6 @@
-import { ColumnFlex } from '@/components';
-import { NavItemProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { NavItemProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Text } from '@chakra-ui/react';
 import { NavItem } from './NavItem';
 

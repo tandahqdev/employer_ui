@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { ColumnFlex } from '@/components';
-import { accountsNav } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { accountsNav } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 

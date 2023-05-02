@@ -1,4 +1,4 @@
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from 'styles';
 import { AlertStatus } from '@chakra-ui/react';
 import { IconType } from 'react-icons';
 import { AiFillInfoCircle } from 'react-icons/ai';

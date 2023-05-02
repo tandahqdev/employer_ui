@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import loader from '@/assets/images/loader.png';
-import { DEFAULT_STYLES } from '@/styles';
+import loader from 'assets/images/loader.png';
+import { DEFAULT_STYLES } from 'styles';
 import { Flex, Text } from '@chakra-ui/react';
 import { Header } from './Header';
 import { SharedBannerContainer } from './SharedBannerContainer';

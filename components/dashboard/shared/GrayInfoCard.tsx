@@ -1,4 +1,4 @@
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from 'styles';
 import { Center, CenterProps } from '@chakra-ui/react';
 
 export const GrayInfoCard = ({ children, ...r }: CenterProps) => {

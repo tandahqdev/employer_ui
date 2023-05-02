@@ -1,6 +1,6 @@
-import { AlertStatus } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
-import { alertStatusHandler } from '@/utils';
+import { AlertStatus } from 'models';
+import { DEFAULT_STYLES } from 'styles';
+import { alertStatusHandler } from 'utils';
 import { Flex, Icon, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 

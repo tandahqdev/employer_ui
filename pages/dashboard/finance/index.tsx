@@ -1,4 +1,4 @@
-import { MainPage, NewExistPage, SecondMainPage } from '@/components';
+import { MainPage, NewExistPage, SecondMainPage } from 'components';
 
 const FinanceOverview = () => {
   return (

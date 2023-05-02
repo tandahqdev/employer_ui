@@ -1,7 +1,7 @@
-import { ColumnFlex } from '@/components';
-import { CardType, SupportedCardType } from '@/models';
-import { CardChangeHandler, useCardStore } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { CardType, SupportedCardType } from 'models';
+import { CardChangeHandler, useCardStore } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { Center, Icon, Text } from '@chakra-ui/react';
 
 export const SelectCardType = ({ icon, value }: SupportedCardType) => {

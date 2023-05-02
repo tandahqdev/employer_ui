@@ -5,11 +5,11 @@ import {
   GrowNewExistPage,
   UtilsBtn,
   SharedCongratulate,
-} from '@/components';
-import { DashBoardLayout } from '@/layout';
-import { growIcon } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+} from 'components';
+import { DashBoardLayout } from 'layout';
+import { growIcon } from 'store';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 
 const FinanceGrow = () => {
   const screenMain = false;

@@ -1,6 +1,6 @@
-import { ColumnFlex } from '@/components';
-import { LayoutProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { LayoutProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { GridItem } from '@chakra-ui/react';
 
 export const SharedBannerContainer = ({ children }: LayoutProps) => {

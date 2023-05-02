@@ -1,5 +1,5 @@
-import { IProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { IProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Flex, FlexProps, Text } from '@chakra-ui/react';
 
 interface Props extends FlexProps, IProps {}

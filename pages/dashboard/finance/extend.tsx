@@ -5,11 +5,11 @@ import {
   FinanceDetails,
   UtilsBtn,
   SharedCongratulate,
-} from '@/components';
-import { DashBoardLayout } from '@/layout';
-import { extendIcon } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+} from 'components';
+import { DashBoardLayout } from 'layout';
+import { extendIcon } from 'store';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 
 const FinanceExtend = () => {
   const screenMain = false;

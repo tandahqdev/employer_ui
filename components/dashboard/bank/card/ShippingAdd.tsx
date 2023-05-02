@@ -1,6 +1,6 @@
-import { ColumnFlex, Desc, InputComp } from '@/components';
-import { CardChangeHandler } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Desc, InputComp } from 'components';
+import { CardChangeHandler } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import {
   Center,
   Checkbox,

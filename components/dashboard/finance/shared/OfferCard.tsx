@@ -1,6 +1,6 @@
-import { ColumnFlex } from '@/components';
-import { IProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { IProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Flex, Icon, Text } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 

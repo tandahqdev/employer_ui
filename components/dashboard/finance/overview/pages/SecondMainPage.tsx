@@ -1,7 +1,7 @@
-import { ActionCard, TandaHDivider } from '@/components';
-import { growIcon, extendIcon, tableItems } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { ActionCard, TandaHDivider } from 'components';
+import { growIcon, extendIcon, tableItems } from 'store';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { AddIcon } from '@chakra-ui/icons';
 import { FinanceActionCardDetails } from '../FinanceActionCardDetails';
 import { PaymentDetails } from '../PaymentDetails';

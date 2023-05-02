@@ -1,6 +1,6 @@
-import { DashBoardLayout } from '@/layout';
-import { LayoutProps, TopBarProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { DashBoardLayout } from 'layout';
+import { LayoutProps, TopBarProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Grid } from '@chakra-ui/react';
 
 interface Props extends LayoutProps, TopBarProps {}

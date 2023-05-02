@@ -1,9 +1,9 @@
-import visa from '@/assets/images/visa.png';
-import verve from '@/assets/images/verve.png';
-import master from '@/assets/images/master.png';
-import cardvisa from '@/assets/images/cardvisa.png';
-import cardverve from '@/assets/images/cardverve.png';
-import cardmaster from '@/assets/images/cardmaster.png';
+import visa from 'assets/images/visa.png';
+import verve from 'assets/images/verve.png';
+import master from 'assets/images/master.png';
+import cardvisa from 'assets/images/cardvisa.png';
+import cardverve from 'assets/images/cardverve.png';
+import cardmaster from 'assets/images/cardmaster.png';
 import {
   CardBrand,
   CardData,
@@ -13,7 +13,7 @@ import {
   SupportedCardBrand,
   SupportedCardType,
   TransactionType,
-} from '@/models';
+} from 'models';
 import { nanoid } from 'nanoid';
 import { AiFillCreditCard } from 'react-icons/ai';
 import { MdPhoneAndroid } from 'react-icons/md';

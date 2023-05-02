@@ -3,7 +3,7 @@ import {
   SharedExpensesAndDraw,
   ExpenseTable,
   PaymentCard,
-} from '@/components';
+} from 'components';
 
 const SelectExpenses = () => {
   const topbar = (

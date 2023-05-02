@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from 'styles';
 import { Flex, Icon } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { IconType } from 'react-icons/lib';
-import { Desc } from '@/components/shared';
+import { Desc } from 'components/shared';
 
 interface Props {
   icon: IconType;

@@ -1,10 +1,10 @@
-import { ColumnFlex, Desc } from '@/components';
-import { IProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Desc } from 'components';
+import { IProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Center, Flex, Icon, Text } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { IconType } from 'react-icons';
-import { useSharedColor } from '@/customHooks';
+import { useSharedColor } from 'customHooks';
 import { ReactNode } from 'react';
 
 interface Props extends IProps {

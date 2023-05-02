@@ -1,5 +1,5 @@
-import { ColumnFlex, Desc } from '@/components/shared';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Desc } from 'components/shared';
+import { DEFAULT_STYLES } from 'styles';
 import { BackgroundProps, Box, Flex, Icon, Text } from '@chakra-ui/react';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { WiMoonAltWaxingCrescent6 } from 'react-icons/wi';

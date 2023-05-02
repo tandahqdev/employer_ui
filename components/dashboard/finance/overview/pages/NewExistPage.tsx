@@ -1,7 +1,7 @@
-import { NewBanner, ExistingBanner, ActionCard } from '@/components';
-import { growIcon, growcurve, extendIcon, extendcurve } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { NewBanner, ExistingBanner, ActionCard } from 'components';
+import { growIcon, growcurve, extendIcon, extendcurve } from 'store';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { SharedFinanceOverview } from '../SharedFinanceOverview';
 
 export const NewExistPage = () => {

@@ -1,4 +1,4 @@
-import { DashRoutes } from '@/utils';
+import { DashRoutes } from 'utils';
 import { nanoid } from 'nanoid';
 
 export const accountsNav = [

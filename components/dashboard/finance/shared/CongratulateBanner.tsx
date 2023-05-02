@@ -7,10 +7,10 @@ import {
   HStack,
   Text,
 } from '@chakra-ui/react';
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from 'styles';
 import { ActionTitle, TandaVDivider } from '../../shared';
 import { OfferCard } from './OfferCard';
-import { extendIcon, growIcon, party, plusIcon } from '@/store';
+import { extendIcon, growIcon, party, plusIcon } from 'store';
 
 interface Props {
   colSpan?: GridItemProps['colSpan'];

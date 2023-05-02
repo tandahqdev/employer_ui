@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { CardPage, Header, NoCards } from '@/components';
-import { DashBoardLayout } from '@/layout';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { CardPage, Header, NoCards } from 'components';
+import { DashBoardLayout } from 'layout';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { AddIcon } from '@chakra-ui/icons';
 import { Button } from '@chakra-ui/react';
 

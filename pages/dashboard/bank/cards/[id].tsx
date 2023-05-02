@@ -1,7 +1,7 @@
-import withdraw from '@/assets/images/withdraw.png';
-import fund from '@/assets/images/fund.png';
-import hide from '@/assets/images/hide.png';
-import freeze from '@/assets/images/freeze.png';
+import withdraw from 'assets/images/withdraw.png';
+import fund from 'assets/images/fund.png';
+import hide from 'assets/images/hide.png';
+import freeze from 'assets/images/freeze.png';
 import {
   Card,
   CardActionBtn,
@@ -11,12 +11,12 @@ import {
   ColumnFlex,
   SharedCardContainer,
   WithdrawFundActions,
-} from '@/components';
-import { DashBoardLayout } from '@/layout';
-import { CardType } from '@/models';
-import { cardExamples } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
-import { hidePin } from '@/utils';
+} from 'components';
+import { DashBoardLayout } from 'layout';
+import { CardType } from 'models';
+import { cardExamples } from 'store';
+import { DEFAULT_STYLES } from 'styles';
+import { hidePin } from 'utils';
 import { Button, Flex, Text, useDisclosure } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { ReactNode, useState } from 'react';

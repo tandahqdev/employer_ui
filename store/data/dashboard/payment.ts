@@ -1,4 +1,4 @@
-import { PaymentStatus } from '@/models';
+import { PaymentStatus } from 'models';
 
 export const paymentTab = [
   PaymentStatus.Initialisation,

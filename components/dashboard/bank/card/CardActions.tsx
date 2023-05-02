@@ -1,5 +1,5 @@
-import { ColumnFlex, Desc } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Desc } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 import { Button, Flex, Input, Text } from '@chakra-ui/react';
 import { ExchangeCard } from '../../shared';
 

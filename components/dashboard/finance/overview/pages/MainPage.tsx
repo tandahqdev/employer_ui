@@ -1,6 +1,6 @@
-import { growIcon, extendIcon, growcurve, extendcurve } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { growIcon, extendIcon, growcurve, extendcurve } from 'store';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { AddIcon } from '@chakra-ui/icons';
 import { ActionCard } from '../../../shared';
 import { CongratulateBanner } from '../../shared';

@@ -1,4 +1,4 @@
-import { PaymentModel, Reset } from '@/models';
+import { PaymentModel, Reset } from 'models';
 import { nanoid } from 'nanoid';
 import { create } from 'zustand';
 

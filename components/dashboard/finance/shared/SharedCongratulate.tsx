@@ -1,4 +1,4 @@
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from 'styles';
 import { Grid, GridItem } from '@chakra-ui/react';
 import { HelpText, NewPageCard } from '../../shared';
 import { GrowActionCard } from './GrowActionCard';

@@ -1,7 +1,7 @@
-import { ColumnFlex } from '@/components/shared';
-import { TransactionData } from '@/models/finance';
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { ColumnFlex } from 'components/shared';
+import { TransactionData } from 'models/finance';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import {
   GridItem,
   Flex,

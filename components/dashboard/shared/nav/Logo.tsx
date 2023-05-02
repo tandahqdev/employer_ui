@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import logo1 from '@/assets/images/logo1.png';
-import logo2 from '@/assets/images/logo2.png';
+import logo1 from 'assets/images/logo1.png';
+import logo2 from 'assets/images/logo2.png';
 import { Flex } from '@chakra-ui/react';
-import { DashRoutes } from '@/utils';
-import { DEFAULT_STYLES } from '@/styles';
+import { DashRoutes } from 'utils';
+import { DEFAULT_STYLES } from 'styles';
 
 export const Logo = () => {
   return (

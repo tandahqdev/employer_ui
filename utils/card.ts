@@ -1,5 +1,5 @@
-import { CardStatus, CardType } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { CardStatus, CardType } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 
 export const cardColorHandler = (type: CardType) => {
   if (type === CardType.Physical) {
@@ -8,7 +8,6 @@ export const cardColorHandler = (type: CardType) => {
     return DEFAULT_STYLES.lightGreen;
   }
 };
-
 
 export const cardTableColorHandler = (type: CardType) => {
   if (type === CardType.Physical) {

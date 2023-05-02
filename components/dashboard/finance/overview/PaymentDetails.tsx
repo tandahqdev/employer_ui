@@ -1,6 +1,6 @@
-import { useSharedColor } from '@/customHooks';
-import { DEFAULT_STYLES } from '@/styles';
-import { getDay } from '@/utils';
+import { useSharedColor } from 'customHooks';
+import { DEFAULT_STYLES } from 'styles';
+import { getDay } from 'utils';
 import {
   CircularProgress,
   CircularProgressLabel,

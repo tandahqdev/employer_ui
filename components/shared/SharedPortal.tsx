@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { LayoutProps } from '@/models';
+import { LayoutProps } from 'models';
 import { Flex } from '@chakra-ui/react';
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from 'styles';
 
 export const SharedPortal = ({ children }: LayoutProps) => {
   const ref = useRef<Element | null>(null);

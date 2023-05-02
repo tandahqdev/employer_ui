@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import { ColumnFlex } from '@/components';
-import { CardType, SupportedCardBrand } from '@/models';
-import { CardChangeHandler, useCardStore } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { CardType, SupportedCardBrand } from 'models';
+import { CardChangeHandler, useCardStore } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { Center, Text } from '@chakra-ui/react';
 
 export const SelectCardBrand = ({ value, image, text }: SupportedCardBrand) => {

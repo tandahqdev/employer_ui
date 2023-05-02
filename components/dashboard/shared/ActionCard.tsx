@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ColumnFlex } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 import { Box, Button, HStack, Stack, Text } from '@chakra-ui/react';
 import { TandaHDivider } from './TandaDivider';
-import { ActionCardModel } from '@/models';
+import { ActionCardModel } from 'models';
 import { ActionTitle } from './ActionTitle';
 
 export const ActionCard = ({

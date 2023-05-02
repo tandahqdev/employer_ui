@@ -1,4 +1,4 @@
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from 'styles';
 import { Flex, Box, Center } from '@chakra-ui/react';
 import { useColor } from './useColor';
 

@@ -1,6 +1,6 @@
-import { ColumnFlex, Desc } from '@/components';
-import { expenseTableBody } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Desc } from 'components';
+import { expenseTableBody } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { Button, Checkbox, Flex, GridItem, Td, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { TandaTable, TandaTableRow } from '../shared';

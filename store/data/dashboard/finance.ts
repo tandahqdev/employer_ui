@@ -1,4 +1,4 @@
-import { TransactionData, TransactionStatus } from '@/models';
+import { TransactionData, TransactionStatus } from 'models';
 
 export const tableItems: TransactionData[] = [
   new TransactionData({

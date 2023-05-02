@@ -1,5 +1,5 @@
-import { Header } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import { Header } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 import { Button, Text } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { SharedBannerContainer } from './SharedBannerContainer';

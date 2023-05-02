@@ -1,6 +1,6 @@
-import { ColumnFlex, Desc } from '@/components';
-import { drawTable } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Desc } from 'components';
+import { drawTable } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { GridItem, Text, Td } from '@chakra-ui/react';
 import { useState } from 'react';
 import { TandaTable, TandaTableRow } from '../shared';

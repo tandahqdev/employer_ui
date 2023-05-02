@@ -5,11 +5,11 @@ import {
   SelectCardType,
   ExchangeCard,
   ShippingAdd,
-} from '@/components';
-import { DashBoardLayout } from '@/layout';
-import { CardType } from '@/models';
-import { CardChangeHandler, useCardStore } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+} from 'components';
+import { DashBoardLayout } from 'layout';
+import { CardType } from 'models';
+import { CardChangeHandler, useCardStore } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { Button, Flex, Grid, Select, Stack, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 

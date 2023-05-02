@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import cardscan from '@/assets/images/cardscan.png';
-import cardlogo from '@/assets/images/cardlogo.png';
-import { ColumnFlex } from '@/components';
-import { CardData } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
-import { hidePin } from '@/utils';
+import cardscan from 'assets/images/cardscan.png';
+import cardlogo from 'assets/images/cardlogo.png';
+import { ColumnFlex } from 'components';
+import { CardData } from 'models';
+import { DEFAULT_STYLES } from 'styles';
+import { hidePin } from 'utils';
 import { Box, Circle, Flex, HStack, Spacer, Text } from '@chakra-ui/react';
-import { cardImages } from '@/store';
+import { cardImages } from 'store';
 
 interface Props {
   data: CardData;

@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { ColumnFlex, Desc } from '@/components';
-import { NewPageItemsModel } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Desc } from 'components';
+import { NewPageItemsModel } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Text } from '@chakra-ui/react';
-import { useSharedColor } from '@/customHooks';
+import { useSharedColor } from 'customHooks';
 
 export const NewPageCardItem = ({ title, desc, icon }: NewPageItemsModel) => {
   const color = useSharedColor();

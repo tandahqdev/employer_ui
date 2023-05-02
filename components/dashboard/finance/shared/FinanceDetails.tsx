@@ -1,6 +1,6 @@
-import { ColumnFlex } from '@/components/shared';
-import { financeDetailsBody, financeDetailsHeaders } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components/shared';
+import { financeDetailsBody, financeDetailsHeaders } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { Center, Divider, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { AiOutlineDownload } from 'react-icons/ai';

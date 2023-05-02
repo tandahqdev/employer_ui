@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import { cardExamples, cardPageTableHeaders } from '@/store';
-import { DashRoutes, getDay, hidePin } from '@/utils';
+import { cardExamples, cardPageTableHeaders } from 'store';
+import { DashRoutes, getDay, hidePin } from 'utils';
 import { Card } from './Card';
 import { SharedCardContainer } from './SharedCardContainer';
 import { SearchIcon } from '@chakra-ui/icons';
 import { Center, Flex, Td, Text } from '@chakra-ui/react';
 import { TandaTable, TandaTableRow } from '../../shared';
-import { ColumnFlex } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 
 export const CardPage = () => {
   const renderCardExample = cardExamples.map((item) => {

@@ -1,4 +1,4 @@
-import { getDay } from '@/utils';
+import { getDay } from 'utils';
 
 export interface TransactionModel {
   date: Date;

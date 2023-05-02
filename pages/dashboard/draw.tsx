@@ -3,7 +3,7 @@ import {
   Header,
   PaymentCard,
   SharedExpensesAndDraw,
-} from '@/components';
+} from 'components';
 
 const DashboardDraw = () => {
   const topbar = (

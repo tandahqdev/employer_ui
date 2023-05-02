@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { DEFAULT_STYLES } from '@/styles';
+import { DEFAULT_STYLES } from 'styles';
 import { Flex, Center, Text } from '@chakra-ui/react';
-import { ActionTitleModel } from '@/models';
+import { ActionTitleModel } from 'models';
 
 export const ActionTitle = ({
   headerColor,

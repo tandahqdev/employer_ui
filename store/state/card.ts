@@ -1,4 +1,4 @@
-import { CardActionsModel, CreateCard, Reset } from '@/models';
+import { CardActionsModel, CreateCard, Reset } from 'models';
 import { nanoid } from 'nanoid';
 import { create } from 'zustand';
 import { supportedBrands, supportedTypes } from '../data';

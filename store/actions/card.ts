@@ -1,4 +1,4 @@
-import { CardBrand, CardType } from '@/models';
+import { CardBrand, CardType } from 'models';
 import { useCardStore } from '../state';
 
 export class CardChangeHandler {

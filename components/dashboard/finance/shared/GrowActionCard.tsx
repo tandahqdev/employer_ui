@@ -1,7 +1,7 @@
-import { ColumnFlex } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 import { Text } from '@chakra-ui/react';
-import { LayoutProps } from '@/models';
+import { LayoutProps } from 'models';
 
 interface Props extends LayoutProps {
   header: string;

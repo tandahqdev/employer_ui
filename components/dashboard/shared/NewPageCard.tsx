@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { ColumnFlex, Header } from '@/components';
-import { IProps } from '@/models';
-import { newPageItems } from '@/store';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex, Header } from 'components';
+import { IProps } from 'models';
+import { newPageItems } from 'store';
+import { DEFAULT_STYLES } from 'styles';
 import { Button, Grid, GridItem, Text } from '@chakra-ui/react';
 import { NewPageCardItem } from './NewPageCardItem';
 

@@ -1,6 +1,6 @@
-import { ColumnFlex } from '@/components';
-import { IProps, LayoutProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { IProps, LayoutProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
 import { Center, Flex, Text } from '@chakra-ui/react';
 import Image, { StaticImageData } from 'next/image';
 
@@ -69,5 +69,3 @@ export const CardActionBtn = ({ icon, text, onClick }: CardActionBtnProps) => {
     </ColumnFlex>
   );
 };
-
-

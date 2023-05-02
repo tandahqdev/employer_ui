@@ -1,5 +1,5 @@
-import { DEFAULT_STYLES } from '@/styles';
-import { DashRoutes } from '@/utils';
+import { DEFAULT_STYLES } from 'styles';
+import { DashRoutes } from 'utils';
 import { useRouter } from 'next/router';
 
 export const useSharedColor = () => {

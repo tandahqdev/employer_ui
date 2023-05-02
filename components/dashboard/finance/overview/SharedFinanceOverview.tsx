@@ -1,8 +1,8 @@
-import { ColumnFlex } from '@/components/shared';
-import { DashBoardLayout } from '@/layout';
-import { LayoutProps } from '@/models';
-import { DEFAULT_STYLES } from '@/styles';
-import { getDay } from '@/utils';
+import { ColumnFlex } from 'components/shared';
+import { DashBoardLayout } from 'layout';
+import { LayoutProps } from 'models';
+import { DEFAULT_STYLES } from 'styles';
+import { getDay } from 'utils';
 import { Grid } from '@chakra-ui/react';
 import { ProfileNavCard, PageSecondaryTitle } from '../../shared';
 

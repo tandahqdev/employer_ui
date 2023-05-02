@@ -1,5 +1,5 @@
-import { ColumnFlex } from '@/components';
-import { DEFAULT_STYLES } from '@/styles';
+import { ColumnFlex } from 'components';
+import { DEFAULT_STYLES } from 'styles';
 import { Center, Grid, Icon, Text } from '@chakra-ui/react';
 import { BsReceipt } from 'react-icons/bs';
 
